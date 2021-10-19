@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <h1>The i and em element</h1>
+    <p><i>This is italic text</i> - this is normal text</p>
+    <p><em>This is emphasized text</em> - this is normal text</p>
+    <p><b>This is bold text</b></p>
+    <p><strong>This is strong text</strong></p>
+    <p><tt>this is type writer text</tt></p>
+    <p><u>This is underline text</u></p>
+    <p>sub<sub>test</sub></p>
+    <p>sup<sup>test</sup></p>
+    <p>This is <del>deleted text</del></p>
+    <p>This is <mark>mark</mark> text</p>
+    <h2>Unordered list</h2>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <h2>Ordered list</h2>
+    <ol>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Grape</li>
+    </ol>
+    <!-- 설명을 위한 리스트 태그 <dl> <dt> <dd> -->
+    <h2>Description list</h2>
+    <dl>
+        <dt>Coffee</dt>
+        <dd>- black ice drink</dd>
+        <dt>Milk</dt>
+        <dd>- White cold drink</dd>
+    </dl>
+    <!-- 하이퍼링크. 
+        새창에 띄우는 속성은 target="_blank". 그냥 페이지 전환은 _self. 디폴값이기도 하다. 
+        parent 속성도 있음. 부모 창을 띄운다고 함. 속성 'title'은 마우스오버시 뜨는 텍스트 지정하게 해줌.-->
+    <!-- 해킹, 패킷후킹 때문에 http를 쓰면 개인정보 노출 위험. 그래서 https는 암호화됨 -->
+    <a href="https://www.daum.net" title="goto daum.net" target="_blank">daum home</a><br>
+    <a href="../tagtest.html" title="goto our site" target="_blank">our site</a><br>
+    
+    <!-- 절대경로
+         고유한 경로로 root(/)에서부터 시작되는 위치로 지정하는 방법 -->
+    <!-- ex) /home/contents/img/1.jpg -->
+
+    <!-- 상대경로
+         HTML 문서를 기준으로 경로를 지정하는 방법 -> 권장 방법. 누가 봐도 알 수 있게 ./를 표기해야 함. 실제로는 없어도 돌아감 -->
+    <!-- ex) ../contents/img/1.jpg -->
+    <a href="./cloud.jpg" title="goto new image window" target="_blank">New Image Window</a><br>
+    <a href="../old/cloud.jpg" title="goto new image window" target="_blank">another path image</a>
+</body>
+</html>

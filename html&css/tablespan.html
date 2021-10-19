@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table span</title>
+    <style>
+        table, th, td {
+            border: 1px solid purple;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cell that span two columns</h2>
+    <p>To make a cell span more than on column, use the colspan attribute.</p>
+    <table style="width: 100%;">
+        <tr>
+            <!-- colspan="2" - 2개를 하나로 합친다 -->
+            <th colspan="2">name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Joel</td>
+            <td>Smith</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>Michael</td>
+            <td>Jackson</td>
+            <td>45</td>
+        </tr>
+    </table>
+    <p></p>
+    <h2>Cell span two rows</h2>
+    <table style="width: 100%;">
+        <tr>
+            <th>Name</th>
+            <th>Michael</th>
+        </tr>
+        <tr>
+            <th rowspan="2">Phone</th>
+            <td>02-1234-5678</td>
+        </tr>
+        <tr>
+            <td>010-1234-5678</td>
+        </tr>
+    </table>
+
+    <p></p>
+    
+
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th>title1</th>
+                <th>title2</th>
+                <th>title3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>sub1</td>
+                <td>sub2</td>
+                <td>sub3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>footer1</td>
+                <td>footer2</td>
+                <td>footer3</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
