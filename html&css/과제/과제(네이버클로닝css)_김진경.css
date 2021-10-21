@@ -3,14 +3,14 @@ body {
 }
 
 .service_area {
-    display: flex;
     font-size: 10px;
-    flex-direction: row-reverse;
+    text-align: end;
 }
 
-.junior, .happyBean {
+.textGray {
     color: grey;
 }
+
 
 /* 헤더 */
 header {
