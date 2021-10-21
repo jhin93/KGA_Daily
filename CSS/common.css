@@ -1,0 +1,180 @@
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    box-sizing: border-box;
+    background-color: gray;
+}
+
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    box-sizing: border-box;
+    background-color: green;
+}
+
+#parag {
+    text-align: center;
+    background-color: indigo;
+    color: lavender;
+}
+
+.aright {
+    text-align: right;
+    background-color: maroon;
+    color: mintcream;
+}
+
+.header {
+    text-align: center;
+    background-color: indigo;
+    color: lavender;
+}
+
+p.header {
+    background-color: navy;
+}
+
+.p1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.p2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.normal {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.italic {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.oblique {
+    font-style: oblique;
+    font-weight: 1000;
+    font-size: 80px;
+}
+
+a:link {
+    color: navy;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:active {
+    color: violet;
+}
+
+.rgbid {
+    background-color: rgb(255, 99, 71);
+}
+
+.hexid {
+    background-color: #ff6347;
+}
+
+/* 색조, 채도, 밝기 */
+.hslid {
+    background-color: hsl(9, 100%, 64%);
+}
+
+.hslaid {
+    background-color: hsla(9, 100%, 64%, 0.5);
+}
+
+
+body {
+    /* background-color: seagreen; */
+    /* background-image: url('./cloud.jpg'); */
+    background-repeat: no-repeat;
+    background-size: 1024px;
+}
+
+h1 {
+    background-color: coral;
+}
+
+div {
+    background-color: red;
+    margin: 10px;
+    width: 320px;
+    padding: 10px;
+    border: 5px solid black;
+}
+
+div.first {
+    opacity: 0.1;
+}
+
+div.second {
+    opacity: 0.3;
+}
+
+div.third {
+    opacity: 0.6;
+}
+
+p {
+    background-color: blue;
+}
+
+p.dotted {
+    border-style: dotted;
+}
+
+p.solid {
+    border-style: solid;
+}
+
+p.double {
+    border-style: double;
+}
+
+p.groove {
+    border-style: groove;
+}
+
+p.ridge {
+    border-style: ridge;
+}
+
+p.inset {
+    border-style: inset;
+}
+
+p.outset {
+    border-style: outset;
+}
+
+p.none {
+    border-style: none;
+}
+
+p.hidden {
+    border-style: hidden;
+}
+
+p.mixed {
+    border-style: dotted dashed solid double;
+}
+
+
+
+

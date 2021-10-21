@@ -1,0 +1,111 @@
+body {
+    padding: 0px 380px;
+}
+
+.service_area {
+    display: flex;
+    font-size: 10px;
+    flex-direction: row-reverse;
+}
+
+.junior, .happyBean {
+    color: grey;
+}
+
+/* 헤더 */
+header {
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    width: 582px;
+    height: 52px;
+    border: 2px solid #19ce60;
+}
+
+.headerRight {
+    display: flex;
+}
+
+/* 네비게이션 */
+nav {
+    display: flex;
+}
+
+
+/* 컨테이너 1 */
+.container1 {
+    display: flex;
+}
+.c1Left{
+    width: 70%;
+    height: 100%;
+}
+.c1Right{
+    font-size: 12px;
+    width: 30%;
+    height: 100%;
+    padding: 9px 0px;
+    background-color: #f7f9fa;
+    border: 1px solid #dae1e6;
+}
+.c1Right__info {
+    padding: 10px 0px 10px 20px;
+}
+
+.c1Right__login {
+    background-color: #19ce60;
+    border: 1px solid #15c654;
+    border-radius: 2px;
+    text-align: center;
+    margin: 0px 20px;
+}
+.c1Right__privateInfo{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+}
+
+
+/* 컨테이너 2 */
+.container2 {
+    display: flex;
+}
+.c2Left {
+    width: 70%;
+    height: 100%;
+}
+.c2Left__nav{
+    font-size: 12px;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.c2Left__navCategory {
+    padding: 0px 56px 0px 0px;
+}
+
+.c2Right{
+    width: 30%;
+    height: 100%;
+    font-size: 10px;
+    padding: 20px 0px;
+}
+
+.c2Left_newsCorp{
+    width: 100%;
+}
+
+/* 푸터 */
+footer {
+    font-size: 10px;
+}

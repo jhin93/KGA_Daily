@@ -1,0 +1,29 @@
+body {
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    color: white;
+    text-align: center;
+}
+
+/* 중간에 공백이 있는 폰트 이름은 '' 로 감싸준다. */
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
