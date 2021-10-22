@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static position</title>
+    <link rel="stylesheet" href="./common.css" type="text/css">
+</head>
+<body>
+    <h2>Static position container</h2>
+    <div class="static">
+        <div class="static">This div element has position : static</div>
+        <div class="static">This div element has position : static</div>
+        <div class="static">This div element has position : static</div>
+    </div>
+
+    <h2>Relative position</h2>
+    <div class="static">
+        <div class="relative">This div element has position : relative</div>
+    </div>
+    
+    <h2>Absolute position</h2>
+    <div class="static">
+        <div class="relative">This div element has position : relative
+            <div class="absolute">This div element has position : absolute<br> 상위 요소가 relative일때를 기준으로 위치를 설정함</div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    
+
+    <h2>fixed position</h2>
+    <div class="fixed">This div element has position : fixed. 창을 위아래로 줄여볼 것.</div>
+    <h2>z-index 맨위에 있음</h2>
+    <img class="zindex" src="./aa.gif" alt="gif" width="100px" height="140px">
+    <p>Image index=? Lorem Ipsum 어쩌구..</p>
+</body>
+</html>

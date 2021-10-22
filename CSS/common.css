@@ -112,10 +112,17 @@ h1 {
 }
 
 div {
-    background-color: red;
-    margin: 10px;
-    width: 320px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 5px solid green;
     padding: 10px;
+}
+
+
+div.longtext {
+    background-color: lightgreen;
+    margin: 140px;
+    width: 300px;
+    padding: 50px;
     border: 5px solid black;
 }
 
@@ -131,8 +138,89 @@ div.third {
     opacity: 0.6;
 }
 
+div.static {
+    position: static;
+    border: 3px solid green;
+}
+
+div.relative {
+    position: relative;
+    left: 50px;
+    border: 5px solid lightseagreen;
+}
+
+div.absolute {
+    position: absolute;
+    left: 50px;
+    top: 5px;
+    border: 3px solid orange;
+    /* width: 200px; */
+    height: 50px;
+}
+
+div.fixed {
+    position: fixed;
+    bottom: 0px;
+    border: 5px solid brown;
+}
+
+.div1 {
+    float: left;
+    padding: 10px;
+    border: 5px solid limegreen;
+}
+
+.div2 {
+    padding: 10px;
+    border: 5px solid red;
+}
+
+.div3 {
+    float: left;
+    padding: 10px;
+    border: 5px solid saddlebrown;
+}
+
+.div4 {
+    padding: 10px;
+    border: 5px solid purple;
+    clear: left;
+}
+
+
+
+img.zindex {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 2;
+}
+
+img.lfloat {
+    float: left;
+}
+
+img.rfloat {
+    float: right;
+}
+
+.img1 {
+    float: right;
+}
+
+.img2 {
+    float: left;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
 p {
-    background-color: blue;
+    /* background-color: blue; */
+    /* border-left: 10px solid red; */
+    padding: 5px;
+    color: red;
 }
 
 p.dotted {
@@ -174,6 +262,70 @@ p.hidden {
 p.mixed {
     border-style: dotted dashed solid double;
 }
+
+p.round1 {
+    border: 2px solid blue;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+p.normal {
+    border: 2px solid blue;
+    padding: 5px;
+}
+
+p.round2 {
+    border: 2px solid blue;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+p.round3 {
+    border: 2px solid blue;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    display: block;
+}
+
+p.ext {
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
