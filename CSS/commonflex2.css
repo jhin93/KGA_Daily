@@ -1,0 +1,41 @@
+.flex-container {
+    background-color: lightskyblue;
+    display: flex;
+    height: 600px;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}
+
+.flex-container > div {
+    background-color: lightseagreen;
+    width: 100px;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

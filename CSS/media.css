@@ -1,0 +1,79 @@
+/* body {
+    background-color: plum;
+
+
+}
+
+@media screen and (min-width: 480px) {
+    body {
+        background-color: powderblue;
+    }
+
+} */
+
+
+.wrapper {
+    overflow: auto;
+}
+
+#main {
+    margin-left: 5px;
+}
+
+#leftsidebar {
+    float: none;
+    width: auto;
+}
+
+#menulist {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.menuitem {
+    background-color: aquamarine;
+    border: 1px solid lightslategray;
+    border-radius: 4px;
+    list-style-type: none;
+    margin: 4px;
+    padding: 2px;
+}
+
+@media screen and (min-width: 768px) {
+    #leftsidebar {
+        width: 200px;
+        float: left;
+    }
+    #main {
+        margin-left: 216px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
