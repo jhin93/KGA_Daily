@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foobar variable</title>
+</head>
+<body>
+    <h2>foobar variable</h2>
+    <script>
+        // var foo = 'foo1';
+        // console.log(foo);
+
+        // if(true) {
+        //     var foo = 'foo2'
+        //     console.log(foo)
+        // }
+        // console.log(foo);
+
+
+        let foo = 'foo1';
+
+        if(true) {
+            let foo = "foo2";
+            console.log(foo);
+        }
+
+        console.log(foo);
+
+        // 결과
+        // 'foo1' - if 문 안에서의 console.log로 인한 결과
+        // 'foo2 - 그냥 console.log로 인한 결과
+
+        var foo = 'foo1';
+
+        if(true) {
+            var foo = "foo2";
+            console.log(foo);
+        }
+
+        console.log(foo);
+
+        // 결과
+        // 'foo2' - if 문 안에서의 console.log로 인한 결과
+        // 'foo2 - 그냥 console.log로 인한 결과
+
+    </script>
+</body>
+</html>

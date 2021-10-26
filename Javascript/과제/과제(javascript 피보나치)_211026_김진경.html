@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피보나치</title>
+</head>
+<body>
+    <h1>피보나치 수열 함수</h1>
+    <div id="result"></div>
+    <script>
+        function fibonacci(n) {
+        var pre = 0;
+        var cur = 1;
+        var last = 0;
+        for(var num = 1; num<n; num++){
+            last = pre + cur;
+            pre = cur;
+            cur = last;
+        }
+        return last;
+        }
+        // 아래는 테스트로 출력해 보기 위한 코드입니다.
+        console.log(fibonacci(3));
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
