@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch문</title>
+</head>
+<body>
+    <h1>Switch문</h1>
+    <div id="result"></div>
+    <script>
+        let day;
+        // https://ko.javascript.info/switch
+        // 적용되는 케이스가 없으면 default를 실행
+        // 만약 중간에 break가 빠졌다면, 바로 다음 케이스를 적용함. 만약 수요일인데 case 3 에 break 가 빠져있다면 목요일로 나옴.
+        switch(new Date().getMonth()) 
+        {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;   
+            case 3:
+                day = "Wednesday";
+                break;         
+            case 4:
+                day = "Thursday";
+                break;    
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+                break;   
+            default:
+                day = "None";
+                break;
+        }
+        document.getElementById('result').innerHTML = "Today is " + day;
+    </script>
+</body>
+</html>

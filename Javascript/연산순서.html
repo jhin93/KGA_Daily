@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment Decrement Operator</title>
+</head>
+<body>
+    <h1>Increment Decrement Operator</h1>
+    <script>
+        var x = 10, y = 10, z = 10;
+        // x를 먼저 증가시키고 3을 뺀다.
+        document.write((++x -3) + "<br>"); // 8
+        document.write(x + "<br>");
+
+
+        document.write((y++ -3) + "<br>"); // 8
+        // 위에서 3을 먼저 뺀 Y를 증가시킨다.
+        document.write(y + "<br>");
+
+        // x와 5를 더한 후 -- 적용하고 난 후, --x 를 더한다. 
+        // 10 +  5 > 15 > 14 > 14 + 9 > 23
+        var z = x-- + 5 + --x; //23
+        document.write(z + "<br>");
+
+        
+    </script>
+</body>
+</html>

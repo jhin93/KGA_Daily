@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콘솔달력</title>
+</head>
+<body>
+    <h1>콘솔달력</h1>
+    <script>
+        let year = new Date().getFullYear();
+        let month = new Date().getMonth();
+
+        let date;
+
+        let dateArr = [];
+     
+        // month가 홀수면 31, 짝수면 30
+        // 2월은 28일.
+        // 7개씩 br로 끊기
+        function makeCalendar(year, month) {
+            // 최상단 연월표기
+            console.log("      " + year + "년 " + month + "월");
+
+            // 요일
+            console.log ("      일 월 화 수 목 금 토 ");
+
+            // month가 홀수면 31일
+            if(month % 2 !== 0){
+                date = 31;
+                for(let i = 1; i <= 31; i ++){
+                    dateArr.push(i);
+                }
+                console.log(dateArr.slice(0, 7));
+                console.log(dateArr.slice(7, 14));
+                console.log(dateArr.slice(14, 21));
+                console.log(dateArr.slice(21, 28));
+                console.log(dateArr.slice(28));
+
+            // 2월이면 28일
+            } else if (month === 2) {
+                date = 28;
+                for(let i = 1; i <= 28; i ++){
+                    dateArr.push(i);
+                }
+                console.log(dateArr.slice(0, 7));
+                console.log(dateArr.slice(7, 14));
+                console.log(dateArr.slice(14, 21));
+                console.log(dateArr.slice(21, 28));
+                console.log(dateArr.slice(28));
+            // month가 짝수면 30일
+            }  else if (month % 2 === 0) {
+                date = 30;
+                for(let i = 1; i <= 30; i ++){
+                    dateArr.push(i);
+                }
+                console.log(dateArr.slice(0, 7));
+                console.log(dateArr.slice(7, 14));
+                console.log(dateArr.slice(14, 21));
+                console.log(dateArr.slice(21, 28));
+                console.log(dateArr.slice(28));   
+            }
+        }
+        makeCalendar(2021, 3);
+    </script>
+</body>
+</html>

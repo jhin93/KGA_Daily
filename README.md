@@ -14,7 +14,14 @@ https://blog.naver.com/jiwon3194/222512040766
 
 
 
+무한 루프가 돌때는 연산자가 제한범위안에 제대로 있는 지 확인
 
+        while( i < 10 ) {
+            if((i % 2) == 0){
+                text += "<br>The number is " + i;
+            }
+            i++;
+        }
 
 
 
