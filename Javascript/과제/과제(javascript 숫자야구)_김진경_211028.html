@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자야구</title>
+</head>
+<body>
+    <h2>숫자를 입력하세요</h2>
+    <input type="number" id="playerNumber" placeholder="숫자중복입력 X">
+    <button onclick="baseball()">결과는?</button>
+    <div id="randomPic"></div>
+    <div id="inputPic"></div>
+    <div id="result"></div>
+    <script>
+        function baseball(){
+
+            // 컴퓨터 난수 생성 (3자리)
+            let randomNum = Math.floor((Math.random() * 899) + 100); 
+            // console.log("컴퓨터 난수 : " + randomNum);
+            let stringifyRandomNum = String(randomNum);
+
+            // 문자열회된 난수를 찢어서 배열에 담기.
+            let tearedRandomString = stringifyRandomNum.split('');
+            console.log("난수를 문자열화하여 찢은 결과 : " + tearedRandomString);
+
+
+            // 사용자 입력수
+            let playerNum = document.getElementById('playerNumber').value; 
+            // console.log("사용자 입력수 : " + playerNum);
+            let stringifyplayerNum = String(playerNum);
+            // 문자열화된 입력수를 찢어서 배열에 담기.
+            let tearedplayerString = stringifyplayerNum.split('');
+            console.log("입력수를 문자열화하여 찢은 결과 : " + tearedplayerString);
+
+
+            let strike = 0; // 맞으면 증가하는 strike 변수
+            let ball = 0; // 맞으면 증가하는 ball 변수
+
+            // input에 중복된 숫자가 들어오면 alert뜨면서 리로드
+            // https://hianna.tistory.com/415
+            const set = new Set(tearedplayerString);
+            if(tearedplayerString.length !== set.size){
+                alert('숫자가 중복되었습니다!')
+                location.reload();
+            }
+
+
+            // strike는 '자릿수와 그 내용이 일치하는 개수'를 체크한다.
+            // 만약 playerNum의 각 자릿수가 randomNum과 일치하면 strike가 ++ 된다.
+            for(let i = 0; i < 3; i ++){
+                if(tearedRandomString[0] == tearedplayerString[0] || tearedRandomString[1] == tearedplayerString[1] || tearedRandomString[2] == tearedplayerString[2]){
+                    strike ++;
+                    break;
+                }
+            }
+
+
+
+            // 볼을 확인하는 수식
+            for(let i = 0; i < tearedRandomString.length; i ++){
+                for(let j = 0; j < tearedplayerString.length; j ++){
+                    if(tearedplayerString[j] == tearedRandomString[i]){
+                        ball ++;
+                        break;
+                    }
+                }
+            }
+
+            // 홈런을 확인하는 수식
+            // strike가 3개면 홈런이고 alert 뜨면서 리로드
+            if(strike == 3){
+                alert('홈런입니다!')
+                location.reload();
+            }
+
+
+
+            // 화면에 출력
+            document.getElementById('randomPic').innerHTML = "컴퓨터 난수 : " + tearedRandomString + "<br>";
+            document.getElementById('inputPic').innerHTML = "사용자 입력수 : " + tearedplayerString + "<br>";
+            document.getElementById('result').innerHTML = strike + " 스트라이크" + ball + " 볼" 
+        }
+    </script>
+</body>
+</html>
