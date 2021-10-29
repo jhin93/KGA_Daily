@@ -61,21 +61,12 @@
             // strike는 '자릿수와 그 내용이 일치하는 개수'를 체크한다.
             // 만약 playerNum의 각 자릿수가 randomNum과 일치하면 strike가 ++ 된다.
             for(let i = 0; i < 3; i ++){
-                if(questNum[0] == tearedplayerString[0] || questNum[1] == tearedplayerString[1] || questNum[2] == tearedplayerString[2]){
+                if(questNum[i] == tearedplayerString[i] ){
                     strike ++;
                     break;
-                }
-            }
-
-
-
-            // 볼을 확인하는 수식
-            for(let i = 0; i < questNum.length; i ++){
-                for(let j = 0; j < tearedplayerString.length; j ++){
-                    if(tearedplayerString[j] == questNum[i]){
-                        ball ++;
-                        break;
-                    }
+                } else if (questNum.indexOf(Number(tearedplayerString[i])) > -1){
+                    // 볼을 확인하는 수식
+                    ball ++;
                 }
             }
 
