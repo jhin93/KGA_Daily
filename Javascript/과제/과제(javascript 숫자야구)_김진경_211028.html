@@ -16,19 +16,25 @@
     <script>
         function baseball(){
 
-            // 컴퓨터 난수 생성 (3자리)
-            let randomNum = Math.floor((Math.random() * 899) + 100);
-            // 자릿수대로 나누기 위해 숫자를 문자화
-            let stringifyRandomNum = String(randomNum);
-
-            // 문자열회된 난수를 찢어서 배열에 담기.
-            let tearedRandomString = stringifyRandomNum.split('');
+            // 컴퓨터 난수 생성 (3자리). 중복없이 각 자리가 전부 다른수여야 함.
+            let questNum = [0,0,0];
+            for (i = 0; i < questNum.length; i++){ // 0-9 까지의 중복되지 않는 숫자 3개를 questNum 에 담음.
+                questNum[i] = Math.floor(Math.random() * 9); // questNum 배열에 0-9 까지의 숫자를 순차적으로 담음.
+                for (k = 0; k < i; k++){ // questNum 배열에 숫자를 담는 중에 같은 값이 들어가는지 확인.
+                    if (questNum[i] == questNum[k]){ // 같은 값이 들어가면 첫 for문 i 값을 차감하여 다시 돌림.
+                        i--;
+                    }
+                }
+                // console.log("questNum[" + i + "] = " + questNum[i]);
+            }
+            console.log(questNum);
 
 
             // 사용자 입력수
             let playerNum = document.getElementById('playerNumber').value; 
             // 문자열화된 입력수를 찢어서 배열에 담기.
             let tearedplayerString = playerNum.split('');
+            console.log("입력수를 문자열화하여 찢은 결과 : " + tearedplayerString);
 
 
             let strike = 0; // 맞으면 증가하는 strike 변수
@@ -55,19 +61,20 @@
             // strike는 '자릿수와 그 내용이 일치하는 개수'를 체크한다.
             // 만약 playerNum의 각 자릿수가 randomNum과 일치하면 strike가 ++ 된다.
             for(let i = 0; i < 3; i ++){
-                if(tearedRandomString[i] == tearedplayerString[i]){
+                if(questNum[0] == tearedplayerString[0] || questNum[1] == tearedplayerString[1] || questNum[2] == tearedplayerString[2]){
                     strike ++;
+                    break;
                 }
             }
 
-            
+
 
             // 볼을 확인하는 수식
-            // 두 배열의 자릿수가 같지 않으면서 동시에 서로 겹치는 숫자를 센다.
-            for(let i = 0; i < tearedRandomString.length; i ++){
+            for(let i = 0; i < questNum.length; i ++){
                 for(let j = 0; j < tearedplayerString.length; j ++){
-                    if(tearedRandomString[i] == tearedplayerString[j]){
+                    if(tearedplayerString[j] == questNum[i]){
                         ball ++;
+                        break;
                     }
                 }
             }
@@ -82,7 +89,7 @@
 
 
             // 화면에 출력
-            document.getElementById('randomPic').innerHTML = "컴퓨터 난수 : " + tearedRandomString + "<br>";
+            document.getElementById('randomPic').innerHTML = "컴퓨터 난수 : " + questNum + "<br>";
             document.getElementById('inputPic').innerHTML = "사용자 입력수 : " + tearedplayerString + "<br>";
             document.getElementById('result').innerHTML = strike + " 스트라이크 " + ball + " 볼" 
         }
