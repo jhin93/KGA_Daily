@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 다이아몬드 절반(삼각형 출력) 출력
+        //      c   i=0일때
+        //     bcd  i=1~3일때
+        //    abcde i=0~4일때
+
+        // 2. 다이아몬드 출력
+        //      c
+        //     bcd
+        //    abcde
+        //     bcd
+        //      c
+
+        //전체문자열 
+        const myArray = ["a", "b", "c", "d", "e"];
+
+        //가운데 index값 찾기
+        const l = myArray.length // 5
+        const num = Math.floor(l/2); // 절반보다 작은 숫자들 중 가장 큰 정수. 2.
+        
+        //이등변삼각형 꼴  
+        // 빈배열 선언
+        const tri = [];
+        // 전체 문자열 길이의 절반 + 1 까지만 1차 for문을 돌림. 그래야 삼각형이 되고 전체 다 하면 마름모.
+        for(let n = 0; n < l-num; n++){
+            tri.push(' ');
+            // console.log(tri);
+            // 2차 for문은 전체 문자열 길이만큼 돌림.
+            for(let i = 0; i < l ; i++) {
+                // n=0, i=0 일때 tri[0]에 '  '추가
+                // n=0, i=1 일때 tri[0]에 '  '추가
+                // n=0, i=2 일때 tri[0]에 myArrai[2] + ' ' 추가
+                // n=0, i=3 일때 tri[0]에 '  '추가
+                // n=0, i=4 일때 tri[0]에 '  '추가             
+                //                                              tri[0] 는 '     c     '로 완성
+
+                // n=1, i=0 일때 tri[1]에 '  '추가
+                // n=1, i=1 일때 tri[1]에 myArray[1] + ' ' 추가
+                // n=1, i=2 일때 tri[1]에 myArray[2] + ' ' 추가
+                // n=1, i=3 일때 tri[1]에 myArray[3] + ' ' 추가
+                // n=1, i=4 일때 tri[1]에 '  '추가
+                //                                              tri[1] 는 '   b c d   '로 완성
+
+                // n=2, i=0 일때 tri[2]에 myArray[0] + ' ' 추가
+                // n=2, i=1 일때 tri[2]에 myArray[1] + ' ' 추가
+                // n=2, i=2 일때 tri[2]에 myArray[2] + ' ' 추가
+                // n=2, i=3 일때 tri[2]에 myArray[3] + ' ' 추가
+                // n=2, i=4 일때 tri[2]에 myArray[4] + ' ' 추가
+                //                                              tri[1] 는 ' a b c d e '로 완성
+                if((i >= (num - n)) && (i <= (num + n))) {
+                    // 맨처음에 tri.push(' ');를 해줬고, 가운데에서 + ' '를 해줘서 양쪽 여백 밸런스가 맞음.
+                    tri[n] += myArray[i] + ' '; 
+                }
+                else {
+                    tri[n] += '  ';
+                } 
+            }
+            console.log(tri[n] + "\n"); // \n 줄바꾸기 \t 띄어쓰기 
+        }
+        
+        //다이아몬드꼴
+        // 빈배열 선언
+        const diam = [];
+        // 마름모꼴이기에 삼각형과 달리 문자열 길이의 절반이 아닌 전체를 기준으로 1차 for문을 돌린다.
+        for(let n = 0; n < l ; n++){ // l은 5
+            diam.push(' ');
+            // Math.abs 는 주어진 숫자의 '절댓값'을 반환. 주어진 수가 음수라면 양수를 반환.
+            // numx 는 '전체 문자열 길이의 절반을 내리고 정수화'한 수에서 n을 뺀 뒤 그것의 절댓값을 구한 값. 즉 모든 경우가 양수.
+            const numx = Math.abs(Math.floor(l/2) - n)
+            for(let i = 0; i < l ; i++) {
+                // n=0, i=0일때 numx는 2. diam[0]에 '  ' 추가
+                // n=0, i=1일때 numx는 2. diam[0]에 '  ' 추가
+                // n=0, i=2일때 numx는 2. diam[1]에 myArray[2] + ' ' 추가
+                // n=0, i=3일때 numx는 2. diam[0]에 '  ' 추가
+                // n=0, i=4일때 numx는 2. diam[0]에 '  ' 추가
+                //                                          diam[0]은 '     c     '로 완성
+                // n=1, i=0일때 numx는 1. diam[1]에 '  ' 추가
+                // n=1, i=1일때 numx는 1. diam[1]에 myArray[1] + ' ' 추가
+                // n=1, i=2일때 numx는 1. diam[1]에 myArray[2] + ' ' 추가
+                // n=1, i=3일때 numx는 1. diam[1]에 myArray[3] + ' ' 추가
+                // n=1, i=4일때 numx는 1. diam[1]에 '  ' 추가
+                //                                          diam[1]은 '   b c d   '로 완성
+                // n=2, i=0일때 numx는 0. diam[2]에 myArray[0] + ' ' 추가
+                // n=2, i=1일때 numx는 0. diam[2]에 myArray[1] + ' ' 추가
+                // n=2, i=2일때 numx는 0. diam[2]에 myArray[2] + ' ' 추가
+                // n=2, i=3일때 numx는 0. diam[2]에 myArray[3] + ' ' 추가
+                // n=2, i=4일때 numx는 0. diam[2]에 myArray[4] + ' ' 추가
+                //                                          diam[2]은 ' a b c d e '로 완성
+                // n=3, i=0일때 numx는 1. diam[3]에 '  ' 추가
+                // n=3, i=1일때 numx는 1. diam[3]에 myArray[1] + ' ' 추가
+                // n=3, i=2일때 numx는 1. diam[3]에 myArray[2] + ' ' 추가
+                // n=3, i=3일때 numx는 1. diam[3]에 myArray[3] + ' ' 추가
+                // n=3, i=4일때 numx는 1. diam[3]에 '  ' 추가
+                //                                          diam[3]은 '   b c d   '로 완성
+                // n=4, i=0일때 numx는 2. diam[4]에 '  ' 추가
+                // n=4, i=1일때 numx는 2. diam[4]에 '  ' 추가
+                // n=4, i=2일때 numx는 2. diam[4]에 myArray[2] + ' ' 추가
+                // n=4, i=3일때 numx는 2. diam[4]에 '  ' 추가
+                // n=4, i=3일때 numx는 2. diam[4]에 '  ' 추가
+                //                                          diam[4]은 '     c     '로 완성
+
+                if((i >= numx) && (i <= ((l-1) - numx))) {
+                    diam[n] += myArray[i] + ' '; 
+                }
+                else {
+                    diam[n] += '  ';
+                } 
+            }
+            console.log(diam[n] + "\n"); // \n 줄바꾸기 \t 띄어쓰기 
+        }
+
+    </script>
+</body>
+</html>

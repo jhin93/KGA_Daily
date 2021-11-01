@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>This is first element for paragraph</p>
+    <p>This is second element for paragraph</p>
+    <p>This is third element for paragraph</p>
+    <p id="demo"></p>
+    <script>
+        const element = document.getElementsByTagName('p');
+        document.getElementById('demo').innerHTML = 'The text in a first paragraph (index 0) is : ' +
+            element[1].innerHTML
+    </script>
+</body>
+</html>
