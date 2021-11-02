@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let star = '';
+        for(let i = 1; i < 10; i ++){
+            for(let j = 0; j < i; j ++){
+                star += '*'
+            }
+            // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Addition_assignment
+            // 오른쪽 피연산자의 값을 변수에 더한 결과를 다시 변수에 할당.
+            // star += 이라고 해야 피라미드 형태로 문자열이 쌓인 모양이 다시 변수에 할당됨.
+            star += '\n'
+            
+        }
+        console.log(star)
+        // function leftSidedTriangle(){
+        //     for(let i = 0; i <= 10; i ++){
+        //         for(let j = 0; j < i; j ++){
+        //             star += '*'
+        //         }
+        //         star += '\n';
+        //     }
+        //     console.log(star);            
+        // }
+        // leftSidedTriangle();
+    </script>
+</body>
+</html>
