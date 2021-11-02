@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myFunction()">Click Me!</button>
+    <p id="result"></p>
+
+    <script>
+        function myFunction(){
+            var text = "";
+            var i = 0;
+            // do While 문은 '반드시 한번은 실행한다'. 그리고 조건을 적용하고 돈다.
+            do {
+                text += "<br>The number is " + i;
+                i ++;
+
+            }
+            while(i <= 0); // 이 조건이라면 한번은 도니까 i = 0일때 한번은 돌고, 그 이후로는 안돈다. 왜? i <=0을 통과를 못하니까.
+            document.getElementById('result').innerHTML = text;
+        }
+    </script>
+</body>
+</html>

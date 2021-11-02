@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="numcheck" type="text">
+    <button type="button" onclick="checkNumber()">Click me!</button>
+    <p id="result"></p>
+
+    <script>
+        function checkNumber(){
+            let message, x;
+            message = document.getElementById('result');
+            message.innerHTML = "";
+
+            x = document.getElementById('numcheck').value;
+
+            // try 문에서 던지는(throw) 에러를 catch문에서 받아서 메세지 완성.
+            try{
+                if(x == "") throw "is Empty";
+                if(isNaN(x)) throw "not a number";
+                if(x > 10) throw "too high";
+                if(x < 1) throw "too row";
+            }
+            catch(error) {
+                message.innerHTML = "Input " + error;
+            }
+        }
+    </script>
+</body>
+</html>

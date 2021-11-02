@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        function myFunction() {
+            document.getElementById('result').innerHTML = "This is correct method!!!"
+        }
+        // trycatch문은 브라우저 화면 상에 띄워서 보여준다. 만약 trycatch문을 쓰지 않는다면 콘솔창에서 봐야 함.
+        try {
+            addAlert("Welcome to Hell!!") // 존재하지 않는 혹은 잘못된 케이스가 실행되면 catch문으로 넘어감.
+            // myFunction();
+        }
+        catch(err) {
+            console.log(err);
+            document.getElementById('result').innerHTML = err.message;
+        }
+    </script>
+</body>
+</html>

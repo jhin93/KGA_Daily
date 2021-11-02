@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 콘솔에 찍기
+        let star = '';
+        let star1 = '';
+
+        // 1. 좌측 직각삼각형
+        function leftSidedTriangle(){
+            for(let i = 0; i <= 10; i ++){
+                for(let j = 0; j < i ; j ++){
+                    star += '*'
+                }
+                star += '\n';
+            }
+            console.log(star);            
+        }
+        leftSidedTriangle();
+
+        // 2. 좌측 직각역삼각형
+
+        function leftSidedUpsideDown(){
+            for (var i = 10; i > 0; i--) {
+                for (var j = 0; j < i; j++) {
+                    star1 += '*';
+                }
+                star1 += '\n';
+
+            }
+            console.log(star1);            
+        }
+        leftSidedUpsideDown();
+
+        // 3. 마름모
+        // for문 내부에 for문을 여러번 써서 해결한 사례.
+        // for문 만을 사용. https://hianna.tistory.com/368
+
+
+        // https://hianna.tistory.com/368
+
+
+        function diamond(){
+            let diam = '';
+            // 상단삼각형
+            // 상단 5행을 진행하는 for문 작성.
+            for(let i = 0; i < 10; i ++){
+                // 다중 반복문의 경우, 차례대로 하나씩 다 돌고 내려오는 걸 반복한다고 보면 된다.
+                
+                // i=0 일때 for문들을 위에서부터 차례로 하나씩 끝내면서 내려온다
+                // 즉, i=0일때의 결과물은 빈칸 4개(첫번째 for문 끝낸 결과) + 별 1개(두, 세번째 for문 끝낸 결과). 
+                // i=1 일때 빈칸 3개 + 별 3개
+                // i=2 일때 빈칸 2개 + 별 5개
+                // i=3 일때 빈칸 1개 + 별 7개
+                // i=4 일때 빈칸 0개 + 별 9개
+                // 공백을 추가하는 for문
+                for(let j = 9; j > i; j--){
+                    diam += ' '
+                }
+                for(let j = 0; j <= i; j++){
+                    diam += '*';
+                }
+                for(let j = 1; j <= i; j++){
+                    diam += '*';
+                }
+                diam += '\n';
+            }
+
+            // 하단역삼각형 
+            for(let i = 0; i < 9; i ++){
+                for(let j = 0; j <= i; j ++){
+                    diam += ' '
+                }
+                for(let j = 9; j > i; j --){
+                    diam += '*'
+                }
+                for(let j = 8; j > i; j --){
+                    diam += '*'
+                }
+                diam += '\n';
+            }
+            console.log(diam);
+        }   
+        diamond();
+    </script>
+</body>
+</html>
