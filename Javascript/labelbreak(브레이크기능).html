@@ -20,9 +20,8 @@
                 Loop2:
                 for(j = 0; j < 5; j++){
                     if(j == 2){
-                        // j 가 2 일때 Loop1으로 빠져나가서 계속 돔
-                        // break가 Loop1으로 빠져나가는 기능도 있음
-                        break Loop1;
+                        // j 가 2일때 Loop1을 종료시켜버림.
+                        break Loop2;
                     }
                     document.getElementById('result').innerHTML = text += j + " ";
                 }// end of for j

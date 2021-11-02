@@ -14,18 +14,18 @@
             var text = "";
             var i = 0;
             var sum = 0;
-            // while(i < 5) {
-            //     text += "<br>The number is " + i;
-            //     i++;
-            //     if(i === 3){
-            //         break;
-            //     }
-            // }
-            while(i < 100) {
-                sum += i + 1;
-                i ++;
+            while(i < 5) {
+                text += "<br>The number is " + i;
+                i++;
+                if(i === 3){
+                    break;
+                }
             }
-            text = "Sum is " + sum;
+            // while(i < 100) {
+            //     sum += i + 1;
+            //     i ++;
+            // }
+            // text = "Sum is " + sum;
             document.getElementById('result').innerHTML = text;
         }
     </script>

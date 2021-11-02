@@ -20,7 +20,7 @@
                 i ++;
 
             }
-            while(i <= 0); // 이 조건이라면 한번은 도니까 i = 0일때 한번은 돌고, 그 이후로는 안돈다. 왜? i <=0을 통과를 못하니까.
+            while(i <= 0); // 이 조건이라면 한번은 도니까 i = 0일때 한번은 돌고, 그 이후로는 안돈다. 왜? i ++ 에 의해 i <= 0을 통과를 못하니까.
             document.getElementById('result').innerHTML = text;
         }
     </script>
