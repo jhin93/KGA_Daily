@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+    class Car {
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+
+        age() {
+            // new는 새로운 오브젝트를 만듬
+            let date = new Date();
+            return date.getFullYear() - this.year;
+        }
+    }
+
+    let myCar = new Car("Benz", "2015");
+    document.getElementById('result').innerHTML = "My car is " + myCar.age() + " years old."
+    </script>
+</body>
+</html>

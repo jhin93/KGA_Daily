@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+
+    <script>
+        const person = {
+            name: 'John',
+            age : 25,
+            city: 'New York'
+        };
+        // values s를 붙여야 한다.
+        document.getElementById('result').innerHTML = Object.values(person)
+    </script>
+</body>
+</html>

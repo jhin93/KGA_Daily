@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="num" type="text">
+    <button type="button" onclick="myFunction()">Submit</button>
+    <p id="result"></p>
+
+    <script>
+        function myFunction() {
+            let x = document.getElementById("num").value;
+            let text;
+
+            // isNaN - 숫자열
+            if(isNaN(x) || x < 1 || x > 10){
+                text = "input not valid";
+            }
+            else {
+                text = "input OK"
+            }
+            document.getElementById('result').innerHTML = text;
+        }
+    </script>
+</body>
+</html>

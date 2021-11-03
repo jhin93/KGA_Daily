@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result1"></p>
+    <p id="result2"></p>
+
+    <script>
+        class Car {
+            constructor(brand){
+                this._carname = brand;
+            }
+
+            get carname(){
+                return this._carname;
+            }
+
+            set carname(x){
+                this._carname = x;
+            }
+
+        }
+        // get set을 프로퍼티처럼 사용한다.
+
+        let myCar = new Car("BMW");
+        document.getElementById("result1").innerHTML = myCar.carname; // 메소드처럼 carname()이 아니라 프로퍼티처럼 .carname으로 사용
+        myCar.carname = "Benz"; // 여기서 set 함수를 사용하여 다른 값을 대입.
+        document.getElementById("result2").innerHTML = myCar.carname;
+    </script>
+</body>
+</html>

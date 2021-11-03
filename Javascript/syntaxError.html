@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        try {
+            // 따옴표를 하나만 쓰면 문법오류이기에 eval() 함수가 에러를 잡아냄.
+            eval("alert('hello)");
+        } 
+        catch(err) {
+            document.getElementById('result').innerHTML = err.name;
+        }
+    </script>
+</body>
+</html>

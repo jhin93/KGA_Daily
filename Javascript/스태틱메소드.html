@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+
+    <script>
+        class Car {
+            constructor(name) {
+                this.name = name;
+            }
+
+            // static 메소드는 오브젝트의 클래스에서만 호출된다.
+            // static은 메모리에 적재되서 글로벌하게 사용됨.
+            // 자신의 멤버에게 접근하는 것도 가능.
+            static hello(x) {
+                return "Hello " + x.name;
+            }
+        }
+
+        let myCar = new Car("BMW X5");
+        document.getElementById("result").innerHTML = Car.hello(myCar);
+    </script>
+</body>
+</html>

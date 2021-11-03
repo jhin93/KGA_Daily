@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        function myDisplay(some){
+            document.getElementById('result').innerHTML = some;
+        }
+
+        function myFirstFunc(){
+            myDisplay("Hello");
+        }
+
+        function mySecondFunc() {
+            myDisplay("Goodbye");
+        }
+
+        // 함수는 순서대로 호출된다.
+        myFirstFunc();
+        mySecondFunc();
+    </script>
+</body>
+</html>
