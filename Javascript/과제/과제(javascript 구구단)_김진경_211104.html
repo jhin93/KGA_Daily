@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 구구단 세로출력.
+        // 1 * 1 = 1
+        // 1 * 2 = 2 
+        // .
+        // .
+        // .
+        //  1단부터 9단 단과 단사이 한줄띄기
+
+
+        // 구구단 가로출력 1단
+        // 1*1 = 1__1*2=2__....1*9=9
+        //.
+        //.
+        //.
+        // 9*1 = 9__9*2 = 18 __... 9*9 = 81
+
+        // 세로출력
+        function gugudanCero(){
+            let multi;
+            // 값을 안준 상태(ex let result;)에서 값을 더하면 undefined 뜸.
+            let result = '';
+            for(let i = 1; i < 10; i ++){
+                for(let j = 1; j < 10; j ++){
+                    multi = i*j;
+                    result += i + '*' + j + '=' + multi + '\n';
+                }
+                result += '\n'
+            }
+            console.log(result);
+        }
+        gugudanCero();
+
+        // 가로출력
+        function gugudanGaro(){
+            let multi = '';
+            let result = '';
+            for(let i = 1; i < 10; i ++){
+                for(let j = 1; j < 10; j ++){
+                    multi = i*j;
+                    // result에 구구단 넣기전에 미리 언더바 넣기. 1제외.
+                    if(j > 1) {
+                        result += ' __ '
+                    }
+                    result += i + '*' + j + '=' + multi;
+                }
+                result += '\n'
+            }
+            console.log(result);
+        }
+        gugudanGaro();
+
+    </script>
+</body>
+</html>
