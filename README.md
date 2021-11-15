@@ -36,9 +36,15 @@ https://stackoverflow.com/questions/8862035/what-does-it-mean-when-the-form-acti
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label  
 
 
+NodeJS  
+nvm 설치 및 버전확인 및 변경  
+https://gist.github.com/falsy/8aa42ae311a9adb50e2ca7d8702c9af1  
 
+nvm ls  
+nvm 버전 확인  
 
-
+nvm 버전사용  
+nvm nvm use 버전(ex nvm use 16.13.0)
 
 
 
