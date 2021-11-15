@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .dropTarget {
+            float: left;
+            width: 100px;
+            height: 35px;
+            margin: 15px;
+            padding: 10px;
+            border: 2px solid #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropTarget" ondrop="drop(event)" ondragover="allowDrop(event)" >
+        <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragstart">Drag Me!!</p>
+    </div>
+
+    <div class="dropTarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <p></p>
+    <p id="result"></p>
+        
+    <script>
+        function dragStart(event){
+            event.dataTransfer.setData("Text", event.target.id);
+        }
+
+        function dragging(event){
+            document.getElementById('result').innerHTML = "The p element is being dragged"
+        }
+
+        function allowDrop(){
+            event.preventDefault();
+        }
+
+        function drop(event){
+            event.preventDefault();
+            var data = event.dataTransfer.getData("Text");
+            event.target.appendChild(document.getElementById(data));
+            document.getElementById('result').innerHTML = "The p element was dropped";
+            console.log(event);
+        }
+    </script>
+</body>
+</html>

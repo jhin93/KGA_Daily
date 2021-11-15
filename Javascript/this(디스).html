@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+    <p id="result"></p>
+
+    <script>
+        var hello;
+
+        hello = function(){
+            document.getElementById('result').innerHTML += this;
+        }
+
+        window.addEventListener('load', hello); // 로드할 때 hello 실행되는 시점의 this는 window 나옴
+        document.getElementById('btn').addEventListener("click", hello); // 클릭할때 hello 실행되는 시점의 this는 버튼.
+    </script>
+</body>
+</html>
