@@ -46,5 +46,6 @@ nvm 버전 확인
 nvm 버전사용  
 nvm nvm use 버전(ex nvm use 16.13.0)
 
+빌트인 모듈은 따로 설치를 안해줘도 사용가능하다 (ex http)
 
 
