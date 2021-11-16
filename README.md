@@ -40,6 +40,9 @@ NodeJS
 nvm 설치 및 버전확인 및 변경  
 https://gist.github.com/falsy/8aa42ae311a9adb50e2ca7d8702c9af1  
 
+
+
+
 nvm ls  
 nvm 버전 확인  
 
@@ -47,5 +50,29 @@ nvm 버전사용
 nvm nvm use 버전(ex nvm use 16.13.0)
 
 빌트인 모듈은 따로 설치를 안해줘도 사용가능하다 (ex http)
+
+
+
+
+REPL 터미널  
+read eval print loop  
+
+var를 선언하고 값을 할당하면 값이 저장되지만,  
+출력이 되지는 않는다. 그래서 undefined가 뜸.  
+> var y = 10  
+undefined  
+
+밑줄을 사용하여 마지막 결과를 얻을 수 있다.
+var sum = _ 는 위에서 더한 결과를 담는다.
+
+
+npm install할때는 -save 옵션을 붙일 것.
+npm install -s 모듈. npm install 모듈 -save
+그래야 package.json의 dependencies에서 관리가 됨.
+
+npm uninstall 모듈명
+npm search 모듈명
+
+npm init - package.json을 생성함.
 
 
