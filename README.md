@@ -75,4 +75,9 @@ npm search 모듈명
 
 npm init - package.json을 생성함.
 
+Buffer의 개념.  
+https://tk-one.github.io/2018/08/28/nodejs-buffer/  
+https://www.youtube.com/watch?v=BsWWPhM8Lvk  
+
+
 
