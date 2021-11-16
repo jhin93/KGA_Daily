@@ -1,5 +1,5 @@
 var assert = require('assert');
-// 잘못된 asset일 경우 뜨는 오류
+// 잘못된 assert일 경우 뜨는 오류
 // AssertionError [ERR_ASSERTION]: 
 // The expression evaluated to a falsy value:
 // assert( 5 > 7);
