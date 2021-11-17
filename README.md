@@ -66,18 +66,24 @@ undefined
 var sum = _ 는 위에서 더한 결과를 담는다.
 
 
-npm install할때는 -save 옵션을 붙일 것.
-npm install -s 모듈. npm install 모듈 -save
-그래야 package.json의 dependencies에서 관리가 됨.
+npm install할때는 -save 옵션을 붙일 것.  
+npm install -s 모듈. npm install 모듈 -save  
+그래야 package.json의 dependencies에서 관리가 됨.  
 
-npm uninstall 모듈명
-npm search 모듈명
+npm uninstall 모듈명  
+npm search 모듈명  
 
-npm init - package.json을 생성함.
+npm init - package.json을 생성함.  
 
 Buffer의 개념.  
 https://tk-one.github.io/2018/08/28/nodejs-buffer/  
 https://www.youtube.com/watch?v=BsWWPhM8Lvk  
 
+readFilfe, readFileSync  
+https://balmostory.tistory.com/33  
 
+파일시스템(fs.open)  
+https://psyhm.tistory.com/15  
 
+tcp ip  
+https://aws-hyoh.tistory.com/entry/TCPIP-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
