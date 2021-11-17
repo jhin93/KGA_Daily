@@ -1,2 +1,1 @@
-Tutorials Point is giving self learning contetn
-to teach the world in simple and easy way!!!!!!
+This is file writing test in nodejs!!!
