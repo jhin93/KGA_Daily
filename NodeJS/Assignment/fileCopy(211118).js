@@ -2,7 +2,7 @@ const fs = require('fs');
 var buf = Buffer.alloc(2048000)
 
 var pos = 0; // 읽는 위치
-var remainSize = 0; // 
+var remainSize = 0; // 붙여넣어질 파일의 사이즈
 // 2개의 파일을 열어야 한다. 복사할 파일, 붙여넣을 파일
 
 // 1. 붙여넣을 파일 열기
@@ -13,8 +13,9 @@ fs.open('copy.mp4', 'r', function(err, fd) {
     fs.stat('../nodeapp/metallica_seattle.mp4', (err, stat) => {
         if(err) return console.error(err);
         console.log('원본크기', stat.size);
+        remainSize = stat.size // 사이즈만 먼저 확보해놓고
     })
-    size = remainSize
+    
     // 3. read 내에서 복사 붙여넣기 시작
     // 파일 디스크럽터 / 데이터가 쓰여질 버퍼 / 데이터가 쓰여질 버퍼의 시작 위치 / 데이터를 읽을 문자열의 크기 /  데이터를 읽을 파일의 읽기 시작할 위치 / callback 함수
     fs.read(fd, buf, 0, buf.length, pos, (err, bytes) => {
@@ -25,13 +26,13 @@ fs.open('copy.mp4', 'r', function(err, fd) {
         remainSize -= bytes; // 위치를 옮긴 만큼 줄어든다. 이해가 안되니까 콘솔에 찍어볼 것
         
         // 원본 사이즈가 버퍼보다 클때. 아직 더 들어가야 함.
-        if(size > buf.length) {
+        if(remainSize > buf.length) {
             //읽고
             //쓰고
 
         // 이젠 원본 사이즈가 버퍼보다 작음. 남은거 넣기
         } else {
-
+            // while 문 사용
             //읽고
             //쓰고
             // write file close
