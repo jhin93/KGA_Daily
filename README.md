@@ -94,7 +94,8 @@ URL 문자열을 입력하면 URL 객체를 만든다. 만든 url 객체에서 p
 url.parse에 줄이 생기는 이유는 더이상 사용하지 않으니 추천하지 않는다  
 https://velog.io/@satoshi25/url.parse-deprecated  
 
-
+nodejs .on 메소드
+https://stickie.tistory.com/66
 
 
 

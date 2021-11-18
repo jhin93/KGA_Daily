@@ -11,6 +11,8 @@ var options = {
 var callback = function(response){
     var body = '';
     // data라는 이벤트
+    //  on(event, listener)   지정한 이벤트의 리스너를 추가
+    // https://stickie.tistory.com/66
     response.on('data', function(data){
         body += data;
     })
