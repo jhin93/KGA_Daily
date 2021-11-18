@@ -87,3 +87,15 @@ https://psyhm.tistory.com/15
 
 tcp ip  
 https://aws-hyoh.tistory.com/entry/TCPIP-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
+
+url.parse()  
+URL 문자열을 입력하면 URL 객체를 만든다. 만든 url 객체에서 pathname 키의 밸류를 가져옴. https://gongbu-ing.tistory.com/9  
+
+url.parse에 줄이 생기는 이유는 더이상 사용하지 않으니 추천하지 않는다  
+https://velog.io/@satoshi25/url.parse-deprecated  
+
+
+
+
+
+
