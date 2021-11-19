@@ -5,6 +5,9 @@ var pos = 0; // 읽는 위치
 var remainSize = 0; // 붙여넣어질 파일의 사이즈
 // 2개의 파일을 열어야 한다. 복사할 파일, 붙여넣을 파일
 
+// 복사할 파일 open - read로 읽기? stat?
+// 붙여넣을 파일 open - write로 붙여넣기
+
 // 1. 붙여넣을 파일 열기
 fs.open('copy.mp4', 'r', function(err, fd) {
     // 에러처리
