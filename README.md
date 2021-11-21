@@ -17,7 +17,7 @@ https://blog.naver.com/jiwon3194/222512040766
 반복문 사용 시, 무한 루프가 돌때는 연산자가 제한범위안에 제대로 있는 지 확인할 것.  
 
 while( i < 10 ) {  
-    if((i % 2) == 0){  
+&nbsp;&nbsp;&nbsp;&nbsp;if((i % 2) == 0){  
         text += "<br>The number is " + i;  
     }  
     i++;  
