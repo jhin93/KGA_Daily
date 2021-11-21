@@ -18,7 +18,8 @@ https://blog.naver.com/jiwon3194/222512040766
 
 while( i < 10 ) {  
 &nbsp;&nbsp;&nbsp;&nbsp;if((i % 2) == 0){  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text += "<br>The number is " + i;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text += "<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The number is " + i;  
 &nbsp;&nbsp;&nbsp;&nbsp;}  
 &nbsp;&nbsp;&nbsp;&nbsp;i++;  
 }  
