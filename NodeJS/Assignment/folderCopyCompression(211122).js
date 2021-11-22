@@ -26,6 +26,7 @@ fs.readdir('./source', (err, files) => {
     })
 })
 
+// zip-lib 이란 모듈을 설치. source 폴더를 압축하여 zip 파일을 target 폴더에 생성
 zl.archiveFolder("./source", "./target/tartget.zip")
 
 
