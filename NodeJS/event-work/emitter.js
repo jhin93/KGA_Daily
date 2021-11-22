@@ -17,9 +17,8 @@ var listener3 = function listener3 (){
 // add
 eventEmitter.addListener('connection', listener1);
 eventEmitter.addListener('connection', listener2);
-// 등록. add와의 차이는 add가 같은 이벤트('connection')에 대해 리스너를 추가할 수 있다는 것 같다.
 eventEmitter.on('connection', listener3);
-
+// eventEmitter.off('connection', listener3); 삭제도 가능.
 var eventListener = require("events").EventEmitter.listenerCount(eventEmitter, 'connection');
 console.log(eventListener + " Listener(s) listening to connection event!!!");
 
