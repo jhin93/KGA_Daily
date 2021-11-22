@@ -14,8 +14,8 @@ fs.readdir("./source", (err, files) => {
     files.forEach((file) => {
         if ("metallica_seattle.mp4" === file) { // 원본파일 일때를 조건으로 설정.
 
-            srcFileName = "./source" + file; // 원본파일명 주소 설정
-            destFileName = "./target" + file; // 복사파일명 주소 설정. 다른 디렉토리니까 ../target아닌가 싶다. 문제가 생기면 여기부터 체크
+            srcFileName = "./source/" + file; // 원본파일명 주소 설정
+            destFileName = "./target/" + file; // 복사파일명 주소 설정. 다른 디렉토리니까 ../target아닌가 싶다. 문제가 생기면 여기부터 체크
             fs.stat(srcFileName, (err, stats) => { // 파일의 정보를 읽기위해 fs.stat()사용
                 if(err) throw err; // 에러처리
 
@@ -34,7 +34,7 @@ fs.readdir("./source", (err, files) => {
                         fs.writeFileSync(wfd, buf, 0, buf.length); // buffer를 fd에 의해 특정된 파일에 작성한다. wfd에 buffer를 적는다. 시작부터 적고(offset이 0), 버퍼길이만큼(buf.length)만큼씩 작성해넣는다.
                         pos += readBytes; // 작성했으니까 읽기 시작하는 position을 증가시킨다. 버퍼 크기만큼(20480) 증가할 것.
                         remainSize -= readBytes; // 읽을 때마다 원본 파일 사이즈에서 읽은 만큼씩 뺀다.
-                    } else { // 마지막 1회에 다다랐을 때. ramainsize는 변하지 않고 버퍼의 크기가 늘어나다보면 언젠가 마지막에 다다른다.
+                    } else { // 마지막 1회에 다다랐을 때. ramainsize는 변하지 않고 버퍼의 크기가 늘어나다보면 언젠가 버퍼의 크기가 ramainsize의 크기에 다다른다.
                         fs.writeSync(wfd, buf, 0, readBytes) // 남은 readBytes 만큼 작성한다.
                         fs.closeSync(rfd); // 오픈한 것을 닫는다.
                         fs.closeSync(wfd); // 오픈한 것을 닫는다.
@@ -43,7 +43,7 @@ fs.readdir("./source", (err, files) => {
                 }
             })
 
-            return false; // if ("metallica_seattle.mp4" === file)의 로직을 만족시켰으면 빠져나가야됨.
+            return false; // if ("metallica_seattle.mp4" === file)의 로직을 만족시켰으면 다른 파일을 건드리지 않고 forEach문을 빠져나가야됨.
         }
     })
 })
