@@ -102,6 +102,55 @@ https://www.wenyanet.com/opensource/ko/604a5b03e303543c092ca57f.html#zip-single-
 zip-lib - 노드에 대한 zip 및 unzip 라이브러리  
 
 
+Promise  
+https://elvanov.com/2597
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises
+
+콜백 함수를 전달해주는 고전적인 방식과는 달리, Promise는 아래와 같은 특징을 보장합니다.  
+callback 방식보다 Promise 방식이 비동기 작업에 대해 훨씬 쉽고 직관적으로 코딩할 수 있다고 생각합니다.  
+  
+1. 콜백은 자바스크립트 Event Loop이 현재 실행중인 콜 스택을 완료하기 이전에는 절대 호출되지 않습니다.  
+2. 비동기 작업이 성공하거나 실패한 뒤에 then() 을 이용하여 추가한 콜백의 경우에도 위와 같습니다.  
+3. then()을 여러번 사용하여 여러개의 콜백을 추가 할 수 있습니다. 그리고 각각의 콜백은 주어진 순서대로 하나 하나 실행되게 됩니다.  
+
+Promise 의 특징은 new Promise(...) 하는 순간 여기에 할당된 비동기 작업은 바로 시작됩니다.  
+비동기 작업의 특징은 작업이 언제 끝날지 모르기 때문에 일단 배를 떠나보낸다고 이야기했습니다.  
+그럼 그 이후에 이 작업이 성공하거나 실패하는 순간에 우리가 또 뒷처리를 해줘야겠죠?  
+Promise 가 끝나고 난 다음의 동작을 우리가 설정해줄 수 있는데, 그것이 바로 then 메소드와 catch 메소드입니다.  
+
+` 
+function startAsync(age) {
+  return new Promise((resolve, reject) => {
+    if (age > 20) resolve();
+    else reject();
+  });
+}
+
+setTimeout(() => {
+  const promise1 = startAsync(25);
+  promise1
+    .then(() => {
+      console.log("1 then!");
+    })
+    .catch(() => {
+      console.log("1 catch!");
+    });
+  const promise2 = startAsync(15);
+  promise2
+    .then(() => {
+      console.log("2 then!");
+    })
+    .catch(() => {
+      console.log("2 catch!");
+    });
+}, 1000);
+
+// 결과  
+1 then!  
+2 catch!  
+`
+
+
 
 
 

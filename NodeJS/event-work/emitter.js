@@ -22,6 +22,8 @@ eventEmitter.on('connection', listener3);
 var eventListener = require("events").EventEmitter.listenerCount(eventEmitter, 'connection');
 console.log(eventListener + " Listener(s) listening to connection event!!!");
 
+// add는 하나의 이벤트에 여러 리스너를 지정할 때, on은 하나의 이벤트에 하나의 리스너를 지정할때.
+
 // 결과물
 // 3 Listener(s) listening to connection event!!! - add 와 on을 포함한 리스너의 수가 산출됨
 
