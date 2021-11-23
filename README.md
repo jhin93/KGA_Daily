@@ -188,8 +188,22 @@ Error: 15 is not over 20
     at processTimers (internal/timers.js:497:7)
 ```
 
+async 함수  
+async 함수는 Promise 와 굉장히 밀접한 연관을 가지고 있는데, 기존에 작성하던 executor 로부터 몇 가지 규칙만 적용한다면  
+new Promise(…) 를 리턴하는 함수를 async 함수로 손쉽게 변환할 수 있습니다.  
 
+1. 함수에 async 키위드를 붙입니다.  
+2. new Promise... 부분을 없애고 executor 본문 내용만 남깁니다.  
+3. resolve(value); 부분을 return value; 로 변경합니다.  
+4. reject(new Error(…)); 부분을 throw new Error(…); 로 수정합니다.  
 
+```
+// 바로 위 예시를 async 함수로 표현하면 다음과 같다.
+async function startAsync(age) {
+  if (age > 20) return `${age} success`;
+  else throw new Error(`${age} is not over 20`);
+}
+```
 
 
 
