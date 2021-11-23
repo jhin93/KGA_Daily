@@ -152,7 +152,7 @@ setTimeout(() => {
 ```
 function startAsync(age) {
   return new Promise((resolve, reject) => {
-    if (age > 20) resolve(`${age} success`);    
+    if (age > 20) resolve(`${age} success`);            // 위의 예시와 다르게 resolve와 reject에 인자가 들어가있다
     else reject(new Error(`${age} is not over 20`));
   });
 }
