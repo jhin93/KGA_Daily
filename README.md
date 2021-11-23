@@ -205,6 +205,7 @@ async function startAsync(age) {
 }
 ```
 
-
+Axios vs fetch\n
+https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-Ajax%EC%99%80-Axios-%EA%B7%B8%EB%A6%AC%EA%B3%A0-fetch#fetch-1  
 
 
