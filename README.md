@@ -216,6 +216,26 @@ async 함수에서만 사용할 수 있습니다.
 3. await 은 Promise 가 resolve 한 값을 내놓습니다.
 4. 해당 Promise 에서 reject 가 발생한다면 예외가 발생합니다.
 
+```
+async function f() {
+
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("완료!"), 1000)
+  });
+
+  let result = await promise; // 프라미스가 이행될 때까지 기다림 (*)
+
+  alert(result); // "완료!"
+}
+
+f();
+
+/*
+함수를 호출하고, 함수 본문이 실행되는 도중에 (*)로 표시한 줄에서 실행이 잠시 '중단’되었다가 프라미스가 처리되면 실행이 재개됩니다. 
+이때 프라미스 객체의 result 값이 변수 result에 할당됩니다. 따라서 위 예시를 실행하면 1초 뒤에 '완료!'가 출력됩니다.
+*/
+```
+
 Axios vs fetch  
 https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-Ajax%EC%99%80-Axios-%EA%B7%B8%EB%A6%AC%EA%B3%A0-fetch#fetch-1  
 
