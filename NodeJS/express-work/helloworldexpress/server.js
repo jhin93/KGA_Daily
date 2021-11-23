@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 var server = app.listen(3000, () => {
     var host = server.address().address;
     var port = server.address().port;
-
+    // %s 정규표현식 host port가 정하지 않아서 따로 나오질 않음.
     console.log("Listening at http://%s:%s", host, port);
 });
 
