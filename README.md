@@ -205,6 +205,17 @@ async function startAsync(age) {
 }
 ```
 
+await 함수  
+await: Promise 가 끝날 때까지 기다린다.  
+await 는 Promise 가 fulfilled 가 되든지 rejected 가 되든지 아무튼 간에 끝날 때까지 기다리는 함수입니다.  
+async 함수에서만 사용할 수 있습니다.  
+
+특성  
+1. 문법적으로 await [[Promise 객체]] 이렇게 사용합니다.
+2. await 은 Promise 가 완료될 때까지 기다립니다. 
+3. await 은 Promise 가 resolve 한 값을 내놓습니다.
+4. 해당 Promise 에서 reject 가 발생한다면 예외가 발생합니다.
+
 Axios vs fetch  
 https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-Ajax%EC%99%80-Axios-%EA%B7%B8%EB%A6%AC%EA%B3%A0-fetch#fetch-1  
 
