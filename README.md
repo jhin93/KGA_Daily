@@ -108,11 +108,11 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises
 
 콜백 함수를 전달해주는 고전적인 방식과는 달리, Promise는 아래와 같은 특징을 보장합니다.  
 callback 방식보다 Promise 방식이 비동기 작업에 대해 훨씬 쉽고 직관적으로 코딩할 수 있다고 생각합니다.  
-  
+  콜백의 장단점  
 1. 콜백은 자바스크립트 Event Loop이 현재 실행중인 콜 스택을 완료하기 이전에는 절대 호출되지 않습니다.  
 2. 비동기 작업이 성공하거나 실패한 뒤에 then() 을 이용하여 추가한 콜백의 경우에도 위와 같습니다.  
 3. then()을 여러번 사용하여 여러개의 콜백을 추가 할 수 있습니다. 그리고 각각의 콜백은 주어진 순서대로 하나 하나 실행되게 됩니다.  
-
+  .then() / .catch  
 Promise 의 특징은 new Promise(...) 하는 순간 여기에 할당된 비동기 작업은 바로 시작됩니다.  
 비동기 작업의 특징은 작업이 언제 끝날지 모르기 때문에 일단 배를 떠나보낸다고 이야기했습니다.  
 그럼 그 이후에 이 작업이 성공하거나 실패하는 순간에 우리가 또 뒷처리를 해줘야겠죠?  
@@ -149,7 +149,44 @@ setTimeout(() => {
 1 then!  
 2 catch!  
 ```
+```
+function startAsync(age) {
+  return new Promise((resolve, reject) => {
+    if (age > 20) resolve(`${age} success`);    
+    else reject(new Error(`${age} is not over 20`));
+  });
+}
 
+setTimeout(() => {
+  const promise1 = startAsync(25);
+  promise1
+    .then((value) => {
+      console.log(value);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  const promise2 = startAsync(15);
+  promise2
+    .then((value) => {
+      console.log(value);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}, 1000);
+
+//결과
+
+25 success
+Error: 15 is not over 20
+    at /home/taehoon/Desktop/playground-nodejs/index.js:4:17
+    at new Promise (<anonymous>)
+    at startAsync (/home/taehoon/Desktop/playground-nodejs/index.js:2:10)
+    at Timeout._onTimeout (/home/taehoon/Desktop/playground-nodejs/index.js:17:20)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+```
 
 
 
