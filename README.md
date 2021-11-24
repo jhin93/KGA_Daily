@@ -258,6 +258,16 @@ console.log(sum2) // 50
 sum1 // Uncaught ReferenceError: sum1 is not defined  
 ```
 
-
+인스턴스  
+```
+let student = {
+  'id' : 123,
+  'class' : Higher
+  .
+  .
+  .
+}
+// 인스턴스는 student.
+```
 
 
