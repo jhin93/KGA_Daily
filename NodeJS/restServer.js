@@ -14,9 +14,12 @@ http.createServer(async (req, res) => {
         const data = await fs.readFile('./about.html');
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         return res.end(data);
-      } else if (req.url === '/users') {
+      } else if (req.url === '/users') { // 데이터를 입력하고 submit 하면, http://localhost:8082/users 에서 확인할 수 있다.
         res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-        return res.end(JSON.stringify(users));
+        console.log("users 는 뭔데 : ", users) // 결과 { '1637738141999': '123' }
+        // JSON.stringify() 메서드는 JavaScript 값이나 객체를 JSON 문자열로 변환합니다.
+        console.log("JSON.stringify(users) :", JSON.stringify(users)); // 결과 {"1637738078201":"123"}
+        return res.end(JSON.stringify(users)); 
       }
       // /도 /about도 /users도 아니면
       try {
