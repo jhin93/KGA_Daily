@@ -15,13 +15,13 @@ async function getUser() { // 로딩 시 사용자 가져오는 함수
         const edit = document.createElement('button');
         edit.textContent = '수정';
         edit.addEventListener('click', async () => { // 수정 버튼 클릭
-          const name = prompt('바꿀 이름을 입력하세요'); // 여기서 name에 담은 프롬프트의 입력값이 try문에서 {} 담는다.
+          const name = prompt('바꿀 이름을 입력하세요');
           console.log("변수 name에 대입할 프롬프트에 입력된 값 : ", name);
           if (!name) {
             return alert('이름을 반드시 입력하셔야 합니다');
           }
           try {
-            await axios.put('/user/' + key, { name }); // {} 안에 담으면 '입력값' 이 {name: '입력값'} 이 된다.
+            await axios.put('/user/' + key, { name }); // 여기서 { name }를 restServer.js로 받는다.
             console.log("/user/ + key : ", '/user/' + key);
             console.log("{}를 씌운 name : ", { name });
             getUser();

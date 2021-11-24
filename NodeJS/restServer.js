@@ -38,7 +38,8 @@ http.createServer(async (req, res) => {
         // 요청의 body를 다 받은 후 실행됨
         return req.on('end', () => {
           console.log('POST 본문(Body):', body);
-          const { name } = JSON.parse(body);
+          // 여기서 { name }를 restFront.js로 전달.
+          const { name } = JSON.parse(body); // 인자를 JSON 객체로 만드는 메소드. JSON.parse() 메서드는 JSON 문자열의 구문을 분석하고, 그 결과에서 JavaScript 값이나 객체를 생성합니다. 
           const id = Date.now();
           users[id] = name;
           res.writeHead(201, { 'Content-Type': 'text/plain; charset=utf-8' });
@@ -54,7 +55,7 @@ http.createServer(async (req, res) => {
         });
         return req.on('end', () => {
           console.log('PUT 본문(Body):', body);
-          users[key] = JSON.parse(body).name;
+          users[key] = JSON.parse(body).name; // 여기서 입력된 값으로 기존 값을 대체
           res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
           return res.end('ok');
         });
