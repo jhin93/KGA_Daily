@@ -1,0 +1,14 @@
+doctype html
+html 
+    head 
+        title="Hello Pug"
+        style
+            include pug.css
+    body 
+        h1 hello h1!!!
+        p.greetings#people Hello Pug!!!
+        //- div.container.column.main#division(style = "background-color: red; width : 100px; height: 100px; color:white")
+        div.container.column.main#division2
+            | to insert multiline text,
+            br
+            | You can use the pipe operator.
