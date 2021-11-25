@@ -5,10 +5,13 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Signup
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script src="./kakaoAddress.js"></script>
     body 
         if(message)
             h4 #{message}
             form(action="/signup" method="POST")
                 input(name = "id" type = "text" require placeholder = "User ID")
                 input(name = "password" type = "password" require placeholder = "Password")
+                input#address_kakao(name = "address" type = "text"  require placeholder = "Address")
                 button(type = "submit") Sign Up!

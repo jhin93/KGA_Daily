@@ -58,7 +58,7 @@ app.post("/signup", (req, res) => {
 
 // userInfo
 app.get("/userInfo", (req, res) => {
-    console.log("req.session 이 나오는가 : ", req.session.user);
+    console.log("req.session.user에 대한 정보 : ", req.session.user);
     res.render("userInfo", {
         user: {id: req.session.user.id, password: req.session.user.password}
     });
