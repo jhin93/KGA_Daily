@@ -52,13 +52,16 @@ app.post("/signup", (req, res) => {
         let newUser = {id: req.body.id, password: req.body.password};
         Users.push(newUser);
         req.session.user = newUser
-        res.redirect("/protected_page");
+        res.redirect("/userInfo");
     };
 });
 
-// protected_page
-app.get("/protected_page", (req, res) => {
-    res.render("protected_page");
+// userInfo
+app.get("/userInfo", (req, res) => {
+    console.log("req.session 이 나오는가 : ", req.session.user);
+    res.render("userInfo", {
+        user: {id: req.session.user.id, password: req.session.user.password}
+    });
 });
 
 app.listen(port, host, () => {
