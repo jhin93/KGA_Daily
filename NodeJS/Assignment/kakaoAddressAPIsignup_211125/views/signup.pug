@@ -13,5 +13,5 @@ html(lang="en")
             form(action="/signup" method="POST")
                 input(name = "id" type = "text" require placeholder = "User ID")
                 input(name = "password" type = "password" require placeholder = "Password")
-                input#address_kakao(name = "address" type = "text"  require placeholder = "Address")
+                input(name = "address" type = "text"  require placeholder = "Address" id="address_kakao" onclick="findAddr()")
                 button(type = "submit") Sign Up!
