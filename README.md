@@ -280,3 +280,16 @@ finally_statements : try 선언이 완료된 이후에 실행된 선언들. 이 
 
 npm multer 모듈
 https://jamong-icetea.tistory.com/133
+
+
+connection Pool 개념  
+
+- 데이터베이스에 연결된 Connection을 미리 만들어 둔후 Pool에 보관하였다가 필요할 때 Pool에서 Connection을 가져다 사용한 후, 다시 Pool에 반환하는 기법입니다. Connection Pool을 이용하면 여러 Connection을 이용할 수 있기 때문에 더 큰 부하를 견딜 수 있습니다.  
+
+- 또한 기존처럼 필요할때 마다 Connection을 생성하고 닫지 않아도 되기 때문에 어플리케이션의 성능향상 또한 기대할 수 있습니다.  
+
+https://techbless.github.io/2020/01/17/Node-js%EC%97%90%EC%84%9C-Mysql-Connection-Pool-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0/  
+
+
+
+
