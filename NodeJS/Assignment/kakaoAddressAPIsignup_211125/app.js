@@ -49,7 +49,7 @@ app.post("/signup", (req, res) => {
             };
         });
         // 만약 가입한적 없다면, 새로 Users배열에 추가.
-        let newUser = {id: req.body.id, password: req.body.password};
+        let newUser = {id: req.body.id, password: req.body.password, address: req.body.address};
         Users.push(newUser);
         req.session.user = newUser
         res.redirect("/userInfo");
@@ -60,7 +60,7 @@ app.post("/signup", (req, res) => {
 app.get("/userInfo", (req, res) => {
     console.log("req.session.user에 대한 정보 : ", req.session.user);
     res.render("userInfo", {
-        user: {id: req.session.user.id, password: req.session.user.password}
+        user: {id: req.session.user.id, password: req.session.user.password, address: req.session.user.address}
     });
 });
 
