@@ -289,6 +289,10 @@ connection Pool 개념
 
 https://techbless.github.io/2020/01/17/Node-js%EC%97%90%EC%84%9C-Mysql-Connection-Pool-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0/  
 
-
-
+sort 메소드  
+sort메소드는 return 값이 음수,양수,0인지에 따라서 순서를 정한다.  
+https://webclub.tistory.com/110  
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sortㅇ
+오름차순 정렬  
+배열.sort((a, b) => a - b);  
 
