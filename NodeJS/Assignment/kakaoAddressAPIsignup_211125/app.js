@@ -25,7 +25,7 @@ app.use(session({
 }));
 
 const host = "127.0.0.1"
-const port = 3000
+const port = 4000
 
 var Users = []
 
@@ -65,7 +65,7 @@ app.get("/userInfo", (req, res) => {
 });
 
 app.listen(port, host, () => {
-    console.log(`Application running at http://${host}:${port}/`);
+    console.log(`Application running at http://${host}:${port}/signup`);
 });
 
 
