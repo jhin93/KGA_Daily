@@ -296,3 +296,21 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Ar
 오름차순 정렬  
 배열.sort((a, b) => a - b);  
 
+dotenv 모듈
+https://www.daleseo.com/js-dotenv/
+
+```
+// 1. env파일 생성하여 환경변수 설정
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=s1mpl3
+
+// 2. .config() 함수를 호출
+require("dotenv").config();
+
+// 3. process.env로 변수 사용 가능.
+console.log("DB_HOST:", process.env.DB_HOST);
+console.log("DB_USER:", process.env.DB_USER);
+console.log("DB_PASS:", process.env.DB_PASS);
+```
+
