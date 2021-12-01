@@ -15,14 +15,15 @@ https://blog.naver.com/jiwon3194/222512040766
 
 
 반복문 사용 시, 무한 루프가 돌때는 연산자가 제한범위안에 제대로 있는 지 확인할 것.  
-
+```
 while( i < 10 ) {  
-&nbsp;&nbsp;&nbsp;&nbsp;if((i % 2) == 0){  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text += "<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The number is " + i;  
-&nbsp;&nbsp;&nbsp;&nbsp;}  
-&nbsp;&nbsp;&nbsp;&nbsp;i++;  
+  if((i % 2) == 0){  
+    text += "<br>
+    The number is " + i;  
+  }  
+  i++;  
 }  
+```
 
 Math.abs()  
 Math.abs() 함수는 주어진 숫자의 절대값을 반환합니다. x가 양수이거나 0이라면 x를 리턴하고, x가 음수라면 x의 반대값, 즉 양수를 반환합니다.  
