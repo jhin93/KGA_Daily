@@ -289,6 +289,7 @@ connection Pool 개념
 - 또한 기존처럼 필요할때 마다 Connection을 생성하고 닫지 않아도 되기 때문에 어플리케이션의 성능향상 또한 기대할 수 있습니다.  
 
 https://techbless.github.io/2020/01/17/Node-js%EC%97%90%EC%84%9C-Mysql-Connection-Pool-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0/  
+https://velog.io/@gwon713/Nodejs-MySQL-DB-connection-pool  
 
 sort 메소드  
 sort메소드는 return 값이 음수,양수,0인지에 따라서 순서를 정한다.  
