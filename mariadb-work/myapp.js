@@ -39,5 +39,4 @@ con.connect((err) => {
         console.log(result); // SELECT * 으로 다 선택한 후 콘솔에 찍으면 콘솔에 나옴.
     }) ;
 });
-
-// con.end(); // 커넥션을 끊는 것.
+con.end(); // 커넥션을 끊어야 함.
