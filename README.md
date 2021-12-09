@@ -103,8 +103,8 @@ zip-lib - 노드에 대한 zip 및 unzip 라이브러리
 
 
 Promise  
-https://elvanov.com/2597
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises
+https://elvanov.com/2597  
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises  
 
 콜백 함수를 전달해주는 고전적인 방식과는 달리, Promise는 아래와 같은 특징을 보장합니다.  
 callback 방식보다 Promise 방식이 비동기 작업에 대해 훨씬 쉽고 직관적으로 코딩할 수 있다고 생각합니다.  
