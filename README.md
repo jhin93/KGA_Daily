@@ -270,7 +270,7 @@ let student = {
 // 인스턴스는 student.
 ```
 
-trycatch문  
+try catch문  
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/try...catch  
  
 try_statements : 실행될 선언들  
