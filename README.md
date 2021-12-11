@@ -340,3 +340,5 @@ https://psyhm.tistory.com/8
 .env과 dbconfig.json 차이
 .json은 객체 한 덩어리로 전달되지만, .env는 설정한 변수가 한 줄 단위로 사용된다.
 
+addEventListner  
+https://opentutorials.org/course/1375/6761  
