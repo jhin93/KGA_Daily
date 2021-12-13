@@ -3,5 +3,8 @@
 
 ole(object linking embeded)
 
+- 리액트 설치
+npx install create-react-app my-react-app
 
-
+- yarn 설치
+npm install -g yarn
