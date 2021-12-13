@@ -1,8 +1,5 @@
 # KGA_daily
-
-블록체인 4기 김진경.
-
-그날 배운 것을 올리는 매일 1커밋 하는 공간입니다.
+그날 배운 것을 올리는 매일 1커밋 하는 공간입니다.  
 
 
 css - position.  
@@ -104,8 +101,8 @@ zip-lib - 노드에 대한 zip 및 unzip 라이브러리
 
 
 Promise  
-https://elvanov.com/2597
-https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises
+https://elvanov.com/2597  
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises  
 
 콜백 함수를 전달해주는 고전적인 방식과는 달리, Promise는 아래와 같은 특징을 보장합니다.  
 callback 방식보다 Promise 방식이 비동기 작업에 대해 훨씬 쉽고 직관적으로 코딩할 수 있다고 생각합니다.  
@@ -271,7 +268,7 @@ let student = {
 // 인스턴스는 student.
 ```
 
-trycatch문  
+try catch문  
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/try...catch  
  
 try_statements : 실행될 선언들  
@@ -341,3 +338,5 @@ https://psyhm.tistory.com/8
 .env과 dbconfig.json 차이
 .json은 객체 한 덩어리로 전달되지만, .env는 설정한 변수가 한 줄 단위로 사용된다.
 
+addEventListner  
+https://opentutorials.org/course/1375/6761  
