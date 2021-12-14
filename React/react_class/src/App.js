@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+// 기존
+
 function App() {
   return (
     <div className="App">
@@ -23,3 +25,15 @@ function App() {
 }
 
 export default App;
+
+
+// ---------------- 수업 예제 ------------------
+// function App(){
+//   return(
+//     <div className="App">
+//       <h1>Hello World!</h1>
+//     </div>
+//   );
+// }
+
+// export default App;
