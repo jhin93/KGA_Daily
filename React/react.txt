@@ -15,4 +15,28 @@ npm install -g yarn
 - npm run build
 npm run build 실행하면 build라는 폴더가 생김
 사이트를 배포할 때 꼭 필요한 파일들만 모아서 빌드를 한다.
+실제 서비스할때는 build 안에있는 파일들을 사용하면 된다.
+
+
+12/14
+- npm install -s serve
+serve는 production build를 한 이후에 앱을 실행하기 위해서 설치를 한 것입니다.
+https://edu.goorm.io/qna/9571
+
+- npx serve -s build
+빌드 후 작아진 용량을 확인하기 위해 웹 서버를 설치한 후 배포.
+serve 패키지를 이용해서 build 폴더 내 파일들을 배포. -s 옵션은 build 디렉터리를 다큐먼트 루트로 하는 옵션이다.
+
+- npm install react-scripts@latest
+https://velog.io/@rlaqltmxm/create-react-app-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0
+
+여러 컴포넌트들을 만들게 되는데 이는 div id="root" 안에 들어가게 되어있다.
+
+App.js 가 메인화면을 구성한 것이다.
+
+
+
+
+
+
 
