@@ -15,15 +15,24 @@ class Headercomp extends React.Component {
         // return (<h1>state.headertitle</h1>)
     }
 
-    // static으로 위처럼 정적으로 선언이 되어있으면 이미 메모리에 할당이 된것이기에, componentDidMount로 변경이 안된다.
-    componentDidMount() { // 리액트 dom에 요소들이 렌더링되고 난 후 실행이 되는 메소드이다.
-        setTimeout(() => {
-            this.setState({headertitle : "componentDidMount title!!!"}) // setState 메소드로 3초 후 헤더를 변경
-        }, 3000)
+    changeHeaderTitle = () => {
+        this.setState({headertitle: "changeHeaderTitle Title!!!"});
     }
 
+    // static으로 위처럼 정적으로 선언이 되어있으면 이미 메모리에 할당이 된것이기에, componentDidMount로 변경이 안된다.
+    // componentDidMount() { // 리액트 dom에 요소들이 렌더링되고 난 후 실행이 되는 메소드이다.
+    //     setTimeout(() => {
+    //         this.setState({headertitle : "componentDidMount title!!!"}) // setState 메소드로 3초 후 헤더를 변경
+    //     }, 3000)
+    // }
+
     render() {
-        return (<h1>{this.state.headertitle}</h1>)
+        return (
+            <div>
+                <h1>{this.state.headertitle}</h1>
+                <button type="button" onClick={this.changeHeaderTitle}>Change Title</button>
+            </div>
+        )
     }
 }
 
