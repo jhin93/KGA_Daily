@@ -39,7 +39,7 @@ class Headercomp extends React.Component {
 
     componentDidUpdate() {
         document.getElementById("div2").innerHTML =
-        "The update title is " + this.state.headertitle;
+        "The latest title is " + this.state.headertitle;
     }
 
     render() {

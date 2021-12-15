@@ -9,6 +9,12 @@ import Headercomp from './Headercomp';
 import reportWebVitals from './reportWebVitals';
 import Container from './Container';
 
+// 함수형 컴포넌트
+import CarFuncComp from './CarFuncComp'
+import ContainerFuncComp from './ContainerFuncComp'
+import GundamFuncComp from './GundamFuncComp'
+import HeadercompFuncComp from './HeadercompFuncComp'
+
 // 기존
 
 ReactDOM.render(
@@ -17,7 +23,7 @@ ReactDOM.render(
     {/* <Archangel /> */}
     {/* <Headercomp newTitle="kkkk"/> */}
     {/* <Gundam cargo = "Archangel"/> */}
-    <Container />
+    <GundamFuncComp cargo="Archangel"/>
   </React.StrictMode>,
   document.getElementById('header')
 );
