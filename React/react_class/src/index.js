@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Car from './Car'
+import Gundam from "./Gundam"
+import Archangel from './Archangel';
 import reportWebVitals from './reportWebVitals';
 
 // 기존
@@ -10,7 +12,9 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Car color="red"/>
+    {/* <Car color = "blue"/> */}
+    {/* <Gundam model="Freedom"/> */}
+    <Archangel />
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -22,7 +26,7 @@ ReactDOM.render(
 
 
 
-// ---------------------- 아래는 수업 예제-----------------
+// ---------------------- 12/14 수업 예제-----------------
 
 // const myelement = (
 //   <table>
@@ -97,6 +101,6 @@ ReactDOM.render(
 // const myElement = <h1>{(x) < 10 ? "Hello" : "Hello World!!!"}</h1>
 
 // ReactDOM.render(myElement, document.getElementById("root"));
-
+// --------------------------------------------
 
 
