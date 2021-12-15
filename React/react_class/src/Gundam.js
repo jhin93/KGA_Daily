@@ -18,7 +18,7 @@ class Gundam extends React.Component { // React.Component는 위처럼 따로 cl
             pilot: "Yamato"
         };
     }
-
+    // getDerivedStateFromProps()
     changeModel = () => {
         this.setState({model: "X109 Justice"}) // setState 메소드는 state를 변경시켜준다.
     }
