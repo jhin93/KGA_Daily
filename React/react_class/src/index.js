@@ -7,6 +7,7 @@ import Gundam from "./Gundam"
 import Archangel from './Archangel';
 import Headercomp from './Headercomp';
 import reportWebVitals from './reportWebVitals';
+import Container from './Container';
 
 // 기존
 
@@ -14,8 +15,9 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Archangel /> */}
-    <Headercomp newTitle="kkkk"/>
+    {/* <Headercomp newTitle="kkkk"/> */}
     {/* <Gundam cargo = "Archangel"/> */}
+    <Container />
   </React.StrictMode>,
   document.getElementById('header')
 );
