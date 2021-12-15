@@ -36,6 +36,7 @@ class Gundam extends React.Component { // React.Component는 위처럼 따로 cl
         </div>
         )
     }
+    //componentDidMount() {}
 }
 
 

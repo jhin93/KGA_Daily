@@ -14,7 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Archangel /> */}
-    <Headercomp newTitle="New Title 22!!!"/>
+    <Headercomp />
     {/* <Gundam cargo = "Archangel"/> */}
   </React.StrictMode>,
   document.getElementById('header')
