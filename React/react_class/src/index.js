@@ -5,6 +5,7 @@ import App from './App';
 import Car from './Car'
 import Gundam from "./Gundam"
 import Archangel from './Archangel';
+import Headercomp from './Headercomp';
 import reportWebVitals from './reportWebVitals';
 
 // 기존
@@ -13,9 +14,10 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Archangel /> */}
-    <Gundam cargo = "Archangel"/>
+    <Headercomp />
+    {/* <Gundam cargo = "Archangel"/> */}
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('header')
 );
 
 // If you want to start measuring performance in your app, pass a function
