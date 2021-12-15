@@ -32,7 +32,7 @@ class Headercomp extends React.Component {
         }, 3000)
     }
 
-    getSnapshotBeforeUpdate(prevProps, prevState) {
+    getSnapshotBeforeUpdate(prevProps, prevState) { // 업데이트 전의 속성(props)과 상태(state)를 가져올 수 있다.
         document.getElementById("div1").innerHTML = 
         "Before update title is " + prevState.headertitle + ", Before update newTitle is " + prevProps.newTitle;
     }
