@@ -88,7 +88,13 @@ function Garage(){
 함수형 컴포넌트 vs 클래스형 컴포넌트
 https://devowen.com/298
 
+리액트는 아래 4가지를 순서대로 실행한다. 
+render만을 필수로 하고 나머지는 선택.
 
+  1. constructor
+  2. getDeriveStateFromProps() - 부모로부터 상속되었다.
+  3. render
+  4. componentDidMount()
 
 
 

@@ -12,9 +12,8 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    {/* <Car color = "blue"/> */}
-    {/* <Gundam model="Freedom"/> */}
-    <Archangel />
+    {/* <Archangel /> */}
+    <Gundam cargo = "Archangel"/>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -25,6 +24,17 @@ ReactDOM.render(
 // reportWebVitals();
 
 
+// ---------------------- 12/15 수업 예제-----------------
+// App.js 없이 아래처럼 컴포넌트를 index.js에 바로 입력하는 것도 가능.
+// class Gundam extends React.Component {
+//   constructor(props) {
+//       super(props);
+//   }
+
+//   render() {
+//       return <h1>This Gundam is {this.props.model}!!!</h1>
+//   }
+// }
 
 // ---------------------- 12/14 수업 예제-----------------
 
