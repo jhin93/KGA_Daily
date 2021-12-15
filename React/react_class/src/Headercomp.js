@@ -19,6 +19,12 @@ class Headercomp extends React.Component {
         this.setState({headertitle: "changeHeaderTitle Title!!!"});
     }
 
+    shouldComponentUpdate () { 
+        // return false로 두면 컴포넌트의 업데이트를 막는다. 그래서 setState를 막음
+        // return true는 업데이트를 시킨다.
+        return true
+    }
+
     // static으로 위처럼 정적으로 선언이 되어있으면 이미 메모리에 할당이 된것이기에, componentDidMount로 변경이 안된다.
     // componentDidMount() { // 리액트 dom에 요소들이 렌더링되고 난 후 실행이 되는 메소드이다.
     //     setTimeout(() => {
