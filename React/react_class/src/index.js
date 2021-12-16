@@ -9,19 +9,22 @@ import Headercomp from './Headercomp';
 import reportWebVitals from './reportWebVitals';
 import Container from './Container';
 import ArchangelClass from './ArchangelClass'
-import Gundam2 from './GundamFuncCompClass2'
 import Football from './Football';
 import Goal from './Goal';
 import Fate from './Fate';
 import ArchangelList from './ArchangelList';
 
-// 함수형 컴포넌트
+// 함수형 컴포넌트(12/15 과제)
 import CarFuncComp from './CarFuncComp'
 import ContainerFuncComp from './ContainerFuncComp'
 import GundamFuncComp from './GundamFuncComp'
 import HeadercompFuncComp from './HeadercompFuncComp'
 
-
+// 클래스 컴포넌트(12/16 과제)
+import Gundam2ClassComp from './Gundam2ClassComp'
+import FootballClassComp from './FootballClassComp'
+import GoalClassComp from './GoalClassComp';
+import FateClassComp from './FateClassComp';
 
 const characters = ["Siro", "Saber", "Archer", "Tosaka Lyn", "Berserker"]
 
@@ -29,7 +32,7 @@ const characters = ["Siro", "Saber", "Archer", "Tosaka Lyn", "Berserker"]
 
 ReactDOM.render(
   <React.StrictMode>
-    <ArchangelList />
+    <FateClassComp characters={characters}/>
   </React.StrictMode>,
   document.getElementById('header')
 );
