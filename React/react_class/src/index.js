@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Car from './Car'
-import Gundam from "./Gundam"
+import Gundam from "./GundamFuncCompClass"
 import Archangel from './Archangel';
 import Headercomp from './Headercomp';
 import reportWebVitals from './reportWebVitals';
 import Container from './Container';
+import ArchangelClass from './GundamFuncCompClass'
 
 // 함수형 컴포넌트
 import CarFuncComp from './CarFuncComp'
@@ -23,7 +24,7 @@ ReactDOM.render(
     {/* <Archangel /> */}
     {/* <Headercomp newTitle="kkkk"/> */}
     {/* <Gundam cargo = "Archangel"/> */}
-    <GundamFuncComp cargo="Archangel"/>
+    <ArchangelClass />
   </React.StrictMode>,
   document.getElementById('header')
 );
