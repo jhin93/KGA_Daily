@@ -33,6 +33,8 @@ function Archangel() {
             <h1>Who lives in Archangel?</h1>
             <ul>
                 {gundams.map((mobileSuite) => <Gundam key={mobileSuite.id} model={mobileSuite.model}/>)}
+                {/* {gundams.map((mobileSuite) => <Gundam id={mobileSuite.id} model={mobileSuite.model}/>)} */}
+                {/* {gundams.map((mobileSuite) => <Gundam model={mobileSuite.model}/>)} */}
             </ul>
         </>
     )
