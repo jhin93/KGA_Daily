@@ -13,6 +13,7 @@ import Gundam2 from './GundamFuncCompClass2'
 import Football from './Football';
 import Goal from './Goal';
 import Fate from './Fate';
+import ArchangelList from './ArchangelList';
 
 // 함수형 컴포넌트
 import CarFuncComp from './CarFuncComp'
@@ -28,7 +29,7 @@ const characters = ["Siro", "Saber", "Archer", "Tosaka Lyn", "Berserker"]
 
 ReactDOM.render(
   <React.StrictMode>
-    <Goal isGoal={false}/>
+    <ArchangelList />
   </React.StrictMode>,
   document.getElementById('header')
 );
