@@ -9,6 +9,7 @@ import Headercomp from './Headercomp';
 import reportWebVitals from './reportWebVitals';
 import Container from './Container';
 import ArchangelClass from './GundamFuncCompClass'
+import Gundam2 from './GundamFuncCompClass2'
 
 // 함수형 컴포넌트
 import CarFuncComp from './CarFuncComp'
@@ -20,11 +21,7 @@ import HeadercompFuncComp from './HeadercompFuncComp'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    {/* <Archangel /> */}
-    {/* <Headercomp newTitle="kkkk"/> */}
-    {/* <Gundam cargo = "Archangel"/> */}
-    <ArchangelClass />
+    <Gundam2 model="ZGMF-X10A"/>
   </React.StrictMode>,
   document.getElementById('header')
 );
