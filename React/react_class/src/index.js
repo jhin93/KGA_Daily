@@ -10,6 +10,8 @@ import reportWebVitals from './reportWebVitals';
 import Container from './Container';
 import ArchangelClass from './GundamFuncCompClass'
 import Gundam2 from './GundamFuncCompClass2'
+import Football from './Football';
+
 
 // 함수형 컴포넌트
 import CarFuncComp from './CarFuncComp'
@@ -21,7 +23,7 @@ import HeadercompFuncComp from './HeadercompFuncComp'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Gundam2 model="ZGMF-X10A"/>
+    <Football />
   </React.StrictMode>,
   document.getElementById('header')
 );
