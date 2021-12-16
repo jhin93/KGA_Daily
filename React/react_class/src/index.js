@@ -11,7 +11,8 @@ import Container from './Container';
 import ArchangelClass from './GundamFuncCompClass'
 import Gundam2 from './GundamFuncCompClass2'
 import Football from './Football';
-
+import Goal from './Goal';
+import Fate from './Fate';
 
 // 함수형 컴포넌트
 import CarFuncComp from './CarFuncComp'
@@ -19,11 +20,15 @@ import ContainerFuncComp from './ContainerFuncComp'
 import GundamFuncComp from './GundamFuncComp'
 import HeadercompFuncComp from './HeadercompFuncComp'
 
+
+
+const characters = ["Siro", "Saber", "Archer", "Tosaka Lyn", "Berserker"]
+
 // 기존
 
 ReactDOM.render(
   <React.StrictMode>
-    <Football />
+    <Goal isGoal={false}/>
   </React.StrictMode>,
   document.getElementById('header')
 );
