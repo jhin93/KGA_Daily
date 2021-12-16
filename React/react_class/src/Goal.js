@@ -20,6 +20,7 @@ function Goal(props){
             {/* 변수를 쓰기위해 {} 안에 작성 */}
             {/* isGoal이 참이면 MadeGoal 아니면 MissGoal*/}
             {isGoal ? <MadeGoal/> : <MissGoal />}
+            {/* {isGoal ? <h1>The tremendous Goal Son!!!</h1> : <h1>MISSED GOAL RONALDO</h1>} */}
         </>
     );
 }
