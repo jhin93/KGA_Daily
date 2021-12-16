@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Car from './Car'
-import Gundam from "./GundamFuncCompClass"
+import Gundam from "./ArchangelClass"
 import Archangel from './Archangel';
 import Headercomp from './Headercomp';
 import reportWebVitals from './reportWebVitals';
 import Container from './Container';
-import ArchangelClass from './GundamFuncCompClass'
+import ArchangelClass from './ArchangelClass'
 import Gundam2 from './GundamFuncCompClass2'
 import Football from './Football';
 import Goal from './Goal';
