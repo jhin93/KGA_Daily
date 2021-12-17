@@ -18,6 +18,7 @@ function Hordform() {
                 />
             </label>
             <input type="submit"/>
+            {/* 왜 setClan이 아닐까. 민수 말로는 useState가 두번째 인자로(setClan) 기존값을 바꾸는 거라고 한다. */}
             <div>{clan}</div>
         </form>
     )
