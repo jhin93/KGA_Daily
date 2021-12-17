@@ -35,7 +35,7 @@ const characters = ["Siro", "Saber", "Archer", "Tosaka Lyn", "Berserker"]
 ReactDOM.render(
   <React.StrictMode>
     {/* <FateClassComp characters={characters}/> */}
-    <Hordform />
+    <App />
   </React.StrictMode>,
   document.getElementById('header')
 );
