@@ -13,6 +13,8 @@ import Football from './Football';
 import Goal from './Goal';
 import Fate from './Fate';
 import ArchangelList from './ArchangelList';
+import GundamForm from './GundamForm';
+import Hordform from './Hordform';
 
 // 함수형 컴포넌트(12/15 과제)
 import CarFuncComp from './CarFuncComp'
@@ -32,7 +34,8 @@ const characters = ["Siro", "Saber", "Archer", "Tosaka Lyn", "Berserker"]
 
 ReactDOM.render(
   <React.StrictMode>
-    <FateClassComp characters={characters}/>
+    {/* <FateClassComp characters={characters}/> */}
+    <Hordform />
   </React.StrictMode>,
   document.getElementById('header')
 );
