@@ -13,6 +13,7 @@ function Wow () {
         // 왜 name이 []에 들어가있는가. 리액트에서 jsx문법으로 key는 []로 넣는다
         // ...는 여러 인풋을 받을 때 사용한다.
         setInput(values => ({...values, [name]: value}))
+        console.log("input이 어떻게 변해는가 ", input)
     }
 
     const handleSubmit = (event) => {
