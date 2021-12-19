@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Wow from './Wow';
 import Counter from './Counter';
+import {CalData,Textaddition} from './CalcResult';
 
 // 기존
 
@@ -28,13 +29,12 @@ import Counter from './Counter';
 
 // export default App;
 
-
-// ---------------- 수업 예제 ------------------
 function App(){
   return(
-    <div>
-      <Counter />
-    </div>
+    <>
+      <CalData />
+      <Textaddition />
+    </>
   );
 }
 
