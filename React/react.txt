@@ -118,3 +118,13 @@ https://ko.reactjs.org/docs/hooks-state.html
 onChange 
 변화가 일어났는지 감지.
 https://kkamikoon.tistory.com/entry/Javascript-onchange-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%A1%9C-%EB%82%B4%EC%9A%A9-%EB%B3%80%EA%B2%BD-%EA%B0%90%EC%A7%80?category=822471
+
+
+Function component에서의 prev state
+https://satisfactoryplace.tistory.com/258  
+
+useEffect
+https://xiubindev.tistory.com/100?category=826117  
+
+useRef
+https://xiubindev.tistory.com/98?category=826117  
