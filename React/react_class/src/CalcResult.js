@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
 function CalData() {
-    const [buttonClicked, setButtonClicked] = useState();
-    const [inputs, setInput] = useState({});
-    const [calcResult, setCalcResult] = useState("Calc Result")
+    const [buttonClicked, setButtonClicked] = useState(); // 클릭한 버튼의 종류를 감지
+    const [inputs, setInput] = useState({}); // 인풋값을 받는 state
+    const [calcResult, setCalcResult] = useState("Calc Result") // 인풋값을 계산한 state
 
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        setInput(values => ({ ...values, [name]: value })) //키는 []
+        setInput(values => ({ ...values, [name]: value })) //키는 []. input의 변화를 감지해 데이터를 받음. inputs가 객체이고 객체.키 = 밸류 니까 결국 input의 밸류를 불러온다.
+        console.log("들어온 input : ", inputs)
     }
     const handleClick = (e) => {
         // e.preventDefault();
@@ -18,7 +19,7 @@ function CalData() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(inputs, e.target)
-        switch (buttonClicked) {
+        switch (buttonClicked) { // 여기서 클릭한 버튼의 종류를 감지해 switch문으로 case마다 다른 계산방식 적용해서 submit한다.
             case "Add":
                 setCalcResult(parseInt(inputs.num1) + parseInt(inputs.num2));
                 break;
