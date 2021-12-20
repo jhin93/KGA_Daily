@@ -3,6 +3,7 @@ import './App.css';
 import Wow from './Wow';
 import Counter from './Counter';
 import {CalData,Textaddition} from './CalcResult';
+import Jsxtest from './Jsxtest';
 
 // 기존
 
@@ -32,8 +33,8 @@ import {CalData,Textaddition} from './CalcResult';
 function App(){
   return(
     <>
-      <CalData />
-      <Textaddition />
+      <Jsxtest />
+      <Wow />
     </>
   );
 }
