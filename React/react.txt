@@ -132,6 +132,9 @@ https://xiubindev.tistory.com/98?category=826117
 라우터 설치
 npm install --save react-router-dom
 
+Outlet 사용예시
+https://medium.com/age-of-awareness/amazing-new-stuff-in-react-router-v6-895ba3fab6af
+
 
 
 
