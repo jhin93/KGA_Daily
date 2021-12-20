@@ -136,14 +136,11 @@ Outlet 사용예시
 https://medium.com/age-of-awareness/amazing-new-stuff-in-react-router-v6-895ba3fab6af
 
 
+React Hooks: useEffect 사용법
+https://www.daleseo.com/react-hooks-use-effect/
 
-
-
-
-
-
-
-
+React Hooks: useRef 사용법
+https://www.daleseo.com/react-hooks-use-ref/
 
 
 
