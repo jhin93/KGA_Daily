@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Wow from './Wow';
-import Counter from './Counter';
-import {CalData,Textaddition} from './CalcResult';
-import Jsxtest from './Jsxtest';
-import Jsxcss from './Jsxcss';
+// import Wow from './Wow';
+// import Counter from './Counter';
+// import {CalData,Textaddition} from './CalcResult';
+// import Jsxtest from './Jsxtest';
+// import Jsxcss from './Jsxcss';
+import Block4 from './Block4';
 
 // 기존
 
@@ -34,10 +35,10 @@ import Jsxcss from './Jsxcss';
 function App(){
   return(
     <>
-    <div>
-      <img src={logo} className="App-logo" alt="logo" />
-    </div>
-      <Jsxcss />
+      <div>
+        <img src={logo} className="App-logo" alt="logo" />
+      </div>
+      <Block4 />
     </>
   );
 }
