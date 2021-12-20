@@ -5,13 +5,13 @@ import About from "./pages/About";
 
 export default function Block4() {
     return (
-      <div>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    )
-  }
+        <div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="about" element={<About />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
+}
