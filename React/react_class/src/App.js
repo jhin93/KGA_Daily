@@ -34,6 +34,9 @@ import Jsxcss from './Jsxcss';
 function App(){
   return(
     <>
+    <div>
+      <img src={logo} className="App-logo" alt="logo" />
+    </div>
       <Jsxcss />
     </>
   );
