@@ -19,11 +19,11 @@ import HeadercompFuncComp from './HeadercompFuncComp'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <Archangel /> */}
     {/* <Headercomp newTitle="kkkk"/> */}
     {/* <Gundam cargo = "Archangel"/> */}
-    <GundamFuncComp cargo="Archangel"/>
+    {/* <GundamFuncComp cargo="Archangel"/> */}
   </React.StrictMode>,
   document.getElementById('header')
 );

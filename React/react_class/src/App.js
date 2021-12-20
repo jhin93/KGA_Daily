@@ -5,7 +5,9 @@ import './App.css';
 // import {CalData,Textaddition} from './CalcResult';
 // import Jsxtest from './Jsxtest';
 // import Jsxcss from './Jsxcss';
-import Block4 from './Block4';
+import Block4 from './Block4 copy';
+import TabRouter from './TabRouter';
+
 
 // 기존
 
@@ -38,7 +40,7 @@ function App(){
       <div>
         <img src={logo} className="App-logo" alt="logo" />
       </div>
-      <Block4 />
+      <TabRouter />
     </>
   );
 }

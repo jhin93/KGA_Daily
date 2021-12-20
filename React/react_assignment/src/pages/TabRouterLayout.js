@@ -1,7 +1,7 @@
 import {Outlet, Link} from "react-router-dom";
 import "./Layout.css"
 
-const Layout = () => {
+const TabRouterLayout = () => {
     return (
         <>
             <nav>
@@ -10,10 +10,13 @@ const Layout = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/blogs">Blogs</Link>
+                        <Link to="/login">Login</Link>
                     </li>
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/archAngel">archAngel</Link>
+                    </li>
+                    <li>
+                        <Link to="/calc">Calc</Link>
                     </li>
                 </ul>
             </nav>
@@ -23,7 +26,7 @@ const Layout = () => {
     );
 }
 
-export default Layout;
+export default TabRouterLayout;
 
 
 
