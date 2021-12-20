@@ -4,6 +4,7 @@ import Wow from './Wow';
 import Counter from './Counter';
 import {CalData,Textaddition} from './CalcResult';
 import Jsxtest from './Jsxtest';
+import Jsxcss from './Jsxcss';
 
 // 기존
 
@@ -33,8 +34,7 @@ import Jsxtest from './Jsxtest';
 function App(){
   return(
     <>
-      <Jsxtest />
-      <Wow />
+      <Jsxcss />
     </>
   );
 }
