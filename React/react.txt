@@ -138,6 +138,9 @@ https://xiubindev.tistory.com/100?category=826117
 React Hooks: useRef 사용법  
 https://www.daleseo.com/react-hooks-use-ref/  
 https://xiubindev.tistory.com/98?category=826117  
+https://react.vlpt.us/basic/10-useRef.html  
 
 
+객체 비구조화 할당  
+https://learnjs.vlpt.us/basics/06-object.html#%EA%B0%9D%EC%B2%B4-%EB%B9%84%EA%B5%AC%EC%A1%B0%ED%99%94-%ED%95%A0%EB%8B%B9  
 
