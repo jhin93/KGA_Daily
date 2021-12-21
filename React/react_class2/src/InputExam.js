@@ -33,11 +33,9 @@ export default function InputExam () {
         <div>
             <input 
                 name="name"
-                placeholder="name"
                 onChange={changeHandler}
                 value={name} // 여기서 inputs의 name을 바로 변수처럼 사용할 수 있는 것이 위에서 비구조화를 했기 떄문
                 ref={nameInput} // focus를 다시 주기 위해 이 input에 ref 줌
-            
             />
             <input 
                 name="nickname"

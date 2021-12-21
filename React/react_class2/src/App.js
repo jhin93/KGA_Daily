@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import InputSample from './InputSample';
 import InputExam from './InputExam';
+import { CalData } from './CalcResult';
+import Calculator from './Calculator';
 
 // 기존
 
@@ -32,8 +33,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <h1>hello world!!!</h1>
       <InputExam />
+      <br />
+      <Calculator />
     </div>
   );
 }
