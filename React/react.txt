@@ -123,12 +123,6 @@ https://kkamikoon.tistory.com/entry/Javascript-onchange-%EC%9D%B4%EB%B2%A4%ED%8A
 Function component에서의 prev state
 https://satisfactoryplace.tistory.com/258  
 
-useEffect
-https://xiubindev.tistory.com/100?category=826117  
-
-useRef
-https://xiubindev.tistory.com/98?category=826117  
-
 라우터 설치
 npm install --save react-router-dom
 
@@ -136,12 +130,14 @@ Outlet 사용예시
 https://medium.com/age-of-awareness/amazing-new-stuff-in-react-router-v6-895ba3fab6af
 
 
-React Hooks: useEffect 사용법
-https://www.daleseo.com/react-hooks-use-effect/
+React Hooks: useEffect 사용법  
+https://www.daleseo.com/react-hooks-use-effect/  
+https://xiubindev.tistory.com/100?category=826117  
 
-React Hooks: useRef 사용법
-https://www.daleseo.com/react-hooks-use-ref/
 
+React Hooks: useRef 사용법  
+https://www.daleseo.com/react-hooks-use-ref/  
+https://xiubindev.tistory.com/98?category=826117  
 
 
 
