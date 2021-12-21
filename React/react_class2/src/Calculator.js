@@ -17,50 +17,59 @@ export default function Calculator () {
         }
     }
 
-    // 연산버튼 감지해서 담기.
+    //입력값 배열에 담기
+    writedNum.push(number)
+    console.log("배열에 값이 담겼는가 : ", writedNum)
+
+    // 연산버튼 - switch문을 위한 기반
     const arithmetic = (e) => {
         e.preventDefault();
         setButtonClicked(e.target.value)
-        //입력값 배열에 담기
-        writedNum.push(number)
-        console.log("배열에 값이 담겼는가 : ", writedNum)
-        // number 초기화
-        setNumber(number => 0);
-    }
 
-    // 합쳐진 number를 배열에 담고, number 초기화
-
-    // 계산함수
-    const Calculation = (e) => {
+        // 끊어줘야 한다.
+        
         
     }
 
 
-
-
-
-
+    // 계산함수
+    const Calculation = (e) => {
+        e.preventDefault();
+        switch (buttonClicked) {
+            case "+":
+                setCalcResult("배열의 첫번째" + "배열의 두번째");
+                break;
+            case "-":
+                setCalcResult(parseInt("배열의 첫번째") - parseInt("배열의 두번째"));
+                break;
+            case "*":
+                setCalcResult(parseInt("배열의 첫번째") * parseInt("배열의 두번째"));
+                break;
+            case "/":
+                setCalcResult(parseInt("배열의 첫번째") / parseInt("배열의 두번째"));
+                break;
+            default: setCalcResult("Calc Result");
+        }
+    }
 
 
     return (
         <div>
             <h1>{number}</h1>
-            <form onSubmit={Calculation}>
-                <button type="button" value="1" onClick={clickedNum}>1</button>
-                <button type="button" value="2" onClick={clickedNum}>2</button>
-                <button type="button" value="3" onClick={clickedNum}>3</button>
-                <button type="button" value="4" onClick={clickedNum}>4</button>
-                <button type="button" value="5" onClick={clickedNum}>5</button>
-                <button type="button" value="6" onClick={clickedNum}>6</button>
-                <button type="button" value="7" onClick={clickedNum}>7</button>
-                <button type="button" value="8" onClick={clickedNum}>8</button>
-                <button type="button" value="9" onClick={clickedNum}>9</button>
-                <input type="submit" onClick={arithmetic} value="+" />
-                <input type="submit" onClick={arithmetic} value="-" />
-                <input type="submit" onClick={arithmetic} value="*" />
-                <input type="submit" onClick={arithmetic} value="/" />
-            </form>
-            
+            <button type="button" value="1" onClick={clickedNum}>1</button>
+            <button type="button" value="2" onClick={clickedNum}>2</button>
+            <button type="button" value="3" onClick={clickedNum}>3</button>
+            <button type="button" value="4" onClick={clickedNum}>4</button>
+            <button type="button" value="5" onClick={clickedNum}>5</button>
+            <button type="button" value="6" onClick={clickedNum}>6</button>
+            <button type="button" value="7" onClick={clickedNum}>7</button>
+            <button type="button" value="8" onClick={clickedNum}>8</button>
+            <button type="button" value="9" onClick={clickedNum}>9</button>
+            <button type="button" onClick={arithmetic} value="+">+</button>
+            <button type="button" onClick={arithmetic} value="-">-</button>
+            <button type="button" onClick={arithmetic} value="*">*</button>
+            <button type="button" onClick={arithmetic} value="/">/</button>
+            <button type="button" onClick={arithmetic} value="=">=</button>
         </div>
     )
 }
