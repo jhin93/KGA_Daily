@@ -37,7 +37,7 @@ function App() {
       </header>
     </div>
     <div>
-      <UserList />
+      <Calculator />
     </div>
     </>
   );
