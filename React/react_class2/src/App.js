@@ -3,6 +3,7 @@ import './App.css';
 import InputExam from './InputExam';
 import { CalData } from './CalcResult';
 import Calculator from './Calculator';
+import UserList from './UserList';
 
 // 기존
 
@@ -29,14 +30,16 @@ import Calculator from './Calculator';
 
 function App() {
   return (
+    <>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <InputExam />
-      <br />
-      <Calculator />
     </div>
+    <div>
+      <UserList />
+    </div>
+    </>
   );
 }
 
