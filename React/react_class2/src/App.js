@@ -5,6 +5,7 @@ import { CalData } from './CalcResult';
 import Calculator from './Calculator';
 import UserList from './UserList';
 import UserManage from './UserManage';
+import Box from './Box';
 
 // 기존
 
@@ -38,7 +39,7 @@ function App() {
       </header>
     </div>
     <div>
-      <UserManage />
+      <Box />
     </div>
     </>
   );
