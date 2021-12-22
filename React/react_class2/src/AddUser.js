@@ -46,7 +46,7 @@ function AddUser () {
 
         setInputs({
             username: "", // 초기화
-            email: ""
+            email: "" // 초기화
         })
         nextId.current += 1; // 아이디를 추가했으니 1이 늘어남
     }
@@ -58,6 +58,7 @@ function AddUser () {
                 email={email}
                 onChange={onChange}
                 onCreate={onCreate}
+                // CreateUser에서 받은 onCreate props를 함수 onCreate로 전달. 사실 받은건 없고 그냥 onCreate를 작동하는 트리거로 보인다.
             />
             <UserList users={users} />
         </>
