@@ -3,14 +3,15 @@ import React, {useEffect} from "react";
 // 재사용가능한 컴포넌트
 function User({user, onRemove,onToggle}) {
     // useEffect
+    // 빈배열을 넣어주면 첫 렌더링만 실행, 배열 없으면 리렌더링때마다 함수 실행
     // https://www.daleseo.com/react-hooks-use-effect/  
     useEffect(() => {
-        // console.log("Set user value");
+        console.log("Set user value");
         console.log(user);
-        // return () => {
-        //     console.log("Before change user");
-        //     console.log(user);
-        // };
+        return () => { // 특정값이 업데이트 되기 직전 혹은 사라지기 전에 업데이트를 하려면 return() 안에 써준다
+            console.log("Deleted user value");
+            console.log(user);
+        };
     }, [user]);
 
     return (

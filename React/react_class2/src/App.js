@@ -41,7 +41,7 @@ function App() {
       </header>
     </div>
     <div>
-      <Circle color="blue" />
+      <Calculator/>
     </div>
     </>
   );

@@ -4,15 +4,10 @@ import React, { useState } from 'react';
 export default function Calc() {
     const [inputs, setInputs] = useState(0);
 
-    // const resultRef = useRef();
-
     const addToInput = (e) => {
-        // nameBtn.current.reset();
-        
         const lastIn = inputs[inputs.length-1]
         console.log('target value: ' + e.target.value);
         console.log();
-        // const inp = [inputs]
         if (inputs === 0) {
             setInputs(e.target.value);
         } else {
@@ -25,17 +20,12 @@ export default function Calc() {
     };
 
     const evalInputs = () => {
-        // setInputs(eval(inputs) || 'can not evaluate')
         setInputs(() => {
-            // if (err) {
-            //     alert('input is invalid')
-            //     setInputs(0)
-            //     console.log(err)
-            // } else {
             return (
-                eval(inputs)
+                eval(inputs) 
+                // 문자열로 연산식을 구성하면 나중에 eval()로 계산할 수 있습니다.
+                // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/eval
             )
-            // }
         })
     }
 
@@ -52,7 +42,6 @@ export default function Calc() {
                     className='result'
                     name="result"
                     value={inputs || '0'}
-
                 />
                 <br />
                 <button onClick={addToInput} value={9}>9</button>
@@ -76,11 +65,6 @@ export default function Calc() {
                 <button onClick={addToInput} value={'/'}>/</button>
                 <br />
                 <button className="clear" onClick={resetHandler}>Reset</button>
-                {/* <div>
-                <b>Value</b> <br />
-                {inputs}
-
-            </div> */}
             </div>
         </div>
     )
