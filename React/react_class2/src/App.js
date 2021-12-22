@@ -4,6 +4,7 @@ import InputExam from './InputExam';
 import { CalData } from './CalcResult';
 import Calculator from './Calculator';
 import UserList from './UserList';
+import AddUser from './AddUser';
 
 // 기존
 
@@ -37,7 +38,7 @@ function App() {
       </header>
     </div>
     <div>
-      <Calculator />
+      <AddUser />
     </div>
     </>
   );

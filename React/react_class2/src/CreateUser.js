@@ -5,7 +5,7 @@ const CreateUser = ({ username, email, onChange, onCreate }) => {
         <div>
             <input 
                 name="username"
-                placeholder="Account"
+                placeholder="User Name"
                 onChange={onChange}
                 value={username}
             />
@@ -15,25 +15,12 @@ const CreateUser = ({ username, email, onChange, onCreate }) => {
                 onChange={onChange}
                 value={email} 
             />
+            <button onClick={onCreate}>Add</button>
         </div>
     );
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default CreateUser
 
 
 
