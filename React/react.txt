@@ -144,3 +144,5 @@ https://react.vlpt.us/basic/10-useRef.html
 객체 비구조화 할당  
 https://learnjs.vlpt.us/basics/06-object.html#%EA%B0%9D%EC%B2%B4-%EB%B9%84%EA%B5%AC%EC%A1%B0%ED%99%94-%ED%95%A0%EB%8B%B9  
 
+
+* 리액트는 부모 컴포넌트가 리렌더링되면 자식 컴포넌트도 리렌더링된다.

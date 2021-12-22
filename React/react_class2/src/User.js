@@ -1,7 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 // 재사용가능한 컴포넌트
 function User({user, onRemove,onToggle}) {
+    // useEffect
+    // https://www.daleseo.com/react-hooks-use-effect/  
+    useEffect(() => {
+        // console.log("Set user value");
+        console.log(user);
+        // return () => {
+        //     console.log("Before change user");
+        //     console.log(user);
+        // };
+    }, [user]);
+
     return (
         <div>
             <b

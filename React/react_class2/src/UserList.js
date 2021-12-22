@@ -62,6 +62,6 @@ function UserList({users, onRemove, onToggle}) { // 인자추가
 }
 
 export default React.memo(UserList) 
-// 컴포넌트를 렌더링하지 않고 마지막으로 렌더링된 결과를 재사용합니다.
+// React.memo 컴포넌트를 렌더링하지 않고 마지막으로 렌더링된 결과를 재사용합니다.
 // 이 메서드는 오직 성능 최적화를 위하여 사용됩니다. 렌더링을 “방지”하기 위하여 사용하지 마세요. 버그를 만들 수 있습니다.
 // https://ko.reactjs.org/docs/react-api.html#reactmemo
