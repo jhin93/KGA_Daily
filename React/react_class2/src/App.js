@@ -6,6 +6,7 @@ import Calculator from './Calculator';
 import UserList from './UserList';
 import UserManage from './UserManage';
 import Box from './Box';
+import Reactcss from './Reactcss';
 
 // 기존
 
@@ -39,7 +40,7 @@ function App() {
       </header>
     </div>
     <div>
-      <Box />
+      <Reactcss />
     </div>
     </>
   );
