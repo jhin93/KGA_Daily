@@ -7,6 +7,7 @@ import UserList from './UserList';
 import UserManage from './UserManage';
 import Box from './Box';
 import Reactcss from './Reactcss';
+import Circle from './CircleDiv';
 
 // 기존
 
@@ -40,7 +41,7 @@ function App() {
       </header>
     </div>
     <div>
-      <Reactcss />
+      <Circle color="blue" />
     </div>
     </>
   );
