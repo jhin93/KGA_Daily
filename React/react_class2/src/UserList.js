@@ -1,7 +1,7 @@
 import React from "react"
 import User from "./User"
 
-function UserList({users, onRemove}) { // 인자추가
+function UserList({users, onRemove, onToggle}) { // 인자추가
     // const users = [
     //     {
     //         id: 1,
@@ -49,7 +49,12 @@ function UserList({users, onRemove}) { // 인자추가
             {/* 리턴에서 스크립트를 쓸 때 {} 안에서 작성한다. */}
             {
                 users.map(user => (
-                    <User user={user} key={user.id} onRemove={onRemove}/> //key값으로 객체에 접근한다.
+                    <User 
+                        user={user} 
+                        key={user.id} 
+                        onRemove={onRemove}
+                        onToggle={onToggle}
+                    /> //key값으로 객체에 접근한다.
                 ))
             }
         </div>
