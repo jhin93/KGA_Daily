@@ -150,5 +150,9 @@ https://learnjs.vlpt.us/basics/06-object.html#%EA%B0%9D%EC%B2%B4-%EB%B9%84%EA%B5
 $ yarn add classname
 classname이라는 모듈을 설치.
 
+createContext
+
 useContext
 https://ko-de-dev-green.tistory.com/67
+
+useReducer

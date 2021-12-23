@@ -80,4 +80,10 @@ export function useTodoDispatch() { // Context를 사용하려고 만든 함수
 
 export function useTodoNextId() {
   const context = useContext(TodoNextIdContext);
+
+  if(!context) {
+    throw new Error('Cannot find TodoProvider');
+  }
+
+  return context;
 }

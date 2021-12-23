@@ -103,8 +103,13 @@ function TodoCreate() {
       {
         open && (
           <InsertFormPosition>
-            <InsertForm>
-              <Input autoFocus placeholder='할일을 입력 후 , Enter를 누르세요' />
+            <InsertForm onSubmit={onSubmit}>
+              <Input 
+                autoFocus 
+                placeholder='할일을 입력 후 , Enter를 누르세요' 
+                onChange={onChange}
+                value={value}
+              />
             </InsertForm>
           </InsertFormPosition>
         )
