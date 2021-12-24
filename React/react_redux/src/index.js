@@ -6,8 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './modules/index'
+import { composeWithDevTools } from "redux-devtools-extension"
 
-const store = createStore(rootReducer) //store 만들기
+const store = createStore(rootReducer, composeWithDevTools()) //store 만들기
 // console.log(store.getState()); // store state print to console
 
 ReactDOM.render(

@@ -1,16 +1,39 @@
-import React from "react"
+/* Action type definition */
+const SET_DIFF = "counter/SET_DIFF";
+const INCREASE = "counter/INCREASE";
+const DECREASE = "counter/DECREASE";
 
-function Counter({number, diff, onIncrease, onSetDiff}) {
-    const onChange = (e) => {
-        onSetDiff(parseInt(e.target.value, 10));
-    };
+/* Make create action function */
+export const setDiff = (diff) => ({ type: SET_DIFF, diff });
+export const increase = () => ({ type: INCREASE });
+export const decrease = () => ({ type: DECREASE })
 
-    return (
-        <div>
-            <h1>{number}</h1>
-            <div>
-                <input type="number" value={diff} min="1" onChange={onChange} />
-            </div>
-        </div>
-    )
+/* Initialize state */
+const initialState = {
+    number: 0,
+    diff: 1
+};
+
+// define reducer : export default
+export default function counter(state=initialState, action) {
+    switch(action.type)
+    {
+        case SET_DIFF:
+            return {
+                ...state,
+                diff: action.diff
+            }
+        case INCREASE:
+            return {
+                ...state,
+                number: state.number = state.number + state.diff // initialState에서 state.diff에 1이 들어있음
+            }
+        case DECREASE:
+            return {
+                ...state,
+                number: state.number = state.number - state.diff
+            }
+        default:
+            return state;
+    }
 }
