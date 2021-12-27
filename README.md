@@ -348,5 +348,6 @@ https://opentutorials.org/course/1375/6761
 https://devowen.com/298
 
 
-
+브랜치 strategy  
+https://techblog.woowahan.com/2553/  
 
