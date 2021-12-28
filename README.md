@@ -352,3 +352,5 @@ https://devowen.com/298
 https://hyeon9mak.github.io/git-branch-strategy/  
 https://techblog.woowahan.com/2553/  
 
+원격 브랜치(깃헙 사이트)를 삭제하는 법  
+https://www.lesstif.com/gitbook/git-delete-remote-branch-20776547.html  
