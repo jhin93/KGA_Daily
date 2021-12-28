@@ -349,5 +349,6 @@ https://devowen.com/298
 
 
 브랜치 strategy  
+https://hyeon9mak.github.io/git-branch-strategy/  
 https://techblog.woowahan.com/2553/  
 
