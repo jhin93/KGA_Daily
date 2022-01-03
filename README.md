@@ -366,5 +366,8 @@ https://www.favicon-generator.org/
 
 로고 제작 사이트  
 https://www.logaster.com/logo/?t=BuildingBOY  
+https://www.logaster.com/v3/signin/?next=%2Fa%2Faccount%2F795026522%2Flogo%2Fdetail%3Bp%3D0%3Bl%3D0  
 
-https://www.logaster.com/v3/signin/?next=%2Fa%2Faccount%2F795026522%2Flogo%2Fdetail%3Bp%3D0%3Bl%3D0
+npm install 안될때(command not found)  
+https://www.inflearn.com/questions/156199  
+
