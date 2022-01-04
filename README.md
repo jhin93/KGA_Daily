@@ -1,7 +1,7 @@
-# KGA_daily
+# KGA_daily  
 그날 배운 것을 올리는 매일 1커밋 하는 공간입니다.  
 
-css - position.  
+css - position  
 https://ofcourse.kr/css-course/position-%EC%86%8D%EC%84%B1  
 
 
@@ -359,3 +359,18 @@ https://www.lesstif.com/gitbook/git-delete-remote-branch-20776547.html
 한 브랜치에서 새로 브랜치 분기해서 나오기  
 git branch 생성할 브랜치명 분기해나올 브랜치명  
 https://mylko72.gitbooks.io/git/content/branch/checkout.html  
+
+파비콘 제작 사이트  
+https://www.favicon-generator.org/  
+
+
+로고 제작 사이트  
+https://www.logaster.com/logo/?t=BuildingBOY  
+https://www.logaster.com/v3/signin/?next=%2Fa%2Faccount%2F795026522%2Flogo%2Fdetail%3Bp%3D0%3Bl%3D0  
+
+npm install 안될때(command not found)  
+https://www.inflearn.com/questions/156199  
+
+배열 안에 선언된 변수(ex. [row])에는 iterable(반복가능한 ex 배열)한 무언가가 대입되어야 한다. https://helloworldjavascript.net/pages/260-iteration.html  
+.excute() http://pythonstudy.xyz/python/article/202-MySQL-%EC%BF%BC%EB%A6%AC  
+변수를 []로 감싼 비슷한 사례 https://stackoverflow.com/questions/44004418/node-js-async-await-using-with-mysql/51690276  
