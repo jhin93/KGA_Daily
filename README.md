@@ -371,3 +371,5 @@ https://www.logaster.com/v3/signin/?next=%2Fa%2Faccount%2F795026522%2Flogo%2Fdet
 npm install 안될때(command not found)  
 https://www.inflearn.com/questions/156199  
 
+배열 안에 선언된 변수(ex. [row])에는 iterable(반복가능한 ex 배열)한 무언가가 대입되어야 한다. https://helloworldjavascript.net/pages/260-iteration.html  
+.excute() http://pythonstudy.xyz/python/article/202-MySQL-%EC%BF%BC%EB%A6%AC  
