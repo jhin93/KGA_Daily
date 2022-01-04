@@ -37,9 +37,9 @@ import TabRouter from './TabRouter';
 function App(){
   return(
     <>
-      <div>
+      {/* <div>
         <img src={logo} className="App-logo" alt="logo" />
-      </div>
+      </div> */}
       <TabRouter />
     </>
   );
