@@ -375,5 +375,23 @@ https://www.inflearn.com/questions/156199
 .excute() http://pythonstudy.xyz/python/article/202-MySQL-%EC%BF%BC%EB%A6%AC  
 변수를 []로 감싼 비슷한 사례 https://stackoverflow.com/questions/44004418/node-js-async-await-using-with-mysql/51690276  
 
+    /* 브라우저 콘솔창에서 실험
+        let [test] = [[1,2,3], [4,5,6]] // [test] 내부에 이중배열 할당
+
+        test// 결과 : [1,2,3]. 이름을 입력하면 배열의 첫번째 요소를 도출한다.
+        test.length // 결과 : 3
+        [test] // 결과 [Array(3)]. 열면 [1, 2, 3] 도출되는 것을 확인
+        [test].length // 결과 : 1
+        [test][0] // 결과 [1, 2, 3]
+        [test][1] // 결과 undefined
+    */
+    // 실험 결과 : 배열의 첫번째 요소만 다루는 방법인 듯 하다. 
+
 리액트/리덕스로 회원가입  
 https://joonganglib.tistory.com/m/13  
+
+
+세션과 쿠키  
+세션은 [서버] 쪽에 정보를 저장하고 쿠키는 [클라이언트] 쪽에 정보를 저장한다는 것이 세션과 쿠키의 가장 큰 차이점 입니다.  
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=weekamp&logNo=220931266233  
+
