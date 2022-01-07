@@ -394,4 +394,4 @@ https://joonganglib.tistory.com/m/13
 세션과 쿠키  
 세션은 [서버] 쪽에 정보를 저장하고 쿠키는 [클라이언트] 쪽에 정보를 저장한다는 것이 세션과 쿠키의 가장 큰 차이점 입니다.  
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=weekamp&logNo=220931266233  
-
+https://interconnection.tistory.com/74  
