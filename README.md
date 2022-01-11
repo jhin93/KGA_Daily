@@ -387,8 +387,10 @@ https://www.inflearn.com/questions/156199
     */
     // 실험 결과 : 배열의 첫번째 요소만 다루는 방법인 듯 하다. 
 
-리액트/리덕스로 회원가입  
-https://ddeck.tistory.com/33?category=866566
+리액트 로그인    
+https://ddeck.tistory.com/33?category=866566  
+리액트 회원가입  
+https://wonyoung2257.tistory.com/7  
 
 
 세션과 쿠키  
