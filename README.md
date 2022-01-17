@@ -1,5 +1,5 @@
 # KGA_daily  
-그날 배운 것을 올리는 매일 1커밋 하는 공간입니다.  
+배운 것을 올리는 매일 1커밋 하는 공간입니다.  
 
 css - position  
 https://ofcourse.kr/css-course/position-%EC%86%8D%EC%84%B1  
@@ -371,6 +371,32 @@ https://www.logaster.com/v3/signin/?next=%2Fa%2Faccount%2F795026522%2Flogo%2Fdet
 npm install 안될때(command not found)  
 https://www.inflearn.com/questions/156199  
 
-배열 안에 선언된 변수(ex. [row])에는 iterable(반복가능한 ex 배열)한 무언가가 대입되어야 한다. https://helloworldjavascript.net/pages/260-iteration.html  
-.excute() http://pythonstudy.xyz/python/article/202-MySQL-%EC%BF%BC%EB%A6%AC  
+배열 안에 선언된 변수(ex. [row])에는 iterable(반복가능한 ex 배열)한 무언가가 대입되어야 한다.  
+https://helloworldjavascript.net/pages/260-iteration.html  
+
+.execute()  
+http://pythonstudy.xyz/python/article/202-MySQL-%EC%BF%BC%EB%A6%AC  
 변수를 []로 감싼 비슷한 사례 https://stackoverflow.com/questions/44004418/node-js-async-await-using-with-mysql/51690276  
+
+    /* 브라우저 콘솔창에서 실험
+        let [test] = [[1,2,3], [4,5,6]] // [test] 내부에 이중배열 할당
+
+        test// 결과 : [1,2,3]. 이름을 입력하면 배열의 첫번째 요소를 도출한다.
+        test.length // 결과 : 3
+        [test] // 결과 [Array(3)]. 열면 [1, 2, 3] 도출되는 것을 확인
+        [test].length // 결과 : 1
+        [test][0] // 결과 [1, 2, 3]
+        [test][1] // 결과 undefined
+    */
+    // 실험 결과 : 배열의 첫번째 요소만 다루는 방법인 듯 하다. 
+
+리액트 로그인  
+https://ddeck.tistory.com/33?category=866566  
+리액트 회원가입  
+https://wonyoung2257.tistory.com/7  
+
+
+세션과 쿠키  
+세션은 [서버] 쪽에 정보를 저장하고 쿠키는 [클라이언트] 쪽에 정보를 저장한다는 것이 세션과 쿠키의 가장 큰 차이점 입니다.  
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=weekamp&logNo=220931266233  
+https://interconnection.tistory.com/74  
