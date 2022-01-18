@@ -33,11 +33,18 @@ int main(int argc, char* argv[]) // (인자의 개수, 인자를 받을 포인�
 }
 
 // 터미널에서 입력 : ./practice hello world
-// 결과
-// 15
-// argc = 3
-// argv[0]=./practice
-// argv[1]=hello
-// argv[2]=world
+/* 결과
+
+15
+argc = 3
+argv[0]=./practice
+argv[1]=hello
+argv[2]=world
+fNum = 99.999, cLetter = A, strText = Hello C++ !!
+floatNum[99.999000], charLetter[A]
+x = 15, y = 21, z = 60
+sum = 96
+
+*/
 
 
