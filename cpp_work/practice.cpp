@@ -24,6 +24,11 @@ int main(int argc, char* argv[]) // (인자의 개수, 인자를 받을 포인�
 
     cout << "fNum = " << fNum << ", cLetter = " << cLetter << ", strText = " << strText << endl;
     printf("floatNum[%f], charLetter[%c]\n", fNum, cLetter); // %변수타입대응, %f는 float, double %c는 캐릭터 타입 대응
+
+    int x = 15, y = 21, z = 60;
+    cout << "x = " << x << ", y = " << y << ", z = " << z << endl;
+    cout << "sum = " << x + y + z << endl;
+
     return 0;
 }
 
