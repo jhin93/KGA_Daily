@@ -1,4 +1,5 @@
-#include <iostream>
+#include <iostream> // 인풋 아웃풋 스트림
+#include <stdio.h> // 인풋 아웃풋 헤더
 
 using namespace std;
 
@@ -16,6 +17,13 @@ int main(int argc, char* argv[]) // (인자의 개수, 인자를 받을 포인�
             cout << "argv[" << i << "]" << "=" << argv[i] << endl;
         }
     }
+
+    double fNum = 99.999;
+    char cLetter = 'A';
+    string strText = "Hello C++ !!";
+
+    cout << "fNum = " << fNum << ", cLetter = " << cLetter << ", strText = " << strText << endl;
+    printf("floatNum[%f], charLetter[%c]\n", fNum, cLetter); // %변수타입대응, %f는 float, double %c는 캐릭터 타입 대응
     return 0;
 }
 
