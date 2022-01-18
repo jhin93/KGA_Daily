@@ -401,6 +401,9 @@ https://wonyoung2257.tistory.com/7
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=weekamp&logNo=220931266233  
 https://interconnection.tistory.com/74  
 
+chmod 기능  
+https://zamezzz.tistory.com/28  
+
 // C++
 
 namespace  
