@@ -4,10 +4,11 @@ using namespace std;
 
 int main(int argc, char* argv[]) // (인자의 개수, 인자를 받을 포인터)
 {
-    int num = 15;
+    int num;
+    num = 15; // 선언 이후 값을 대입할 수도 있다.
     cout << num << "\n"; // cout은 출력. num을 출력하고, 줄바꿈
 
-    if(argc > 1)
+    if(argc > 1) // argc에 아무것도 넣지 않아도, 스스로 int argc라고 정의되있기 때문에, 인자는 기본적으로 1개부터 시작함.
     {
         cout << "argc = " << argc << endl;
         for(int i = 0; i < argc; i++)
