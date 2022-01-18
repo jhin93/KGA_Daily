@@ -400,3 +400,8 @@ https://wonyoung2257.tistory.com/7
 세션은 [서버] 쪽에 정보를 저장하고 쿠키는 [클라이언트] 쪽에 정보를 저장한다는 것이 세션과 쿠키의 가장 큰 차이점 입니다.  
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=weekamp&logNo=220931266233  
 https://interconnection.tistory.com/74  
+
+// C++
+
+namespace  
+https://thinkpro.tistory.com/22  
