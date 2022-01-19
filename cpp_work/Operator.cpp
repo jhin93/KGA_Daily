@@ -26,8 +26,8 @@ int main ()
 
     cout << "nNumber : " << nNumber << endl;
 
-    int isX = 10, isY = 11;
-    cout << "Return value : " << (isX != isY) << endl; // true면 1, false면 0
+    int isX = 10, isY = 10;
+    cout << "Return value : " << (isX >= isY) << endl; // true면 1, false면 0
 
     return 0;
 }
