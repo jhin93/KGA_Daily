@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdio.h>
+#include <string>
 
 using namespace std;
 
@@ -34,6 +36,9 @@ int main()
     cout << "chA : " << (int)chA << endl; // (int) - 타입캐스팅(형변환)
     cout << "chA : " << chA << endl;
     cout << chAA << chBB << chCC << endl;
+
+    string strGreeting = "Hello C++!!!";
+    cout << strGreeting << endl;
 
     return 0;
 }
