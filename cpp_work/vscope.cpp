@@ -11,7 +11,6 @@ int main()
     a = 10;
     b = 40;
     c = a + b;
-    // gVar = a + b;
 
     std::cout << "c = a + b : " << c << std::endl;
     std::cout << "gVar = a + b : " << gVar << std::endl;
