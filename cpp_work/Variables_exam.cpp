@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
     cout << "iMinutesPerHour = " << iMinutesPerHour << NEW_LINE;
     cout << "PI = " << PI << endl;
 
-    // %d = deciamal, 정수 %f = float, 실수
+    // %d = 부호있는 10진수 정수 %f = float, 실수
     printf("iMinutesPerHour[%d], PI[%f]\n", iMinutesPerHour, PI);
 
     cout << "Define const WIDTH = " << WIDTH << NEW_LINE;
