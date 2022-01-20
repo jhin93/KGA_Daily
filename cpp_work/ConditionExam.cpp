@@ -83,6 +83,7 @@ int main()
             cout << "Sunday";
             break;
         default:
+            cout << "Nonday";
             break;
     }
 
