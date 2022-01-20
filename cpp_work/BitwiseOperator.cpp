@@ -14,7 +14,7 @@ using namespace std;
 int main()
 {
     unsigned char A = 60, B = 13;
-    //10진수 : 2진수
+    // 10진수 : 2진수
     // 60 : 0011 1100,
     // 13 : 0000 1101
     cout << "A & B : " << bitset<8>(A & B) << endl; // 0000 1100 : 12
