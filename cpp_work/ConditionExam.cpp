@@ -5,7 +5,7 @@ using namespace std;
 
 int GetCurrentTime(void)
 {
-    time_t curTime = time(NULL);
+    time_t curTime = time(NULL); // 현재 시간을 가져옴
     struct tm *pLocalTime = NULL;
 
     pLocalTime = localtime(&curTime);
