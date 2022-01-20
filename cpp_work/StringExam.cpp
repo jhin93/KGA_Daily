@@ -28,5 +28,12 @@ int main()
     }
     cout << endl;
 
+    string baseballTeam;
+    cout << "Enter your favorite baseball Team : ";
+    // 라인으로 받고 cin으로 받음
+    getline(cin, baseballTeam);
+    
+    cout << baseballTeam << endl;
+
     return 0;
 }
