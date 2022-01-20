@@ -15,5 +15,8 @@ int main()
 
     cout << fullNameEquip << endl;
 
+    string strAlphabet = "ABCDEFJKLMNOPQRSTUV";
+    cout << "strAlphabet length : " << strAlphabet.length() << endl;
+    cout << "strAlphabet size : " << strAlphabet.size() << endl;
     return 0;
 }
