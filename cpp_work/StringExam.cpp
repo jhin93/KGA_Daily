@@ -18,5 +18,15 @@ int main()
     string strAlphabet = "ABCDEFJKLMNOPQRSTUV";
     cout << "strAlphabet length : " << strAlphabet.length() << endl;
     cout << "strAlphabet size : " << strAlphabet.size() << endl;
+
+    string strHello = "Hello world!!!";
+    cout << strHello[0] << endl; // 배열처럼 사용 가능
+    strHello[0] = 'J'; // 요소 교체 가능
+    for(int i = 0; i < strHello.length(); i ++)
+    {
+        cout << strHello[i];
+    }
+    cout << endl;
+
     return 0;
 }
