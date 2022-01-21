@@ -8,14 +8,17 @@ int main()
     string food = "Hamburger";
     string *ptrFood = &food;
 
+    // 값 변경
+    *ptrFood = "Pizza"; // 값이 Pizza로 변경
+
     cout << "food : " << food << ", Address of food : " << &food << endl;
     cout << "ptrFood : " << *ptrFood << ", Address of ptrFood : " << ptrFood << endl;
 
-    int nNumber = 1234;
-    int *ptrNumber = &nNumber;
+    // int nNumber = 1234;
+    // int *ptrNumber = &nNumber;
 
-    cout << "nNumber : " << nNumber << ", Address of food : " << &nNumber << endl;
-    cout << "ptrNumber : " << *ptrNumber << ", Address of ptrNumber : " << ptrNumber << endl;
+    // cout << "nNumber : " << nNumber << ", Address of food : " << &nNumber << endl;
+    // cout << "ptrNumber : " << *ptrNumber << ", Address of ptrNumber : " << ptrNumber << endl;
 
     //결과
     /*
