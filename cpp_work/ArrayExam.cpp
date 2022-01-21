@@ -27,9 +27,11 @@ int main()
     cout << itCompany[4] << endl;
     itCompany[0] = "Snakebyte Guitar"; // 다시 초기화
     for(string str : itCompany) // range-based
-    {
         cout << str << endl;
-    }
+    
+
+    for(int i = 0; i < (sizeof(itCompany)/sizeof(itCompany[0])); i++)
+        cout << "sizeof itCompany[" << i << "] : " << itCompany[i] << endl;
 
     return 0;
 
