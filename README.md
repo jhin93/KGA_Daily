@@ -419,4 +419,26 @@ ex)
 ```
 string food = "Pizza";
 string *ptr = &food; // * 앞에 있는 string은 food가 "Pizza"라는 string 이기에 작성한 것.
+
+예제1)
+    string food = "Hamburger";
+    string *ptrFood = &food;
+
+    cout << "food : " << food << ", Address of food : " << &food << endl;
+    cout << "ptrFood : " << *ptrFood << ", Address of ptrFood : " << ptrFood << endl;
+
+    int nNumber = 1234;
+    int *ptrNumber = &nNumber;
+
+    cout << "nNumber : " << nNumber << ", Address of food : " << &nNumber << endl;
+    cout << "ptrNumber : " << *ptrNumber << ", Address of ptrNumber : " << ptrNumber << endl;
+
+    //결과
+    /*
+        food : Hamburger, Address of food : 0x7ffee1777658
+        ptrFood : Hamburger, Address of ptrFood : 0x7ffee1777658
+        
+        nNumber : 1234, Address of food : 0x7ffee1777640
+        ptrNumber : 1234, Address of ptrNumber : 0x7ffee1777640
+    */
 ```
