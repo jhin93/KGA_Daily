@@ -30,6 +30,8 @@ int main()
     //     cout << "n = " << n << ", i = " << i << endl;
     // }
 
+    //Range-Based Loop
+
     int nArr[5] = {1, 3, 5, 7, 9};
 
     for(int i : nArr)
