@@ -415,3 +415,8 @@ https://iflife1124.tistory.com/15
 포인터  
 포인터란, 메모리의 주소 값을 저장하는 변수이며, 포인터 변수라고도 부른다. 
 포인터 변수는 자기 자신의 메모리 주소도 갖고 있고, 데이터로써 메모리 주소를 가질 수 있다.  
+ex)
+```
+string food = "Pizza";
+string *ptr = &food; // * 앞에 있는 string은 food가 "Pizza"라는 string 이기에 작성한 것.
+```
