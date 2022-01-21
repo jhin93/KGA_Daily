@@ -9,7 +9,7 @@ int main()
 {
     // 입력받을 정수 초기화.
     int inputNum = -1; // 처음에 초기화를 시킴
-    int numArr[10] = {1,2,3,4,5,6,7,8,9,10};
+    int numArr[9] = {1,2,3,4,5,6,7,8,9};
     int* ptr = numArr;
 
     while(true)
