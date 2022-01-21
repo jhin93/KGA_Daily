@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     string food = "Hamburger";
-    string *ptrFood = &food;
+    string *ptrFood = &food; // 사용하기 전에 포인터는 초기화를 해줘야 한다.
 
     // 값 변경
     *ptrFood = "Pizza"; // 값이 Pizza로 변경
