@@ -7,8 +7,8 @@ void IncrementAll(int* start, int* stop)
     int* current = start; // 주소를 준 것
     while(current != stop)
     {
-        ++(*current);   // increment value pointed(data)
-        ++current;      // increment pointer(address)
+        ++(*current);   // increment value pointed(data). 데이터를 1개 증가
+        ++current;      // increment pointer(address). 주소를 증가
     }
 }
 
