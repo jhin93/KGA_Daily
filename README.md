@@ -417,7 +417,6 @@ https://iflife1124.tistory.com/15
 포인터 변수는 자기 자신의 메모리 주소도 갖고 있고, 데이터로써 메모리 주소를 가질 수 있다.  
 포인터 변수의 일반적인 형식. 
 : type * name ex) int * number;  
-
 ex)
 ```
 string food = "Pizza";
