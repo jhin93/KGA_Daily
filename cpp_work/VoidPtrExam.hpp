@@ -1,0 +1,1 @@
+void increase(void* pData, int pSize); // 함수 프로토타입 선언
