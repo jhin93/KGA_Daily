@@ -471,3 +471,11 @@ int main()
 strcpy, strncpy  
 C 스타일의 문자열인 char*, char[] 타입의 문자열을 복사하는 함수.  
 https://blockdmask.tistory.com/348  
+```
+> 간단한 사용법.
+
+char origin[] = "BlockDMask";
+char dest[100];
+strncpy(dest, origin, sizeof(origin));
+```
+
