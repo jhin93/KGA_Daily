@@ -527,3 +527,6 @@ https://blog.naver.com/sharonichoya/220501158281
     free(pAlphabet);
     return 0;
 ```
+
+new와 delete 연산자  
+https://jhnyang.tistory.com/334  
