@@ -468,3 +468,6 @@ int main()
 }
 ```
 
+strcpy, strncpy  
+C 스타일의 문자열인 char*, char[] 타입의 문자열을 복사하는 함수.  
+https://blockdmask.tistory.com/348  
