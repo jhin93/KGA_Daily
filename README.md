@@ -417,7 +417,6 @@ https://iflife1124.tistory.com/15
 포인터 변수는 자기 자신의 메모리 주소도 갖고 있고, 데이터로써 메모리 주소를 가질 수 있다.  
 포인터 변수의 일반적인 형식. 
 : type * name ex) int * number;  
-
 ex)
 ```
 string food = "Pizza";
@@ -445,3 +444,27 @@ string *ptr = &food; // * 앞에 있는 string은 food가 "Pizza"라는 string �
         ptrNumber : 1234, Address of ptrNumber : 0x7ffee1777640
     */
 ```
+
+이중포인터  
+포인터를 가리키는 포인터.  
+
+```
+int main()
+{
+    char a;
+    char* b;
+    char** c;
+
+    a = 'z';
+    b = &a;
+    c = &b;
+
+    cout << "**c : " << **c << endl;
+
+    return 0;
+
+    // 결과
+    // **c : z
+}
+```
+
