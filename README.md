@@ -444,3 +444,6 @@ string *ptr = &food; // * 앞에 있는 string은 food가 "Pizza"라는 string �
         ptrNumber : 1234, Address of ptrNumber : 0x7ffee1777640
     */
 ```
+
+이중포인터  
+포인터를 가리키는 포인터.  
