@@ -479,10 +479,26 @@ char dest[100];
 strncpy(dest, origin, sizeof(origin));
 ```
 
-C언어 동적메모리할당(malloc, calloc) 
-https://blog.naver.com/sharonichoya/220501158281 
+
+C언어 동적메모리할당(malloc, calloc)  
+https://blog.naver.com/sharonichoya/220501158281  
 ```
 // 예제
+
     int* pi = (int* p) malloc(sizeof(int) * 10);
     // 정수 10개를 저장할 수 있는 메모리공간(즉 40바이트)를 할당하고 그 첫번째 주소를 int*로 형변환하여 pi에 저장
+    
+    char* pc = (char*)malloc(sizeof(char) * 1);
+    // char 1개 만큼의 사이즈를 동적할당한 후 첫번째 주소를 char*로 형변환하여 pc에 저장
+    
+    typedef struct book
+    {
+      char name[10]; 
+      int isbn;
+      int price;
+      int yeawr;
+      struct book* pb;
+    }BOOK;
+    BOOK* p = (BOOK*)malloc (sizeof(BOOK) * 30)
+    // BOOK 구조체 30개를 저장할 수 있는 메모리공간을 할당한 후 BOOK 구조체 포인터로 변환하여 p에 저장
 ```
