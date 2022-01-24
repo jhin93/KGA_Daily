@@ -501,4 +501,29 @@ https://blog.naver.com/sharonichoya/220501158281
     }BOOK;
     BOOK* p = (BOOK*)malloc (sizeof(BOOK) * 30)
     // BOOK 구조체 30개를 저장할 수 있는 메모리공간을 할당한 후 BOOK 구조체 포인터로 변환하여 p에 저장
+    
+    
+// calloc(DynamicMemExam) 사용예제
+    char cAlphabet, *pAlphabet, *ptr;
+    pAlphabet = (char*)calloc(35, sizeof(char));
+
+    if(pAlphabet == NULL) // 실수를 방지하기 위한 로직
+    {
+        cout << "Dynamic memory allocation fail..." << endl;   
+        exit(1);
+    }
+
+    ptr = pAlphabet; // 주소를 그대로 준 것
+
+    for(cAlphabet = 0x41; cAlphabet < 0x5B; cAlphabet++)
+    {
+        *ptr++ = cAlphabet;
+    }
+    *ptr = '\0'; // 문자열의 마지막은 null이어야해서 \0을 넣음
+
+    cout << "Alphabet String : " << pAlphabet << endl; // *ptr은 null이 들어가서 찍어도 아무것도 안나옴. 그래서 연산에만 사용하고 pAlphabet을 찍음
+    // Alphabet String : ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    
+    free(pAlphabet);
+    return 0;
 ```
