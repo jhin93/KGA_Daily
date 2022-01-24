@@ -447,3 +447,24 @@ string *ptr = &food; // * 앞에 있는 string은 food가 "Pizza"라는 string �
 
 이중포인터  
 포인터를 가리키는 포인터.  
+
+```
+int main()
+{
+    char a;
+    char* b;
+    char** c;
+
+    a = 'z';
+    b = &a;
+    c = &b;
+
+    cout << "**c : " << **c << endl;
+
+    return 0;
+
+    // 결과
+    // **c : z
+}
+```
+
