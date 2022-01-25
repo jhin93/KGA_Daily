@@ -530,3 +530,27 @@ https://blog.naver.com/sharonichoya/220501158281
 
 new와 delete 연산자  
 https://jhnyang.tistory.com/334  
+
+쉬운 포인터사용법
+```
+    string *ptrFood = &food;
+
+    cout << "food : " << food << ", Address of food : " << &food << endl;
+
+    cout << "ptrFood : " << *ptrFood << ", Address of ptrFood : " << ptrFood << endl;
+
+    int nNumber = 1234;
+    int *ptrNumber = &nNumber;
+
+    cout << "nNumber : " << nNumber << ", Address of food : " << &nNumber << endl;
+    cout << "ptrNumber : " << *ptrNumber << ", Address of ptrNumber : " << ptrNumber << endl;
+
+    //결과
+    /*
+        food : Hamburger, Address of food : 0x7ffee1777658
+        ptrFood : Hamburger, Address of ptrFood : 0x7ffee1777658
+        
+        nNumber : 1234, Address of food : 0x7ffee1777640
+        ptrNumber : 1234, Address of ptrNumber : 0x7ffee1777640
+    */
+```
