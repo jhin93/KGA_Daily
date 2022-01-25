@@ -26,6 +26,14 @@ int HowOldAreYou(int nAge)
     return age;
 }
 
+void SwapInt(int& x, int& y)
+{
+    int temp = x;
+
+    x = y;
+    y = temp;
+}
+
 int main()
 {
     HelloWorld("SiEun");
@@ -38,6 +46,12 @@ int main()
     WhereAreYouFrom("James Hetfield", 30, "USA");
 
     cout << "My Age : " << HowOldAreYou(25) << endl;
+
+    cout << "====================\n";
+    int nFirst = 10, nSecond = 30;
+    cout << "Before swap nFirst[" << nFirst << "], nSecond[" << nSecond << "]\n";
+    SwapInt(nFirst, nSecond);
+    cout << "After swap nFirst[" << nFirst << "], nSecond[" << nSecond << "]\n";
 
     return 0;
 }
