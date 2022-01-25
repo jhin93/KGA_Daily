@@ -37,7 +37,7 @@ int main()
         }
     }
 
-    delete[] row_1;
+    delete[] row_1; // new를 사용후 이렇게 delete로 할당을 해제해야 함.
     delete[] row_2;
     delete[] row_3;
     delete[] twod_array;
