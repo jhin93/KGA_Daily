@@ -13,8 +13,9 @@ void HelloWorld(string strName)
 }
 
 // default parameter
-void WhereAreYouFrom(string strCountry = "KOREA")
+void WhereAreYouFrom(string strName, int nAge, string strCountry = "KOREA")
 {
+    cout << "My Name is " << strName << " and My Age is " << nAge << "!!!\n";
     cout << "I came from " << strCountry << "!!!!\n";
 }
 
@@ -26,8 +27,8 @@ int main()
     HelloWorld("TaeHyun");
     HelloFunc();
 
-    WhereAreYouFrom();
-    WhereAreYouFrom("USA");
-    WhereAreYouFrom("France");
+    WhereAreYouFrom("SiEun", 20);
+    WhereAreYouFrom("Hyejin", 24);
+    WhereAreYouFrom("James Hetfield", 30, "USA");
     return 0;
 }
