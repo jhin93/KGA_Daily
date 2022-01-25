@@ -533,15 +533,19 @@ https://jhnyang.tistory.com/334
 
 쉬운 포인터사용법
 ```
-    int nNumber = 1234;
-    int *ptrNumber = &nNumber;
+    int testNum = 100;
+    int* ptrNum = &testNum;
 
-    cout << "nNumber : " << nNumber << ", Address of food : " << &nNumber << endl;
-    cout << "ptrNumber : " << *ptrNumber << ", Address of ptrNumber : " << ptrNumber << endl;
-
+    cout << "testNum : " << testNum << endl;
+    cout << "&testNum : " << &testNum << endl;
+    cout << "ptrNum : " << ptrNum << endl;
+    cout << "*ptrNum : " << *ptrNum << endl;
+    
     //결과
-    /*        
-        nNumber : 1234, Address of food : 0x7ffee1777640
-        ptrNumber : 1234, Address of ptrNumber : 0x7ffee1777640
+    /*
+        testNum : 100
+        &testNum : 0x7ffee2c22668
+        ptrNum : 0x7ffee2c22668
+        *ptrNum : 100
     */
 ```
