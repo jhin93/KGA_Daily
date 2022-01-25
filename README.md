@@ -533,12 +533,6 @@ https://jhnyang.tistory.com/334
 
 쉬운 포인터사용법
 ```
-    string *ptrFood = &food;
-
-    cout << "food : " << food << ", Address of food : " << &food << endl;
-
-    cout << "ptrFood : " << *ptrFood << ", Address of ptrFood : " << ptrFood << endl;
-
     int nNumber = 1234;
     int *ptrNumber = &nNumber;
 
@@ -546,10 +540,7 @@ https://jhnyang.tistory.com/334
     cout << "ptrNumber : " << *ptrNumber << ", Address of ptrNumber : " << ptrNumber << endl;
 
     //결과
-    /*
-        food : Hamburger, Address of food : 0x7ffee1777658
-        ptrFood : Hamburger, Address of ptrFood : 0x7ffee1777658
-        
+    /*        
         nNumber : 1234, Address of food : 0x7ffee1777640
         ptrNumber : 1234, Address of ptrNumber : 0x7ffee1777640
     */
