@@ -19,7 +19,7 @@ int main()
     // 2nd.
     int row = 3, col = 5;
 
-    int* row_1 = new int[col] {1, 2, 3, 4, 5}; // window
+    int* row_1 = new int[col] {1, 2, 3, 4, 5};
     int* row_2 = new int[col] {6, 7, 8, 9, 10};
     int* row_3 = new int[col] {11, 12, 13, 14, 15};
     int** twod_array = new int* [row] {row_1, row_2, row_3};
