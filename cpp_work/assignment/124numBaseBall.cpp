@@ -23,7 +23,7 @@ int main()
         questArr[i] = dis(gen); // 난수 삽입
         int *ranNum = &questArr[i];
         cout << "각 자릿수" << *ranNum << endl;
-        cout << "각 자릿수마다의 주소" << ranNum << endl;
+        cout << "각 자릿수 주소" << ranNum << endl;
     }
     
     // 사용자 입력수.
@@ -33,19 +33,26 @@ int main()
     {
         cout << "3자리 수를 입력하세요 : ";
         cin >> inputNum; // 입력수 받기
+        int inputArr[3]; // 입력수 배열 정의
         if(inputNum < 100 || inputNum > 999) // 3자리가 아니어도, 3자리가 넘어가도 얼럿 메시지 출력
         {
             cout << "3자리 수를 입력해주세요!" << endl;
         } else {
             // 입력수를 배열화하기.
             // https://stackoverflow.com/questions/1860983/convert-integer-to-array/1861022
-            
+            for(int i = 2; i >= 0; i --)
+            {
+                inputArr[i] = inputNum % 10;
+                inputNum /= 10;
+                // cout << "test : " << inputArr[i] << " i : " << i << endl;
+            }
             break;
         }
     }
 
     // 맞추면 증가하는 strike 변수, ball 변수
     cout << "input number is : " << inputNum << endl;
+
     int strike; // 맞으면 증가하는 strike 변수
     int ball; // 맞으면 증가하는 ball 변수
 
