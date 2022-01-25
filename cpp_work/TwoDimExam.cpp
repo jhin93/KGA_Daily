@@ -23,6 +23,11 @@ int main()
     int* row_2 = new int[col] {6, 7, 8, 9, 10};
     int* row_3 = new int[col] {11, 12, 13, 14, 15};
     int** twod_array = new int* [row] {row_1, row_2, row_3};
+    // 윗 문장을 풀어서 설명하면 아래와 같다.
+    // int* twod_array[3];
+    // twod_array[0] = row_1;
+    // twod_array[1] = row_2;
+    // twod_array[2] = row_3;
 
     for(int i = 0; i < row; i++)
     {
