@@ -21,7 +21,7 @@ struct ExamSize1
 int main(int argc, char* argv[])
 {
     cout << "Structure ExamSize's each Member variable size : " << endl;
-    cout << "char : " << sizeof(char) << ", " << sizeof(int) << ", " << sizeof(double) << endl;
+    cout << "char : " << sizeof(char) << ", int : " << sizeof(int) << ", double : " << sizeof(double) << endl;
     
     cout << "Size of structure : " << sizeof(ExamSize) << endl;
     cout << "Size of structure : " << sizeof(ExamSize1) << endl;
