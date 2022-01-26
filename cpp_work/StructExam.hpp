@@ -5,3 +5,5 @@ struct Books
     char subject[100];
     int book_id;
 };
+
+void PrintBooksInformation(Books* book); // 함수 프로토타입 선언

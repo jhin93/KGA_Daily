@@ -3,8 +3,6 @@
 
 using namespace std;
 
-void PrintBooksInformation(Books* book); // 함수 프로토타입 선언
-
 int main()
 {
     // struct Books book1;
