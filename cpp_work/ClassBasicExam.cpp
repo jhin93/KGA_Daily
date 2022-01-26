@@ -4,7 +4,7 @@
 using namespace std;
 
 // 클래스 선언
-class Books
+class CBooks // class라는걸 명시하기 위해 C를 붙임
 {
     public:
         string m_Title;
@@ -12,18 +12,28 @@ class Books
         string m_Subject;
         int m_nBookId;
 
-        void PrintBookInforamtion()
-        {
-            cout << "Book title : " << m_Title << endl;
-            cout << "Book Author : " << m_Author << endl;
-            cout << "Book Subject : " << m_Subject << endl;
-            cout << "Book BookID : " << m_nBookId << endl;
-        }
+        // void PrintBookInforamtion() // Inside class definition
+        // {
+        //     cout << "Book title : " << m_Title << endl;
+        //     cout << "Book Author : " << m_Author << endl;
+        //     cout << "Book Subject : " << m_Subject << endl;
+        //     cout << "Book BookID : " << m_nBookId << endl;
+        // }
+
+        void PrintBookInforamtion(); // Outside class definition
 };
+
+void CBooks::PrintBookInforamtion() // Outside class definition
+{
+    cout << "Book title : " << m_Title << endl;
+    cout << "Book Author : " << m_Author << endl;
+    cout << "Book Subject : " << m_Subject << endl;
+    cout << "Book BookID : " << m_nBookId << endl;
+}
 
 int main()
 {
-    Books booksObj; // stack에 선언. 함수가 끝나면 사라짐
+    CBooks booksObj; // stack에 선언. 함수가 끝나면 사라짐
     booksObj.m_Title = "Learning C++ 21 days";
     booksObj.m_Author = "Sieun Lee";
     booksObj.m_Subject = "Learning C++ Programming";
@@ -31,7 +41,7 @@ int main()
 
     booksObj.PrintBookInforamtion(); 
 
-    Books cppBook; // stack에 선언. 함수가 끝나면 사라짐
+    CBooks cppBook; // stack에 선언. 함수가 끝나면 사라짐
     cppBook.m_Title = "Learning C++ in Hell";
     cppBook.m_Author = "Hades";
     cppBook.m_Subject = "Learning C++ Programming in Olympus";
