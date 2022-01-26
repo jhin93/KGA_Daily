@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "ClassBasicExam.hpp"
+#include "Car.cpp"
 
 int main()
 {
@@ -19,6 +20,12 @@ int main()
     cppBook.m_nBookId = 20210225;
 
     cppBook.PrintBookInforamtion(); 
+
+    CCar carObj;
+    carObj.m_strCompany = "BMW";
+    carObj.m_strCarName = "BMW X5";
+    carObj.m_strCarNo = "NY 3456";
+    carObj.PrintCarInformation();
 
     return 0;
 }
