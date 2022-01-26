@@ -6,11 +6,19 @@ using namespace std;
 // 클래스 선언
 class Books
 {
-public:
-    string m_Title;
-    string m_Author;
-    string m_Subject;
-    int m_nBookId;
+    public:
+        string m_Title;
+        string m_Author;
+        string m_Subject;
+        int m_nBookId;
+
+        void PrintBookInforamtion()
+        {
+            cout << "Book title : " << m_Title << endl;
+            cout << "Book Author : " << m_Author << endl;
+            cout << "Book Subject : " << m_Subject << endl;
+            cout << "Book BookID : " << m_nBookId << endl;
+        }
 };
 
 int main()
@@ -21,10 +29,7 @@ int main()
     booksObj.m_Subject = "Learning C++ Programming";
     booksObj.m_nBookId = 19980225;
 
-    cout << "Book title : " << booksObj.m_Title << endl;
-    cout << "Book Author : " << booksObj.m_Author << endl;
-    cout << "Book Subject : " << booksObj.m_Subject << endl;
-    cout << "Book BookID : " << booksObj.m_nBookId << endl;
+    booksObj.PrintBookInforamtion(); 
 
     return 0;
 }
