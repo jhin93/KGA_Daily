@@ -2,23 +2,31 @@ using namespace std;
 
 namespace BooksInfo
 {
-    struct Books
+    // struct Books
+    // {
+    //     char title[50];
+    //     char author[50];
+    //     char subject[100];
+    //     int book_id;
+    // };
+
+    typedef struct
     {
         char title[50];
         char author[50];
         char subject[100];
         int book_id;
-    };
+    } Books;
 
-    void PrintBooksInformation(struct Books* book)
+    void PrintBooksInformation(Books* book)
     {
         cout << "book title : " << book -> title << ", author : " << book -> author << ", subject : " << book -> subject << ", book_id : " << book -> book_id << endl;
     }
 
     // struct 내부에 함수 작성
-    struct Books SetBooksInformation(char* title, char* author, char* subject, int bookId)
+    Books SetBooksInformation(char* title, char* author, char* subject, int bookId)
     {
-        struct Books book;
+        Books book;
 
         strcpy(book.title, title);
         strcpy(book.author, author);

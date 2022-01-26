@@ -29,7 +29,7 @@ int main()
     book2.book_id = 44423;
     PrintBooksInformation(&book2); // 주소값을 넘겨줌
 
-    struct Books book3 = SetBooksInformation((char*)"Welcome to Hell in C++", (char*)"Bjane stroustoup", (char*)"Hell in the C++", 3456);
+    Books book3 = SetBooksInformation((char*)"Welcome to Hell in C++", (char*)"Bjane stroustoup", (char*)"Hell in the C++", 3456);
     PrintBooksInformation(&book3);
     delete book1;
     // delete book2;
