@@ -12,6 +12,19 @@ namespace BooksInfo
 
     void PrintBooksInformation(struct Books* book)
     {
-        cout << "book title : " << book -> title << ", author : " << book -> author << ", subject : " << book -> subject << ", book -> book_id : " << book -> book_id << endl;
+        cout << "book title : " << book -> title << ", author : " << book -> author << ", subject : " << book -> subject << ", book_id : " << book -> book_id << endl;
+    }
+
+    // struct 내부에 함수 작성
+    struct Books SetBooksInformation(char* title, char* author, char* subject, int bookId)
+    {
+        struct Books book;
+
+        strcpy(book.title, title);
+        strcpy(book.author, author);
+        strcpy(book.subject, subject);
+        book.book_id = bookId;
+
+        return book;
     }
 }
