@@ -31,5 +31,13 @@ int main()
 
     booksObj.PrintBookInforamtion(); 
 
+    Books cppBook; // stack에 선언. 함수가 끝나면 사라짐
+    cppBook.m_Title = "Learning C++ in Hell";
+    cppBook.m_Author = "Hades";
+    cppBook.m_Subject = "Learning C++ Programming in Olympus";
+    cppBook.m_nBookId = 20210225;
+
+    cppBook.PrintBookInforamtion(); 
+
     return 0;
 }
