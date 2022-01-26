@@ -37,6 +37,6 @@ int main()
     newfruit -> fPrice = inputfPrice;
     // 가격 출력
     PrintFruitInfo(newfruit);
-
+    delete newfruit;
     return  0;
 }
