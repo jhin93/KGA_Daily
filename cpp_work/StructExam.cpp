@@ -10,6 +10,7 @@ struct Books
     int book_id;
 };
 
+void PrintBooksInformation(struct Books book); // 함수 프로토타입 선언
 
 int main()
 {
@@ -20,14 +21,21 @@ int main()
     strcpy(book1.author, "Sieun Lee");
     strcpy(book1.subject, "C++ Programming in Liquor");
     book1.book_id = 12423;
+    PrintBooksInformation(book1);
 
     strcpy(book2.title, "Learn C++ Programming 21 days");
     strcpy(book2.author, "Hyein Lee");
     strcpy(book2.subject, "C++ Programming in Liquor");
     book2.book_id = 44423;
+    PrintBooksInformation(book2);
 
-    cout << "book1 title : " << book1.title << ", author : " << book1.author << ", subject : " << book1.subject << ", book1.book_id : " << book1.book_id << endl;
-    cout << "book2 title : " << book2.title << ", author : " << book2.author << ", subject : " << book2.subject << ", book2.book_id : " << book2.book_id << endl;
+    // cout << "book1 title : " << book1.title << ", author : " << book1.author << ", subject : " << book1.subject << ", book1.book_id : " << book1.book_id << endl;
+    // cout << "book2 title : " << book2.title << ", author : " << book2.author << ", subject : " << book2.subject << ", book2.book_id : " << book2.book_id << endl;
 
     return 0;
+}
+
+void PrintBooksInformation(struct Books book)
+{
+    cout << "book title : " << book.title << ", author : " << book.author << ", subject : " << book.subject << ", book.book_id : " << book.book_id << endl;
 }
