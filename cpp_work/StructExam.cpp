@@ -1,7 +1,8 @@
 #include <iostream>
 #include "StructExam.hpp"
 
-using namespace std;
+// using namespace std; // namespace에 std 있으니 여기에는 없어야 됨
+using namespace BooksInfo;
 
 int main()
 {
@@ -12,7 +13,7 @@ int main()
     // Books book2;
 
     // 포인터로 사용가능. 동적할당.
-    Books* book1 = new Books;
+    BooksInfo::Books* book1 = new BooksInfo::Books;
     Books* book2 = new Books;
 
     strcpy(book1 -> title, "Learn C++ Programming 21 days");
@@ -34,9 +35,4 @@ int main()
     delete book2;
 
     return 0;
-}
-
-void PrintBooksInformation(struct Books* book)
-{
-    cout << "book title : " << book -> title << ", author : " << book -> author << ", subject : " << book -> subject << ", book -> book_id : " << book -> book_id << endl;
 }
