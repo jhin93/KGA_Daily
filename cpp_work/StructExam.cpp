@@ -15,7 +15,7 @@ int main()
     // 포인터로 사용가능. 동적할당.
     BooksInfo::Books* book1 = new BooksInfo::Books; // new로 heap에 할당. delete할때 heap에서 삭제.
     // 포인터 사용 X. 동적할당 X.
-    Books book2; // 메모리는 스택에 할당. 메인함수의 로컬변수라서 메인함수가 끝나면 사라짐(pop)
+    Books book2; // 메모리를 스택에 할당. 메인함수의 로컬변수라서 메인함수가 끝나면 사라짐(pop)
 
     strcpy(book1 -> title, "Learn C++ Programming 21 days");
     strcpy(book1 -> author, "Sieun Lee");
