@@ -28,9 +28,6 @@ int main()
     book2.book_id = 44423;
     PrintBooksInformation(&book2); // 주소값을 넘겨줌
 
-    // cout << "book1 title : " << book1.title << ", author : " << book1.author << ", subject : " << book1.subject << ", book1.book_id : " << book1.book_id << endl;
-    // cout << "book2 title : " << book2.title << ", author : " << book2.author << ", subject : " << book2.subject << ", book2.book_id : " << book2.book_id << endl;
-
     delete book1;
     // delete book2;
 
