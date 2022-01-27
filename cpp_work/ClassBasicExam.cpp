@@ -27,5 +27,7 @@ int main()
     carObj.m_strCarNo = "NY 3456";
     carObj.PrintCarInformation();
 
+    cout << carObj.m_strCarName  << " : Maximum Speed : " << carObj.CarSpeed(220) << endl;
+
     return 0;
 }
