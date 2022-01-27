@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class CCar {
+class CCar { // 클래스는 설계도
     public:
         CCar(); // Default constructor. 객체 생성자 선언
         CCar(string brand, string name, int year);
@@ -13,11 +13,11 @@ class CCar {
         int m_nYear;
 };
 
-CCar::CCar()
+CCar::CCar() // 외부에도 선언한번 해주기
 {
 }
 
-CCar::CCar(string brand, string name, int year)
+CCar::CCar(string brand, string name, int year) // 외부 선언 방식
 {    
     m_strBrand = brand;
     m_strName = name;
