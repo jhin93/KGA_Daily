@@ -21,6 +21,7 @@ void CBox::SetHeight(double height)
 }
 
 
+
 CBox CBox::operator+(const CBox& b) // '+' 를 재정의 한 것.
 {
     CBox box;
