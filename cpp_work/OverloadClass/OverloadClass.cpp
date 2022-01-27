@@ -1,7 +1,7 @@
-#include <iostream>
+// #include <iostream>
 #include "Print.hpp"
 
-using namespace std;
+// using namespace std;
 
 int main()
 {
@@ -10,6 +10,8 @@ int main()
     printData.print(4);
     printData.print(3.1415);
     printData.print((char*)"Hello World!!!");
+
+    cout << "Hello C++\n" << endl;
 
     return 0;
 }
