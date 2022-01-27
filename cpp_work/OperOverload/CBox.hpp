@@ -16,6 +16,7 @@ class CBox
         void SetBreath(double breath);
         void SetHeight(double height);
         CBox operator+(const CBox&);
+        CBox operator*(const CBox&);
 
     private:
         double m_length;

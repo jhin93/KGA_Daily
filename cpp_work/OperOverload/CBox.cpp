@@ -30,3 +30,13 @@ CBox CBox::operator+(const CBox& b) // '+' 를 재정의 한 것.
 
     return box;
 }
+
+CBox CBox::operator*(const CBox& b) // '*' 를 재정의 한 것.
+{
+    CBox box;
+    box.m_length = this -> m_length * b.m_length;
+    box.m_breath = this -> m_breath * b.m_breath;
+    box.m_height = this -> m_height * b.m_height; 
+
+    return box;
+}
