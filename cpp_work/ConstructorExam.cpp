@@ -3,26 +3,21 @@
 
 using namespace std;
 
-class CCar { // 클래스는 설계도
+class CCar {
     public:
-        CCar(); // Default constructor. 객체 생성자 선언
-        CCar(string brand, string name, int year);
+    // 객체 생성자는 빈 것이라도 선언해놓는 것을 버릇들여놓을 것
+        CCar() {}; // Default constructor. 객체 생성자 선언
+        CCar(string brand, string name, int year)
+        {
+            m_strBrand = brand;
+            m_strName = name;
+            m_nYear = year;
+        }
         // 속성값 선언
         string m_strBrand; 
         string m_strName;
         int m_nYear;
 };
-
-CCar::CCar() // 외부에도 선언한번 해주기
-{
-}
-
-CCar::CCar(string brand, string name, int year) // 외부 선언 방식
-{    
-    m_strBrand = brand;
-    m_strName = name;
-    m_nYear = year;       
-}
 
 int main()
 {
