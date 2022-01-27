@@ -6,6 +6,7 @@
 int main()
 {
     CBooks booksObj; // stack에 선언. 함수가 끝나면 사라짐
+    booksObj.PrintBookInforamtion(); // default값(헤더파일의 constructor)이 출력됨
     booksObj.m_Title = "Learning C++ 21 days";
     booksObj.m_Author = "Sieun Lee";
     booksObj.m_Subject = "Learning C++ Programming";
