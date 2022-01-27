@@ -13,4 +13,5 @@ class CLine
         double GetLength();
     private:
         double m_dLength;
+        char* m_pstrLineName;
 };
