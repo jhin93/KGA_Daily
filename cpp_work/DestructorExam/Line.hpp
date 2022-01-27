@@ -9,7 +9,7 @@ class CLine
         CLine(); // 선언
         ~CLine(); // 객체 파괴자
 
-        void SetLength(double len);
+        void SetLength(double); // 인자 이름을 여기서 정의하지 않아도 됨. 구현부에서 정의하면 됨.
         double GetLength();
     private:
         double m_dLength;
