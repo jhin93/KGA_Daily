@@ -549,3 +549,6 @@ https://jhnyang.tistory.com/334
         *ptrNum : 100
     */
 ```
+
+C++ 에서의 public, private, protected.  
+https://hwan-shell.tistory.com/25  
