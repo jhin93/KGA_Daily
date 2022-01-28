@@ -29,9 +29,26 @@ class Cat : public Animal
 
 int main()
 {
+    Animal* animal;
+
     Dog myDog;
     myDog.Cry();
     Cat myCat;
     myCat.Cry();
+    // 결과
+    /*
+    Bow Wow
+    Meow
+    */
 
+    // 추상화
+    animal = &myDog;
+    animal -> Cry();
+    animal = &myCat;
+    animal -> Cry();
+    // 결과
+    /*
+    Bow Wow
+    Meow
+    */
 }
