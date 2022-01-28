@@ -32,7 +32,7 @@ int main()
     smallBox->SetSmallWidth(5.0);
     cout << "Width of small box : " << smallBox->GetSmallWidth() << endl;
 
-    // smallBox->m_width : public이기에 그냥 접근하면 안됨. public에 있는 함수(SetSmallWidth, GetSmallWidth)로 접근해야 함
+    // smallBox->m_width : protected라서 그냥 접근하면 안됨. public에 있는 함수(SetSmallWidth, GetSmallWidth)로 접근해야 함
 
 
     delete smallBox;
