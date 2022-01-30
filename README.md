@@ -597,7 +597,7 @@ int main()
 }
 ```
 
-public, private.  
+public, private  
 
 class : 클래스 내에 선언되는 것들은 기본적으로 다 private이고, public 내부에 선언된 것들이 public이다.
 구조체, 함수 : 기본적으로 public이다.
