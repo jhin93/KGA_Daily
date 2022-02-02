@@ -599,8 +599,8 @@ int main()
 
 public, private  
 
-class : 클래스 내에 선언되는 것들은 기본적으로 다 private이고, public 내부에 선언된 것들이 public이다.
-구조체, 함수 : 기본적으로 public이다.
+class : 클래스 내에 선언되는 것들은 기본적으로 다 private이고, public 내부에 선언된 것들이 public이다.  
+구조체, 함수 : 기본적으로 public이다.  
 ```
     private: - 이 지시자 없이 그냥 선언해도 private로 선언된다.
         int m_nCurrentPage;
