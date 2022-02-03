@@ -44,11 +44,13 @@ int main()
     
     try
     {
-        throw DefException();
+        // throw DefException();
+        int* nArr = new int[1000]; // 에러가 안남.
+        delete nArr; // 사용후 메모리 삭제
     }
     catch (exception& e)
     {
-        cout << "MyException Caught" << endl;
+        cout << "Standard Exception Caught" << endl;
         cout << e.what() << endl;
     }
     
