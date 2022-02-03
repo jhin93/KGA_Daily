@@ -17,7 +17,7 @@ int main()
     
     while(getline(readFile, readString))
     {
-        cout << readString;
+        cout << readString << endl; // endl을 사용하면 줄단위로 읽어온다.
     }
 
     return 0;
