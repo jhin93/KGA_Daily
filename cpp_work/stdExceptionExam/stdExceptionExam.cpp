@@ -9,11 +9,19 @@ void ExceptHandler(){
     exit(-1); // 프로그램 강제종료
 };
 
-struct MyException : public exception
+// struct MyException : public exception
+// {
+//     const char* what() const throw()
+//     {
+//         return "Defining new exception";
+//     }
+// };
+
+class DefException : public exception
 {
-    const char* what() const throw()
+    virtual const char* what() const throw()
     {
-        return "Defining new exception";
+        return "Defining new class exception";
     }
 };
 
@@ -36,16 +44,12 @@ int main()
     
     try
     {
-        throw MyException();
+        throw DefException();
     }
-    catch (MyException& e)
+    catch (exception& e)
     {
         cout << "MyException Caught" << endl;
         cout << e.what() << endl;
-    }
-    catch(const std::exception& e)
-    {
-        //other error
     }
     
     cout << "Hello world" << endl; 
