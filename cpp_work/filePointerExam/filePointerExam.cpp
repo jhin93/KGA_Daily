@@ -19,4 +19,8 @@ int main()
     cout << "file [ " << fileName << " ] size : " << (lEnd - lFirst) << endl;
 
     return 0;
+
+    // 결과
+    //  file [ simplefile.txt ] size : 393
+    // 실제 디렉토리에서 파일을 정보 가져오기로 확인해보면 사이즈가 동일한 것을 확인할 수 있다.
 }
