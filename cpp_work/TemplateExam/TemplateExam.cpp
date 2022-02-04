@@ -46,10 +46,10 @@ int main()
 template <typename T> // typename T는 템플릿이라는 뜻
 void Swap(T& a, T& b)
 {
-    T temp;
-    temp = a;
-    a = b;
-    b = temp;
+    // T temp;
+    // temp = a;
+    // a = b;
+    // b = temp;
 }
 
 template <typename T>
