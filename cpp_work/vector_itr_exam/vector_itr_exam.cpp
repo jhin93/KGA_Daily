@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//템플릿 프로토타입
+//프로토타입 선언
 template <typename T>
 void PrintVector(vector<T> vec) // vec로 만들고 어떤 타입이든 참조(T)
 {
@@ -13,7 +13,7 @@ void PrintVector(vector<T> vec) // vec로 만들고 어떤 타입이든 참조(T
 
 int main()
 {
-    vector<int> vec;
+    vector<int> vec; // integer로 정의
     vec.push_back(1);
     vec.push_back(2);
     vec.push_back(3);
