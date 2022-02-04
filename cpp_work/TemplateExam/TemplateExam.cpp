@@ -33,6 +33,12 @@ int main()
     return 0;
 }
 
+// 특정값을 swap하고 싶지 않을 때 ex double을 스왑하고 싶지 않을 때.
+template <> void Swap<double>(double&, double&)
+{
+    // Do not swapping double number
+}
+
 template <typename T> // typename T는 템플릿이라는 뜻
 void Swap(T& a, T& b)
 {
