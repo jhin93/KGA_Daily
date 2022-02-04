@@ -33,9 +33,20 @@ int main()
 
     PrintVector(vec);
     vector<int>::const_iterator citr = vec.begin() + 2;
+    cout << "=====================" << endl;
 
     // cannot assign to a variable that is const_iterator
     // *citr = 70; // const_iterator는 재할당이 불가능.
+
+    cout << "Reverse Vector Print" << endl;
+    vector<int>::reverse_iterator ritr = vec.rbegin();
+    cout << "[";
+    for(; ritr != vec.rend(); ritr ++)
+    {
+      cout << *ritr << " ";
+    }
+    cout << "]";
+
 
     return 0;
 }
