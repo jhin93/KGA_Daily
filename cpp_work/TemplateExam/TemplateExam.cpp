@@ -37,7 +37,9 @@ int main()
     Swap(strA, strB);
     cout << "after swap => " << "strA : " << strA << ", strB : " << strB << endl;
 
-    cout << "Max value : " << Max(c, d) << endl;
+    cout << "int Max value : " << Max(c, d) << endl;
+    cout << "double Max value : " << Max(x, y) << endl;
+    cout << "string Max value : " << Max(strA, strB) << endl;
 
     return 0;
 }
