@@ -67,6 +67,10 @@
         "deque": "cpp",
         "iomanip": "cpp",
         "stack": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "__tree": "cpp",
+        "filesystem": "cpp",
+        "map": "cpp",
+        "set": "cpp"
     }
 }
