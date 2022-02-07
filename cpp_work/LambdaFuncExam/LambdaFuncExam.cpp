@@ -15,6 +15,13 @@ void PrintVector(T begin, T end)
     }
     cout << endl;
 }
+// 람다 함수의 정의
+// [capture list] (받는 인자) -> 리턴 타입 {함수 본체}
+// int i 를 받고, bool을 반환하는 람다함수를 정의한 것. 반환 타입을 생략한다면 컴파일러가 알아서 리턴타입을 추측해준다.
+// ex) [](int i) -> bool {return i % 2 == 1;}
+
+// 리턴타입을 생략할 경우.
+// [capture list](받는 인자){함수 본체}
 
 
 int main()
@@ -34,8 +41,11 @@ int main()
     PrintVector(vec.begin(), vec.end());
 
     cout << "delete odd number in vector" << endl;
+    // auto func = [](int i) {return i % 2 == 1;};
+    // func(4)
     vec.erase(remove_if(vec.begin(), vec.end(), 
-        [](int i) -> bool {return i % 2 == 1;} // 람다함수
+        // [](int i) -> bool {return i % 2 == 1;} // 람다함수
+        [](int i) {return i % 2 == 1;} // bool 타입이기에 이렇게 축약 가능.
     ), vec.end()); // remove_if
 
     PrintVector(vec.begin(), vec.end());
