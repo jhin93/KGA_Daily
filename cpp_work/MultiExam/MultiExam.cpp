@@ -50,5 +50,13 @@ int main()
     PrintMultiMap(mm);
     cout << "==========================\n";
     cout << mm.find(1)->second << endl; // key값에 대응하는 value 값을 출력해라.
+
+    cout << "++++++++++++++++++++++++++\n";
+    auto range = mm.equal_range(1); // 키값 1 에 해당하는 밸류값을 전부 출력한다.
+    for(auto itr = range.first; itr != range.second; ++itr)
+    {
+        cout << itr -> first << " : " << itr -> second << " " << endl;
+    }
+
     return 0;
 }
