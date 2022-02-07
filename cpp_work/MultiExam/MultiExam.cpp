@@ -1,16 +1,27 @@
 #include <iostream>
 #include <set>
 #include <string>
-
+#include <map>
 
 using namespace std;
 
+//multiset
 template <typename T>
 void printMultiSet(const multiset<T>& ms)
 {
     for(const auto& ele : ms)
     {
         cout << ele << endl;
+    }
+}
+
+//multimap
+template <typename K, typename V>
+void PrintMultiMap(const multimap<K, V>& mm)
+{
+    for(const auto& kv : mm)
+    {
+        cout << kv.first << ", " << kv.second << endl; // first key second value
     }
 }
 
@@ -26,5 +37,18 @@ int main()
 
     printMultiSet(ms);
 
+    cout << "===========================";
+
+    multimap<int, string> mm; // key는 int, value는 string
+    mm.insert(make_pair(1, "Hello World"));
+    mm.insert(make_pair(1, "Good morning C++"));
+    mm.insert(make_pair(2, "Chau React"));
+    mm.insert(make_pair(2, "Aha Javascript"));
+    mm.insert(make_pair(2, "Bye nodejs"));
+    mm.insert(make_pair(2, "bye World"));
+
+    PrintMultiMap(mm);
+    cout << "==========================\n";
+    cout << mm.find(1)->second << endl; // key값에 대응하는 value 값을 출력해라.
     return 0;
 }
