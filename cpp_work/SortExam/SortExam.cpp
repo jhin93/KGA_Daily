@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <functional>
 
 using namespace std;
 
@@ -18,8 +19,16 @@ void PrintVector(T begin, T end)
 class IntCompare
 {
     public:
-        bool operator()(const int& a, const int& b) const {return (a > b); } // 참인 것을 return 한다. 그래서 begin이 end보다 큰 것이 리턴되고 그래서 내림차순으로 정렬됨.
+        bool operator()(const int& a, const int& b) const {return (a > b);} // 참인 것을 return 한다. 그래서 begin이 end보다 큰 것이 리턴되고 그래서 내림차순으로 정렬됨.
 };
+
+// 모든 타입을 비교, 정렬할 수 있도록 하려면
+// template <class T1, class T2>
+// class GreaterComp
+// {
+//     public:
+//         bool operator()(const T1& a, const T2& b) const {return (a > b);}
+// };
 
 int main () 
 {
@@ -35,16 +44,13 @@ int main ()
     cout << "Before sorting\n";
     PrintVector(vec.begin(), vec.end());
     
-    sort(vec.begin(), vec.end(), IntCompare()); // sort의 3번째 인자는 조건. 결과는 반대로 정렬된다.
+    // sort(vec.begin(), vec.end(), IntCompare()); // sort의 3번째 인자는 조건. 결과는 반대로 정렬된다.
+    // sort(vec.begin(), vec.end(), GreaterComp<int, int>()); 
+    // #include functional 해야 함.
+    // sort(vec.begin(), vec.end(), greater<int>());  // greater : 오름차순 정렬 
+    sort(vec.begin(), vec.end(), less<int>()); // less : 내림차순 정렬 
     cout << "After sorting\n";
     PrintVector(vec.begin(), vec.end());
 
-    // 결과
-    /*
-        Before sorting
-        5 2 3 1 4 6 7 8 
-        After sorting
-        1 2 3 4 5 6 7 8 
-    */
     return 0;
 }
