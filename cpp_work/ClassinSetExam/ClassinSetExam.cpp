@@ -29,7 +29,7 @@ public:
 
 // if endif로 잠시 막기
 // #if 0
-//    bool operator<(const Todo& t) const // < 가 있어야 컴파일러가 재대로 작동한다.
+//    bool operator<(const Todo& t) const // < 가 있어야 컴파일러가 재대로 작동한다. operator < 오름차순, <를 반대로 하면 내림차순. 수업자료 참고할 것
 //    {
 //       if (priority == t.priority)
 //       {

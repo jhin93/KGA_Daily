@@ -15,6 +15,12 @@ void PrintVector(T begin, T end)
     cout << endl;
 }
 
+class IntCompare
+{
+    public:
+        bool operator()(const int& a, const int& b) const {return (a > b); } // 참인 것을 return 한다. 그래서 begin이 end보다 큰 것이 리턴되고 그래서 내림차순으로 정렬됨.
+};
+
 int main () 
 {
     vector<int> vec;
@@ -29,7 +35,7 @@ int main ()
     cout << "Before sorting\n";
     PrintVector(vec.begin(), vec.end());
     
-    sort(vec.begin(), vec.end());
+    sort(vec.begin(), vec.end(), IntCompare()); // sort의 3번째 인자는 조건. 결과는 반대로 정렬된다.
     cout << "After sorting\n";
     PrintVector(vec.begin(), vec.end());
 
