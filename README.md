@@ -619,3 +619,6 @@ class : 클래스 내에 선언되는 것들은 기본적으로 다 private이�
 
         const CBook& ThickerBook(const CBook&);
 ```
+
+react-slick(캐러셀)  
+https://react-slick.neostack.com/  
