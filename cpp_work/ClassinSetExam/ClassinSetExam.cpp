@@ -27,14 +27,14 @@ public:
    {
    }
 
-   bool operator<(const Todo& t) const
+   bool operator<(const Todo& t) const // < 가 있어야 컴파일러가 재대로 작동한다.
    {
       if (priority == t.priority)
       {
-         return jobDesc < t.jobDesc;
+         return jobDesc < t.jobDesc; // 중요도가 같다면 job_desc 비교
       }
 
-      return priority > t.priority;
+      return priority > t.priority; // 중요도가 다르면 중요도 값이 높은 것이 위로 가게 하였다.
    }
 
    friend ostream& operator<<(ostream& o, const Todo& td);
