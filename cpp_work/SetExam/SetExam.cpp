@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <set>
+#include <string>
 
 using namespace std;
 
@@ -50,6 +51,10 @@ int main()
     {
         cout << "No" << endl;
     }
+
+
+    string food = "hamburger";
+    string *ptr = &food;
 
     return 0;
 }
