@@ -52,9 +52,17 @@ int main()
         cout << "No" << endl;
     }
 
+    set<int> nSet; // integer로 정의
+    nSet.insert(10);
+    nSet.insert(20);
+    nSet.insert(10);
+    nSet.insert(30);
+    nSet.insert(40);
+    cout << "nSet : ";
+    PrintSetElement(nSet);
+    // 결과
+    // nSet : [10 20 30 40 ]. 트리에서 중복은 제거된다.
 
-    string food = "hamburger";
-    string *ptr = &food;
 
     return 0;
 }
