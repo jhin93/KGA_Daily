@@ -31,6 +31,7 @@ int main()
     PrintMapElement(pitcherList);
 
     cout << "Chanho's ERA : " << pitcherList["Chanho"] << endl;
+    cout << "ChooChoo's ERA : " << pitcherList["ChooChoo"] << endl;
 
     return 0;
 }
