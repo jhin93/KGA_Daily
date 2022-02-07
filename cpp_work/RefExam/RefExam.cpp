@@ -2,7 +2,7 @@
 #include <string>
 
 using namespace std;
-void abc(int x) // 여기서 &x를 x로 변경한다면, cout의 결과는 200이 나온다. 인자의 기존 주소(&x)가 아닌새로운 주소(메모리)에 값을 할당해버리기 때문
+void abc(int &x) // 여기서 &x를 x로 변경한다면, cout의 결과는 200이 나온다. 인자의 기존 주소(&x)가 아닌 새로운 주소(메모리)에 값을 할당해버리기 때문
 {
     x = 100;
 }
@@ -12,7 +12,6 @@ int main()
     string food = "Pizza";
     string &meal = food; // 주소값을 준 것. meal은 food를 바라보는 새로운 방식(같은 주소)
     meal = "Hamburger"; // 같은 주소(meal과 food의 주소)에 같은 데이터를 넣었기에 food 값도 변경.
-    // meal = "Hamburger"; // 같은 주소(meal과 food의 주소)에 같은 데이터를 넣었기에 food 값도 변경.
 
     cout << food << ", Address of food : " << &food << endl;
     cout << meal << ", Address of meal : " << &meal << endl; // 같은 주소가 나옴
