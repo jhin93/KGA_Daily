@@ -28,7 +28,7 @@ int main()
     vec.push_back(8);
     cout << "Before sorting\n";
     PrintVector(vec.begin(), vec.end());
-
+    // partial_sort 함수는 일부만 정렬하는 함수. start, middle, end 3개를 인자로 받고, start 에서 middle까지 작은 순서대로 정렬시킨다.
     partial_sort(vec.begin(), vec.begin() + 3, vec.end()); // 인수(처음, 중간, 마지막) 으로 범위를 제한한다. partial로 sort 하는거니까
     cout << "After sorting\n";
     PrintVector(vec.begin(), vec.end());
