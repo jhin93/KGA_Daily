@@ -640,5 +640,9 @@ for문 활용
 
 <img width="391" alt="스크린샷 2022-02-10 오전 9 34 40" src="https://user-images.githubusercontent.com/55314087/153314244-5f24a84e-b7b6-4c98-9462-bb2bd4ad935a.png">
 
+명령어치환(``사용)
+
+<img width="308" alt="스크린샷 2022-02-10 오전 9 49 47" src="https://user-images.githubusercontent.com/55314087/153315639-6a72af19-2c35-4c68-8a6f-d0374cd0a31a.png">
+<img width="224" alt="스크린샷 2022-02-10 오전 9 49 58" src="https://user-images.githubusercontent.com/55314087/153315658-2107ccf2-86ec-4ddf-9273-bff277c41dea.png">
 
 
