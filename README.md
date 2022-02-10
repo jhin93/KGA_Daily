@@ -622,3 +622,27 @@ class : 클래스 내에 선언되는 것들은 기본적으로 다 private이�
 
 react-slick(캐러셀)  
 https://react-slick.neostack.com/  
+
+
+리눅스 강의(2/8 ~)  
+
+whoami : 현재 계정 확인    
+~ : 루트로 이동  
+
+cat :  하나 혹은 여러개의 파일을 연결해서 전체를 보여주는 일종의 전체 훑어보기 기능입니다.  
+https://macinjune.com/all-posts/mac/terminal/%EB%A7%A5-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%A7%A7%EC%9D%80-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EA%B0%84%EB%8B%A8%ED%95%98%EA%B2%8C-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0-cat-command/  
+
+https://macinjune.com/all-posts/mac/terminal/%EB%A7%A5-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%A7%A7%EC%9D%80-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EA%B0%84%EB%8B%A8%ED%95%98%EA%B2%8C-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0-cat-command/  
+
+for문 활용  
+
+<img width="184" alt="스크린샷 2022-02-10 오전 9 33 54" src="https://user-images.githubusercontent.com/55314087/153314159-07491507-03f2-4fc2-88bf-0a008c31bb35.png">
+
+<img width="391" alt="스크린샷 2022-02-10 오전 9 34 40" src="https://user-images.githubusercontent.com/55314087/153314244-5f24a84e-b7b6-4c98-9462-bb2bd4ad935a.png">
+
+명령어치환(``사용)
+
+<img width="308" alt="스크린샷 2022-02-10 오전 9 49 47" src="https://user-images.githubusercontent.com/55314087/153315639-6a72af19-2c35-4c68-8a6f-d0374cd0a31a.png">
+<img width="224" alt="스크린샷 2022-02-10 오전 9 49 58" src="https://user-images.githubusercontent.com/55314087/153315658-2107ccf2-86ec-4ddf-9273-bff277c41dea.png">
+
+
