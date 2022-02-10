@@ -634,6 +634,7 @@ https://macinjune.com/all-posts/mac/terminal/%EB%A7%A5-%ED%84%B0%EB%AF%B8%EB%84%
 
 https://macinjune.com/all-posts/mac/terminal/%EB%A7%A5-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%A7%A7%EC%9D%80-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EA%B0%84%EB%8B%A8%ED%95%98%EA%B2%8C-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0-cat-command/  
 
+<img width="184" alt="스크린샷 2022-02-10 오전 9 33 54" src="https://user-images.githubusercontent.com/55314087/153314159-07491507-03f2-4fc2-88bf-0a008c31bb35.png">
 
 
 
