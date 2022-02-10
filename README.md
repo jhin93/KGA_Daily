@@ -632,3 +632,9 @@ whoami : 현재 계정 확인
 cat :  하나 혹은 여러개의 파일을 연결해서 전체를 보여주는 일종의 전체 훑어보기 기능입니다.  
 https://macinjune.com/all-posts/mac/terminal/%EB%A7%A5-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%A7%A7%EC%9D%80-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EA%B0%84%EB%8B%A8%ED%95%98%EA%B2%8C-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0-cat-command/  
 
+https://macinjune.com/all-posts/mac/terminal/%EB%A7%A5-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%A7%A7%EC%9D%80-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EA%B0%84%EB%8B%A8%ED%95%98%EA%B2%8C-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0-cat-command/  
+
+
+
+
+
