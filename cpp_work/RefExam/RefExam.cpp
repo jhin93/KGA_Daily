@@ -17,9 +17,10 @@ int main()
     cout << meal << ", Address of meal : " << &meal << endl; // 같은 주소가 나옴
 
     int xx = 200;
-    abc(xx);
-    cout << "xx : " << xx << endl; // &x -> 100, x -> 200
-
+    int *ptr = &xx;
+    abc(*ptr);
+    // cout << "xx : " << xx << endl; // 결과 : xx : 100. &x -> 100, x -> 200
+    cout << "xx : " << *ptr << endl; // xx : 100. 포인터가 가리킨 주소의 값을 abc함수가 변경시킴. 인자로 주소를 받기 때문에 가능.
     // 결과 : void abc(int &x) - 인자를 주소로 받을 경우
     /* 
         Hamburger, Address of food : 0x7ffee2457648
