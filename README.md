@@ -561,7 +561,7 @@ https://hwan-shell.tistory.com/25
 #include <string>
 
 using namespace std;
-void abc(int x) // 여기서 &x를 x로 변경한다면, cout의 결과는 200이 나온다. 인자의 기존 주소(&x)가 아닌새로운 주소(메모리)에 값을 할당해버리기 때문
+void abc(int &x) // 여기서 &x를 x로 변경한다면, cout의 결과는 200이 나온다. 인자의 기존 주소(&x)가 아닌새로운 주소(메모리)에 값을 할당해버리기 때문
 {
     x = 100;
 }
