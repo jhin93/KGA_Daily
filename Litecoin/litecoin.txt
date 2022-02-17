@@ -1,0 +1,60 @@
+Litecoin 수업
+
+* [ ] https://github.com/litecoin-project/litecoin/blob/0.15/doc/build-osx.md
+* [ ] cd /work
+* [ ] mkdir makecoin
+* [ ] cd /makecoin
+* [ ] git clone -b 0.21 --single-branch https://github.com/litecoin-project/litecoin ./litecoin-0.21
+* [ ] git clone -b 0.15 --single-branch https://github.com/litecoin-project/litecoin ./litecoin-0.15
+* [ ] mv -fv ./litecoin-0.15 ./litecoin-0.15.org
+* [ ] cp -rfv ./litecoin-0.15.org/ ./litecoin
+* [ ] brew install gcc@11
+* [ ] brew install automake berkeley-db@4 libtool boost miniupnpc openssl pkg-config protobuf qt libevent
+* [ ] brew install mingw-w64
+* [ ] brew install librsvg
+* [ ] ./autogen.sh
+* [ ] ./configure
+* (boost에 대한 내용) 
+* depends 폴더 안에서 make -j 4
+* litecoin 안에서 CONFIG_SITE=$PWD/depends/x86_64-apple-darwin19.6.0/share/config.site ./configure —prefix=/(다윈 버전은 gcc —version으로 확인해볼 것)
+* litecoin 폴더 안에서 make -j 4
+* 블록체인을 다운받을 디렉토리 형성. mkdir litecoin_bin - 위치는 makecoin 근처에 만들 것
+* 다시 litecoin 폴더로 이동 후에 make install DESTDIR=/users/june/litecoin_bin
+* 그리고 litecoin_bin 으로 이동하면 bin include lib share 이렇게 4개의 폴더가 있을 것임. 여기에 data 라는 폴더 하나 추가로 생성
+* 생성 후, cd bin. bin 내부에 litecoin-qt가 존재하는 것을 확인. 그리고 ./litecoin-qt -datadir=/Users/kimjinkyung/litecoin021_bin/data 실행
+* 위 명령어를 실행하면, 생성했던 data 폴더 안에 블록체인이 받아질 것임. Gui가 뜨거나 터미널에 height가 쌓이면 성공
+
+
+
+
+
+ ./b2 runtime-link=static toolset=gcc   
+
+ ./b2 -a runtime-link=static toolset=gcc   
+
+Brew uninstall boost
+
+Boost root폴더에서 
+Sudo ./b2 install
+
+
+Depends 폴더에서 make -j 4
+
+그리고 litecoin 폴더에서 다음 명령어들 차례로 실행
+1. CONFIG_SITE=$PWD/depends/x86_64-apple-darwin19.6.0/share/config.site ./configure —prefix=/
+2. Make -j 4
+
+make install DESTDIR=/users/june/litecoin021_bin
+
+litecoin021_bin % mkdir data
+litecoin021_bin % ll
+litecoin021_bin % cd bin 
+
+./litecoin-qt -datadir=/Users/kimjinkyung/litecoin021_bin/data
+
+
+
+
+
+도일형 라이트코인 노션문서
+https://difficult-fernleaf-720.notion.site/litecoin-70cbc9decc2741eca683bac601eedcbb
