@@ -653,3 +653,6 @@ https://velog.io/@iamhayoung/Bcrypt%EB%A1%9C-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B
 
 litecoin 설치  
 https://difficult-fernleaf-720.notion.site/litecoin-70cbc9decc2741eca683bac601eedcbb  
+
+리눅스 configure, make, make install  
+https://itdexter.tistory.com/325  
