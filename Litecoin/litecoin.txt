@@ -58,3 +58,8 @@ litecoin021_bin % cd bin
 
 도일형 라이트코인 노션문서
 https://difficult-fernleaf-720.notion.site/litecoin-70cbc9decc2741eca683bac601eedcbb
+
+
+
+지갑 실행 명령줄
+./litecoin-qt -datadir=/Users/kimjinkyung/litecoin021_bin/data
