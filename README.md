@@ -624,6 +624,8 @@ react-slick(캐러셀)
 https://react-slick.neostack.com/  
 
 
+
+
 리눅스 강의(2/8 ~)  
 
 whoami : 현재 계정 확인    
