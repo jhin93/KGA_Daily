@@ -658,3 +658,13 @@ https://difficult-fernleaf-720.notion.site/litecoin-70cbc9decc2741eca683bac601ee
 
 리눅스 configure, make, make install  
 https://itdexter.tistory.com/325  
+
+./litecoin-qt -datadir=/Users/kimjinkyung/litecoin021_bin/data  
+gui 띄우기  
+
+./litecoin-cli -datadir=/Users/kimjinkyung/litecoin021_bin/data getnetworkinfo  
+네트워크 정보 띄우기  
+끄는 법 : data 뒤에 stop 입력  
+
+
+
