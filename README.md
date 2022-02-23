@@ -39,8 +39,6 @@ nvm 설치 및 버전확인 및 변경
 https://gist.github.com/falsy/8aa42ae311a9adb50e2ca7d8702c9af1  
 
 
-
-
 nvm ls  
 nvm 버전 확인  
 
