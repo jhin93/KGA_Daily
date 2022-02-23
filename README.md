@@ -664,5 +664,6 @@ gui 띄우기
 네트워크 정보 띄우기  
 끄는 법 : data 뒤에 stop 입력  
 
-
+반감기 계산 및 채굴 손익계산  
+https://sheepone.tistory.com/42  
 
