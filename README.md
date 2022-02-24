@@ -293,8 +293,8 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Ar
 오름차순 정렬  
 배열.sort((a, b) => a - b);  
 
-dotenv 모듈
-https://www.daleseo.com/js-dotenv/
+dotenv 모듈. 
+https://www.daleseo.com/js-dotenv/  
 
 ```
 // 1. env파일 생성하여 환경변수 설정
