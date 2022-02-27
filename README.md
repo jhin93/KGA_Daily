@@ -651,18 +651,23 @@ for문 활용
 암호화(bcrypt)  
 https://velog.io/@iamhayoung/Bcrypt%EB%A1%9C-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EC%95%94%ED%98%B8%ED%99%94%ED%95%98%EA%B8%B0  
 
+
 litecoin 설치  
 https://difficult-fernleaf-720.notion.site/litecoin-70cbc9decc2741eca683bac601eedcbb  
+
 
 리눅스 configure, make, make install  
 https://itdexter.tistory.com/325  
 
+
 ./litecoin-qt -datadir=/Users/kimjinkyung/litecoin021_bin/data  
 gui 띄우기  
+
 
 ./litecoin-cli -datadir=/Users/kimjinkyung/litecoin021_bin/data getnetworkinfo  
 네트워크 정보 띄우기  
 끄는 법 : data 뒤에 stop 입력  
+
 
 반감기 계산 및 채굴 손익계산  
 https://sheepone.tistory.com/42  
