@@ -529,6 +529,8 @@ https://blog.naver.com/sharonichoya/220501158281
 new와 delete 연산자  
 https://jhnyang.tistory.com/334  
 
+
+
 쉬운 포인터사용법
 ```
     int testNum = 100;
