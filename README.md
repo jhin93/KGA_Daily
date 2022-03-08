@@ -677,3 +677,5 @@ gui 띄우기
 반감기 계산 및 채굴 손익계산  
 https://sheepone.tistory.com/42  
 
+리액트 2번 렌더링되는 이유  
+https://okky.kr/article/705179  
