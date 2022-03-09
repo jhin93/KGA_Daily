@@ -686,3 +686,8 @@ https://okky.kr/article/705179
 
 bash 쉘이란?  
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=writer0713&logNo=220702559704  
+
+~/.bash_profile  permission 에러  
+zsh: permission denied: /Users/kimjinkyung/.bash_profile  
+해결법  : 
+https://superuser.com/questions/369406/mac-osx-lion-terminal-bash-profile-permission-denied  
