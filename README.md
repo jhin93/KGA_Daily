@@ -679,3 +679,7 @@ https://sheepone.tistory.com/42
 
 리액트 2번 렌더링되는 이유  
 https://okky.kr/article/705179  
+
+
+  // 월렛 로그인(wallet)
+  window.klaytn.enable();
