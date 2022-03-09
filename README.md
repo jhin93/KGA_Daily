@@ -683,3 +683,6 @@ https://okky.kr/article/705179
 
   // 월렛 로그인(wallet)
   window.klaytn.enable();
+
+bash 쉘이란?  
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=writer0713&logNo=220702559704  
