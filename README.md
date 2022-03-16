@@ -709,6 +709,14 @@ https://react.vlpt.us/basic/13-array-insert.html
 useState로 객체에 데이터 갱신  
 https://gogoonbuntu.tistory.com/75  
 ```
+      // time & txnum object
+      const [blockObj, setblockObj] = useState({
+
+          time : "",
+          txnum : ""
+
+      });
+
       setblockObj((blockObj) => ({
         ...blockObj,
         time : response.data.result.time,
