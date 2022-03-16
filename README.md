@@ -704,3 +704,14 @@ useState 사용해서 배열에 원소 추가하기
 https://velog.io/@jengyoung/%EC%97%AC%EB%9F%AC-%EA%B0%9C%EC%9D%98-input%EC%9D%B4-%EC%9E%88%EC%9D%84-%EB%95%8C-useState%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C%EB%8B%A4%EB%A9%B4  
 https://velog.io/@summer_luna_0/reactuseState%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C-%EB%B0%B0%EC%97%B4%EC%97%90-%EA%B0%92-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0.-a.k.a-TODOLIST  
 https://react.vlpt.us/basic/13-array-insert.html  
+
+
+useState로 객체에 데이터 갱신  
+https://gogoonbuntu.tistory.com/75  
+```
+      setblockObj((blockObj) => ({
+        ...blockObj,
+        time : response.data.result.time,
+        txnum : response.data.result.tx.length        
+      }))
+```
