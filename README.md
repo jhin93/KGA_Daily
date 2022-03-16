@@ -694,3 +694,8 @@ https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=writer0713&l
 zsh: permission denied: /Users/kimjinkyung/.bash_profile  
 해결법  : 
 https://superuser.com/questions/369406/mac-osx-lion-terminal-bash-profile-permission-denied  
+
+
+react  
+spread(...)연산자  
+https://learnjs.vlpt.us/useful/07-spread-and-rest.html#spread  
