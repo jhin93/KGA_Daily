@@ -728,3 +728,9 @@ https://velog.io/@nara7875/BlockChain%EA%B1%B0%EB%9E%98%EC%86%8C-%EB%A7%8C%EB%93
 
 
 
+permision denied 에러 해결  
+chmod -R 777 디렉토리이름  
+
+
+
+
