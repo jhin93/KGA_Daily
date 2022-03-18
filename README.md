@@ -724,7 +724,7 @@ https://gogoonbuntu.tistory.com/75
 aws에서 코인빌드하기  
 https://blog.naver.com/redqoralsrl/222395294692  
 https://velog.io/@nara7875/BlockChainAWS%EC%97%90-%EC%BD%94%EC%9D%B8-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0#1-aws-%EC%84%9C%EB%B2%84-%EB%A7%8C%EB%93%A4%EA%B8%B0  
-
+https://velog.io/@nara7875/BlockChain%EA%B1%B0%EB%9E%98%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0-2#3-rdbs  
 
 
 
