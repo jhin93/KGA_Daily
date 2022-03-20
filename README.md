@@ -728,10 +728,7 @@ https://velog.io/@nara7875/BlockChainAWS%EC%97%90-%EC%BD%94%EC%9D%B8-%EB%B9%8C%E
 https://velog.io/@nara7875/BlockChain%EA%B1%B0%EB%9E%98%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0-2#3-rdbs  
 
 
-
 permision denied 에러 해결  
 chmod -R 777 디렉토리이름  
-
-
 
 
