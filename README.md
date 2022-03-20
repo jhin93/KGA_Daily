@@ -733,3 +733,9 @@ chmod -R 777 디렉토리이름
 
 configure에서 --host와 --build의 차이  
 http://lvzuufx.blogspot.com/2015/06/configure-build-host-target.html  
+
+
+[리눅스] uname 명령어: 시스템 및 커널 정보 출력  
+uname 명령어는 시스템 정보를 출력해줍니다. 주로 시스템과 리눅스 커널에 관련된 정보를 확인할 수 있습니다.  
+uname은 리눅스뿐만 아니라 맥OS 등에서도 사용할 수 있습니다. 현재 시스템의 시스템 아키텍처나 커널 버전을 확인할 때 특히 유용합니다.  
+https://www.lainyzine.com/ko/article/linux-uname-command-how-to-check-the-kernel-information-of-the-current-system/  
