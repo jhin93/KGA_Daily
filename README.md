@@ -739,3 +739,9 @@ http://lvzuufx.blogspot.com/2015/06/configure-build-host-target.html
 uname 명령어는 시스템 정보를 출력해줍니다. 주로 시스템과 리눅스 커널에 관련된 정보를 확인할 수 있습니다.  
 uname은 리눅스뿐만 아니라 맥OS 등에서도 사용할 수 있습니다. 현재 시스템의 시스템 아키텍처나 커널 버전을 확인할 때 특히 유용합니다.  
 https://www.lainyzine.com/ko/article/linux-uname-command-how-to-check-the-kernel-information-of-the-current-system/  
+
+
+
+라이브러리 비교(Node, Axios, Fetch ...)  
+아래 링크의 우측 코드 확인  
+https://docs.upbit.com/reference/%EC%A0%84%EC%B2%B4-%EA%B3%84%EC%A2%8C-%EC%A1%B0%ED%9A%8C  
