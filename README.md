@@ -745,3 +745,10 @@ https://www.lainyzine.com/ko/article/linux-uname-command-how-to-check-the-kernel
 자바스크립트 라이브러리 비교(Node, Axios, Fetch ...)  
 아래 링크의 우측 코드 확인  
 https://docs.upbit.com/reference/%EC%A0%84%EC%B2%B4-%EA%B3%84%EC%A2%8C-%EC%A1%B0%ED%9A%8C  
+
+
+몽고db 설치  
+https://meanbymin.tistory.com/77  
+
+
+
