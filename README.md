@@ -750,3 +750,6 @@ https://docs.upbit.com/reference/%EC%A0%84%EC%B2%B4-%EA%B3%84%EC%A2%8C-%EC%A1%B0
 몽고db 설치  
 https://meanbymin.tistory.com/77  
 https://velopert.com/457  
+
+거래소 제작 관련 블로그글  
+https://m.blog.naver.com/PostView.naver?blogId=pjt3591oo&logNo=222103669253&proxyReferer=https:%2F%2Fvelog.io%2F  
