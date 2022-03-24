@@ -753,3 +753,8 @@ https://velopert.com/457
 
 거래소 제작 관련 블로그글  
 https://m.blog.naver.com/PostView.naver?blogId=pjt3591oo&logNo=222103669253&proxyReferer=https:%2F%2Fvelog.io%2F  
+
+
+원격 브랜치 가져오기  
+git checkout -b 만들 브랜치이름 origin/가져올브랜치이름  
+Ex) git checkout -b master origin/master  
