@@ -758,3 +758,12 @@ https://m.blog.naver.com/PostView.naver?blogId=pjt3591oo&logNo=222103669253&prox
 원격 브랜치 가져오기  
 git checkout -b 만들 브랜치이름 origin/가져올브랜치이름  
 Ex) git checkout -b master origin/master  
+
+
+몽고디비 접속에러  
+https://www.inflearn.com/questions/29959  
+ 1. 몽고디비 사이트 로그인 -> Product 탭 -> Atlas -> Database  
+ 2. Connect 옵션 -> Connect your Application  
+ 3. Version 2.2.12 or later 선택 후 String으로 접속 시도  
+ 
+ 
