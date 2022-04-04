@@ -1,46 +1,17 @@
 #include "Singleton.h"
-#include <iostream>
 
-using namespace std;
-
-CSingleton* CSingleton::m_pInst = nullptr;
-
-CSingleton::CSingleton()
+int main(int arc, char** argv)
 {
-    count = 0;
+    CSingleton* ps1;
+
+    ps1 = CSingleton::getInstance();
+
+    ps1->HelloWorld();
+    CSingleton::getInstance()->HelloWorld();
+
+    ps1->DestroyInst();
+    // or
+    // CSingleton::DestroyInst();
+
+    return 0;
 }
-
-CSingleton::~CSingleton()
-{
-
-}
-
-CSingleton* CSingleton::getInstance()
-{
-    if(!m_pInst)
-    {
-        m_pInst = new CSingleton();
-    }
-
-    return m_pInst;
-}
-
-void CSingleton::DestroyInst()
-{
-    if(!m_pInst)
-    {
-        return;
-    }
-
-    delete m_pInst;
-    m_pInst = nullptr;
-}
-
-void CSingleton::HelloWorld()
-{
-    count ++;
-    cout << "Hello World!!-count(" << count << ")" << endl;
-}
-
-
-
