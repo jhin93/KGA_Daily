@@ -764,4 +764,5 @@ https://www.inflearn.com/questions/29959
  2. Connect 옵션 -> Connect your Application  
  3. Version 2.2.12 or later 선택 후 String으로 접속 시도  
  
- 
+ Singleton 패턴  
+ https://devmoony.tistory.com/43  
