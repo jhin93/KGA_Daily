@@ -769,3 +769,6 @@ https://www.inflearn.com/questions/29959
  
  DID 탈중앙화 신원증명  
  https://comart.io/blog/%ED%83%88%EC%A4%91%EC%95%99%ED%99%94-%EC%8B%A0%EC%9B%90%EC%A6%9D%EB%AA%85-did-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90  
+ 
+ EVM(이더리움 가상머신)개념  
+ https://opentutorials.org/course/2869/18360  
