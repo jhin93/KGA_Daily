@@ -1,13 +1,10 @@
 # KGA_daily  
-배운 것을 매일 1커밋 하는 공간입니다.  
 
 css - position  
 https://ofcourse.kr/css-course/position-%EC%86%8D%EC%84%B1  
 
-
 vscode 단축키  
 https://blog.naver.com/jiwon3194/222512040766  
-
 
 
 반복문 사용 시, 무한 루프가 돌때는 연산자가 제한범위안에 제대로 있는 지 확인할 것.  
@@ -39,8 +36,6 @@ nvm 설치 및 버전확인 및 변경
 https://gist.github.com/falsy/8aa42ae311a9adb50e2ca7d8702c9af1  
 
 
-
-
 nvm ls  
 nvm 버전 확인  
 
@@ -48,8 +43,6 @@ nvm 버전사용
 nvm nvm use 버전(ex nvm use 16.13.0)
 
 빌트인 모듈은 따로 설치를 안해줘도 사용가능하다 (ex http)
-
-
 
 
 REPL 터미널  
@@ -80,14 +73,18 @@ https://www.youtube.com/watch?v=BsWWPhM8Lvk
 readFilfe, readFileSync  
 https://balmostory.tistory.com/33  
 
+
 파일시스템(fs.open)  
 https://psyhm.tistory.com/15  
+
 
 tcp ip  
 https://aws-hyoh.tistory.com/entry/TCPIP-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
 
+
 url.parse()  
 URL 문자열을 입력하면 URL 객체를 만든다. 만든 url 객체에서 pathname 키의 밸류를 가져옴. https://gongbu-ing.tistory.com/9  
+
 
 url.parse에 줄이 생기는 이유는 더이상 사용하지 않으니 추천하지 않는다  
 https://velog.io/@satoshi25/url.parse-deprecated  
@@ -100,6 +97,8 @@ zip-lib - 노드에 대한 zip 및 unzip 라이브러리
 
 
 Promise  
+
+https://developer.mozilla.org/ko/docs/conflicting/Learn/JavaScript/Asynchronous/Promises#the_basics_of_asyncawait  
 https://elvanov.com/2597  
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises  
 
@@ -240,6 +239,8 @@ Axios vs fetch
 https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-Ajax%EC%99%80-Axios-%EA%B7%B8%EB%A6%AC%EA%B3%A0-fetch#fetch-1  
 
 
+
+
 전역변수  
 var, let, const 등을 쓰지 않고 선언한 변수는 '전역변수'이다.  
 즉 어디서나 불러서 사용할 수 있음.  
@@ -295,8 +296,8 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Ar
 오름차순 정렬  
 배열.sort((a, b) => a - b);  
 
-dotenv 모듈
-https://www.daleseo.com/js-dotenv/
+dotenv 모듈. 
+https://www.daleseo.com/js-dotenv/  
 
 ```
 // 1. env파일 생성하여 환경변수 설정
@@ -531,6 +532,8 @@ https://blog.naver.com/sharonichoya/220501158281
 new와 delete 연산자  
 https://jhnyang.tistory.com/334  
 
+
+
 쉬운 포인터사용법
 ```
     int testNum = 100;
@@ -624,6 +627,8 @@ react-slick(캐러셀)
 https://react-slick.neostack.com/  
 
 
+
+
 리눅스 강의(2/8 ~)  
 
 whoami : 현재 계정 확인    
@@ -643,7 +648,6 @@ for문 활용
 
 
 명령어치환(``사용)
-
 <img width="308" alt="스크린샷 2022-02-10 오전 9 49 47" src="https://user-images.githubusercontent.com/55314087/153315639-6a72af19-2c35-4c68-8a6f-d0374cd0a31a.png">
 <img width="224" alt="스크린샷 2022-02-10 오전 9 49 58" src="https://user-images.githubusercontent.com/55314087/153315658-2107ccf2-86ec-4ddf-9273-bff277c41dea.png">
 
@@ -651,5 +655,113 @@ for문 활용
 암호화(bcrypt)  
 https://velog.io/@iamhayoung/Bcrypt%EB%A1%9C-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EC%95%94%ED%98%B8%ED%99%94%ED%95%98%EA%B8%B0  
 
+
 litecoin 설치  
 https://difficult-fernleaf-720.notion.site/litecoin-70cbc9decc2741eca683bac601eedcbb  
+
+
+리눅스 configure, make, make install  
+https://itdexter.tistory.com/325  
+
+
+./litecoin-qt -datadir=/Users/kimjinkyung/litecoin021_bin/data  
+gui 띄우기  
+
+
+./litecoin-cli -datadir=/Users/kimjinkyung/litecoin021_bin/data getnetworkinfo  
+네트워크 정보 띄우기  
+끄는 법 : data 뒤에 stop 입력  
+
+
+반감기 계산 및 채굴 손익계산  
+https://sheepone.tistory.com/42  
+
+리액트 2번 렌더링되는 이유  
+https://okky.kr/article/705179  
+
+
+  // 월렛 로그인(wallet)
+  window.klaytn.enable();
+
+bash 쉘이란?  
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=writer0713&logNo=220702559704  
+
+~/.bash_profile  permission 에러  
+zsh: permission denied: /Users/kimjinkyung/.bash_profile  
+해결법  : 
+https://superuser.com/questions/369406/mac-osx-lion-terminal-bash-profile-permission-denied  
+
+
+react  
+spread(...)연산자  
+https://learnjs.vlpt.us/useful/07-spread-and-rest.html#spread  
+
+useState 사용해서 배열에 원소 추가하기  
+https://velog.io/@jengyoung/%EC%97%AC%EB%9F%AC-%EA%B0%9C%EC%9D%98-input%EC%9D%B4-%EC%9E%88%EC%9D%84-%EB%95%8C-useState%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C%EB%8B%A4%EB%A9%B4  
+https://velog.io/@summer_luna_0/reactuseState%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C-%EB%B0%B0%EC%97%B4%EC%97%90-%EA%B0%92-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0.-a.k.a-TODOLIST  
+https://react.vlpt.us/basic/13-array-insert.html  
+
+
+useState로 객체에 데이터 갱신  
+https://gogoonbuntu.tistory.com/75  
+```
+      // time & txnum object
+      const [blockObj, setblockObj] = useState({
+
+          time : "",
+          txnum : ""
+
+      });
+
+      setblockObj((blockObj) => ({
+        ...blockObj,
+        time : response.data.result.time,
+        txnum : response.data.result.tx.length        
+      }))
+```
+
+aws에서 코인빌드하기  
+https://blog.naver.com/redqoralsrl/222395294692  
+https://velog.io/@nara7875/BlockChainAWS%EC%97%90-%EC%BD%94%EC%9D%B8-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0#1-aws-%EC%84%9C%EB%B2%84-%EB%A7%8C%EB%93%A4%EA%B8%B0  
+https://velog.io/@nara7875/BlockChain%EA%B1%B0%EB%9E%98%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0-2#3-rdbs  
+
+
+permision denied 에러 해결  
+chmod -R 777 디렉토리이름  
+
+configure에서 --host와 --build의 차이  
+http://lvzuufx.blogspot.com/2015/06/configure-build-host-target.html  
+
+
+[리눅스] uname 명령어: 시스템 및 커널 정보 출력  
+uname 명령어는 시스템 정보를 출력해줍니다. 주로 시스템과 리눅스 커널에 관련된 정보를 확인할 수 있습니다.  
+uname은 리눅스뿐만 아니라 맥OS 등에서도 사용할 수 있습니다. 현재 시스템의 시스템 아키텍처나 커널 버전을 확인할 때 특히 유용합니다.  
+https://www.lainyzine.com/ko/article/linux-uname-command-how-to-check-the-kernel-information-of-the-current-system/  
+
+
+
+자바스크립트 라이브러리 비교(Node, Axios, Fetch ...)  
+아래 링크의 우측 코드 확인  
+https://docs.upbit.com/reference/%EC%A0%84%EC%B2%B4-%EA%B3%84%EC%A2%8C-%EC%A1%B0%ED%9A%8C  
+
+
+몽고db 설치  
+https://meanbymin.tistory.com/77  
+https://velopert.com/457  
+
+거래소 제작 관련 블로그글  
+https://m.blog.naver.com/PostView.naver?blogId=pjt3591oo&logNo=222103669253&proxyReferer=https:%2F%2Fvelog.io%2F  
+
+
+원격 브랜치 가져오기  
+git checkout -b 만들 브랜치이름 origin/가져올브랜치이름  
+Ex) git checkout -b master origin/master  
+
+
+몽고디비 접속에러  
+https://www.inflearn.com/questions/29959  
+ 1. 몽고디비 사이트 로그인 -> Product 탭 -> Atlas -> Database  
+ 2. Connect 옵션 -> Connect your Application  
+ 3. Version 2.2.12 or later 선택 후 String으로 접속 시도  
+ 
+ 
