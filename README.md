@@ -772,3 +772,6 @@ https://www.inflearn.com/questions/29959
  
  EVM(이더리움 가상머신)개념  
  https://opentutorials.org/course/2869/18360  
+
+web3.js 스마트컨트랙트 접근  
+https://velog.io/@moonshot/web3.js-%EC%8A%A4%EB%A7%88%ED%8A%B8-%EC%BB%A8%ED%8A%B8%EB%9E%99%ED%8A%B8%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0  
