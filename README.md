@@ -398,6 +398,8 @@ https://wonyoung2257.tistory.com/7
 
 세션과 쿠키  
 세션은 [서버] 쪽에 정보를 저장하고 쿠키는 [클라이언트] 쪽에 정보를 저장한다는 것이 세션과 쿠키의 가장 큰 차이점 입니다.  
+라이프 사이클에서의 차이가 중요.  
+https://interconnection.tistory.com/74  
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=weekamp&logNo=220931266233  
 https://interconnection.tistory.com/74  
 
@@ -773,4 +775,4 @@ https://www.inflearn.com/questions/29959
  https://opentutorials.org/course/2869/18360  
 
 web3.js 스마트컨트랙트 접근  
-https://velog.io/@moonshot/web3.js-%EC%8A%A4%EB%A7%88%ED%8A%B8-%EC%BB%A8%ED%8A%B8%EB%9E%99%ED%8A%B8%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0  
+https://velog.io/@moonshot/web3.js-%EC%8A%A4%EB%A7%88%ED%8A%B8-%EC%BB%A8%ED%8A%B8%EB%9E%99%ED%8A%B8%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0   
