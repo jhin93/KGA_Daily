@@ -17,20 +17,3 @@ function fibonacci(n){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
