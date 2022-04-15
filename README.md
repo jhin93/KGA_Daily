@@ -759,6 +759,7 @@ git checkout -b 만들 브랜치이름 origin/가져올브랜치이름
 Ex) git checkout -b master origin/master  
 
 
+
 몽고디비 접속에러  
 https://www.inflearn.com/questions/29959  
  1. 몽고디비 사이트 로그인 -> Product 탭 -> Atlas -> Database  
