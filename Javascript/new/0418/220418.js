@@ -12,7 +12,15 @@ alert("start javascript!!");
 console.log(varName); // undefined. 메모리는 잡혔지만 초기화가 안되서 undefined임.
 // 호이스팅. 자바스크립트 엔진 1. 변수 선언이 이루어짐 2. 런타임에서 사용이 됨
 var varName = "test"; // 가장 오래된 버전에서 사용하는 변수 타입
-console.log(varName); // 
+console.log(varName); 
+
+if(true)
+{
+    // 다른 영역
+    var varName = "kimjinkyung"; // 한번 더 선언 및 초기화 가능.
+}
+console.log(varName); // 위의 if문에 새롭게 선언 및 초기화한 내용이 출력된다. 이게 var의 문제점
+
 let letName; 
 const constName = "jinkyung";
 
