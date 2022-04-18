@@ -422,7 +422,7 @@ https://iflife1124.tistory.com/15
 포인터 변수의 일반적인 형식. 
 : type * name ex) int * number;  
 ex)
-```
+```c
 string food = "Pizza";
 string *ptr = &food; // * 앞에 있는 string은 food가 "Pizza"라는 string 이기에 작성한 것.
 
