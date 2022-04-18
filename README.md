@@ -115,7 +115,7 @@ Promise 의 특징은 new Promise(...) 하는 순간 여기에 할당된 비동�
 그럼 그 이후에 이 작업이 성공하거나 실패하는 순간에 우리가 또 뒷처리를 해줘야겠죠?  
 Promise 가 끝나고 난 다음의 동작을 우리가 설정해줄 수 있는데, 그것이 바로 then 메소드와 catch 메소드입니다.  
 
-```
+```javascript
 function startAsync(age) {
   return new Promise((resolve, reject) => {
     if (age > 20) resolve();
@@ -146,7 +146,7 @@ setTimeout(() => {
 1 then!  
 2 catch!  
 ```
-```
+```javascript
 function startAsync(age) {
   return new Promise((resolve, reject) => {
     if (age > 20) resolve(`${age} success`);            // 위의 예시와 다르게 resolve와 reject에 인자가 들어가있다
@@ -194,7 +194,7 @@ new Promise(…) 를 리턴하는 함수를 async 함수로 손쉽게 변환할 
 3. resolve(value); 부분을 return value; 로 변경합니다.  
 4. reject(new Error(…)); 부분을 throw new Error(…); 로 수정합니다.  
 
-```
+```javascript
 // 바로 위 예시를 async 함수로 표현하면 다음과 같다.
 async function startAsync(age) {
   if (age > 20) return `${age} success`;
@@ -213,7 +213,7 @@ async 함수에서만 사용할 수 있습니다.
 3. await 은 Promise 가 resolve 한 값을 내놓습니다.
 4. 해당 Promise 에서 reject 가 발생한다면 예외가 발생합니다.
 
-```
+```javascript
 async function f() {
 
   let promise = new Promise((resolve, reject) => {
@@ -245,7 +245,7 @@ https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-Ajax%EC%99%80-Ax
 전역변수  
 var, let, const 등을 쓰지 않고 선언한 변수는 '전역변수'이다.  
 즉 어디서나 불러서 사용할 수 있음.  
-```
+```javascript
 function calc (a, b) {
   let sum1 = a + b;
   sum2 = a + b;
@@ -258,7 +258,7 @@ sum1 // Uncaught ReferenceError: sum1 is not defined
 ```
 
 인스턴스  
-```
+```javascript
 let student = {
   'id' : 123,
   'class' : Higher
@@ -300,7 +300,7 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Ar
 dotenv 모듈. 
 https://www.daleseo.com/js-dotenv/  
 
-```
+```javascript
 // 1. env파일 생성하여 환경변수 설정
 DB_HOST=localhost
 DB_USER=root
@@ -322,7 +322,7 @@ https://velog.io/@hyunju-song/body-parser%EC%9D%98-urlencoded%EB%8A%94-%EB%8F%84
 fetch() 함수 사용법  
 https://yeri-kim.github.io/posts/fetch/  
 
-```
+```javascript
 fetch('https://api.google.com/user/3')
   .then(res => res.json())
   .then(res => {
