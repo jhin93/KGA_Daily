@@ -18,17 +18,60 @@
             16x15 + 15
 */
 
-let num = 255;
-console.log(num.toString(2)); // 11111111. 2진수로 표현
-console.log(num.toString(8)); // 377. 8진수로 표현
-console.log(num.toString(16)); // ff. 16진수로 표현
+// prompt("정답을 입력하세요.", 10);
 
-let randomNum = Math.random() * 10; // 0.0 ~ 1.0 사이의 랜덤한 값(난수)
-console.log(randomNum);
+// let num = 255;
+// console.log(num.toString(2)); // 11111111. 2진수로 표현
+// console.log(num.toString(8)); // 377. 8진수로 표현
+// console.log(num.toString(16)); // ff. 16진수로 표현
 
-console.log(Math.floor(randomNum)); // 버림
-console.log(Math.ceil(randomNum)); // 올림
-console.log(Math.round(randomNum)); // 반올림
+// let randomNum = Math.random() * 10; // 0.0 ~ 1.0 사이의 랜덤한 값(난수)
+// console.log(randomNum);
+
+// console.log(Math.floor(randomNum)); // 버림
+// console.log(Math.ceil(randomNum)); // 올림
+// console.log(Math.round(randomNum)); // 반올림
+
+
+/*
+    실습.
+    프로그램이 3 ~ 10 사이의 랜덤한 값을 지정한다.
+    입력한 숫자와 랜덤한 값이 동일한 지 출력해준다.
+
+    prompt 사용해서 입력값 받을 것.
+
+    
+
+*/
+
+// function randomNum() {
+//     let randomNum = Math.floor(Math.random() * 10);
+//     console.log(randomNum);
+//     // let inputNum = prompt("정답을 입력하세요.", );
+//     if(randomNum <){
+
+//     }
+// }
+
+
+// randomNum();
+
+function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+function randomNunTest() {
+    let randomNum = getRandomArbitrary(3, 10);
+    console.log("난수", randomNum);
+    let inputNum = prompt("정답을 입력하세요.", );
+    if(randomNum == inputNum) {
+        alert("정답입니다!")
+    } else {
+        alert("정답이 아닙니다!")
+    }
+}
+randomNunTest();
+
 
 
 //변수명 이름 규칙
