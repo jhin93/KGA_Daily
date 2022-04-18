@@ -452,7 +452,7 @@ string *ptr = &food; // * 앞에 있는 string은 food가 "Pizza"라는 string �
 이중포인터  
 포인터를 가리키는 포인터.  
 
-```
+```c
 int main()
 {
     char a;
@@ -475,7 +475,7 @@ int main()
 strcpy  
 C 스타일의 문자열인 char*, char[] 타입의 문자열을 복사하는 함수.  
 https://blockdmask.tistory.com/348  
-```
+```c
 > 간단한 사용법.
 
 char origin[] = "BlockDMask";
@@ -486,7 +486,7 @@ strncpy(dest, origin, sizeof(origin));
 
 C언어 동적메모리할당(malloc, calloc)  
 https://blog.naver.com/sharonichoya/220501158281  
-```
+```c
 // 예제
 
     int* pi = (int* p) malloc(sizeof(int) * 10);
@@ -538,7 +538,7 @@ https://jhnyang.tistory.com/334
 
 
 쉬운 포인터사용법
-```
+```c
     int testNum = 100;
     int* ptrNum = &testNum;
 
@@ -562,7 +562,7 @@ https://hwan-shell.tistory.com/25
 
 주소를 쓰는 이유. 어떤 값을 바꿀 때, 그 값의 '주소'에 새로운 값을 대입하기 위해. 만약 '주소'에 새로운 데이터를 넣지 않으면, 새로운 주소에 데이터가 할당된다.  
 그럴 경우 1. 실제로 인자로 받은 그 변수를 정확하게 바꾸기 위해.  2. 메모리 낭비도 일어나고, 연산도 느려질 것.
-```
+```c
 #include <iostream>
 #include <string>
 
@@ -607,7 +607,7 @@ public, private
 
 class : 클래스 내에 선언되는 것들은 기본적으로 다 private이고, public 내부에 선언된 것들이 public이다.  
 구조체, 함수 : 기본적으로 public이다.  
-```
+```c
     private: - 이 지시자 없이 그냥 선언해도 private로 선언된다.
         int m_nCurrentPage;
         void SetPercent();
@@ -707,7 +707,7 @@ https://react.vlpt.us/basic/13-array-insert.html
 
 useState로 객체에 데이터 갱신  
 https://gogoonbuntu.tistory.com/75  
-```
+```javascript
       // time & txnum object
       const [blockObj, setblockObj] = useState({
 
