@@ -1,4 +1,4 @@
-alert("start javascript!!");
+// alert("start javascript!!");
 
 // 숫자형
 /*
@@ -22,6 +22,14 @@ let num = 255;
 console.log(num.toString(2)); // 11111111. 2진수로 표현
 console.log(num.toString(8)); // 377. 8진수로 표현
 console.log(num.toString(16)); // ff. 16진수로 표현
+
+let randomNum = Math.random() * 10; // 0.0 ~ 1.0 사이의 랜덤한 값(난수)
+console.log(randomNum);
+
+console.log(Math.floor(randomNum)); // 버림
+console.log(Math.ceil(randomNum)); // 올림
+console.log(Math.round(randomNum)); // 반올림
+
 
 //변수명 이름 규칙
 /*
