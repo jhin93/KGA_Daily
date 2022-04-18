@@ -12,21 +12,3 @@
 
 // 로그인 전문 서버가 OAuth.
 
-const express = require('express')
-const app = express()
-const port = 4000
-const axios = require('axios')
-
-app.get('/', (req, res) => {
-  res.send('lvtest q4')
-})
-
-axios.post("http://localhost:4000/getCookie", {name: "ingoo"}, {
-  headers : {
-    'Content-type' : 'application/x-www-form-urlencoded'
-  }
-})
-
-app.listen(port, () => {
-  console.log(`leveltest Question number 3 answer code. Check it out localhost:${port}`)
-})
