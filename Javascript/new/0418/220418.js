@@ -9,7 +9,8 @@ alert("start javascript!!");
     3. 대소문자를 구분한다. 
  */
 
-/* var
+/* var.
+
     console.log(varName); // undefined. 메모리는 잡혔지만 초기화가 안되서 undefined임.
     // 호이스팅. 자바스크립트 엔진 1. 변수 선언이 이루어짐 2. 런타임에서 사용이 됨
     var varName = "test"; // 가장 오래된 버전에서 사용하는 변수 타입
@@ -24,6 +25,7 @@ alert("start javascript!!");
     // 전역변수가 많다는 건, 선언한 시점에서 프로젝트가 종료될떄까지 메모리를 잡아먹기에 좋은게 아니다
 */
 
+/* let.
 
 let letName = "kjk";
 console.log(letName); // kjk
@@ -31,12 +33,18 @@ if(true) {
     let letName = "jinkyung"; // 지역변수는 블록 스코프를 벗어나면 메모리가 해제된다.
     console.log(letName) // jinkyung
 }
-let letName = "kjk"; // 재선언 불가능. Identifier 'letName' has already been declared
+let letName = "test"; // 재선언 불가능. Identifier 'letName' has already been declared
 console.log(letName); // kjk
+*/
 
+// const constName; // Missing initializer in const declaration. 선언하면서 동시에 초기화를 해야만 함. 값이 수정될 일이 없는 변수
+const constName = "kjk"
+// ex) 게임에서 1스테이지 맵의 크기
+// ex) 1스테이지 보스 이름
+// ex) document를 변수로 선언할 때
+constName = "test" // const 변수는 재할당이 불가하다.  Assignment to constant variable.
+console.log(constName);
 
-const constName = "jinkyung";
-
-
-
+// 빨간줄이 뜨는 건 컴파일 에러. 컴파일은 사람 언어(자바스크립트) -> 컴퓨터 언어로 번역하는 것.
+// 디버그창에 뜨는 건 런타임 에러. 번역한 컴퓨터 언어로 코드를 한줄한줄 실행하는 것.
 
