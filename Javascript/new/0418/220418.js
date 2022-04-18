@@ -9,20 +9,32 @@ alert("start javascript!!");
     3. 대소문자를 구분한다. 
  */
 
-console.log(varName); // undefined. 메모리는 잡혔지만 초기화가 안되서 undefined임.
-// 호이스팅. 자바스크립트 엔진 1. 변수 선언이 이루어짐 2. 런타임에서 사용이 됨
-var varName = "test"; // 가장 오래된 버전에서 사용하는 변수 타입
-console.log(varName); 
+/* var
+    console.log(varName); // undefined. 메모리는 잡혔지만 초기화가 안되서 undefined임.
+    // 호이스팅. 자바스크립트 엔진 1. 변수 선언이 이루어짐 2. 런타임에서 사용이 됨
+    var varName = "test"; // 가장 오래된 버전에서 사용하는 변수 타입
+    console.log(varName); 
 
-if(true)
-{
-    // 다른 영역
-    var varName = "kimjinkyung"; // 한번 더 선언 및 초기화 가능.
+    if(true)
+    {
+        // 다른 영역
+        var varName = "kimjinkyung"; // 한번 더 선언 및 초기화 가능.
+    }
+    console.log(varName); // 위의 if문에 새롭게 선언 및 초기화한 내용이 출력된다. 이게 var의 문제점.
+    // 전역변수가 많다는 건, 선언한 시점에서 프로젝트가 종료될떄까지 메모리를 잡아먹기에 좋은게 아니다
+*/
+
+
+let letName = "kjk";
+console.log(letName); // kjk
+if(true) {
+    let letName = "jinkyung"; // 지역변수는 블록 스코프를 벗어나면 메모리가 해제된다.
+    console.log(letName) // jinkyung
 }
-console.log(varName); // 위의 if문에 새롭게 선언 및 초기화한 내용이 출력된다. 이게 var의 문제점.
-// 전역변수가 많다는 건, 선언한 시점에서 프로젝트가 종료될떄까지 메모리를 잡아먹기에 좋은게 아니다
+let letName = "kjk"; // 재선언 불가능. Identifier 'letName' has already been declared
+console.log(letName); // kjk
 
-let letName; 
+
 const constName = "jinkyung";
 
 
