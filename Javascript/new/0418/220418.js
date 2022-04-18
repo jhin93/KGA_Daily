@@ -1,5 +1,24 @@
 alert("start javascript!!");
 
+// 숫자형
+/*
+    2진수. 0b로 시작
+        255 -> 0b 1111 1111
+            128 64 32 16 8 4 2 1 // 총합 255
+
+        179 -> 0b 1011 0011
+            128 32 16 2 1 // 총합 179
+
+    8진수(0o).
+        255 -> 0o377
+        64x3 8x7 1x7
+    
+    16진수(0x00). 0123456789abcdef(0부터 15)
+        255 -> 0x00ff
+            16x15 + 15
+
+*/
+
 //변수명 이름 규칙
 /*
     1. 알파벳, _, -, 숫자 (한글, 특수문자, 일본어 이런거 쓰지 말자)
@@ -27,24 +46,26 @@ alert("start javascript!!");
 
 /* let.
 
-let letName = "kjk";
-console.log(letName); // kjk
-if(true) {
-    let letName = "jinkyung"; // 지역변수는 블록 스코프를 벗어나면 메모리가 해제된다.
-    console.log(letName) // jinkyung
-}
-let letName = "test"; // 재선언 불가능. Identifier 'letName' has already been declared
-console.log(letName); // kjk
+    let letName = "kjk";
+    console.log(letName); // kjk
+    if(true) {
+        let letName = "jinkyung"; // 지역변수는 블록 스코프를 벗어나면 메모리가 해제된다.
+        console.log(letName) // jinkyung
+    }
+    let letName = "test"; // 재선언 불가능. Identifier 'letName' has already been declared
+    console.log(letName); // kjk
 */
 
-// const constName; // Missing initializer in const declaration. 선언하면서 동시에 초기화를 해야만 함. 값이 수정될 일이 없는 변수
-const constName = "kjk"
-// ex) 게임에서 1스테이지 맵의 크기
-// ex) 1스테이지 보스 이름
-// ex) document를 변수로 선언할 때
-constName = "test" // const 변수는 재할당이 불가하다.  Assignment to constant variable.
-console.log(constName);
+/* const.
 
-// 빨간줄이 뜨는 건 컴파일 에러. 컴파일은 사람 언어(자바스크립트) -> 컴퓨터 언어로 번역하는 것.
-// 디버그창에 뜨는 건 런타임 에러. 번역한 컴퓨터 언어로 코드를 한줄한줄 실행하는 것.
+    // const constName; // Missing initializer in const declaration. 선언하면서 동시에 초기화를 해야만 함. 값이 수정될 일이 없는 변수
+    const constName = "kjk"
+    // ex) 게임에서 1스테이지 맵의 크기
+    // ex) 1스테이지 보스 이름
+    // ex) document를 변수로 선언할 때
+    constName = "test" // const 변수는 재할당이 불가하다.  Assignment to constant variable.
+    console.log(constName);
 
+    // 빨간줄이 뜨는 건 컴파일 에러. 컴파일은 사람 언어(자바스크립트) -> 컴퓨터 언어로 번역하는 것.
+    // 디버그창에 뜨는 건 런타임 에러. 번역한 컴퓨터 언어로 코드를 한줄한줄 실행하는 것.
+*/
