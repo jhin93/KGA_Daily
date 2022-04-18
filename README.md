@@ -9,7 +9,7 @@ https://blog.naver.com/jiwon3194/222512040766
 
 
 반복문 사용 시, 무한 루프가 돌때는 연산자가 제한범위안에 제대로 있는 지 확인할 것.  
-```
+```javascript
 while( i < 10 ) {  
   if((i % 2) == 0){  
     text += "<br>
@@ -115,7 +115,7 @@ Promise 의 특징은 new Promise(...) 하는 순간 여기에 할당된 비동�
 그럼 그 이후에 이 작업이 성공하거나 실패하는 순간에 우리가 또 뒷처리를 해줘야겠죠?  
 Promise 가 끝나고 난 다음의 동작을 우리가 설정해줄 수 있는데, 그것이 바로 then 메소드와 catch 메소드입니다.  
 
-```
+```javascript
 function startAsync(age) {
   return new Promise((resolve, reject) => {
     if (age > 20) resolve();
@@ -146,7 +146,7 @@ setTimeout(() => {
 1 then!  
 2 catch!  
 ```
-```
+```javascript
 function startAsync(age) {
   return new Promise((resolve, reject) => {
     if (age > 20) resolve(`${age} success`);            // 위의 예시와 다르게 resolve와 reject에 인자가 들어가있다
@@ -194,7 +194,7 @@ new Promise(…) 를 리턴하는 함수를 async 함수로 손쉽게 변환할 
 3. resolve(value); 부분을 return value; 로 변경합니다.  
 4. reject(new Error(…)); 부분을 throw new Error(…); 로 수정합니다.  
 
-```
+```javascript
 // 바로 위 예시를 async 함수로 표현하면 다음과 같다.
 async function startAsync(age) {
   if (age > 20) return `${age} success`;
@@ -213,7 +213,7 @@ async 함수에서만 사용할 수 있습니다.
 3. await 은 Promise 가 resolve 한 값을 내놓습니다.
 4. 해당 Promise 에서 reject 가 발생한다면 예외가 발생합니다.
 
-```
+```javascript
 async function f() {
 
   let promise = new Promise((resolve, reject) => {
@@ -245,7 +245,7 @@ https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-Ajax%EC%99%80-Ax
 전역변수  
 var, let, const 등을 쓰지 않고 선언한 변수는 '전역변수'이다.  
 즉 어디서나 불러서 사용할 수 있음.  
-```
+```javascript
 function calc (a, b) {
   let sum1 = a + b;
   sum2 = a + b;
@@ -258,7 +258,7 @@ sum1 // Uncaught ReferenceError: sum1 is not defined
 ```
 
 인스턴스  
-```
+```javascript
 let student = {
   'id' : 123,
   'class' : Higher
@@ -300,7 +300,7 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Ar
 dotenv 모듈. 
 https://www.daleseo.com/js-dotenv/  
 
-```
+```javascript
 // 1. env파일 생성하여 환경변수 설정
 DB_HOST=localhost
 DB_USER=root
@@ -322,7 +322,7 @@ https://velog.io/@hyunju-song/body-parser%EC%9D%98-urlencoded%EB%8A%94-%EB%8F%84
 fetch() 함수 사용법  
 https://yeri-kim.github.io/posts/fetch/  
 
-```
+```javascript
 fetch('https://api.google.com/user/3')
   .then(res => res.json())
   .then(res => {
@@ -422,7 +422,7 @@ https://iflife1124.tistory.com/15
 포인터 변수의 일반적인 형식. 
 : type * name ex) int * number;  
 ex)
-```
+```c
 string food = "Pizza";
 string *ptr = &food; // * 앞에 있는 string은 food가 "Pizza"라는 string 이기에 작성한 것.
 
@@ -452,7 +452,7 @@ string *ptr = &food; // * 앞에 있는 string은 food가 "Pizza"라는 string �
 이중포인터  
 포인터를 가리키는 포인터.  
 
-```
+```c
 int main()
 {
     char a;
@@ -475,7 +475,7 @@ int main()
 strcpy  
 C 스타일의 문자열인 char*, char[] 타입의 문자열을 복사하는 함수.  
 https://blockdmask.tistory.com/348  
-```
+```c
 > 간단한 사용법.
 
 char origin[] = "BlockDMask";
@@ -486,7 +486,7 @@ strncpy(dest, origin, sizeof(origin));
 
 C언어 동적메모리할당(malloc, calloc)  
 https://blog.naver.com/sharonichoya/220501158281  
-```
+```c
 // 예제
 
     int* pi = (int* p) malloc(sizeof(int) * 10);
@@ -538,7 +538,7 @@ https://jhnyang.tistory.com/334
 
 
 쉬운 포인터사용법
-```
+```c
     int testNum = 100;
     int* ptrNum = &testNum;
 
@@ -562,7 +562,7 @@ https://hwan-shell.tistory.com/25
 
 주소를 쓰는 이유. 어떤 값을 바꿀 때, 그 값의 '주소'에 새로운 값을 대입하기 위해. 만약 '주소'에 새로운 데이터를 넣지 않으면, 새로운 주소에 데이터가 할당된다.  
 그럴 경우 1. 실제로 인자로 받은 그 변수를 정확하게 바꾸기 위해.  2. 메모리 낭비도 일어나고, 연산도 느려질 것.
-```
+```c
 #include <iostream>
 #include <string>
 
@@ -607,7 +607,7 @@ public, private
 
 class : 클래스 내에 선언되는 것들은 기본적으로 다 private이고, public 내부에 선언된 것들이 public이다.  
 구조체, 함수 : 기본적으로 public이다.  
-```
+```c
     private: - 이 지시자 없이 그냥 선언해도 private로 선언된다.
         int m_nCurrentPage;
         void SetPercent();
@@ -707,7 +707,7 @@ https://react.vlpt.us/basic/13-array-insert.html
 
 useState로 객체에 데이터 갱신  
 https://gogoonbuntu.tistory.com/75  
-```
+```javascript
       // time & txnum object
       const [blockObj, setblockObj] = useState({
 
@@ -779,3 +779,6 @@ https://www.inflearn.com/questions/29959
 
 web3.js 스마트컨트랙트 접근  
 https://velog.io/@moonshot/web3.js-%EC%8A%A4%EB%A7%88%ED%8A%B8-%EC%BB%A8%ED%8A%B8%EB%9E%99%ED%8A%B8%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0   
+
+jwt 인증  
+https://velog.io/@_woogie/JWT-%EB%A1%9C%EA%B7%B8%EC%9D%B8%EB%B0%A9%EC%8B%9D-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-feat.-session%EC%97%90%EC%84%9C-jwt%EB%A1%9C  
