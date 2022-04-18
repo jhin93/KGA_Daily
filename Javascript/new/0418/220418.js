@@ -74,14 +74,14 @@
 
 
 // 교수님 풀이
-let correctNum = Math.floor(Math.random() * 10) % 8 + 3; // 3 + 0 ~ 3 + 7 . 8로 나눈 나머지는 1 ~ 7만 나오기에 가능한 코드
-console.log("난수 : ", correctNum)
-let inputNum = prompt("정답을 입력하세요", );
-if(inputNum == correctNum) {
-    alert("정답입니다!")
-} else {
-    alert("틀렸습니다")
-}
+// let correctNum = Math.floor(Math.random() * 10) % 8 + 3; // 3 + 0 ~ 3 + 7 . 8로 나눈 나머지는 1 ~ 7만 나오기에 가능한 코드
+// console.log("난수 : ", correctNum)
+// let inputNum = prompt("정답을 입력하세요", );
+// if(inputNum == correctNum) {
+//     alert("정답입니다!")
+// } else {
+//     alert("틀렸습니다")
+// }
 
 
 //변수명 이름 규칙
