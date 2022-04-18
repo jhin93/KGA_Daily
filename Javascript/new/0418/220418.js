@@ -16,8 +16,12 @@ alert("start javascript!!");
     16진수(0x00). 0123456789abcdef(0부터 15)
         255 -> 0x00ff
             16x15 + 15
-
 */
+
+let num = 255;
+console.log(num.toString(2)); // 11111111. 2진수로 표현
+console.log(num.toString(8)); // 377. 8진수로 표현
+console.log(num.toString(16)); // ff. 16진수로 표현
 
 //변수명 이름 규칙
 /*
