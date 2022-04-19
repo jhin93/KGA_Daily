@@ -32,19 +32,32 @@ function genesis(callback) {
     })
 }
 
-avante().then((data)=>{
-    console.log(data)
-    return sonata()
-})
-.then((data)=>{
-    console.log(data)
-    return genesis()
-})
-.then((data)=>{
-    console.log(data)
-})
+// avante().then((data)=>{
+//     console.log(data)
+//     return sonata()
+// })
+// .then((data)=>{
+//     console.log(data)
+//     return genesis()
+// })
+// .then((data)=>{
+//     console.log(data)
+// })
+
+async function car(){
+    const result = await avante()
+    console.log(result)
+    const result2 = await sonata()
+    console.log(result2)
+    const result3 = await genesis()
+    console.log(result3)
+}
+
+// async 가 붙은 함수는 백그라운드(관리하는 싱글 쓰레드가 아닌)에 들어감.
+// async는 무조건 프로미스 객체를 결과로 반환한다.
 
 
+car()
 
 // function sonata(callback) {
 //     setTimeout(() => {
