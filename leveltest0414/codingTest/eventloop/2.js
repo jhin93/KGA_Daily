@@ -19,3 +19,7 @@ function time() {
 }
 
 a(time)
+
+// event loop
+// 얇코 
+// 제로초
