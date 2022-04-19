@@ -10,7 +10,7 @@ const context = canvas.getContext('2d');
 let arcPosX = canvas.width/2;
 let arcPosY = canvas.height/2;
 let arcMoveDir = -1;
-let arcMoveSpeed = 2;
+let arcMoveSpeed = 9;
 
 // 실습. 동그라미가 오른쪽으로 움직이다가 캔버스 끝에 닿으면 왼쪽으로 이동.
 // 왼쪽으로 이동하다가 오른쪽에 닿으면 다시 반대로 이동.
