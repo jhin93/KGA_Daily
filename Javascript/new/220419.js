@@ -13,7 +13,7 @@ let arcPosX = canvas.width/2 + 120;
 let arcPosY = canvas.height/2;
 let arcMoveDirX = -1;
 let arcMoveDirY = -1;
-let arcMoveSpeed = 1;
+let arcMoveSpeed = 4;
 
 let ball = {
     left:0, right:0, top:0, bottom:0,
@@ -68,13 +68,8 @@ function keyDownEventHandler(e) { // 무슨키를 눌렀는지 알기 위해 매
 
 
 
+
 // 도형 움직이기
-
-
-function barUpdate() {
-    
-}
-
 
 function update() {
     // 데이터 수정(도형의 위치 이동)
@@ -93,10 +88,10 @@ function update() {
     arcPosX += arcMoveDirX * arcMoveSpeed; // 원 좌우로 움직이기. 
     arcPosY += arcMoveDirY * arcMoveSpeed; // 원 위아래로 움직이기
 
-    ball.left  = arcPosX - (arcRadius/2)
-    ball.right  = arcPosX + (arcRadius/2)
-    ball.top  = arcPosY - (arcRadius/2)
-    ball.bottom  = arcPosY + (arcRadius/2)
+    ball.left  = arcPosX - (arcRadius)
+    ball.right  = arcPosX + (arcRadius)
+    ball.top  = arcPosY - (arcRadius)
+    ball.bottom  = arcPosY + (arcRadius)
 
 
     // 충돌이 되는지 확인
@@ -124,8 +119,9 @@ function isCollisionRectToRect(rectA, rectB) {
 
 
 
-// 그리기
 
+
+// 그리기
 
 function draw() {
     // 화면 클리어
