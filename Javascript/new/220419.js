@@ -37,12 +37,17 @@ function keyDownEventHandler(e) { // 무슨키를 눌렀는지 알기 위해 매
     if (e.key == 'ArrowRight') {
         // 바를 오른쪽으로 이동
         // console.log("ArrowRight 는", e.key)
-        barPosX += barMoveSpeed
+        if(barPosX + barWidth < canvas.width) {
+            barPosX += barMoveSpeed
+        }
     }
     else if (e.key == 'ArrowLeft') {
         // 바를 왼쪽으로 이동
         // console.log("ArrowLeft 는", e.key)
-        barPosX -= barMoveSpeed
+        if(barPosX > 0) {
+            barPosX -= barMoveSpeed
+        }
+        
     }
 }
 
