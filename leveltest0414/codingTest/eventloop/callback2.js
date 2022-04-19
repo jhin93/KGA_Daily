@@ -2,31 +2,37 @@
 // callback, promise, async/await
 
 function avante(callback) {
-    setTimeout(callback, 1000)
+    setTimeout(() => {
+        console.log('avante go')
+        callback()
+    }, 1000)
 }
-
-avante(() => {console.log('avante go')}) // 1초 뒤 실행
 
 function sonata(callback) {
-    
-    callback() // 콘솔로그가 콜백 아래로 가면 출력 순서가 달라짐
-    console.log('sonata go')
+    setTimeout(() => {
+        console.log('sonata go')
+        callback()
+    }, 2000)
 }
 
-function genesis() {
-    console.log('genesis go')
+function genesis(callback) {
+    setTimeout(() => {
+        console.log('genesis go')
+    }, 3000)
 }
+
+avante(()=>{sonata(genesis)})
 
 
 // 아반때, 소나타, 제네시스를 비동기면서 차례대로 실행하려면?
 
-function carRacing() {
-    avante(() => {
-        sonata(()=>{
-            genesis()
-        })
-    })
-}
+// function carRacing() {
+//     avante(() => {
+//         sonata(()=>{
+//             genesis()
+//         })
+//     })
+// }
 
-carRacing()
+// carRacing()
 
