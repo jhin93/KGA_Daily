@@ -8,6 +8,8 @@ function a (callback) {
 }
 
 
+//promise 객체와 settimeout이 먼저 있다면 promise가 먼저 실행된다
+
 console.log(3)
 
 function time2() {
