@@ -2,9 +2,10 @@
 // callback, promise, async/await
 
 function avante(callback) {
-    console.log('avante go')
-    callback()
+    setTimeout(callback, 1000)
 }
+
+avante(() => {console.log('avante go')}) // 1초 뒤 실행
 
 function sonata(callback) {
     
