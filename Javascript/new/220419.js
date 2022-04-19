@@ -9,8 +9,10 @@ const context = canvas.getContext('2d');
 
 let arcPosX = canvas.width/2;
 let arcPosY = canvas.height/2;
-let arcMoveDir = -1;
-let arcMoveSpeed = 9;
+let arcMoveDirX = -1;
+let arcMoveDirY = -1;
+let arcMoveSpeed = 2;
+
 
 // 실습. 동그라미가 오른쪽으로 움직이다가 캔버스 끝에 닿으면 왼쪽으로 이동.
 // 왼쪽으로 이동하다가 오른쪽에 닿으면 다시 반대로 이동.
@@ -21,12 +23,19 @@ let arcMoveSpeed = 9;
 function update() {
     // 데이터 수정(도형의 위치 이동)
     if(arcPosX - 50 < 0) {
-        arcMoveDir = 1
+        arcMoveDirX = 1
     } else if (arcPosX + 50 > canvas.width) {
-        arcMoveDir = -1
+        arcMoveDirX = -1
     }
 
-    arcPosX += arcMoveDir * arcMoveSpeed; // 원 움직이기. 
+    if(arcPosY - 50 < 0){
+       arcMoveDirY = 1; 
+    } else if(arcPosY + 50 > canvas.height) {
+        arcMoveDirY = -1;
+    }
+
+    arcPosX += arcMoveDirX * arcMoveSpeed; // 원 움직이기. 
+    arcPosY += arcMoveDirY * arcMoveSpeed; // 위아래
 }
 
 
