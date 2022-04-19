@@ -13,15 +13,22 @@ let arcPosX = canvas.width/2 + 120;
 let arcPosY = canvas.height/2;
 let arcMoveDirX = -1;
 let arcMoveDirY = -1;
-let arcMoveSpeed = 2;
+let arcMoveSpeed = 1;
+
+let ball = {
+    left:0, right:0, top:0, bottom:0,
+}
 
 // 사각형 바 관련 변수
 const barWidth = 100;
 const barHeight = 20;
 let barPosX = canvas.width/2 - barWidth/2;
 let barPosY =  canvas.height - barHeight;
-let barMoveSpeed = 30;
+let barMoveSpeed = 60;
 
+let paddle = {
+    left:0, right:0, top:0, bottom:0
+}
 
 // 실습. 동그라미가 오른쪽으로 움직이다가 캔버스 끝에 닿으면 왼쪽으로 이동.
 // 왼쪽으로 이동하다가 오른쪽에 닿으면 다시 반대로 이동.
@@ -49,6 +56,12 @@ function keyDownEventHandler(e) { // 무슨키를 눌렀는지 알기 위해 매
         }
         
     }
+
+    paddle.left = barPosX 
+    paddle.right = barPosX + barWidth; 
+
+    paddle.top = barPosY 
+    paddle.bottom = barPosY + barHeight; 
 }
 
 
@@ -79,8 +92,35 @@ function update() {
 
     arcPosX += arcMoveDirX * arcMoveSpeed; // 원 좌우로 움직이기. 
     arcPosY += arcMoveDirY * arcMoveSpeed; // 원 위아래로 움직이기
+
+    ball.left  = arcPosX - (arcRadius/2)
+    ball.right  = arcPosX + (arcRadius/2)
+    ball.top  = arcPosY - (arcRadius/2)
+    ball.bottom  = arcPosY + (arcRadius/2)
+
+
+    // 충돌이 되는지 확인
+    if(isCollisionRectToRect(ball, paddle)){
+        arcMoveDirY = -1;
+        arcPosY = paddle.top - arcRadius;
+    }
 }
 
+function isCollisionRectToRect(rectA, rectB) {
+    // a의 왼쪽과 b의 오른쪽
+    // a의 오른쪽과 b의 왼쪽
+    // a의 아래쪽과 b의 위쪽
+    // a의 위쪽과 b의 아래쪽
+    if(rectA.left > rectB.right || 
+        rectA.right < rectB.left ||
+        rectA.top > rectB.bottom ||
+        rectA.bottom < rectB.top )
+    { // 이 4가지중 하나라도 만족하면 충돌 X
+        return false; // 겹치지 않았다
+    }
+
+    return true; // 겹쳤다. 즉, 충돌했다.
+}
 
 
 
