@@ -109,8 +109,10 @@
             for(let j = 0; j < brickCol; j ++) {
                 if(bricks[i][j].isAlive && isCollisionRectToRect(ball, bricks[i][j])) { //  한번 충돌된 애들은 체크를 안함. false
                     // arcMoveDirY *= -1; // 부딪힐때마다 방향이 바뀌어야 하기에 *= 로 적용
-                    arcMoveDirY = -arcMoveDirY
                     bricks[i][j].isAlive = false; // 여기서 isAlive가 false 바뀜. 충돌한 적 있다고 상태가 바뀐다.
+                    
+                    arcMoveDirY = -arcMoveDirY
+                    break;
                 }
             }
         }
