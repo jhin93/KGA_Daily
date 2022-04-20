@@ -2,22 +2,13 @@
     배열 array
  */
 
-    let testArray = [1, 2, 3, 4, 5];
-    let testArray2 = new Array(5);
 
-    testArray[0] = 100;
-    
-    testArray.push(30);
-    testArray.pop();
-    testArray.unshift(300)
-    
-    let arrayMultiple = testArray.map(x => x * 2);
-    arrayMultiple.forEach(function (number, index, array) {
-        console.log("number : ", number, "index : ", index, "arr : ", array);
-    })
-    
-
-    // shift와 unshift는 새로 공간을 만들고 모든 인덱스와 요소들을 다 한칸씩 다 뒤로 밀어주는 것이기에 사용을 지양하기.
+    // 벽돌
+    const brickCol = 5; // 열
+    const brickRow = 4; // 행
+    const brickWidth = 50; // 간격 10
+    const brickHeight = 25; // 간격 5
+    let bricks = [];
 
     const canvas = document.getElementById('myCanvas');
     const context = canvas.getContext('2d');
@@ -33,8 +24,14 @@
     let ball = {
         left:0, right:0, top:0, bottom:0,
     }
-    
-    // 사각형 바 관련 변수
+
+    // 벽돌
+    let brick = {
+        left:0, right:0, top:0, bottom:0,
+        column : 0, row : 0
+    }
+
+    // 패들 관련 변수
     const barWidth = 100;
     const barHeight = 20;
     let barPosX = canvas.width/2 - barWidth/2;
@@ -45,16 +42,13 @@
         left:0, right:0, top:0, bottom:0
     }
     
-    // 실습. 동그라미가 오른쪽으로 움직이다가 캔버스 끝에 닿으면 왼쪽으로 이동.
-    // 왼쪽으로 이동하다가 오른쪽에 닿으면 다시 반대로 이동.
     
+
+    // 키 처리 함수 추가
     document.addEventListener('keydown', keyDownEventHandler); // keydown이라는 이벤트가 발생하면 함수를 호출한다
     // document.addEventListener('keyup', keyUpEventHandler); // keydown이라는 이벤트가 발생하면 함수를 호출한다
     
-    
-    
-    // 키보드 조작
-    
+    // 함수 모음
     function keyDownEventHandler(e) { // 무슨키를 눌렀는지 알기 위해 매개변수 e 대입
         if (e.key == 'ArrowRight') {
             // 바를 오른쪽으로 이동
@@ -79,11 +73,7 @@
         paddle.bottom = barPosY + barHeight; 
     }
     
-    
-    
-    
-    
-    
+
     // 도형 움직이기
     
     function update() {
@@ -132,10 +122,7 @@
         return true; // 겹쳤다. 즉, 충돌했다.
     }
     
-    
-    
-    
-    
+
     // 그리기
     
     function draw() {
@@ -144,6 +131,7 @@
         // 다른 도형 그리기
         drawRect();
         drawArc();
+        drawBricks();
     }
     
     // 사각형 그리는 함수
@@ -169,9 +157,38 @@
         
         context.closePath(); // 그리기 종료
     }
+
+    // 벽돌 생성 함수
+    function setBricks() {
+        for (let i = 0; i < brickRow; i ++) {
+            bricks[i] = [];
+            for(let j = 0; j < brickCol; j ++) {
+                bricks[i][j] = {
+                    left:55 + j * (brickWidth + 10), 
+                    right: 55 + j * (brickWidth + 10) + 50, 
+                    top: 30 + i * (brickHeight + 5), 
+                    bottom: 30 + i * (brickHeight + 5) + 25,
+                    column : i, row : j
+                };
+            }
+        }
+    }
+
+    function drawBricks(){
+        context.beginPath(); // 그리기 시작
+        for (let i = 0; i < brickRow; i ++) {
+            for(let j = 0; j < brickCol; j ++) {
+                context.rect(bricks[i][j].left, bricks[i][j].top, brickWidth, brickHeight);
+                context.fillStyle = 'green';
+                context.fill();
+            }
+        }
+        context.closePath(); // 그리기 종료
+    }
     
     
     // 지속적인 변화주기 setInterval. 함수이름, 시간, 
+    setBricks();
     setInterval(update, 10);
     setInterval(draw, 10);
     
