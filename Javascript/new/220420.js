@@ -10,9 +10,12 @@
     testArray.push(30);
     testArray.pop();
     testArray.unshift(300)
-    testArray.forEach(function (number, index, array) {
+    
+    let arrayMultiple = testArray.map(x => x * 2);
+    arrayMultiple.forEach(function (number, index, array) {
         console.log("number : ", number, "index : ", index, "arr : ", array);
     })
+    
 
     // shift와 unshift는 새로 공간을 만들고 모든 인덱스와 요소들을 다 한칸씩 다 뒤로 밀어주는 것이기에 사용을 지양하기.
 
