@@ -3,9 +3,11 @@
  */
 
 
+    var [columnNum, RowNum] = prompt("두 숫자를 띄어쓰기로 입력하세요 ").split(" ")
+
     // 벽돌
-    const brickCol = 5; // 열
-    const brickRow = 4; // 행
+    const brickCol = columnNum; // 열
+    const brickRow = RowNum; // 행
     const brickWidth = 50; // 간격 10
     const brickHeight = 25; // 간격 5
     let bricks = [];
@@ -19,7 +21,7 @@
     let arcPosY = canvas.height/2;
     let arcMoveDirX = -1;
     let arcMoveDirY = -1;
-    let arcMoveSpeed = 2;
+    let arcMoveSpeed = 4;
     
     let ball = {
         left:0, right:0, top:0, bottom:0,
@@ -42,6 +44,9 @@
         left:0, right:0, top:0, bottom:0
     }
     
+    // game clear 변수
+    let maxCount = brickRow * brickCol // 전체 벽돌의 개수
+    let falseCount = 0; // false 벽돌의 개수
     
 
     // 키 처리 함수 추가
@@ -87,7 +92,8 @@
         if(arcPosY - arcRadius < 0){
            arcMoveDirY = 1; 
         } else if(arcPosY + arcRadius > canvas.height) {
-            arcMoveDirY = -1;
+            location.reload();
+            alert('game over!')
         }
     
         arcPosX += arcMoveDirX * arcMoveSpeed; // 원 좌우로 움직이기. 
@@ -107,10 +113,19 @@
 
         for(let i = 0; i < brickRow; i ++){
             for(let j = 0; j < brickCol; j ++) {
+                
                 if(bricks[i][j].isAlive && isCollisionRectToRect(ball, bricks[i][j])) { //  한번 충돌된 애들은 체크를 안함. false
                     // arcMoveDirY *= -1; // 부딪힐때마다 방향이 바뀌어야 하기에 *= 로 적용
                     bricks[i][j].isAlive = false; // 여기서 isAlive가 false 바뀜. 충돌한 적 있다고 상태가 바뀐다.
-                    
+                    falseCount++;
+                    console.log("falseCount : ", falseCount)
+                    console.log("maxCount : ", maxCount)
+
+                    if(maxCount == falseCount) {
+                        location.reload()
+                        alert("game clear")
+                    }
+
                     arcMoveDirY = -arcMoveDirY
                     break;
                 }
