@@ -19,7 +19,7 @@
     let arcPosY = canvas.height/2;
     let arcMoveDirX = -1;
     let arcMoveDirY = -1;
-    let arcMoveSpeed = 4;
+    let arcMoveSpeed = 2;
     
     let ball = {
         left:0, right:0, top:0, bottom:0,
@@ -104,6 +104,17 @@
             arcMoveDirY = -1;
             arcPosY = paddle.top - arcRadius;
         }
+
+        for(let i = 0; i < brickRow; i ++){
+            for(let j = 0; j < brickCol; j ++) {
+                if(bricks[i][j].isAlive && isCollisionRectToRect(ball, bricks[i][j])) { //  한번 충돌된 애들은 체크를 안함. false
+                    // 벽돌을 안보이게 하든, 위치를 바꾸던지, ball의 방향을 변경
+                    // console.log('i : ', i , 'j : ', j)
+                    bricks[i][j].isAlive = false; // 여기서 isAlive가 false 바뀜. 충돌한 적 있다고 상태가 바뀐다.
+                }
+            }
+        }
+
     }
     
     function isCollisionRectToRect(rectA, rectB) {
@@ -168,7 +179,8 @@
                     right: 55 + j * (brickWidth + 10) + 50, 
                     top: 30 + i * (brickHeight + 5), 
                     bottom: 30 + i * (brickHeight + 5) + 25,
-                    column : i, row : j
+                    column : i, row : j,
+                    isAlive:true
                 };
             }
         }
@@ -178,9 +190,11 @@
         context.beginPath(); // 그리기 시작
         for (let i = 0; i < brickRow; i ++) {
             for(let j = 0; j < brickCol; j ++) {
-                context.rect(bricks[i][j].left, bricks[i][j].top, brickWidth, brickHeight);
-                context.fillStyle = 'green';
-                context.fill();
+                if(bricks[i][j].isAlive) {
+                    context.rect(bricks[i][j].left, bricks[i][j].top, brickWidth, brickHeight);
+                    context.fillStyle = 'green';
+                    context.fill();
+                }
             }
         }
         context.closePath(); // 그리기 종료
