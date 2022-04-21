@@ -27,6 +27,8 @@
             console.log('내가 움직이고 있어');
         }
     }
+
+    // MovingBrick(10, 10, 20, 20, 'black').draw()
  
 
 
@@ -34,8 +36,8 @@
     // var [columnNum, RowNum] = prompt("두 숫자를 띄어쓰기로 입력하세요 ").split(" ")
 
     // 벽돌
-    const brickCol = 10; // 열
-    const brickRow = 10; // 행
+    const brickCol = 5; // 열
+    const brickRow = 5; // 행
     const brickWidth = 50; // 간격 10
     const brickHeight = 25; // 간격 5
     let bricks = [];
@@ -71,6 +73,12 @@
     let paddle = {
         left:0, right:0, top:0, bottom:0
     }
+
+    // 장애물 변수
+    const obsWidth = 100;
+    const obsHeight = 20;
+    let obsPosX = canvas.width/2 - obsWidth/2;
+    let obsPosY = canvas.width/2 - obsHeight/2 + 80;
     
     // game clear 변수
     let maxCount = brickRow * brickCol // 전체 벽돌의 개수
@@ -121,7 +129,7 @@
            arcMoveDirY = 1; 
         } else if(arcPosY + arcRadius > canvas.height) {
             document.location.reload()
-            // alert('game over!')
+            alert('game over!')
         }
     
         arcPosX += arcMoveDirX * arcMoveSpeed; // 원 좌우로 움직이기. 
@@ -204,14 +212,27 @@
         drawRect();
         drawArc();
         drawBricks();
+        drawObstacle();
     }
 
-    // 사각형 그리는 함수
+    // 패들 그리는 함수
     function drawRect() {
         context.beginPath(); // 그리기 시작
     
         context.rect(barPosX, barPosY, barWidth, barHeight); // rect는 좌상단 기준으로 그리기
         context.fillStyle = 'red';
+        context.fill();
+    
+        context.closePath(); // 그리기 종료
+    
+    }
+
+    // 장애물 그리는 함수
+    function drawObstacle() {
+        context.beginPath(); // 그리기 시작
+    
+        context.rect(obsPosX, obsPosY, obsWidth, obsHeight); // rect는 좌상단 기준으로 그리기
+        context.fillStyle = 'black';
         context.fill();
     
         context.closePath(); // 그리기 종료
@@ -267,6 +288,9 @@
                 // 만약 위의 bricks[i][j] = new Brick가 없다면 당연히 bricks[i][j].draw(); 처럼 메소드를 꺼내쓰는 건 불가능.
             }
         }
+
+
+
         context.closePath(); // 그리기 종료
     }
     
