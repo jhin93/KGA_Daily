@@ -171,7 +171,7 @@
         }
         
         if(isCollisionRectToRect(ball, obs)){
-            arcMoveDirY = -arcMoveDirY;
+            arcMoveDirY = -arcMoveDirY; // 모든 면에서 부딪혔을 때, 방향이 바뀌어야 함.
         } 
 
         for(let i = 0; i < brickRow; i ++){
