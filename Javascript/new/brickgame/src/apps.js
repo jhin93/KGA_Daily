@@ -262,7 +262,9 @@
         context.beginPath(); // 그리기 시작
         for (let i = 0; i < brickRow; i ++) {
             for(let j = 0; j < brickCol; j ++) {
-                bricks[i][j].draw(); // 클래스 class 사용.
+                bricks[i][j].draw(); // 클래스 class 사용. 최상단 클래스
+                // 이게 가능한 이유는 bricks[i][j]가 바로 위에서 bricks[i][j] = new Brick라고 클래스를 복사해서 사용하기 때문이다.
+                // 만약 위의 bricks[i][j] = new Brick가 없다면 당연히 bricks[i][j].draw(); 처럼 메소드를 꺼내쓰는 건 불가능.
             }
         }
         context.closePath(); // 그리기 종료
