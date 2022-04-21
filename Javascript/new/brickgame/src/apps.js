@@ -1,12 +1,8 @@
 
 
-// var [columnNum, RowNum] = prompt("두 숫자를 띄어쓰기로 입력하세요 ").split(" "
-
-/*
-    배열 array
- */
 
 
+    // 프롬프트로 블록 개수 입력받기
     var [columnNum, RowNum] = prompt("두 숫자를 띄어쓰기로 입력하세요 ").split(" ")
 
     // 벽돌
@@ -122,13 +118,9 @@
                     // arcMoveDirY *= -1; // 부딪힐때마다 방향이 바뀌어야 하기에 *= 로 적용
                     bricks[i][j].isAlive = false; // 여기서 isAlive가 false 바뀜. 충돌한 적 있다고 상태가 바뀐다.
                     falseCount++;
-                    console.log("falseCount : ", falseCount)
-                    console.log("maxCount : ", maxCount)
 
-                    if(maxCount == falseCount) {
-                        document.location.reload()
-                        alert("game clear")
-                    }
+
+                    checkToWin()
 
                     arcMoveDirY = -arcMoveDirY
                     break;
@@ -137,7 +129,27 @@
         }
 
     }
-    
+
+    // 게임 이겼는지 체크
+    function checkToWin() {
+
+        // 1. bricks 배열에 있는 정보로 처리
+
+        // let flatBricks = bricks.flat();// 배열의 모든 요소를 꺼내서 하나하나를 배열로 만듬
+
+        // let deadBricks = bricks.filter(brick => brick.isAlive === false);
+        // if(deadBricks.length === maxCount) {
+        //     document.location.reload()
+        //     alert("game clear")
+        // }
+
+        // 2. 카운트를 세는 변수를 만들어서 처리
+        if(maxCount === falseCount) {
+            document.location.reload()
+            alert("game clear")
+        }
+    }
+
     function isCollisionRectToRect(rectA, rectB) {
         // a의 왼쪽과 b의 오른쪽
         // a의 오른쪽과 b의 왼쪽
@@ -196,7 +208,7 @@
             bricks[i] = [];
             for(let j = 0; j < brickCol; j ++) {
                 bricks[i][j] = {
-                    left:55 + j * (brickWidth + 10), 
+                    left: 55 + j * (brickWidth + 10), 
                     right: 55 + j * (brickWidth + 10) + 50, 
                     top: 30 + i * (brickHeight + 5), 
                     bottom: 30 + i * (brickHeight + 5) + 25,

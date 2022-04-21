@@ -1,6 +1,43 @@
+
 /*
-    배열 array
- */
+    클래스(class)
+
+    함수 생성자
+
+*/
+
+// 벽돌 left, top, right, bottom, col, row, pos + 움직이는 기능
+
+// function Brick (left, top, right, bottom) {
+//     this.left = left,
+//     this.top = top,
+//     this.right = right,
+//     this.bottom = bottom
+//     this.movingAction = function () {console.log("내가 움직이고 있어")}
+// }
+
+// Brick.prototype.movingAction = function () {console.log('내가 움직이고 있어')}
+
+// for(let i = 0; i < 20; i ++) {
+//     let tempBrick = new Brick(0, 0, 10, 10);
+//     tempBrick.movingAction();
+// }
+
+class Brick {
+    constructor(left, top, right, bottom) {
+        this.left = left;
+        this.top = top;
+        this.right = right;
+        this.bottom = bottom;
+    }
+
+    movingAction() {
+        this.left++;
+        console.log('내가 움직이고 있어');
+    }
+}
+
+
 
 
     var [columnNum, RowNum] = prompt("두 숫자를 띄어쓰기로 입력하세요 ").split(" ")
@@ -21,7 +58,7 @@
     let arcPosY = canvas.height/2;
     let arcMoveDirX = -1;
     let arcMoveDirY = -1;
-    let arcMoveSpeed = 4;
+    let arcMoveSpeed = 2;
     
     let ball = {
         left:0, right:0, top:0, bottom:0,
