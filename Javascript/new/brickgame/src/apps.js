@@ -51,37 +51,41 @@
     let arcPosY = canvas.height/2;
     let arcMoveDirX = -1;
     let arcMoveDirY = -1;
-    let arcMoveSpeed = 1;
+    let arcMoveSpeed = 2;
     
     let ball = {
         left:0, right:0, top:0, bottom:0,
     }
 
     // 벽돌
-    let brick = {
-        left:0, right:0, top:0, bottom:0,
-        column : 0, row : 0
-    }
+    // let brick = {
+    //     left:0, right:0, top:0, bottom:0,
+    //     column : 0, row : 0
+    // }
 
     // 패들 관련 변수
     const barWidth = 100;
     const barHeight = 20;
     let barPosX = canvas.width/2 - barWidth/2;
     let barPosY =  canvas.height - barHeight;
-    let barMoveSpeed = 60;
+    let barMoveSpeed = 80;
     
     let paddle = {
         left:0, right:0, top:0, bottom:0
     }
 
     // 장애물 변수
+    let obs = {
+        left:0, right:0, top:0, bottom:0
+    }
+
     const obsWidth = 100;
     const obsHeight = 20;
     let obsPosX = canvas.width/2 - obsWidth/2;
     let obsPosY = canvas.width/2 - obsHeight/2 + 80;
     let obsMoveDirX = -1;
-    let obsMoveDirY = -1;
-    let obsMoveSpeed = 1;
+    // let obsMoveDirY = -1;
+    let obsMoveSpeed = 2;
     
     // game clear 변수
     let maxCount = brickRow * brickCol // 전체 벽돌의 개수
@@ -142,6 +146,13 @@
         ball.right  = arcPosX + (arcRadius)
         ball.top  = arcPosY - (arcRadius)
         ball.bottom  = arcPosY + (arcRadius)
+
+        // 장애물
+        obs.left = obsPosX;
+        obs.right = obsPosX + obsWidth; 
+    
+        obs.top = obsPosY;
+        obs.bottom = obsPosY + obsHeight; 
     
         // 검은 블록 이동
         if(obsPosX < 0) {
@@ -150,7 +161,7 @@
             obsMoveDirX = -1
         }
     
-        obsPosX += obsMoveDirX * obsMoveSpeed; // 원 좌우로 움직이기. 
+        obsPosX += obsMoveDirX * obsMoveSpeed; // 장애물 좌우로 움직이기. 
 
     
         // 충돌이 되는지 확인
@@ -158,6 +169,10 @@
             arcMoveDirY = -1;
             arcPosY = paddle.top - arcRadius;
         }
+        
+        if(isCollisionRectToRect(ball, obs)){
+            arcMoveDirY = -arcMoveDirY;
+        } 
 
         for(let i = 0; i < brickRow; i ++){
             for(let j = 0; j < brickCol; j ++) {
