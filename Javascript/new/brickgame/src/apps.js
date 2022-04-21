@@ -1,13 +1,41 @@
 
 
+    // 클래스로 객체의 설계도를 만든다.
+    // 명사로 지칭되는 객체를 설계한다. 자동차(속성), 책(속성과 기능), 몬스터(속성과 기능), 사람...
+    class Brick {
+        constructor(left, top, right, bottom, color) {
+            this.left = left;
+            this.top = top;
+            this.right = right;
+            this.bottom = bottom;
+            this.isAlive = true; // 처음 생성될때는 alive가 맞음
+            this.color = color
+        }
+
+        draw() {
+            if(this.isAlive) {
+                context.rect(this.left, this.top, brickWidth, brickHeight);
+                context.fillStyle = this.color;
+                context.fill();
+            }
+        }
+    }
+    // 상속 받기
+    class MovingBrick extends Brick{
+        movingAction() {
+            this.left++;
+            console.log('내가 움직이고 있어');
+        }
+    }
+ 
 
 
     // 프롬프트로 블록 개수 입력받기
-    var [columnNum, RowNum] = prompt("두 숫자를 띄어쓰기로 입력하세요 ").split(" ")
+    // var [columnNum, RowNum] = prompt("두 숫자를 띄어쓰기로 입력하세요 ").split(" ")
 
     // 벽돌
-    const brickCol = columnNum; // 열
-    const brickRow = RowNum; // 행
+    const brickCol = 10; // 열
+    const brickRow = 10; // 행
     const brickWidth = 50; // 간격 10
     const brickHeight = 25; // 간격 5
     let bricks = [];
@@ -21,7 +49,7 @@
     let arcPosY = canvas.height/2;
     let arcMoveDirX = -1;
     let arcMoveDirY = -1;
-    let arcMoveSpeed = 2;
+    let arcMoveSpeed = 1;
     
     let ball = {
         left:0, right:0, top:0, bottom:0,
@@ -93,7 +121,7 @@
            arcMoveDirY = 1; 
         } else if(arcPosY + arcRadius > canvas.height) {
             document.location.reload()
-            alert('game over!')
+            // alert('game over!')
         }
     
         arcPosX += arcMoveDirX * arcMoveSpeed; // 원 좌우로 움직이기. 
@@ -177,11 +205,10 @@
         drawArc();
         drawBricks();
     }
-    
+
     // 사각형 그리는 함수
     function drawRect() {
         context.beginPath(); // 그리기 시작
-    
     
         context.rect(barPosX, barPosY, barWidth, barHeight); // rect는 좌상단 기준으로 그리기
         context.fillStyle = 'red';
@@ -202,32 +229,40 @@
         context.closePath(); // 그리기 종료
     }
 
+
+
     // 벽돌 생성 함수
     function setBricks() {
+        bricks = [];
         for (let i = 0; i < brickRow; i ++) {
             bricks[i] = [];
             for(let j = 0; j < brickCol; j ++) {
-                bricks[i][j] = {
-                    left: 55 + j * (brickWidth + 10), 
-                    right: 55 + j * (brickWidth + 10) + 50, 
-                    top: 30 + i * (brickHeight + 5), 
-                    bottom: 30 + i * (brickHeight + 5) + 25,
-                    column : i, row : j,
-                    isAlive:true
-                };
+                // bricks[i][j] = {
+                //     left: 55 + j * (brickWidth + 10), 
+                //     right: 55 + j * (brickWidth + 10) + 50, 
+                //     top: 30 + i * (brickHeight + 5), 
+                //     bottom: 30 + i * (brickHeight + 5) + 25,
+                //     column : i, row : j,
+                //     isAlive:true
+                // };
+                bricks[i][j] = new Brick(
+                    55 + j * (brickWidth + 10), 
+                    30 + i * (brickHeight + 5), 
+                    55 + j * (brickWidth + 10) + 50, 
+                    30 + i * (brickHeight + 5) + 25,
+                    'green'
+                );
+
             }
         }
     }
 
+    // 벽돌 그리기.
     function drawBricks(){
         context.beginPath(); // 그리기 시작
         for (let i = 0; i < brickRow; i ++) {
             for(let j = 0; j < brickCol; j ++) {
-                if(bricks[i][j].isAlive) {
-                    context.rect(bricks[i][j].left, bricks[i][j].top, brickWidth, brickHeight);
-                    context.fillStyle = 'green';
-                    context.fill();
-                }
+                bricks[i][j].draw(); // 클래스 class 사용.
             }
         }
         context.closePath(); // 그리기 종료
