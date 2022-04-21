@@ -79,6 +79,9 @@
     const obsHeight = 20;
     let obsPosX = canvas.width/2 - obsWidth/2;
     let obsPosY = canvas.width/2 - obsHeight/2 + 80;
+    let obsMoveDirX = -1;
+    let obsMoveDirY = -1;
+    let obsMoveSpeed = 1;
     
     // game clear 변수
     let maxCount = brickRow * brickCol // 전체 벽돌의 개수
@@ -140,6 +143,15 @@
         ball.top  = arcPosY - (arcRadius)
         ball.bottom  = arcPosY + (arcRadius)
     
+        // 검은 블록 이동
+        if(obsPosX < 0) {
+            obsMoveDirX = 1
+        } else if (obsPosX + obsWidth > canvas.width) {
+            obsMoveDirX = -1
+        }
+    
+        obsPosX += obsMoveDirX * obsMoveSpeed; // 원 좌우로 움직이기. 
+
     
         // 충돌이 되는지 확인
         if(isCollisionRectToRect(ball, paddle)){
