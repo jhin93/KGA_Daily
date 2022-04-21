@@ -30,14 +30,14 @@ class Brick {
         this.right = right;
         this.bottom = bottom;
     }
-
+}
+// 상속 받기
+class MovingBrick extends Brick{
     movingAction() {
         this.left++;
         console.log('내가 움직이고 있어');
     }
 }
-
-
 
 
     var [columnNum, RowNum] = prompt("두 숫자를 띄어쓰기로 입력하세요 ").split(" ")
