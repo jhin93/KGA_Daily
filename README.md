@@ -202,6 +202,9 @@ async function startAsync(age) {
 ```
 
 await 함수  
+
+await 키워드는 async 함수 안에서만 작동한다. await가 붙은 로직은 끝날때까지 종료되지 않는다. 비동기인 async 안에서 동기적으로 작동한다.
+
 await: Promise 가 끝날 때까지 기다린다.  
 await 는 Promise 가 fulfilled 가 되든지 rejected 가 되든지 아무튼 간에 끝날 때까지 기다리는 함수입니다.  
 async 함수에서만 사용할 수 있습니다.  
