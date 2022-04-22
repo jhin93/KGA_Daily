@@ -102,17 +102,17 @@ testAsyncAwaitFunc();
 //            console.log('2. promsie() catch() called');
 //     });
 
-// function testFunc1() {
-//     console.log('testFunc1()');
+function testFunc1() {
+    console.log('testFunc1()');
 
-//     let startTime = new Date().getTime();
-//     while(new Date().getTime() - startTime < 100);
+    let startTime = new Date().getTime();
+    while(new Date().getTime() - startTime < 100);
 
-//     testFunc2();
-// }
+    testFunc2();
+}
 
-// function testFunc2() {
-//     console.log('testFunc2()');
-// }
+function testFunc2() {
+    console.log('testFunc2()');
+}
 
-// testFunc1();
+testFunc1();
