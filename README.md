@@ -234,7 +234,7 @@ f();
 
 axios 사용법  
 https://velog.io/@april_5/TIL43-Axios-%EC%82%AC%EC%9A%A9%EB%B2%95#axiosput
-
+https://joshua1988.github.io/web-development/javascript/js-async-await/#async--await-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%98%88%EC%A0%9C
 Axios vs fetch  
 https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-Ajax%EC%99%80-Axios-%EA%B7%B8%EB%A6%AC%EA%B3%A0-fetch#fetch-1  
 
