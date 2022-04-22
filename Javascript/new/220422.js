@@ -12,15 +12,25 @@
 function asyncCheckAdult (age) {
     return new Promise((resolve, reject) => {
         if (age >= 20) resolve(age); // resolve에 age가 들어가야 then에도 age가 들어간다
-        else reject();
+        else reject(age);
     })
 }
 
-const promiseCheckAdult = asyncCheckAdult(21);
+// 1번째 promise
+const promiseCheckAdult1 = asyncCheckAdult(10);
 
-promiseCheckAdult.then((age) => { 
+promiseCheckAdult1.then((age) => { 
     console.log(`${age} is adult!!`)
-}).catch(() => {
+}).catch((age) => {
+    console.log(`${age} is not adult!!`)
+});
+
+// 2번째 promise
+const promiseCheckAdult2 = asyncCheckAdult(21);
+
+promiseCheckAdult2.then((age) => { 
+    console.log(`${age} is adult!!`)
+}).catch((age) => {
     console.log(`${age} is not adult!!`)
 });
 
