@@ -99,7 +99,6 @@ zip-lib - 노드에 대한 zip 및 unzip 라이브러리
 
 Promise  
 
-https://developer.mozilla.org/ko/docs/conflicting/Learn/JavaScript/Asynchronous/Promises#the_basics_of_asyncawait  
 https://elvanov.com/2597  
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises  
 
