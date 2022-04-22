@@ -99,7 +99,6 @@ zip-lib - 노드에 대한 zip 및 unzip 라이브러리
 
 Promise  
 
-https://developer.mozilla.org/ko/docs/conflicting/Learn/JavaScript/Asynchronous/Promises#the_basics_of_asyncawait  
 https://elvanov.com/2597  
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises  
 
@@ -203,6 +202,9 @@ async function startAsync(age) {
 ```
 
 await 함수  
+
+await 키워드는 async 함수 안에서만 작동한다. await가 붙은 로직은 끝날때까지 종료되지 않는다. 비동기인 async 안에서 동기적으로 작동한다.
+
 await: Promise 가 끝날 때까지 기다린다.  
 await 는 Promise 가 fulfilled 가 되든지 rejected 가 되든지 아무튼 간에 끝날 때까지 기다리는 함수입니다.  
 async 함수에서만 사용할 수 있습니다.  
@@ -235,7 +237,7 @@ f();
 
 axios 사용법  
 https://velog.io/@april_5/TIL43-Axios-%EC%82%AC%EC%9A%A9%EB%B2%95#axiosput
-
+https://joshua1988.github.io/web-development/javascript/js-async-await/#async--await-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%98%88%EC%A0%9C
 Axios vs fetch  
 https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-Ajax%EC%99%80-Axios-%EA%B7%B8%EB%A6%AC%EA%B3%A0-fetch#fetch-1  
 
@@ -798,3 +800,6 @@ https://velog.io/@_woogie/JWT-%EB%A1%9C%EA%B7%B8%EC%9D%B8%EB%B0%A9%EC%8B%9D-%EA%
 
 로그인 전문 서버가 OAuth.  
 
+
+비동기함수 이동경로  
+callback queue -> call stack(이동방식은 이벤트 루프이다)  
