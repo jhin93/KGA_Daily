@@ -8,6 +8,31 @@
 // let a = 0;
 // a();
 
+
+function asyncCheckAdult (age) {
+    return new Promise((resolve, reject) => {
+        if (age >= 20) resolve(age); // resolve에 age가 들어가야 then에도 age가 들어간다
+        else reject();
+    })
+}
+
+const promiseCheckAdult = asyncCheckAdult(21);
+
+promiseCheckAdult.then((age) => { 
+    console.log(`${age} is adult!!`)
+}).catch(() => {
+    console.log(`${age} is not adult!!`)
+});
+
+
+
+// 1. promiseCheckAdult 함수를 then과 catch로 구분해서 먼저 크게 작성
+// promiseCheckAdult.then().catch()
+
+// 2. 채워넣기
+
+
+
 // const promise = new Promise(() => {
 
 // });
