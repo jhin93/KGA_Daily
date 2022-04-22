@@ -98,6 +98,25 @@ zip-lib - 노드에 대한 zip 및 unzip 라이브러리
 
 
 Promise  
+```javascript
+
+// resolve 반환
+const promise1 = new Promise((resolve, reject) => {
+  resolve();
+});
+
+promise1.then(() => {
+  console.log("then!");
+}).catch(() => {
+  console.log("catch!");
+});
+
+// reject 반환
+const promise1 = new Promise((resolve, reject) => {
+  reject();
+});
+
+```
 
 https://elvanov.com/2597  
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises  
