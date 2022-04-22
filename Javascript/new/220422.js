@@ -1,23 +1,18 @@
-/*
-    비동기 처리
-    Promise
+// 1. promiseCheckAdult 함수를 then과 catch로 구분해서 먼저 크게 작성
+// promiseCheckAdult.then().catch()
 
-    동기 처리
- */
+// 2. 채워넣기
 
-// let a = 0;
-// a();
-
-
-function asyncCheckAdult (age) {
-    return new Promise((resolve, reject) => {
-        if (age >= 20) resolve(age); // resolve에 age가 들어가야 then에도 age가 들어간다
-        else reject(age);
-    })
-}
+// 밑의 async 예시를 위해 주석처리
+// function asyncCheckAdult (age) {
+//     return new Promise((resolve, reject) => {
+//         if (age >= 20) resolve(age); // resolve에 age가 들어가야 then에도 age가 들어간다
+//         else reject(age);
+//     })
+// }
 
 // 1번째 promise
-const promiseCheckAdult1 = asyncCheckAdult(10);
+const promiseCheckAdult1 = asyncCheckAdult(10); // resolve를 먼저 처리해줌.
 
 promiseCheckAdult1.then((age) => { 
     console.log(`${age} is adult!!`)
@@ -36,10 +31,21 @@ promiseCheckAdult2.then((age) => {
 
 
 
-// 1. promiseCheckAdult 함수를 then과 catch로 구분해서 먼저 크게 작성
-// promiseCheckAdult.then().catch()
 
-// 2. 채워넣기
+
+// async await
+// async는 프로미스 함수를 간략하게 만듬
+
+async function asyncCheckAdult (age) {
+    if (age >= 20) return age;
+    else throw new Error(age);
+}
+
+
+
+
+
+
 
 
 
