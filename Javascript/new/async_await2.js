@@ -19,8 +19,8 @@ function testFunc1() {
 }
 
 async function compare() {
-    // await testAsyncAwaitFunc(); // 1초
-    testAsyncAwaitFunc(); // 1초
+    // await testAsyncAwaitFunc(); //
+    testAsyncAwaitFunc(); // 
     testFunc1(); 
 }
 
@@ -38,4 +38,3 @@ compare();
     // await가 내부에 아무데도 없고, 먼저 실행된 함수가 비동기함수라면(async가 붙은) 일반 함수가 먼저 결과를 도출한다. 그리고 비동기 함수(async가 붙은)가 결과를 도출한다.
 
 
-    
