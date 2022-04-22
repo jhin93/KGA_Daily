@@ -32,6 +32,10 @@ promiseCheckAdult2.then((age) => {
 
 
 
+// 비동기는 실행시켜놓고 다른 일을 할 때 쓴다.
+
+
+
 
 // async await
 // async는 프로미스 함수를 간략하게 만듬
