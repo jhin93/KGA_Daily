@@ -797,3 +797,6 @@ https://velog.io/@_woogie/JWT-%EB%A1%9C%EA%B7%B8%EC%9D%B8%EB%B0%A9%EC%8B%9D-%EA%
 
 로그인 전문 서버가 OAuth.  
 
+
+비동기함수 이동경로  
+callback queue -> call stack(이동방식은 이벤트 루프이다)  
