@@ -2,6 +2,8 @@
 
     // 클래스로 객체의 설계도를 만든다.
     // 명사로 지칭되는 객체를 설계한다. 자동차(속성), 책(속성과 기능), 몬스터(속성과 기능), 사람...
+    
+    // 타일 클래스
     class Brick {
         constructor(left, top, right, bottom, color) {
             this.left = left;
@@ -15,6 +17,26 @@
         draw() {
             if(this.isAlive) {
                 context.rect(this.left, this.top, brickWidth, brickHeight);
+                context.fillStyle = this.color;
+                context.fill();
+            }
+        }
+    }
+
+    // 목표지점 클래스
+    class Obstacle {
+        constructor(left, top, right, bottom, color) {
+            this.left = left;
+            this.top = top;
+            this.right = right;
+            this.bottom = bottom;
+            this.isAlive = true; // 패들과 부딪힐때 false로 바뀌면서 게임클리어
+            this.color = color
+        }
+
+        draw() {
+            if(this.isAlive) {
+                context.rect(this.left, this.top, obsWidth, obsHeight);
                 context.fillStyle = this.color;
                 context.fill();
             }
@@ -38,9 +60,7 @@
     // 패들 관련 변수
     const barWidth = 40;
     const barHeight = 40;
-    // let barPosX = canvas.width/2 - barWidth/2;
     let barPosX = 55;
-    // let barPosY =  canvas.height - barHeight;
     let barPosY =  480;
     let barMoveSpeed = 50;
     
@@ -50,42 +70,17 @@
 
     // 장애물 변수
 
-    class Obstacle {
-        constructor(left, top, right, bottom, color) {
-            this.left = left;
-            this.top = top;
-            this.right = right;
-            this.bottom = bottom;
-            this.isAlive = true; // 패들과 부딪힐때 false로 바뀌면서 게임클리어
-            this.color = color
-        }
-
-        draw() {
-            if(this.isAlive) {
-                context.rect(this.left, this.top, brickWidth, brickHeight);
-                context.fillStyle = this.color;
-                context.fill();
-            }
-        }
-    }
-
-    // let obstacle = new Obstacle(40, 40, 40, 40, "black")
+    let obstacle = new Obstacle()
     // obstacle.draw()
-
 
     const obsWidth = 40;
     const obsHeight = 40;
-    let obsPosX = 505;
-    let obsPosY = 30;
 
 
 
 
 
 
-
-
-    // game clear 변수
 
     
 
@@ -93,7 +88,7 @@
     document.addEventListener('keydown', keyDownEventHandler); // keydown이라는 이벤트가 발생하면 함수를 호출한다
     // document.addEventListener('keyup', keyUpEventHandler); // keydown이라는 이벤트가 발생하면 함수를 호출한다
     
-    // 함수 모음
+    // 키보드 조작
     function keyDownEventHandler(e) { // 무슨키를 눌렀는지 알기 위해 매개변수 e 대입
         
         if (e.key === 'ArrowRight') {
@@ -141,6 +136,14 @@
     }
     
 
+
+
+
+
+
+
+
+    
     // 그리기
     
     function draw() {
@@ -148,9 +151,8 @@
         context.clearRect(0, 0, canvas.width, canvas.height); // 움직이고 이전 상태는 지운다. 아니면 잔상이 남음
         // 다른 도형 그리기
         drawBricks();
+        drawGoal();
         drawRect();
-        drawObstacle();
-
     }
 
     // 패들 그리는 함수
@@ -163,20 +165,6 @@
     
         context.closePath(); // 그리기 종료
     }
-
-        // 목표지점 그리는 함수
-        function drawObstacle() {
-            context.beginPath(); // 그리기 시작
-        
-            context.rect(obsPosX, obsPosY, obsWidth, obsHeight); // rect는 좌상단 기준으로 그리기
-            context.fillStyle = 'black';
-            context.fill();
-        
-            context.closePath(); // 그리기 종료
-            // let obstacle = new Obstacle(500, 60, 40, 40, "black")
-            // obstacle.draw()
-        
-        }
 
     // 타일 생성 함수
     function setBricks() {
@@ -206,15 +194,24 @@
                 // 만약 위의 bricks[i][j] = new Brick가 없다면 당연히 bricks[i][j].draw(); 처럼 메소드를 꺼내쓰는 건 불가능.
             }
         }
+        context.closePath(); // 그리기 종료
+    }
 
-
-
+    // 목표지점 생성 함수
+    function setGoal() {
+        obstacle = new Obstacle(505, 30, 40, 40, "black")
+    }
+    // 목표지점 그리기
+    function drawGoal() {
+        context.beginPath(); // 그리기 시작
+        obstacle.draw()
         context.closePath(); // 그리기 종료
     }
     
     
     // 지속적인 변화주기 setInterval. 함수이름, 시간, 
     setBricks();
+    setGoal();
     // setInterval(update, 10);
     setInterval(draw, 10);
     
