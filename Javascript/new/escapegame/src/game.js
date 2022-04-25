@@ -24,7 +24,7 @@
     }
 
     // 목표지점 클래스
-    class Obstacle {
+    class Goal {
         constructor(left, top, right, bottom, color) {
             this.left = left;
             this.top = top;
@@ -70,8 +70,7 @@
 
     // 장애물 변수
 
-    let obstacle = new Obstacle()
-    // obstacle.draw()
+    let goal = new Goal()
 
     const obsWidth = 40;
     const obsHeight = 40;
@@ -96,24 +95,28 @@
             // console.log("ArrowRight 는", e.key)
             if(barPosX + barWidth < canvas.width) {
                 barPosX += barMoveSpeed
+                // console.log("barPosX", barPosX)
             }
         }
         else if (e.key === 'ArrowLeft') {
             // 바를 왼쪽으로 이동
             if(barPosX > 0) {
                 barPosX -= barMoveSpeed
+                // console.log("barPosX1", barPosX)
             }
         }
         else if (e.key === 'ArrowUp') {
             // 바를 위쪽으로 이동
             if(barPosY + barHeight < canvas.height) {
                 barPosY -= barMoveSpeed
+                // console.log("barPosY", barPosY)
             }
         }
         else if (e.key === 'ArrowDown') {
-            // 바를 위쪽으로 이동
+            // 바를 아래쪽으로 이동
             if(barPosY + barHeight < canvas.height) {
                 barPosY += barMoveSpeed
+                // console.log("barPosY", barPosY)
             }
         }
     
@@ -122,19 +125,14 @@
     
         paddle.top = barPosY 
         paddle.bottom = barPosY + barHeight; 
+
+
+ 
+        if(barPosX === goal.left && barPosY === goal.top) {
+            document.location.reload()
+            alert('game over!')
+        }
     }
-    
-
-    // 도형 움직이기
-    
-    // 게임 이겼는지 체크
-    function checkToWin() {
-
-        // 목표 블럭과 패들이 겹칠 경우, 클리어.
-        // 1. 목표블럭 생성
-        // 2. 패들과 겹치는 것을 조건으로 클리어.
-    }
-    
 
 
 
@@ -142,8 +140,6 @@
 
 
 
-
-    
     // 그리기
     
     function draw() {
@@ -199,23 +195,36 @@
 
     // 목표지점 생성 함수
     function setGoal() {
-        obstacle = new Obstacle(505, 30, 40, 40, "black")
+        goal = new Goal(505, 30, 40, 40, "black")
     }
     // 목표지점 그리기
     function drawGoal() {
         context.beginPath(); // 그리기 시작
-        obstacle.draw()
+        goal.draw()
         context.closePath(); // 그리기 종료
     }
-    
+
     
     // 지속적인 변화주기 setInterval. 함수이름, 시간, 
     setBricks();
     setGoal();
-    // setInterval(update, 10);
     setInterval(draw, 10);
     
-    
-    
+
+
+
+
+
+
+
+    function checkToWin() {
+        // 목표지점과 패들의 x,y값이 서로 일치하면 게임 클리어
+
+        console.log("goal left", goal.left)
+        console.log("paddle left", paddle.left)
+        
+
+    }
+    checkToWin();
 
 
