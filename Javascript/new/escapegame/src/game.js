@@ -24,22 +24,16 @@
     // 프롬프트로 블록 개수 입력받기
     // var [columnNum, RowNum] = prompt("두 숫자를 띄어쓰기로 입력하세요 ").split(" ")
 
-    // 벽돌
+    // 타일
     const brickCol = 10; // 열
     const brickRow = 10; // 행
-    const brickWidth = 40; // 간격 10
-    const brickHeight = 40; // 간격 5
+    const brickWidth = 40; 
+    const brickHeight = 40; 
     let bricks = [];
 
     const canvas = document.getElementById('myCanvas');
     const context = canvas.getContext('2d');
     
-
-    // 벽돌
-    // let brick = {
-    //     left:0, right:0, top:0, bottom:0,
-    //     column : 0, row : 0
-    // }
 
     // 패들 관련 변수
     const barWidth = 40;
@@ -54,10 +48,45 @@
         left:0, right:0, top:0, bottom:0
     }
 
+    // 장애물 변수
+
+    class Obstacle {
+        constructor(left, top, right, bottom, color) {
+            this.left = left;
+            this.top = top;
+            this.right = right;
+            this.bottom = bottom;
+            this.isAlive = true; // 패들과 부딪힐때 false로 바뀌면서 게임클리어
+            this.color = color
+        }
+
+        draw() {
+            if(this.isAlive) {
+                context.rect(this.left, this.top, brickWidth, brickHeight);
+                context.fillStyle = this.color;
+                context.fill();
+            }
+        }
+    }
+
+    // let obstacle = new Obstacle(40, 40, 40, 40, "black")
+    // obstacle.draw()
+
+
+    // const obsWidth = 40;
+    // const obsHeight = 40;
+    // let obsPosX = canvas.width/2 - obsWidth/2;
+    // let obsPosY = canvas.width/2 - obsHeight/2 + 80;
+
+
+
+
+
+
+
 
     // game clear 변수
-    let maxCount = brickRow * brickCol // 전체 벽돌의 개수
-    let falseCount = 0; // false 벽돌의 개수
+
     
 
     // 키 처리 함수 추가
@@ -106,21 +135,9 @@
     // 게임 이겼는지 체크
     function checkToWin() {
 
-        // 1. bricks 배열에 있는 정보로 처리
-
-        // let flatBricks = bricks.flat();// 배열의 모든 요소를 꺼내서 하나하나를 배열로 만듬
-
-        // let deadBricks = bricks.filter(brick => brick.isAlive === false);
-        // if(deadBricks.length === maxCount) {
-        //     document.location.reload()
-        //     alert("game clear")
-        // }
-
-        // 2. 카운트를 세는 변수를 만들어서 처리
-        if(maxCount === falseCount) {
-            document.location.reload()
-            alert("game clear")
-        }
+        // 목표 블럭과 패들이 겹칠 경우, 클리어.
+        // 1. 목표블럭 생성
+        // 2. 패들과 겹치는 것을 조건으로 클리어.
     }
     
 
@@ -132,6 +149,7 @@
         // 다른 도형 그리기
         drawBricks();
         drawRect();
+        drawObstacle();
 
     }
 
@@ -146,12 +164,21 @@
         context.closePath(); // 그리기 종료
     }
 
+        // 목표지점 그리는 함수
+        function drawObstacle() {
+            // context.beginPath(); // 그리기 시작
+        
+            // context.rect(obsPosX, obsPosY, obsWidth, obsHeight); // rect는 좌상단 기준으로 그리기
+            // context.fillStyle = 'black';
+            // context.fill();
+        
+            // context.closePath(); // 그리기 종료
+            let obstacle = new Obstacle(500, 60, 40, 40, "black")
+            obstacle.draw()
+        
+        }
 
-
-
-
-
-    // 벽돌 생성 함수
+    // 타일 생성 함수
     function setBricks() {
         bricks = [];
         for (let i = 0; i < brickRow; i ++) {
@@ -169,7 +196,7 @@
         }
     }
 
-    // 벽돌 그리기.
+    // 타일 그리기.
     function drawBricks(){
         context.beginPath(); // 그리기 시작
         for (let i = 0; i < brickRow; i ++) {
