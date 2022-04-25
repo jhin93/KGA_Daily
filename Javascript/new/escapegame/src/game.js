@@ -132,12 +132,15 @@
 
 
         // 골 지점에 도달 === 게임 클리어
-        if(barPosX === goal.left && barPosY === goal.top) {
-            document.location.reload()
-            alert('game over!')
+        function gameClear(){
+            if(barPosX === goal.left && barPosY === goal.top) {
+                document.location.reload()
+                alert('game over!')
+            }
         }
+        gameClear();
 
-
+        // 몬스터 출현. 20% 확률.
         function monsterAppear(){
             let randomNum = Math.floor(Math.random() * 10)
             console.log("randomNum : ", randomNum);
