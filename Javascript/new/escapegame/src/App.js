@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import { useRef } from 'react';
-import "./apps";
+import "./game";
 
 // var [columnNum, RowNum] = prompt("두 숫자를 띄어쓰기로 입력하세요 ").split(" "
 export default function App () {
