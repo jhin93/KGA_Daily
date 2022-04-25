@@ -47,7 +47,7 @@
     // let barPosX = canvas.width/2 - barWidth/2;
     let barPosX = 55;
     // let barPosY =  canvas.height - barHeight;
-    let barPosY =  500;
+    let barPosY =  480;
     let barMoveSpeed = 50;
     
     let paddle = {
@@ -130,8 +130,8 @@
         // 화면 클리어
         context.clearRect(0, 0, canvas.width, canvas.height); // 움직이고 이전 상태는 지운다. 아니면 잔상이 남음
         // 다른 도형 그리기
-        drawRect();
         drawBricks();
+        drawRect();
 
     }
 
@@ -140,7 +140,7 @@
         context.beginPath(); // 그리기 시작
     
         context.rect(barPosX, barPosY, barWidth, barHeight); // rect는 좌상단 기준으로 그리기
-        context.fillStyle = 'red';
+        context.fillStyle = 'green';
         context.fill();
     
         context.closePath(); // 그리기 종료
@@ -162,7 +162,7 @@
                     30 + i * (brickHeight + 10), 
                     55 + j * (brickWidth + 10) + 50, 
                     30 + i * (brickHeight + 10) + 25,
-                    'green'
+                    'lightgreen'
                 );
 
             }
