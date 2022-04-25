@@ -73,10 +73,10 @@
     // obstacle.draw()
 
 
-    // const obsWidth = 40;
-    // const obsHeight = 40;
-    // let obsPosX = canvas.width/2 - obsWidth/2;
-    // let obsPosY = canvas.width/2 - obsHeight/2 + 80;
+    const obsWidth = 40;
+    const obsHeight = 40;
+    let obsPosX = 505;
+    let obsPosY = 30;
 
 
 
@@ -166,15 +166,15 @@
 
         // 목표지점 그리는 함수
         function drawObstacle() {
-            // context.beginPath(); // 그리기 시작
+            context.beginPath(); // 그리기 시작
         
-            // context.rect(obsPosX, obsPosY, obsWidth, obsHeight); // rect는 좌상단 기준으로 그리기
-            // context.fillStyle = 'black';
-            // context.fill();
+            context.rect(obsPosX, obsPosY, obsWidth, obsHeight); // rect는 좌상단 기준으로 그리기
+            context.fillStyle = 'black';
+            context.fill();
         
-            // context.closePath(); // 그리기 종료
-            let obstacle = new Obstacle(500, 60, 40, 40, "black")
-            obstacle.draw()
+            context.closePath(); // 그리기 종료
+            // let obstacle = new Obstacle(500, 60, 40, 40, "black")
+            // obstacle.draw()
         
         }
 
