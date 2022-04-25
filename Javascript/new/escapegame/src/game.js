@@ -76,6 +76,8 @@
     const obsHeight = 40;
 
 
+    // 몬스터 변수
+    // let randomNum = Math.floor(Math.random() * 10) 
 
 
 
@@ -127,11 +129,24 @@
         paddle.bottom = barPosY + barHeight; 
 
 
- 
+
+
+        // 골 지점에 도달 === 게임 클리어
         if(barPosX === goal.left && barPosY === goal.top) {
             document.location.reload()
             alert('game over!')
         }
+
+
+        function monsterAppear(){
+            let randomNum = Math.floor(Math.random() * 10)
+            console.log("randomNum : ", randomNum);
+            if(randomNum === 0 || randomNum === 1){
+                alert('몬스터 출현!')
+            }
+        }
+        monsterAppear();
+
     }
 
 
@@ -215,16 +230,5 @@
 
 
 
-
-
-    function checkToWin() {
-        // 목표지점과 패들의 x,y값이 서로 일치하면 게임 클리어
-
-        console.log("goal left", goal.left)
-        console.log("paddle left", paddle.left)
-        
-
-    }
-    checkToWin();
 
 
