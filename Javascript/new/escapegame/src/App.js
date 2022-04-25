@@ -12,7 +12,7 @@ export default function App () {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <canvas id="myCanvas" width="400" height="400" style={{"backgroundColor" : "beige"}}></canvas>
+        <canvas id="myCanvas" width="600" height="600" style={{"backgroundColor" : "beige"}}></canvas>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
