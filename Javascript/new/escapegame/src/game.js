@@ -76,8 +76,10 @@
     const obsHeight = 40;
 
 
-    // 몬스터 변수
-    // let randomNum = Math.floor(Math.random() * 10) 
+
+    //가위바위보 변수
+    let monsterNum; // 몬스터 변수
+    let userNum;
 
 
 
@@ -140,19 +142,54 @@
         }
         gameClear();
 
+
+
         // 몬스터 출현. 20% 확률.
         function monsterAppear(){
             let randomNum = Math.floor(Math.random() * 10)
-            console.log("randomNum : ", randomNum);
-            if(randomNum === 0 || randomNum === 1){
+            if(randomNum === 0 || randomNum === 1 || randomNum === 2){
                 alert('몬스터 출현!')
+                monsterNum = randomNum; // 몬스터에 0,1,2 중 하나를 부여.
+
+
+                function battleWithMonster() {
+                    console.log("몬스터 수 : ", monsterNum);
+
+                    // monsterNum은 0,1,2 중 하나를 가지고 있음
+                    userNum = prompt("가위, 바위, 보 중 하나를 입력하세요 ")
+                    if (userNum === "가위") userNum = 0
+                    else if (userNum === "바위") userNum = 1
+                    else if (userNum === "보") userNum = 2
+                    console.log("입력수 : ", userNum)
+
+                    // (몬스터 수 - 입력수 + 2) % 3 가 0일때 패배, 1일때 승, 2일때 무승부
+                    let calcNum = monsterNum - userNum + 2
+                    if(calcNum % 3 === 0) console.log("패배")
+                    if(calcNum % 3 === 1) console.log("승리")
+                    if(calcNum % 3 === 2) console.log("무승부")
+                    
+                }
+                battleWithMonster()
             }
         }
         monsterAppear();
 
+        // console.log("monsterNum : ", monsterNum);
+
+
+
+
+        // 가위바위보
+        // 0. 몬스터 변수는 임의의 값(가위, 바위, 보)를 가지고 출현.
+        // 1. 데이터 수신, 변환
+        //  프롬프트로 값을 입력받고 그걸 숫자로 변환
+        //  가위 : 0, 바위 : 1, 보 : 2 
+        // 2. 몬스터가 가진 값과 비교. 알고리즘 작동.
+        // 3. 승패결정
+
+
+
     }
-
-
 
 
 
