@@ -36,7 +36,28 @@
 
         draw() {
             if(this.isAlive) {
-                context.rect(this.left, this.top, obsWidth, obsHeight);
+                context.rect(this.left, this.top, goalWidth, goalHeight);
+                context.fillStyle = this.color;
+                context.fill();
+            }
+        }
+    }
+
+
+    // 상점 클래스
+    class Store {
+        constructor(left, top, right, bottom, color) {
+            this.left = left;
+            this.top = top;
+            this.right = right;
+            this.bottom = bottom;
+            this.isAlive = true; // 처음 생성될때는 alive가 맞음
+            this.color = color
+        }
+
+        draw() {
+            if(this.isAlive) {
+                context.rect(this.left, this.top, storeWidth, storeHeight);
                 context.fillStyle = this.color;
                 context.fill();
             }
@@ -68,12 +89,16 @@
         left:0, right:0, top:0, bottom:0
     }
 
-    // 장애물 변수
-
+    // 목표지점 변수
     let goal = new Goal()
+    const goalWidth = 40;
+    const goalHeight = 40;
 
-    const obsWidth = 40;
-    const obsHeight = 40;
+    // 상점 변수
+    let store = new Store()
+    const storeWidth = 40;
+    const storeHeight = 40;
+
 
 
 
@@ -98,32 +123,23 @@
     function keyDownEventHandler(e) { // 무슨키를 눌렀는지 알기 위해 매개변수 e 대입
         
         if (e.key === 'ArrowRight') {
-            // 바를 오른쪽으로 이동
-            // console.log("ArrowRight 는", e.key)
             if(barPosX + barWidth < canvas.width) {
                 barPosX += barMoveSpeed
-                // console.log("barPosX", barPosX)
             }
         }
         else if (e.key === 'ArrowLeft') {
-            // 바를 왼쪽으로 이동
             if(barPosX > 0) {
                 barPosX -= barMoveSpeed
-                // console.log("barPosX1", barPosX)
             }
         }
         else if (e.key === 'ArrowUp') {
-            // 바를 위쪽으로 이동
             if(barPosY + barHeight < canvas.height) {
                 barPosY -= barMoveSpeed
-                // console.log("barPosY", barPosY)
             }
         }
         else if (e.key === 'ArrowDown') {
-            // 바를 아래쪽으로 이동
             if(barPosY + barHeight < canvas.height) {
                 barPosY += barMoveSpeed
-                // console.log("barPosY", barPosY)
             }
         }
     
@@ -145,9 +161,24 @@
         }
         gameClear();
 
+        // 상점에 도달
+        function reachStore() {
+            if(barPosX === store.left && barPosY === store.top) {
+                alert('상점 도착!')
+                if(userGold <= 0) {
+                    alert('골드가 부족합니다!')
+                    return;
+                }
+                userGold -= 2;
+                healthPoint +=1;
+                alert("체력 + 1, 골드 -2")
+                alert(`현재 체력 : ${healthPoint}, 남은 골드 : ${userGold}`)
+            }
+        }
+        reachStore();
 
 
-        // 몬스터 출현. 20% 확률.
+        // 몬스터 출현. 30% 확률
         function monsterAppear(){
             let randomNum = Math.floor(Math.random() * 10)
             if(randomNum === 0 || randomNum === 1 || randomNum === 2){
@@ -194,13 +225,13 @@
 
 
     // 그리기
-    
     function draw() {
         // 화면 클리어
         context.clearRect(0, 0, canvas.width, canvas.height); // 움직이고 이전 상태는 지운다. 아니면 잔상이 남음
         // 다른 도형 그리기
         drawBricks();
         drawGoal();
+        drawStore();
         drawRect();
     }
 
@@ -257,10 +288,22 @@
         context.closePath(); // 그리기 종료
     }
 
+    // 상점 생성 함수
+    function setStore() {
+        store = new Store(105, 30, 40, 40, "blue")
+    }
+    // 상점 그리기
+    function drawStore() {
+        context.beginPath(); // 그리기 시작
+        store.draw()
+        context.closePath(); // 그리기 종료
+    }
+
     
     // 지속적인 변화주기 setInterval. 함수이름, 시간, 
     setBricks();
     setGoal();
+    setStore();
     setInterval(draw, 10);
     
 
