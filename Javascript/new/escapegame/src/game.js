@@ -80,8 +80,11 @@
     //가위바위보 변수
     let monsterNum; // 몬스터 변수
     let userNum;
+    let prizeGold; // 승리보상 변수
 
-
+    // 유저 변수
+    let healthPoint = 100; // HP
+    let userGold = 0; // 누적골드
 
 
 
@@ -151,7 +154,7 @@
                 alert('몬스터 출현!')
                 monsterNum = randomNum; // 몬스터에 0,1,2 중 하나를 부여.
 
-
+                // 몬스터 전투 함수
                 function battleWithMonster() {
                     console.log("몬스터 수 : ", monsterNum);
 
@@ -164,30 +167,25 @@
 
                     // (몬스터 수 - 입력수 + 2) % 3 가 0일때 패배, 1일때 승, 2일때 무승부
                     let calcNum = monsterNum - userNum + 2
-                    if(calcNum % 3 === 0) console.log("패배")
-                    if(calcNum % 3 === 1) console.log("승리")
-                    if(calcNum % 3 === 2) console.log("무승부")
+                    if(calcNum % 3 === 0) {
+                        healthPoint -=1
+                        alert(`패배! 남은 체력 : ${healthPoint}`)
+                    } 
+                    if(calcNum % 3 === 1) {
+                        prizeGold = Math.floor(Math.random() * 10) // 승리보상골드
+                        userGold += prizeGold
+                        alert(`승리! 보상골드 : ${prizeGold} 누적골드 : ${userGold}`)
+                    }
+                    if(calcNum % 3 === 2) {
+                        console.log("무승부")
+                        alert("무승부")
+                    }
                     
                 }
                 battleWithMonster()
             }
         }
         monsterAppear();
-
-        // console.log("monsterNum : ", monsterNum);
-
-
-
-
-        // 가위바위보
-        // 0. 몬스터 변수는 임의의 값(가위, 바위, 보)를 가지고 출현.
-        // 1. 데이터 수신, 변환
-        //  프롬프트로 값을 입력받고 그걸 숫자로 변환
-        //  가위 : 0, 바위 : 1, 보 : 2 
-        // 2. 몬스터가 가진 값과 비교. 알고리즘 작동.
-        // 3. 승패결정
-
-
 
     }
 
