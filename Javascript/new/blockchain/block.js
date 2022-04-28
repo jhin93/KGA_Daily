@@ -28,7 +28,12 @@ function getBlocks () {
 // 해쉬값 계산
 const calculateHash = (index, data, timestamp, previoushash) => {
     // 암호화 모듈 사용
-    CryptoJS.SHA256(index + data + timestamp + previoushash);
+    return CryptoJS.SHA256((index + data + timestamp + previoushash).toString()).toString(); // toString을 붙이면 16진수 64자리 해쉬 형태로 나온다. 해당 블록이 유일무이하다는 증거.
+    // sha256은 string을 받기 때문에 안쪽에도 toString을 사용
+    // 아래 테스트에서 매개변수 int값이 조금만 변해도 해쉬값이 판이하게 변함
 }
+
+let test = calculateHash(11, 20, 30, 40);
+console.log('test : ', test);
 
 export { getBlocks }
