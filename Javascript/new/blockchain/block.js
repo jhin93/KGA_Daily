@@ -46,21 +46,21 @@ function getBlocks () {
 // 일반 블록 생성 함수
 const createBlock = (blockData) => {
     const previousBlock = blocks[blocks.length - 1]; // 가장 마지막 블록
-    const data = 0
     const nextIndex = previousBlock.index + 1;
     const nextTimestamp = new Date().getTime() / 1000 //밀리세컨드 단위를 초단위로 만듬
     const nextHash = calculateHash(nextIndex, blockData, nextTimestamp, previousBlock.hash) // 이전 블록의 정보들을 가지고 다음 블록 해쉬 구하기
     
-    const newBlock = new Block(nextIndex, data, blockData, nextTimestamp, nextHash, previousBlock.hash);
+    const newBlock = new Block(nextIndex, blockData, nextTimestamp, nextHash, previousBlock.hash);
 
+    blocks.push(newBlock)
     return newBlock;
 }
 
-blocks.push(createBlock('test')); // blockData 매개변수 자리에는 아무거나 넣어서 한다.
+createBlock('test'); // blockData 매개변수 자리에는 아무거나 넣어서 한다.
 
 
 
-export { getBlocks }
+export { getBlocks, createBlock }
 
 
 
