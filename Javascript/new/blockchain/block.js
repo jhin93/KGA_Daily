@@ -19,7 +19,7 @@ class Block {
     }
 }
 
-const blocks = [];
+const blocks = [createGenesisBlock()]; // 선언할때만 한번 호출해서 0번 인덱스로 제네시스 블록 들어감.
 
 function getBlocks () {
     return blocks;
@@ -36,8 +36,10 @@ const calculateHash = (index, data, timestamp, previoushash) => {
 
 // genesis 블록 생성 함수
 const createGenesisBlock = () => {
-    const genesisBlock = new Block(0, 'the times 03/jan/2009 chancellor on brink of second bailout for banks', 0, 0, 0);
+    const genesisBlock = new Block(0, 'the times 03/jan/2009 chancellor on brink of second bailout for banks', new Date().getTime() / 1000, 0, 0);
     genesisBlock.hash = calculateHash(genesisBlock.index, genesisBlock.data, genesisBlock.timestamp, genesisBlock.previoushash);
+
+    return genesisBlock;
 }
 
 
@@ -52,6 +54,8 @@ const createBlock = (blockData) => {
 
     return newBlock;
 }
+
+blocks.push(createGenesisBlock());
 
 
 export { getBlocks }
