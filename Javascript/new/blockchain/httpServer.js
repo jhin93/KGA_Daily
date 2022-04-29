@@ -26,7 +26,7 @@ const initHttpServer = (myHttpPort) => {
     })
 
     app.post('/addPeer', (req, res) => {
-        console.log("message : ", req.body.message)
+        console.log("send : ", req.body.send)
         res.send(connectionToPeer(req.body.data)) 
         // 포스트맨에서 다음과 같이 작성해서 보내면 뜬다.
         // {
