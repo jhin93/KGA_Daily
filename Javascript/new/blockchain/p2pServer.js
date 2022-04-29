@@ -19,7 +19,6 @@ const initP2PServer = (p2pPort) => {
 
 const initConnection = (ws) => {
     sockets.push(ws); // ws를 담는 구조로, 계속 뭔가를 추가한다.
-    console.log("누가 왔음")
 }
 
 const connectionToPeer = (newPeer) => {
