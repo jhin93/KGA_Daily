@@ -26,7 +26,13 @@ const initHttpServer = (myHttpPort) => {
     })
 
     app.post('/addPeer', (req, res) => {
-        res.send(connectionToPeer(req.body.data))
+        console.log("message : ", req.body.message)
+        res.send(connectionToPeer(req.body.data)) 
+        // 포스트맨에서 다음과 같이 작성해서 보내면 뜬다.
+        // {
+        //     "data" : "ws://192.168.0.211:6001", // 받는 사람 ip 입력하고 받는 사람이 6001을 열어놔야 가능
+        //     "message" : "test" // 이건 내 콘솔에서 뜸
+        // }
     })
     
 
