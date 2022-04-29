@@ -28,9 +28,9 @@ const getBlocks = () => {
     return blocks;
 }
 
-const calculateHash = (index, data, timestamp, previousHash) => {
+const calculateHash = (index, data, timestamp, previousHash, difficulty, nonce) => {
     console.log((index + data + timestamp + previousHash).toString())
-    return CryptoJS.SHA256((index + data + timestamp + previousHash).toString()).toString();
+    return CryptoJS.SHA256((index + data + timestamp + previousHash + difficulty + nonce).toString()).toString();
 }
 
 // 0 하나로 시작하는 hash 값을 만드는 매개변수(nonce) -> 난이도가 올라가면 0 두개로 시작하는 hash 값
@@ -40,7 +40,7 @@ const calculateHash = (index, data, timestamp, previousHash) => {
 const createGenesisBlock = () => {
     const genesisBlock = new Block(0, 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks',
         new Date().getTime() / 1000, 0, 0, 0, 0)
-    genesisBlock.hash = calculateHash(genesisBlock.index, genesisBlock.data, genesisBlock.timestamp, genesisBlock.previousHash);
+    genesisBlock.hash = calculateHash(genesisBlock.index, genesisBlock.data, genesisBlock.timestamp, genesisBlock.previousHash, genesisBlock.difficulty, genesisBlock.nonce);
     // blocks.push(genesisBlock);
     return genesisBlock;
 }
@@ -49,8 +49,11 @@ const createBlock = (blockData) => {
     const previousBlock = blocks[blocks.length - 1];
     const nextIndex = previousBlock.index + 1;
     const nextTimestamp = new Date().getTime() / 1000; //초단위로
-    const nextHash = calculateHash(nextIndex, blockData, nextTimestamp, previousBlock.hash);
-    const nextBlock = new Block(nextIndex, blockData, nextTimestamp, nextHash, previousBlock.hash, 0, 0)
+    const nextDifficulty = 1;
+    const nextNonce = findNonce(nextIndex, blockData, nextTimestamp, previousBlock.hash, nextDifficulty);
+    const nextHash = calculateHash(nextIndex, blockData, nextTimestamp, previousBlock.hash, nextDifficulty, nextNonce);
+
+    const nextBlock = new Block(nextIndex, blockData, nextTimestamp, nextHash, previousBlock.hash, nextDifficulty, nextNonce); 
 
     if (isValidNewBlock(nextBlock, previousBlock)) {
         blocks.push(nextBlock);
@@ -75,7 +78,9 @@ const isValidBlockStructure = (newBlock) => {
         && typeof (newBlock.data) === 'string'
         && typeof (newBlock.timestamp) === 'number'
         && typeof (newBlock.hash) === 'string'
-        && typeof (newBlock.previousHash) === 'string') {
+        && typeof (newBlock.previousHash) === 'string'
+        && typeof (newBlock.difficulty) === 'number'
+        && typeof (newBlock.nonce) === 'number') {
         return true;
     } else {
         return false;
@@ -105,7 +110,7 @@ const hashMatchDifficulty = (hash, difficulty) => {
     const binaryHash = hexToBinary(hash);
     const requiredPrefix = '0'.repeat(difficulty) // 0이 difficulty 만큼 만들어지는 문자열
 
-    return binaryHash.startWith(requiredPrefix)
+    return binaryHash.startsWith(requiredPrefix)
 }
 
 const hexToBinary = (hex) => {
@@ -114,6 +119,34 @@ const hexToBinary = (hex) => {
         '4' : '0100', '5' : '0101', '6' : '0110', '7' : '0111', 
         '8' : '1000', '9' : '1001', 'a' : '1010', 'b' : '1011', 
         'c' : '1100', 'd' : '1101', 'e' : '1110', 'f' : '1111', 
+    }
+
+    // 03cf -> 0000001111001111
+    let binary = '';
+    for(let i = 0; i < hex.length; i ++) {
+        if(lookupTable[hex[i]]) {
+            binary += lookupTable[hex[i]];
+        } else {
+            console.log('invalid hex : ', hex)
+            return null;
+        }
+    }
+
+    return binary;
+}
+
+const findNonce = (index, data, timestamp, previousHash, difficulty) => {
+    let nonce = 0;
+
+    while(true)
+    {
+        let hash = calculateHash(index, data, timestamp, previousHash, difficulty, nonce)
+
+        if(hashMatchDifficulty(hash, difficulty)){
+            return nonce // hashMatchDifficulty함수의 결과가 true면 답을 찾은 것.그대로 리턴.
+        } 
+        nonce ++; // 원하느 nonce 값이 나올때까지 반복.
+
     }
 }
 
