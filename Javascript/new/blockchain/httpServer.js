@@ -18,11 +18,12 @@ const initHttpServer = (myHttpPort) => {
     //block.js의 블록 데이터를 조회
     app.get('/getblocks', (req, res) => {
         res.send(getBlocks()); // getBLock 함수를 실행시킨 것을 import 해온다.
-        console.log(req.body)
+        console.log("req.body : ", req.body)
     })
 
     app.post('/createBlock', (req, res) => {
         res.send(createBlock(req.body.data)) // postman에서 입력한 값을 여기서 전달해준다.
+        console.log("req.body.data : ", req.body)
     })
 
     app.post('/addPeer', (req, res) => {
