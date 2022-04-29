@@ -49,7 +49,7 @@ const createBlock = (blockData) => {
     const previousBlock = blocks[blocks.length - 1];
     const nextIndex = previousBlock.index + 1;
     const nextTimestamp = new Date().getTime() / 1000; //초단위로
-    const nextDifficulty = 1;
+    const nextDifficulty = 10;
     const nextNonce = findNonce(nextIndex, blockData, nextTimestamp, previousBlock.hash, nextDifficulty);
     const nextHash = calculateHash(nextIndex, blockData, nextTimestamp, previousBlock.hash, nextDifficulty, nextNonce);
 
@@ -145,7 +145,7 @@ const findNonce = (index, data, timestamp, previousHash, difficulty) => {
         if(hashMatchDifficulty(hash, difficulty)){
             return nonce // hashMatchDifficulty함수의 결과가 true면 답을 찾은 것.그대로 리턴.
         } 
-        nonce ++; // 원하느 nonce 값이 나올때까지 반복.
+        nonce ++; // 원하는 nonce 값이 나올때까지 반복.
 
     }
 }
