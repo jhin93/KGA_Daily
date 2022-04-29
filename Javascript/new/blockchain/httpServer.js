@@ -2,7 +2,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { getBlocks, createBlock } from './block.js';
-import { connectionToPeer } from './p2pServer.js';
+import { connectionToPeer, getPeers, sendMessage } from './p2pServer.js';
 
 
 // 초기화 함수
@@ -35,7 +35,9 @@ const initHttpServer = (myHttpPort) => {
         // }
     })
     
-
+    app.post('/sendMessage', (req, res) => {
+        sendMessage(req.body.data);
+    })
 
 
 
