@@ -2,6 +2,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { getBlocks, createBlock } from './block.js';
+import { connectionToPeer } from './p2pServer.js';
 
 
 // 초기화 함수
@@ -24,7 +25,9 @@ const initHttpServer = (myHttpPort) => {
         res.send(createBlock(req.body.data)) // postman에서 입력한 값을 여기서 전달해준다.
     })
 
-
+    app.post('/addPeer', (req, res) => {
+        res.send(connectionToPeer(req.body.data))
+    })
     
 
 

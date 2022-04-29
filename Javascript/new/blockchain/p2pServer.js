@@ -17,5 +17,11 @@ const initConnection = (ws) => {
     sockets.push(ws); // ws를 담는 구조로, 계속 뭔가를 추가한다.
 }
 
-export { initP2PServer };
+const connectionToPeer = (newPeer) => {
+    const ws = new WebSocket(newPeer)
+    ws.on('open', () => { initConnection(ws); })
+    ws.on('error', () => { console.log('Fail to Connection peer : ', ws.remoteAddress); return false})
+}
+
+export { initP2PServer, connectionToPeer };
 
