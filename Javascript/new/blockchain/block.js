@@ -36,10 +36,8 @@ const calculateHash = (index, data, timestamp, previousHash, difficulty, nonce) 
 
 
 const createGenesisBlock = () => {
-    const genesisBlock = new Block(0, 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks',
-                                     new Date().getTime() / 1000, 0, 0, 0, 0)
-    genesisBlock.hash = calculateHash(genesisBlock.index, genesisBlock.data, genesisBlock.timestamp,
-        genesisBlock.previousHash, genesisBlock.difficulty, genesisBlock.nonce);
+    const genesisBlock = new Block(0, 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks', new Date().getTime() / 1000, 0, 0, 0, 0)
+    genesisBlock.hash = calculateHash(genesisBlock.index, genesisBlock.data, genesisBlock.timestamp,genesisBlock.previousHash, genesisBlock.difficulty, genesisBlock.nonce);
     // blocks.push(genesisBlock);
     return genesisBlock;
 }
