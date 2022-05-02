@@ -6,8 +6,11 @@
     timestamp : 블록이 생성된 시간
     hash : 블록 내부 데이터로 생성한 sha256 값 (블록의 유일성 - key값)
     previousHash : 이전 블록의 hash (이전 블록을 참조)
-
 */
+
+// 블록을 채굴했을 때 상대방에게 알려준다
+// 상대방의 체인정보를 가져온다.
+
 import CryptoJS from 'crypto-js'
 
 class Block {

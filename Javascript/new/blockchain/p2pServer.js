@@ -4,12 +4,15 @@ import { WebSocketServer } from 'ws';
 
 const sockets = [];
 const MessageType = {
-    RESPONSE_MESSAGE: 0,
-    SENT_MESSAGE: 1,
+    // RESPONSE_MESSAGE: 0,
+    // SENT_MESSAGE: 1,
 
     // 최신 블록 요청
+    QUERY_LATEST : 0,
     // 모든 블록 요청
+    QUERY_ALL : 1,
     // 요청에 따른 블록 전달
+    RESPONSE_BLOCKCHAIN : 2
 }
 
 const initP2PServer = (p2pPort) => {
@@ -46,11 +49,18 @@ const initMessageHandler = (ws) => {
         const message = JSON.parse(data); //ev.data? test
 
         switch (message.type) {
-            case MessageType.RESPONSE_MESSAGE: // 메세지 받았을때
+            // case MessageType.RESPONSE_MESSAGE: // 메세지 받았을때
+            //     break;
+            // case MessageType.SENT_MESSAGE: // 보내진 메세지
+            //     console.log(message.message);
+            //     break;
+            case MessageType.QUERY_LATEST:
                 break;
-            case MessageType.SENT_MESSAGE: // 보내진 메세지
-                console.log(message.message);
+            case MessageType.QUERY_ALL:
                 break;
+            case MessageType.RESPONSE_BLOCKCHAIN: // 내가 위에서 요청한 블록 데이터를 받음
+                break;
+                
         }
     })
 
