@@ -40,7 +40,7 @@ const connectionToPeer = (newPeer) => {
 }
 
 const initMessageHandler = (ws) => {
-    ws.on('message', (data) => {
+    ws.on('message', (data) => { // message라는 이벤트가 발생
         const message = JSON.parse(data); // json 형태로 변형
 
         switch(message.type)
