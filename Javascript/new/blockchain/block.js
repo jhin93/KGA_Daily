@@ -31,6 +31,10 @@ const getBlocks = () => {
     return blocks;
 }
 
+const getLatestBlock = () => {
+    return blocks[blocks.length - 1];
+}
+
 const calculateHash = (index, data, timestamp, previousHash, difficulty, nonce) => {
     // console.log((index + data + timestamp + previousHash + difficulty + nonce).toString())
     return CryptoJS.SHA256((index + data + timestamp + previousHash + difficulty + nonce).toString()).toString();
@@ -163,4 +167,4 @@ const findNonce = (index, data, timestamp, previousHash, difficulty) => {
 
 const blocks = [createGenesisBlock()];
 
-export { getBlocks, createBlock }
+export { getBlocks, getLatestBlock, createBlock }

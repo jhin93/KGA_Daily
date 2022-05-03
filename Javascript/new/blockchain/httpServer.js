@@ -59,7 +59,6 @@ const initHttpServer = (myHttpPort) => {
     app.post('/sendMessage', (req, res) => {
         
         let data= {
-
             "message" : req.body.msg,
             "type" : parseInt(req.body.type)
         }

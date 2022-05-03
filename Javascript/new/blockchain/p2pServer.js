@@ -1,6 +1,7 @@
 // 다른 노드와 통신을 위한 서버
 import WebSocket from 'ws';
 import { WebSocketServer } from 'ws';
+import { getLatestBlock, getBlocks } from './block.js';
 
 const sockets = [];
 const MessageType = {
@@ -41,13 +42,14 @@ const connectToPeer = (newPeer) => {
         return false;
     })
 }
+
 const getPeers = () => {
     return sockets;
 }
+
 const initMessageHandler = (ws) => {
     ws.on('message', (data) => {
         const message = JSON.parse(data); //ev.data? test
-
         switch (message.type) {
             // case MessageType.RESPONSE_MESSAGE: // 메세지 받았을때
             //     break;
@@ -60,10 +62,41 @@ const initMessageHandler = (ws) => {
                 break;
             case MessageType.RESPONSE_BLOCKCHAIN: // 내가 위에서 요청한 블록 데이터를 받음
                 break;
-                
         }
     })
+}
 
+// 마지막 요청 보내기
+const queryLastestMessage = () => {
+    return ({
+        "type" : MessageType.QUERY_LATEST,
+        "data" : null
+    })
+}
+
+// 전체 요청
+const queryAllMessage = () => {
+    return ({
+        "type" : MessageType.QUERY_All,
+        "data" : null
+    })
+}
+
+// 마지막 요청 응답하기
+const responseLatestMessage = () => {
+    return ({
+        "type" : MessageType.RESPONSE_BLOCKCHAIN,
+        "data" : JSON.stringify(getLatestBlock) /* 내가 가지고 있는 체인의 마지막 블록 */
+    })
+}
+
+// 요청 전체 응답하기
+
+const responseAllMessage = () => {
+    return ({
+        "type" : MessageType.RESPONSE_BLOCKCHAIN,
+        "data" : JSON.stringify(getBlocks) /* 내가 가지고 있는 전체 블록 */
+    })
 }
 
 const write = (ws, message) => {
