@@ -43,8 +43,9 @@ const calculateHash = (index, data, timestamp, previousHash, difficulty, nonce) 
 
 
 const createGenesisBlock = () => {
-    const genesisBlock = new Block(0, 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks', new Date().getTime() / 1000, 0, 0, 0, 0)
-    genesisBlock.hash = calculateHash(genesisBlock.index, genesisBlock.data, genesisBlock.timestamp,genesisBlock.previousHash, genesisBlock.difficulty, genesisBlock.nonce);
+    const genesisBlock = new Block(0, 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks', 0, 0, 0, 0, 0)
+    // genesisBlock.hash = calculateHash(genesisBlock.index, genesisBlock.data, genesisBlock.timestamp,genesisBlock.previousHash, genesisBlock.difficulty, genesisBlock.nonce);
+    genesisBlock.hash = calculateHash(0);
     // blocks.push(genesisBlock);
     return genesisBlock;
 }
@@ -165,6 +166,6 @@ const findNonce = (index, data, timestamp, previousHash, difficulty) => {
     }
 }
 
-const blocks = [createGenesisBlock()];
+let blocks = [createGenesisBlock()];
 
-export { getBlocks, getLatestBlock, createBlock, addBlock }
+export { getBlocks, getLatestBlock, createBlock, addBlock, isValidNewBlock,/* blocks*/ }

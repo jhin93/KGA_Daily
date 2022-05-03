@@ -49,8 +49,9 @@ const initHttpServer = (myHttpPort) => {
 
         let fullAddress = "ws://" + ipAddress + ":" + port;
         console.log(fullAddress)
-        connectToPeer(fullAddress);
         console.log("connectToPeer")
+        res.send(connectToPeer(fullAddress));
+        
 
     })
 

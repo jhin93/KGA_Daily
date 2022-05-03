@@ -1,7 +1,8 @@
 // 다른 노드와 통신을 위한 서버
+import random from 'random';
 import WebSocket from 'ws';
 import { WebSocketServer } from 'ws';
-import { getLatestBlock, getBlocks, createBlock, addBlock } from './block.js';
+import { getLatestBlock, getBlocks, createBlock, addBlock, isValidNewBlock/*, blocks*/ } from './block.js';
 
 const sockets = [];
 const MessageType = {
@@ -29,7 +30,9 @@ const initP2PServer = (p2pPort) => {
 
 const initConnection = (ws) => {
     sockets.push(ws);
+    initMessageHandler(ws);
 
+    write(ws, queryAllMessage());
 };
 
 const connectToPeer = (newPeer) => {
@@ -59,12 +62,54 @@ const initMessageHandler = (ws) => {
             case MessageType.QUERY_LATEST:
                 break;
             case MessageType.QUERY_ALL:
+                write(ws, responseAllMessage())
                 break;
             case MessageType.RESPONSE_BLOCKCHAIN: // 내가 위에서 요청한 블록 데이터를 받음
-                console.log(ws._socket.remoteAddress, ' : ', message.data)
+                // console.log(ws._socket.remoteAddress, ' : ', message.data)
+                replaceBlockchain(message.data);
+                // handleBlockchainResponse(message);
                 break;
         }
     })
+}
+
+const isValidBlockchain = (receiveBlockchain) => {
+    // 같은 제네시스 블록인가
+    if(JSON.stringify(receiveBlockchain[0]) !== JSON.stringify(getBlocks()[0]))  // 상대방 제네시스 블록 !== 내 제네시스 블록이면 바로 리턴
+        return false
+
+    // 체인 내의 모든 블록을 확인
+    for (let i = 1; i < receiveBlockchain.length; i ++) {
+        console.log("receiveBlockchain ", receiveBlockchain)
+        if(isValidNewBlock(receiveBlockchain[i], receiveBlockchain[i-1]) == false) { // isValidNewBlock의 인자가 블록, 전블록을 받기에 i, i-1을 대입
+            return false // 만약 블록들 중 하나라도 isValidNewBlock를 통과못하면 return false
+        }
+    }
+    return true
+}
+
+const replaceBlockchain = (receiveBlockchain) => {
+    if(isValidBlockchain(receiveBlockchain)) {
+        let blocks = getBlocks()
+        if(receiveBlockchain.length > blocks.length){ // 들어온게 가지고 있는 체인보다 길이가 길면 바꾼다.
+            console.log('받은 블록체인 길이가 길다')
+            blocks = receiveBlockchain // 기존의 체인을 새것으로 대체
+        } else if(receiveBlockchain.length == blocks.length && random.boolean()) { // 길이가 같으면 바꾸거나 안바꾸거나. random.boolean()으로 true가 나오면 바꾸고 아니면 안바꿈.
+            console.log('받은 블록체인 길이가 같다')
+            blocks = receiveBlockchain // 기존의 체인을 새것으로 대체
+        }
+    }
+    else {
+        console.log("problem!");
+    }
+}
+
+const handleBlockchainResponse = (receiveBlockchain) => {
+    // 받은 블록체인이 현재 블록체인보다 짧으면 안바꿈
+
+    // 길이가 같으면 바꾸거나 안 바꿈.
+    
+    // 받은 블록체인이 현재 블록체인보다 길다. 즉, 바꿈
 }
 
 // 마지막 요청 보내기
@@ -78,7 +123,7 @@ const queryLastestMessage = () => {
 // 전체 요청
 const queryAllMessage = () => {
     return ({
-        "type" : MessageType.QUERY_All,
+        "type" : MessageType.QUERY_ALL,
         "data" : null
     })
 }
