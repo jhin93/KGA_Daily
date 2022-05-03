@@ -1,7 +1,7 @@
 // 다른 노드와 통신을 위한 서버
 import WebSocket from 'ws';
 import { WebSocketServer } from 'ws';
-import { getLatestBlock, getBlocks } from './block.js';
+import { getLatestBlock, getBlocks, createBlock, addBlock } from './block.js';
 
 const sockets = [];
 const MessageType = {
@@ -110,8 +110,13 @@ const SendMessage = (message) => { // broadcasting
         write(socket, message);
     })
 }
-// const resposeMessage = () => {
 
-// }
+// 내가 새로운 블록을 채굴했을 때 연결된 노드들에게 전파
+const mineBlock = (blockData) => { // 블록 생성(createBlock), 배열에 추가(getLatestBlock), 만든 블록 전파 (responseLatestMessage) 
+    const newBlock = createBlock(blockData); // newblock
+    if (addBlock(newBlock, getLatestBlock())) {
+        responseLatestMessage(); // 전파
+    }
+}
 
-export { initP2PServer, connectToPeer, getPeers, SendMessage }
+export { initP2PServer, connectToPeer, getPeers, SendMessage, mineBlock } // mineBlock export

@@ -58,18 +58,19 @@ const createBlock = (blockData) => {
     const nextHash = calculateHash(nextIndex, blockData, nextTimestamp, previousBlock.hash, nextDifficulty, nextNonce);
 
 
-    const nextBlock = new Block(nextIndex, blockData, nextTimestamp, nextHash, previousBlock.hash, nextDifficulty, nextNonce)
+    const newBlock = new Block(nextIndex, blockData, nextTimestamp, nextHash, previousBlock.hash, nextDifficulty, nextNonce)
 
-
-
-    if (isValidNewBlock(nextBlock, previousBlock)) {
-        blocks.push(nextBlock);
-        return nextBlock;
-    }
-
-    console.log("failed to create new block");
-    return null;
+    return newBlock
 }
+
+const addBlock = (newBlock, previousBlock) => {
+    if (isValidNewBlock(newBlock, previousBlock)) {
+        blocks.push(newBlock);
+        return true
+    }
+    return false
+}
+
 
 // let testHash = calculateHash(10, 20, 30, 40);
 // console.log(testHash)
@@ -162,9 +163,8 @@ const findNonce = (index, data, timestamp, previousHash, difficulty) => {
         nonce++;
         console.log(nonce);
     }
-
 }
 
 const blocks = [createGenesisBlock()];
 
-export { getBlocks, getLatestBlock, createBlock }
+export { getBlocks, getLatestBlock, createBlock, addBlock }
