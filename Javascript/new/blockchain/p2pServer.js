@@ -61,6 +61,7 @@ const initMessageHandler = (ws) => {
             case MessageType.QUERY_ALL:
                 break;
             case MessageType.RESPONSE_BLOCKCHAIN: // 내가 위에서 요청한 블록 데이터를 받음
+                console.log(ws._socket.remoteAddress, ' : ', message.data)
                 break;
         }
     })
@@ -86,7 +87,7 @@ const queryAllMessage = () => {
 const responseLatestMessage = () => {
     return ({
         "type" : MessageType.RESPONSE_BLOCKCHAIN,
-        "data" : JSON.stringify(getLatestBlock) /* 내가 가지고 있는 체인의 마지막 블록 */
+        "data" : JSON.stringify(getLatestBlock()) /* 내가 가지고 있는 체인의 마지막 블록 */
     })
 }
 
@@ -104,7 +105,7 @@ const write = (ws, message) => {
     ws.send(JSON.stringify(message));
 }
 
-const SendMessage = (message) => { // broadcasting
+const broadCasting = (message) => { // broadcasting
     sockets.forEach((socket) => {
         // console.log(socket);
         write(socket, message);
@@ -115,8 +116,8 @@ const SendMessage = (message) => { // broadcasting
 const mineBlock = (blockData) => { // 블록 생성(createBlock), 배열에 추가(getLatestBlock), 만든 블록 전파 (responseLatestMessage) 
     const newBlock = createBlock(blockData); // newblock
     if (addBlock(newBlock, getLatestBlock())) {
-        responseLatestMessage(); // 전파
+        broadCasting(responseLatestMessage()); // responseLatestMessage를 broadCasting에 넣어서 모든 소켓에 전달.
     }
 }
 
-export { initP2PServer, connectToPeer, getPeers, SendMessage, mineBlock } // mineBlock export
+export { initP2PServer, connectToPeer, getPeers, broadCasting, mineBlock } // mineBlock export

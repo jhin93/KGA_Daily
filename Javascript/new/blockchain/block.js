@@ -53,7 +53,7 @@ const createBlock = (blockData) => {
     const previousBlock = blocks[blocks.length - 1];
     const nextIndex = previousBlock.index + 1;
     const nextTimestamp = new Date().getTime() / 1000; // 초단위로
-    const nextDifficulty = 15;
+    const nextDifficulty = 1;
     const nextNonce = findNonce(nextIndex, blockData, nextTimestamp, previousBlock.hash, nextDifficulty);
     const nextHash = calculateHash(nextIndex, blockData, nextTimestamp, previousBlock.hash, nextDifficulty, nextNonce);
 
