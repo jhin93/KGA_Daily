@@ -1,193 +1,173 @@
 // 다른 노드와 통신을 위한 서버
-import WebSocket from 'ws';
-import { WebSocketServer } from 'ws';
-import { getLatestBlock, getBlocks, createBlock, addBlock, isValidNewBlock, blocks } from './block.js';
-import random from 'random';
+import WebSocket from 'ws'
+import { WebSocketServer } from 'ws'
+import { getBlocks, getLatestBlock, createBlock, addBlock, isValidNewBlock, blocks } from './block.js'
 
-// let myblocks = blocks;
-// console.log(blocks)
-const sockets = [];
 const MessageType = {
-    // RESPONSE_MESSAGE: 0,
-    // SENT_MESSAGE: 1,
+    // RESPONSE_MESSAGE : 0,
+    // SENT_MESSAGE : 1
 
     // 최신 블록 요청
-    QUERY_LATEST: 0,
+    QUERY_LATEST : 0,
     // 모든 블록 요청
-    QUERY_ALL: 1,
-    // 요청에 따른 블록 전달
-    RESPONSE_BLOCKCHAIN: 2
-    // 요청에 따른 블록 전달
-
+    QUERY_ALL : 1,
+    // 블록 전달
+    RESPONSE_BLOCKCHAIN : 2
 }
 
-const initP2PServer = (p2pPort) => {
-    const server = new WebSocketServer({ port: p2pPort });
-    server.on('connection', (ws, req) => {
-        console.log("initp2p:", req.headers.host)
-        initConnection(ws);
-        // write(ws, queryAllMessage());
-    });
-
-    console.log('listening P2PServer Port : ', p2pPort);
-}
-
-const initConnection = (ws) => {
-    console.log("initconnection:")
-    sockets.push(ws);
-    initMessageHandler(ws);
-    // write(ws, queryAllMessage());
-};
-
-const connectToPeer = (newPeer) => {
-    // console.log('sockets: ', sockets);
-    const ws = new WebSocket(newPeer);
-    ws.on('open', () => { initConnection(ws); console.log("connected to:", newPeer); return true; })
-    ws.on('error', () => {
-        console.log('failed to connect to new peer : ', newPeer);
-        console.log('failed to connect to ws.remoteAddress : ', newPeer);
-        return false;
-    })
-}
+const sockets = [];
 
 const getPeers = () => {
     return sockets;
 }
 
+const initP2PServer = (p2pPort) => {
+    const server = new WebSocketServer({port:p2pPort});
+    server.on('connection', (ws) => {
+        initConnection(ws);
+    })
+
+    console.log('listening P2PServer Port : ', p2pPort);
+}
+
+const initConnection = (ws) => {
+    sockets.push(ws);
+    initMessageHandler(ws);
+
+    write(ws, queryAllMessage());
+}
+
+const connectionToPeer = (newPeer) => {
+    console.log(newPeer);
+    const ws = new WebSocket(newPeer);
+    ws.on('open', () => { initConnection(ws); console.log('Connect peer : ', newPeer); })
+    ws.on('error', () => { console.log('Fail to Connection peer : ', newPeer); })
+}
+
 const initMessageHandler = (ws) => {
     ws.on('message', (data) => {
-        const message = JSON.parse(data); //ev.data? test
-        switch (message.type) {
-            // case MessageType.RESPONSE_MESSAGE: // 메세지 받았을때
-            //     break;
-            // case MessageType.SENT_MESSAGE: // 보내진 메세지
-            //     console.log(message.message);
+        const message = JSON.parse(data);
+
+        switch(message.type)
+        {
+            // case MessageType.SENT_MESSAGE:      // 메시지 받았을 때
+            //     console.log(ws._socket.remoteAddress, ' : ', message.message);
             //     break;
             case MessageType.QUERY_LATEST:
-                break;
-            case MessageType.RESPONSE_LATEST:
                 break;
             case MessageType.QUERY_ALL:
                 write(ws, responseAllMessage());
                 break;
-            case MessageType.RESPONSE_BLOCKCHAIN: // 내가 위에서 요청한 블록 데이터를 받음
-                // console.log(ws._socket.remoteAddress, ' : ', message.data)
-                replaceBlockchain(message.data)
-                // console.log(message.data)
-                // handleBlockchainResponse(message);
+            case MessageType.RESPONSE_BLOCKCHAIN:
+                console.log(ws._socket.remoteAddress, ' : ', message.data);
+                replaceBlockchain(message.data);
+                //handleBlockchainResponse(message);
                 break;
         }
     })
 }
 
-const isValidBlockchain = (receivedBlockchain) => {
+const isValidBlockchain = (receiveBlockchain) => {
     // 같은 제네시스 블록인가
-    if (JSON.stringify(receivedBlockchain[0]) !== JSON.stringify(getBlocks()[0])) {
-        console.log("제네시스블록이 다름")
-        console.log("receivedBlockchain ", JSON.stringify(receivedBlockchain[0]))
-        console.log("getBlocks()[0] ", JSON.stringify(getBlocks()[0]))
+    if (JSON.stringify(receiveBlockchain[0]) !== JSON.stringify(getBlocks()[0])){
+        console.log('같은 제네시스 블록이 아님');
+        console.log(receiveBlockchain[0]);
+        console.log('-------------------------')
+        console.log(getBlocks()[0]);
         return false;
     }
-    // 체인 내의 모든 블록을 확인
-    for (let i = 1; i < receivedBlockchain.length; i++) {
-        // console.log("receivedBlockchain ", receivedBlockchain.length)
-        if (isValidNewBlock(receivedBlockchain[i], receivedBlockchain[i - 1]) == false) {
 
+    // 체인 내의 모든 블록을 확인
+    for (let i = 1; i < receiveBlockchain.length; i++)
+    {
+        if (isValidNewBlock(receiveBlockchain[i], receiveBlockchain[i - 1]) == false)
+        {
+            console.log(i - 1, '번 블록과 ', i, '번 블록이 문제');
+            console.log(receiveBlockchain[i - 1]);
+            console.log(receiveBlockchain[i]);
             return false;
         }
     }
+
+    console.log('블록체인 확인 완료')
     return true;
 }
 
-
-
-const handleBlockchainResponse = (receivedBlockchain) => {
-    // 받은 블록체인 보다 현재 블록체인이 더 길다. (안바꿈)
-
-    // 받은 블록체인과 현재 블록체인이 같다. (안바꿈 or 바꿈)
-
-    // 받은 블록체인이 현재 블록체인보다 길면 바꾼다. 
-
-    // 
+const replaceBlockchain = (receiveBlockchain) => {
+    const newBlocks = JSON.parse(receiveBlockchain);
+    console.log(newBlocks);
+    if (isValidBlockchain(newBlocks))
+    {
+        //let blocks = getBlocks();
+        if (newBlocks.length > blocks.length)
+        {
+            console.log('받은 블록체인 길이가 길다');
+            blocks = newBlocks;
+        }
+        else if (newBlocks.length == blocks.length && random.boolean())
+        {
+            console.log('받은 블록체인 길이가 같다');
+            blocks = newBlocks;
+        }
+    }
+    else {
+        console.log('받은 블록체인에 문제가 있음');
+    }
 }
 
-// 마지막 요청 보내기
-const queryLastestMessage = () => {
-    return ({
-        "type": MessageType.QUERY_LATEST,
-        "data": null
-    })
+const handleBlockchainResponse = (receiveBlockchain) => {
+    // 받은 블록체인보다 현재 블록체인이 더 길거나 (안 바꿈)
+    
+    // 같으면. (바꾸거나 안 바꿈)
+
+    // 받은 블록체인이 현재 블록체인보다 길면 바꾼다.
+
 }
 
-// 전체 요청
+const queryLatestMessage = () => {
+    return ({ 
+            "type":MessageType.QUERY_LATEST,
+            "data":null  })
+}
+
 const queryAllMessage = () => {
-    return ({
-        "type": MessageType.QUERY_ALL,
-        // "data": JSON.stringify(getBlocks())
-        "data": getBlocks()
-    })
+    return ({ 
+            "type":MessageType.QUERY_ALL,
+            "data":null  })
 }
 
-// 마지막 요청 응답하기
 const responseLatestMessage = () => {
-    return ({
-        "type": MessageType.RESPONSE_LATEST,
-        "data": JSON.stringify(getLatestBlock()) /* 내가 가지고 있는 체인의 마지막 블록 */
-    })
+    return ({ 
+        "type":MessageType.RESPONSE_BLOCKCHAIN,
+        "data":JSON.stringify(getLatestBlock())  })
 }
-
-// 요청 전체 응답하기
 
 const responseAllMessage = () => {
-    return ({
-        "type": MessageType.RESPONSE_BLOCKCHAIN,
-        // "data": JSON.stringify(getBlocks()) /* 내가 가지고 있는 전체 블록 */
-        "data": getBlocks() /* 내가 가지고 있는 전체 블록 */
-    })
+    return ({ 
+        "type":MessageType.RESPONSE_BLOCKCHAIN,
+        "data":JSON.stringify(getBlocks())  })
 }
 
 const write = (ws, message) => {
-    console.log("write() : ", message)
+    console.log('write() ', ws._socket.remoteAddress, ' : ', message);
     ws.send(JSON.stringify(message));
 }
 
-const broadcasting = (message) => { // broadcasting
-    sockets.forEach((socket) => {
-        // console.log(socket);
+const broadcasting = (message) => {
+    sockets.forEach( (socket) => {
         write(socket, message);
-    })
+    });
+}
+
+const mineBlock = (blockData) => {
+    const newBlock = createBlock(blockData);
+    if (addBlock(newBlock, getLatestBlock()))
+    {
+        broadcasting(responseLatestMessage());
+    }
 }
 
 // 내가 새로운 블록을 채굴했을 때 연결된 노드들에게 전파
-const mineBlock = (blockData) => { // 블록 생성(createBlock), 배열에 추가(getLatestBlock), 만든 블록 전파 (responseLatestMessage) 
-    const newBlock = createBlock(blockData); // newblock
-    if (addBlock(newBlock, getLatestBlock())) {
-        broadcasting(responseLatestMessage()); // responseLatestMessage를 broadCasting에 넣어서 모든 소켓에 전달.
-        broadcasting(responseAllMessage()); // responseLatestMessage를 broadCasting에 넣어서 모든 소켓에 전달.
-    }
-}
 
-const replaceBlockchain = (receivedBlockchain) => {
-    if (isValidBlockchain(receivedBlockchain)) {
-        // let blocks = getBlocks()
-        if (receivedBlockchain.length > blocks.length) {
-            console.log('받은 블록체인이 더 길어 동기화중')
-            for (let i = 0; i < receivedBlockchain.length; i++) {
-                blocks[i] = receivedBlockchain[i]
-                console.log(`${i+1}/${receivedBlockchain.length} 완료`)
-            }
-            
-            // blocks = [...receivedBlockchain];
-        } else if (receivedBlockchain.length == blocks.length && random.boolean()) {
-            console.log('받은 블록체인 길이가 같습니다.')
-            for (let i = 0; i < receivedBlockchain.length; i++) {
-                blocks[i] = receivedBlockchain[i]
-                console.log(`${i+1}/${receivedBlockchain.length} 완료`)
-            }
-        }
-    } else {
-        console.log('받은 블록체인에 문제가 있습니다.');
-    }
-}
 
-export { initP2PServer, connectToPeer, getPeers, broadcasting, mineBlock, isValidBlockchain } // mineBlock export
+export { initP2PServer, connectionToPeer, getPeers, broadcasting, mineBlock }
