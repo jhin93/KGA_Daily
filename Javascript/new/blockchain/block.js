@@ -149,6 +149,53 @@ if (!blocks) {
     blocks = [createGenesisBlock()];
 }
 
+const replaceBlockchain = (receiveBlockchain) => {
+    const newBlocks = JSON.parse(receiveBlockchain);
+    console.log(newBlocks);
+    if (isValidBlockchain(newBlocks))
+    {
+        //let blocks = getBlocks();
+        if (newBlocks.length > blocks.length)
+        {
+            console.log('받은 블록체인 길이가 길다');
+            blocks = newBlocks;
+        }
+        else if (newBlocks.length == blocks.length && random.boolean())
+        {
+            console.log('받은 블록체인 길이가 같다');
+            blocks = newBlocks;
+        }
+    }
+    else {
+        console.log('받은 블록체인에 문제가 있음');
+    }
+}
+
+const isValidBlockchain = (receiveBlockchain) => {
+    // 같은 제네시스 블록인가
+    if (JSON.stringify(receiveBlockchain[0]) !== JSON.stringify(getBlocks()[0])){
+        console.log('같은 제네시스 블록이 아님');
+        console.log(receiveBlockchain[0]);
+        console.log('-------------------------')
+        console.log(getBlocks()[0]);
+        return false;
+    }
+
+    // 체인 내의 모든 블록을 확인
+    for (let i = 1; i < receiveBlockchain.length; i++)
+    {
+        if (isValidNewBlock(receiveBlockchain[i], receiveBlockchain[i - 1]) == false)
+        {
+            console.log(i - 1, '번 블록과 ', i, '번 블록이 문제');
+            console.log(receiveBlockchain[i - 1]);
+            console.log(receiveBlockchain[i]);
+            return false;
+        }
+    }
+
+    console.log('블록체인 확인 완료')
+    return true;
+}
 
 
-export { getBlocks, createBlock, getLatestBlock, addBlock, isValidNewBlock, blocks }
+export { getBlocks, createBlock, getLatestBlock, addBlock, isValidNewBlock, blocks, replaceBlockchain }
