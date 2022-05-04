@@ -183,20 +183,19 @@ const isValidBlockchain = (receiveBlockchain) => {
 }
 
 const replaceBlockchain = (receiveBlockchain) => {
-    const newBlocks = JSON.parse(receiveBlockchain);
-    console.log(newBlocks);
-    if (isValidBlockchain(newBlocks))
+    console.log(receiveBlockchain);
+    if (isValidBlockchain(receiveBlockchain))
     {
         //let blocks = getBlocks();
-        if (newBlocks.length > blocks.length)
+        if (receiveBlockchain.length > blocks.length)
         {
             console.log('받은 블록체인 길이가 길다');
-            blocks = newBlocks;
+            blocks = receiveBlockchain;
         }
-        else if (newBlocks.length == blocks.length && random.boolean())
+        else if (receiveBlockchain.length == blocks.length && random.boolean())
         {
             console.log('받은 블록체인 길이가 같다');
-            blocks = newBlocks;
+            blocks = receiveBlockchain;
         }
     }
     else {
