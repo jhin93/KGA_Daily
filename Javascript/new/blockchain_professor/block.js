@@ -10,6 +10,9 @@
 
 import CryptoJS from 'crypto-js'
 
+const BLOCK_GENERATION_INTERVAL = 10 // 블록 생성주기  
+const DIFFICULTY_ADJUSTMENT_INTERVAL = 10 // 난이도 조절 주기
+
 class Block {
     constructor(index, data, timestamp, hash, previousHash, difficulty, nonce)
     {

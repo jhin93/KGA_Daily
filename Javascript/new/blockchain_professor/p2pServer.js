@@ -70,7 +70,9 @@ const handleBlockchainResponse = (receiveBlockchain) => {
     const newBlocks = JSON.parse(receiveBlockchain);
     // 받아온 블록의 마지막 인덱스가 내 마지막 블록의 인덱스보다 크다.
     const latestNewBlock = newBlocks[newBlocks.length - 1];
+    console.log("받아온 마지막 블록", latestNewBlock);
     const latestMyBlock = getLatestBlock();
+    console.log("내 마지막 블록", latestNewBlock);
 
     if(latestNewBlock.index > latestMyBlock.index){ // 새로운 블록의 인덱스가 내 마지막 블록의 인덱스보다 커야 뒤에 이어받을 수 있다.
         
@@ -114,16 +116,16 @@ const queryAllMessage = () => {
             "data":null  })
 }
 
-const responseLatestMessage = () => {
+const responseLatestMessage = () => { // 마지막 블록만 주는 방식
     return ({ 
         "type":MessageType.RESPONSE_BLOCKCHAIN,
-        "data":JSON.stringify(getLatestBlock())  })
+        "data":JSON.stringify([getLatestBlock()])  }) // 마지막 블록 1개만 줌. 배열의 형태로
 }
 
 const responseAllMessage = () => {
     return ({ 
         "type":MessageType.RESPONSE_BLOCKCHAIN,
-        "data":JSON.stringify(getBlocks())  })
+        "data":JSON.stringify(getBlocks())  }) // 블록체인 전체(배열)를 줌.
 }
 
 const write = (ws, message) => {

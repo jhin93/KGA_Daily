@@ -60,22 +60,48 @@ const initMessageHandler = (ws) => {
                 break;
             case MessageType.RESPONSE_BLOCKCHAIN:
                 console.log(ws._socket.remoteAddress, ' : ', message.data);
-                replaceBlockchain(message.data);
-                //handleBlockchainResponse(message);
+                handleBlockchainResponse(message.data);
                 break;
         }
     })
 }
 
-
-
 const handleBlockchainResponse = (receiveBlockchain) => {
+    const newBlocks = JSON.parse(receiveBlockchain);
+    // 받아온 블록의 마지막 인덱스가 내 마지막 블록의 인덱스보다 크다.
+    const latestNewBlock = newBlocks[newBlocks.length - 1];
+    console.log("받아온 마지막 블록", latestNewBlock);
+    const latestMyBlock = getLatestBlock();
+    console.log("내 마지막 블록", latestNewBlock);
+
+    if(latestNewBlock.index > latestMyBlock.index){ // 새로운 블록의 인덱스가 내 마지막 블록의 인덱스보다 커야 뒤에 이어받을 수 있다.
+        
+    }
+
+    // 받아온 마지막 블록의 previousHash와 내 마지막 블록의 hash를 확인한다.
+    if(latestNewBlock.previousHash === latestMyBlock.hash) {
+        if(addBlock(latestNewBlock, latestMyBlock)) 
+        {
+            // 제한된 플러딩을 사용한다. 
+            broadcasting(responseLatestMessage())
+        } // newblock, previousblock
+        broadcasting(responseLatestMessage())
+    }
+
+    // 받아온 블록의 전체 크기가 1인 경우 -> 재요청
+    else if(newBlocks.length === 1) 
+    {
+        broadcasting(queryAllMessage());
+    }
+
+    // 그외
     // 받은 블록체인보다 현재 블록체인이 더 길거나 (안 바꿈)
-    
     // 같으면. (바꾸거나 안 바꿈)
-
     // 받은 블록체인이 현재 블록체인보다 길면 바꾼다.
-
+    else 
+    {
+        replaceBlockchain(newBlocks);
+    }
 }
 
 const queryLatestMessage = () => {
@@ -90,16 +116,16 @@ const queryAllMessage = () => {
             "data":null  })
 }
 
-const responseLatestMessage = () => {
+const responseLatestMessage = () => { // 마지막 블록만 주는 방식
     return ({ 
         "type":MessageType.RESPONSE_BLOCKCHAIN,
-        "data":JSON.stringify(getLatestBlock())  })
+        "data":JSON.stringify([getLatestBlock()])  }) // 마지막 블록 1개만 줌. 배열의 형태로
 }
 
 const responseAllMessage = () => {
     return ({ 
         "type":MessageType.RESPONSE_BLOCKCHAIN,
-        "data":JSON.stringify(getBlocks())  })
+        "data":JSON.stringify(getBlocks())  }) // 블록체인 전체(배열)를 줌.
 }
 
 const write = (ws, message) => {

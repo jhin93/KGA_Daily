@@ -1,74 +1,43 @@
 // 웹에 명령어를 입력해서 내 노드를 제어하는 서버
-import express from 'express'; //속도나 크기면에서 require에 비해 compact함
-// const express = require('express'); 
-import bodyParser from 'body-parser';
-import { getBlocks, createBlock } from './block.js';
+//const express = require('express')
+import express from 'express'
+import bodyParser from 'body-parser'
+import { getBlocks, createBlock } from './block.js'
 import { connectionToPeer, getPeers, mineBlock } from './p2pServer.js'
-import nunjucks from 'nunjucks';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // 초기화 함수
 const initHttpServer = (myHttpPort) => {
     const app = express();
-    app.use(express.static(__dirname + "/public"))
-    app.set('view engine', 'html');
-    nunjucks.configure('views', {
-        express: app,
-    })
-
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: true }));
-
 
     app.get('/', (req, res) => {
-
-        res.render('p2pclient')
+        res.send('Hello, World!');
     })
 
     app.get('/blocks', (req, res) => {
         res.send(getBlocks());
     })
 
-    app.post('/blocks', (req, res) => {
-
-        res.send(createBlock(req.body.data));
-
+    app.post('/createBlock', (req, res) => {
+        res.send(createBlock(req.body.data));        
     })
 
     app.post('/mineBlock', (req, res) => {
-        res.send(mineBlock(req.body.data))
-    })
-
-    app.post('/addPeer', (req, res) => {
-
-        const { ipAddress, port } = req.body
-
-        let fullAddress = "ws://" + ipAddress + ":" + port;
-        console.log(fullAddress)
-        console.log("connectionToPeer")
-        res.send(connectionToPeer(fullAddress));
-        
-
-    })
-
-    app.get('/addPeer', (req, res) => {
-        res.redirect('/')
-
+        res.send(mineBlock(req.body.data));
     })
 
     app.get('/peers', (req, res) => {
         res.send(getPeers());
+    })
 
+    app.post('/addPeer', (req, res) => {
+        console.log('/addPeer : ',req.body.message);
+        res.send(connectionToPeer(req.body.data));
     })
 
     app.listen(myHttpPort, () => {
         console.log('listening httpServer Port : ', myHttpPort);
-    });
-};
-
+    })
+}
 
 export { initHttpServer }
