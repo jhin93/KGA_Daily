@@ -210,7 +210,8 @@ const replaceBlockchain = (receiveBlockchain) => {
 const getAdjustmentDifficulty = () => { 
     // 현재 시간, 마지막으로 난이도 조정된 시간
     // 마지막으로 조정된 애. 현재가 30번째 블록이라면 현재 블록 인덱스 - 조절 주기 = 20번째 블록.
-    const prevAdjustedBlock = blocks[blocks.length - 1 - DIFFICULTY_ADJUSTMENT_INTERVAL] 
+    // const prevAdjustedBlock = blocks[blocks.length - 1 - DIFFICULTY_ADJUSTMENT_INTERVAL] 
+    const prevAdjustedBlock = blocks[blocks.length - DIFFICULTY_ADJUSTMENT_INTERVAL] 
     // 마지막 블록
     const latestBlock = getLatestBlock();
     // 경과시간. 마지막 블록 시간 - 마지막 조정된 블록 시간

@@ -23,7 +23,9 @@ const initHttpServer = (myHttpPort) => {
     })
 
     app.post('/mineBlock', (req, res) => {
-        res.send(mineBlock(req.body.data));
+        for(let i = 0; i < 100; i ++) {
+        res.send(mineBlock(req.body.data)); 
+        }
     })
 
     app.get('/peers', (req, res) => {
