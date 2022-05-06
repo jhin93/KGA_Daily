@@ -28,15 +28,22 @@
 import ecdsa from 'elliptic';
 
 const ec = new ecdsa.ec('secp256k1'); // ec()는 여러 암호화 알고리즘 중 하나. secp256k1는 256비트로 만드는 방식
+const privateKeyLocation = 'wallet/' + (process.env.PRIVATE_KEY || 'default') // 환경변수에 있다면 가지고 오고, 없다면 default
+const privateKeyFile = privateKeyLocation + '/private_key'
 
 const createPrivateKey = () => {
     const keyPair = ec.genKeyPair();
     const privateKey = keyPair.getPrivate();
-    console.log(privateKey);
+
+    // console.log("==== private key ====  : ", privateKey);
+    // console.log("==== 16진수 ==== : ", privateKey.toString(16)) // 16진수로 바꾸기
+
+    return privateKey.toString(16)
 }
 
-createPrivateKey()
-
+const initWallet = () => {
+    
+}
 
 
 
