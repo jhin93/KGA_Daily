@@ -915,5 +915,4 @@ compare();
 
 
 geth puppeth(프라이빗 네트워크)    
-https://brunch.co.kr/@skkrypto/79  
 https://brunch.co.kr/@skkrypto/80  
