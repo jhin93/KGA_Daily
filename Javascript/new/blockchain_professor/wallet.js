@@ -26,6 +26,7 @@
 
 // 타원 곡선 디지털 서명 알고리즘(ECDSA) 설치 : npm install elliptic
 import ecdsa from 'elliptic';
+import fs from 'fs'
 
 const ec = new ecdsa.ec('secp256k1'); // ec()는 여러 암호화 알고리즘 중 하나. secp256k1는 256비트로 만드는 방식
 const privateKeyLocation = 'wallet/' + (process.env.PRIVATE_KEY || 'default') // 환경변수에 있다면 가지고 오고, 없다면 default
@@ -41,18 +42,46 @@ const createPrivateKey = () => {
     return privateKey.toString(16)
 }
 
+
 const initWallet = () => {
-    
+    // 이미 만들어져 있을 때
+    if(fs.existsSync(privateKeyFile)) {
+        console.log('지갑에 비밀키가 이미 만들어져 있음')
+        return;
+    }
+
+    // 폴더 있는지 체크
+    if(!fs.existsSync('wallet/')) { fs.mkdirSync('wallet/') } // 만약 wallet 폴더가 없다면 폴더 생성
+    if(!fs.existsSync(privateKeyLocation)) { fs.mkdirSync(privateKeyLocation) }
+
+    const privateKey = createPrivateKey() // 지갑이 초기화될때, 비밀키가 만들어진다
+    // 만든 비밀키를 저장하기 위해 fs 모듈을 사용
+    fs.writeFileSync(privateKeyFile, privateKey); // 파일 생성하고 그 안에 privateKey 삽입
+}
+
+
+const getPrivateKeyFromWallet = () => {
+    const buffer = fs.readFileSync(privateKeyFile, 'utf-8'); // 프라이빗 키를 읽어옴
+    return buffer.toString();
 }
 
 
 
 
 
+const getPublicKeyFromWallet = () => {
+    const privateKey = getPrivateKeyFromWallet();
+    const publicKey = ec.keyFromPrivate(privateKey, 'hex') // keyFromPrivate는 받은 인자로 다른 키를 만드는 메소드. 16진수로 인코딩
+    
+    return publicKey.getPublic().encode('hex') // 공개키. 여기서 비밀키를 유추하는 건 불가능.
+    // 퍼블릭키는 다 04로 나옴
+}
 
 
 
 
+
+export { getPublicKeyFromWallet, initWallet }
 
 
 
