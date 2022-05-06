@@ -916,5 +916,8 @@ compare();
 geth 공식 홈페이지  
 https://geth.ethereum.org/  
 
+geth 명령어, 옵션  
+https://geth.ethereum.org/docs/interface/command-line-options  
+
 geth puppeth(프라이빗 네트워크)    
 https://brunch.co.kr/@skkrypto/80  
