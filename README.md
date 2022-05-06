@@ -919,6 +919,7 @@ https://geth.ethereum.org/
 geth 명령어, 옵션  
 https://geth.ethereum.org/docs/interface/command-line-options  
 
-geth puppeth(프라이빗 네트워크)    
+geth puppeth로 프라이빗 네트워크   
+https://medium.com/onther-tech/geth%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-private-ethereum-chain-private-network-%EA%B5%AC%EC%B6%95-82feeb1d0bbc  
 https://brunch.co.kr/@skkrypto/80  
 https://velog.io/@hustle-dev/Geth-puppeth%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4-%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0-2%ED%8E%B8-POA  
