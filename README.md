@@ -933,3 +933,6 @@ https://ethdocs.org/en/latest/ethereum-clients/choosing-a-client.html
 
 puppeth  
 https://blog.ethereum.org/2017/04/14/geth-1-6-puppeth-master/  
+
+파우셋(faucet)  
+https://smartmission.tistory.com/247  
