@@ -930,3 +930,6 @@ https://velog.io/@hustle-dev/Geth-puppeth%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4-%
 
 이더리움 클라이언트 종류  
 https://ethdocs.org/en/latest/ethereum-clients/choosing-a-client.html  
+
+puppeth  
+https://blog.ethereum.org/2017/04/14/geth-1-6-puppeth-master/  
