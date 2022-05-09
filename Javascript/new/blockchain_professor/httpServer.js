@@ -44,6 +44,13 @@ const initHttpServer = (myHttpPort) => {
     })
     // 결과 : {"address : ":"0424ff190a564fb622a27ba04298b27dc25129ac1503c84bce6ae671be75454a1fdde0c05209eaf98aa68365b4fd57524d8f1e8f8489e6823d7cd0a55288155a87"}
 
+    app.post('/sendTransaction', (req, res) => {
+        const address = req.body.address;
+        const amount = req.body.amount;
+        
+        res.send(sendTransaction(address, amount));
+    })
+
     app.listen(myHttpPort, () => {
         console.log('listening httpServer Port : ', myHttpPort);
     })

@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
-    "elliptic": "^6.5.4"
+    "elliptic": "^6.5.4",
+    "lodash": "^4.17.21"
   }
 }
