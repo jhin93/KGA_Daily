@@ -1,7 +1,7 @@
 
 import CryptoJS from 'crypto-js'
 import _ from 'lodash' // 깊은 복사를 위해 설치
-import { getPublicKeyFromWallet } from './wallet.js';
+import { getPublicKeyFromWallet, getPrivateKeyFromWallet } from './wallet.js';
 
 const COIN_BASE_AMOUNT = 50;
 
@@ -111,7 +111,7 @@ const sendTransaction = (address, amount) => {
     const tx = createTransaction();
 
     // 2. 트랜잭션 풀에 추가
-
+    transactionPool.push(tx);
 
     // 3. 주변 노드에 전파
 
@@ -119,7 +119,7 @@ const sendTransaction = (address, amount) => {
     return tx;
 }
 
-const createTransaction = () => {
+const createTransaction = (amount, address) => {
     // 1. 아직 처리되지 않았지만 트랜잭션 풀에 올라가있는 내용을 확인
     const myAddress = getPublicKeyFromWallet(); // wallet.js에서 import해서 사용
     const myUnspentTxOuts = unspentTxOuts.filter((uTxO) => {uTxO.address === myAddress})
@@ -129,11 +129,23 @@ const createTransaction = () => {
 
     // 2. 거래에 사용되지 않은 TxOuts을 구성, 트랜잭션에 필요한 코인을 확인
     // 전송하고 남는 금액은 다시 나에게 전달
-    
+    const {includeTxOuts, leftoverAmount} = findTxOutsForAmount(amount, filteredUnspentTxOuts)
 
     // 3. 서명 전의 TxIns로 구성
+    const unsignedTxIns = includeTxOuts.map(createUnsignedTxIn);
 
     // 4. 트랜잭션 구성
+    const tx = new Transaction();
+    tx.txIns = unsignedTxIns;
+    tx.txOuts = createTxOuts(address, amount, leftoverAmount) // 받는 사람 주소, 보내는 금액
+    tx.id = getTransactionId(tx);
+
+    tx.txIns = tx.txIns.map((txIn) => {
+        txIn.sign = signTxIn(tx, txIn.txOutIndex, getPrivateKeyFromWallet());
+        return txIn;
+    }) 
+
+    return tx;
 }
 
 
@@ -170,18 +182,110 @@ const filterTxPoolTxs = (myUnspentTxOuts) => {
 
 const findTxOutsForAmount = (amount, filteredUnspentTxOuts) => { // 보내고 싶은 금액(amount), 실제로 사용할 filteredUnspentTxOuts
     let currentAmount = 0;
+    const includeTxOuts = [];
     
     for (const unspentTxout of filteredUnspentTxOuts) { // 보내고 싶은 금액을 넘어가면 그때 보냄. 안넘어가면 계속 누적
+        includeTxOuts.push(unspentTxout);
+
         currentAmount = currentAmount + unspentTxout.amount; 
         if(currentAmount >= amount) {
             const leftoverAmount = currentAmount - amount; // 현재 금액 - 보낼 금액 = 나한테 보낼 금액
+            return { includeTxOuts, leftoverAmount };
         }
     }
+
+    throw Error('보내려는 금액보다 보유 금액이 적다!!');
+
 } 
 
 
 
+const createUnsignedTxIn = (unspentTxOut) => {
+    const txIn = new TxIn();
+    txIn.txOutId = unspentTxOut.txOutId;
+    txIn.txOutId = unspentTxOut.txOutIndex;
 
+    return txIn;
+}
 
+const createTxOuts = (address, amount, leftoverAmount) => {
+    const txOut = new TxOut(address, amount);
+    if(leftoverAmount > 0) { // 남는게 있을 때
+        const leftoverTxOut = new TxOut(getPublicKeyFromWallet(), leftoverAmount);
+        return [leftoverTxOut, txOut];
+    }
+    else { // 남는게 없을 때
+        return [txOut];
+    }
+}
+
+const addToTransactionPool = (transaction) => {
+    // 올바른 트랜잭션인지
+    if (!isValidateTransaction(transaction, unspentTxOuts)) {
+        throw Error('추가하려는 트랜잭션이 올바르지 않다!!', transaction);
+    }
+
+    // 중복되는지
+    if(!isValidateTxForPool(transaction)) {
+        throw Error('추가하려는 트랜잭션이 트랜잭션 풀에 있다!!', transaction)
+    }
+
+    transactionPool.push(transaction);
+}
+
+const isValidateTransaction = (transaction, unspentTxOuts) => {
+    if (getTransactionId(transaction) !== transaction.id) {
+        console.log('invalid transaction id : ', transaction.id);
+        return false;
+    }
+
+    const totalTxInValues = transaction.txIns
+        .map((txIn) => getTxInAmount(txIn, unspentTxOuts))
+        .reduce((a, b) => (a + b), 0); // 중괄호 생략
+    
+    const totalTxOutValues = transaction.txOuts
+        .map((txOut) => txOut.amount)
+        .reduce((a, b) => (a + b), 0)
+
+    if(totalTxInValues !== totalTxOutValues) { // 값 비교
+        console.log('totalTxInValues !== totalTxOutValues id : ', transaction.id);
+        return false;
+    }
+
+    return true
+}
+
+const getTxInAmount = (txIn, unspentTxOuts) => {
+    const findUnsepentTxOut = unspentTxOuts.find((uTxO) => uTxO.txOutId === txIn.txOutId && 
+        uTxO.txOutIndex === txIn.txOutIndex);
+
+    return findUnsepentTxOut.amount;
+}
+
+const isValidateTxForPool = (transaction) => {
+    // 트랜잭션 풀에 있는 txIns들과 transaction에 txIns들을 비교해서 같은 것이 있는지 확인
+    const txPoolIns = _(transactionPool)
+        .map((tx) => tx.txIns)
+        .flatten()
+        .value();
+
+    const containTxIn = (txIn) => { // 이중포문 대신 이중 애로우 함수
+        return _.find(txPoolIns, (txPoolIn) => {
+            return txIn.txOutIndex === txPoolIn.txOutIndex &&
+            txIn.txOutId === txPoolIn.txOutId;
+        })
+    }
+
+    for (const txIn of transaction.txIns) {
+        if(containTxIn(txIn)) {
+            console.log('이미 존재하는 트랜잭션이다!! id : ', transaction.id);
+            return false;
+        }
+    }
+
+    return true;
+}
+
+export { getTransactionPool, addToTransactionPool }
 
 

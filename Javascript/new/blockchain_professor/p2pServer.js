@@ -2,6 +2,7 @@
 import WebSocket from 'ws'
 import { WebSocketServer } from 'ws'
 import { getBlocks, getLatestBlock, createBlock, addBlock, isValidNewBlock, replaceBlockchain } from './block.js'
+import { getTransactionPool, addToTransactionPool } from './transaction.js'
 
 const MessageType = {
     // RESPONSE_MESSAGE : 0,
@@ -12,7 +13,9 @@ const MessageType = {
     // 모든 블록 요청
     QUERY_ALL : 1,
     // 블록 전달
-    RESPONSE_BLOCKCHAIN : 2
+    RESPONSE_BLOCKCHAIN : 2,
+    QUERY_TRANSACTION_POOL : 3,
+    RESPONSE_TRANSACTION_POOL : 4
 }
 
 const sockets = [];
@@ -62,6 +65,12 @@ const initMessageHandler = (ws) => {
                 console.log(ws._socket.remoteAddress, ' : ', message.data);
                 handleBlockchainResponse(message.data);
                 break;
+            case MessageType.QUERY_TRANSACTION_POOL:
+                write(ws, responseTransactionPoolMessage());
+                break;
+            case MessageType.RESPONSE_TRANSACTION_POOL:
+                handleTransactionPoolResponse(message.data);
+                break;
         }
     })
 }
@@ -104,6 +113,16 @@ const handleBlockchainResponse = (receiveBlockchain) => {
     }
 }
 
+const handleTransactionPoolResponse = (receiveTransactionPool) => {
+    console.log('receiveTransactionPool : ', receiveTransactionPool)
+
+    receiveTransactionPool.forEach((transaction) => {
+        addToTransactionPool(transaction);
+
+        // 다시 전파
+    })
+}
+
 const queryLatestMessage = () => {
     return ({ 
             "type":MessageType.QUERY_LATEST,
@@ -126,6 +145,12 @@ const responseAllMessage = () => {
     return ({ 
         "type":MessageType.RESPONSE_BLOCKCHAIN,
         "data":JSON.stringify(getBlocks())  }) // 블록체인 전체(배열)를 줌.
+}
+
+const responseTransactionPoolMessage = () => {
+    return ({ 
+        "type":MessageType.RESPONSE_TRANSACTION_POOL,
+        "data":JSON.stringify(getTransactionPool())  }) // 블록체인 전체(배열)를 줌.
 }
 
 const write = (ws, message) => {
@@ -151,3 +176,21 @@ const mineBlock = (blockData) => {
 
 
 export { initP2PServer, connectionToPeer, getPeers, broadcasting, mineBlock }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -81,7 +81,7 @@ const getPublicKeyFromWallet = () => {
 
 
 
-export { getPublicKeyFromWallet, initWallet }
+export { getPublicKeyFromWallet, getPrivateKeyFromWallet, initWallet }
 
 
 
