@@ -909,7 +909,37 @@ compare();
 // await가 붙은 곳은 무조건 실행하고 넘어간다. 내부에 settimeout이 몇초던 간에.
 // await가 내부에 아무데도 없고, 먼저 실행된 함수가 비동기함수라면(async가 붙은) 일반 함수가 먼저 결과를 도출한다. 그리고 비동기 함수(async가 붙은)가 결과를 도출한다.
 
-
-
 ```
 
+쿠키로 로그인해야 하는 이유.  
+
+
+<br>
+<br>
+
+geth 공식 홈페이지  
+https://geth.ethereum.org/  
+
+geth 명령어, 옵션  
+https://geth.ethereum.org/docs/interface/command-line-options  
+
+geth puppeth로 프라이빗 네트워크   
+https://medium.com/onther-tech/geth%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-private-ethereum-chain-private-network-%EA%B5%AC%EC%B6%95-82feeb1d0bbc  
+https://brunch.co.kr/@skkrypto/80  
+https://velog.io/@hustle-dev/Geth-puppeth%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4-%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0-2%ED%8E%B8-POA  
+
+이더리움 클라이언트 종류  
+https://ethdocs.org/en/latest/ethereum-clients/choosing-a-client.html  
+
+puppeth  
+https://blog.ethereum.org/2017/04/14/geth-1-6-puppeth-master/  
+
+파우셋(faucet)  
+https://smartmission.tistory.com/247  
+
+POA(권위증명)  
+http://wiki.hash.kr/index.php/%EA%B6%8C%EC%9C%84%EC%A6%9D%EB%AA%85#.EC.9E.A5.EC.A0.90  
+
+POA(권위증명)이 프라이빗 네트워크와 어울리는 이유  
+https://m.blog.naver.com/mage7th/221718001743  
+https://yceffort.kr/2018/09/19/how-does-proof-of-authority-consensus-work  
