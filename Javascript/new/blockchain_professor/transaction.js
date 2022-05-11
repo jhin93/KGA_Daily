@@ -10,7 +10,11 @@ const getTransactionPool = () => {
     return _.cloneDeep(transactionPool);    // 깊은 복사
 }
 
-let unspentTxOuts = []; // UnspentTxOut []
+// let unspentTxOuts = []; // UnspentTxOut []
+let unspentTxOuts = processTransaction(transactions /* Transaction[] */, [] /* UnspentTxOut[] */, 0 /* blockIndex */);
+const getUnspentTxOuts = () => {
+    return _.cloneDeep(unspentTxOuts);
+}
 
 class UnspentTxOut {
     constructor(txOutId, txOutIndex, address, amount) {
@@ -290,6 +294,24 @@ const isInTx = (txIn) => {
     uTxO.txOutId === txIn.txOutId});
 
     return findTxOut !== undefined;
+}
+
+const processTransaction = (transactions, unspentTxOuts, blockIndex) => {
+    // 1. 예외처리 (트랜잭션 구조를 검증하는 과정)
+    if(!isValidateBlockTransaction(transactions, unspentTxOuts, blockIndex)) {
+        console.log('invalid processTransaction');
+        return null;
+    }
+    
+    // 2. 미사용 txouts를 추출하는 과정
+    // 2-1. 블록에 있는 데이터 (처리해야 할 트랜잭션 정보) 중에서 txIns로 이미 소모된 txOuts(UnspentTxOut)를 구성
+    const consumedTxOuts = transactions.map((tx) => tx.txIns)  // txIns로만 만든 배열
+        .reduce((a,b) => a.concat(b), []) // txIns들을 하나의 배열로
+        .map((txIn) => new UnspentTxOut(txIn.txOutId, txIn.txOutIndex, '', 0));
+
+    // 2-2. transactions에서 소모된 UnspentTxOut들을 제거
+    
+    // 2-3. transactions - 소모된 UnspentTxOut + 새로 들어온 트랜잭션 정보에서 추출한 UnspentTXout을 추가 
 }
 
 export { sendTransaction, getTransactionPool, addToTransactionPool, getCoinbaseTransaction, updateTransactionPool };

@@ -233,7 +233,10 @@ const findNonce = (index, data, timestamp, previousHash, difficulty) => {
     }
 }
 
-let blocks = [createGenesisBlock()];
+const genesisBlock = createGenesisBlock();
+genesisBlock.data = getCoinbaseTransaction(getPublicKeyFromWallet(), getLatestBlock().index + 1);
+
+let blocks = [genesisBlock];
 // const blocks6002 = [createGenesisBlock()];
 // const blocks6003 = [createGenesisBlock()];
 
