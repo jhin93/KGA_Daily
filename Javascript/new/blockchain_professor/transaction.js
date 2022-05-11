@@ -309,9 +309,27 @@ const processTransaction = (transactions, unspentTxOuts, blockIndex) => {
         .reduce((a,b) => a.concat(b), []) // txIns들을 하나의 배열로
         .map((txIn) => new UnspentTxOut(txIn.txOutId, txIn.txOutIndex, '', 0));
 
-    // 2-2. transactions에서 소모된 UnspentTxOut들을 제거
+    // 2-2. 새로 들어온 트랜잭션 정보에서 추출한 UnspentTxout 생성
+    const newUnspentTxOuts = transactions.map((tx) => {
+        return tx.txOuts.map((txOut) => new UnspentTxOut(tx.id, blockIndex, txOut.address, txOut.amount))
+    })
+    .reduce((a, b) => a.concat(b), []);    
+
+    // 2-3. 기존 UnspentTxOut - 소모된 UnspentTxOut + newUnspentTXout을 추가 
+    // 두 1차원 배열의 txOutId와 txOutIndex를 비교해서 같은 요소를 filter하는 코드를 만들어보자.
     
-    // 2-3. transactions - 소모된 UnspentTxOut + 새로 들어온 트랜잭션 정보에서 추출한 UnspentTXout을 추가 
+    // txOutId와 txOutIndex를 비교해서 같은 요소를 찾는 함수
+    const findSameEle = txOutId.filter(ele => txOutIndex.includes(ele))
+
+    const resultUnspentTxOuts = (unspentTxOuts.filter((uTxO) => !checkSameElement(consumedTxOuts, uTxO.txOutIndex, uTxO.txOutId))).concat(newUnspentTxOuts);
+    // !checkSameElement 인 이유는 같은 요소를 배제해야 하기 때문에 ! 연산자를 붙인다.
+
+    unspentTxOuts = resultUnspentTxOuts
+    return resultUnspentTxOuts;
 }
 
-export { sendTransaction, getTransactionPool, addToTransactionPool, getCoinbaseTransaction, updateTransactionPool };
+const checkSameElement = (txOuts, txOutIndex, txOutId) => {
+    return txOuts.find((txOut) => txOut.txOutId === txOutId &&  txOut.txOutIndex === txOutIndex);
+}
+
+export { sendTransaction, getTransactionPool, addToTransactionPool, getCoinbaseTransaction, updateTransactionPool, getUnspentTxOuts, processTransaction };
