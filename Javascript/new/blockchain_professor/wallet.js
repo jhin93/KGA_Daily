@@ -150,3 +150,5 @@ const getPublicKeyFromWallet = () => {
 }
 // createPrivateKey()
 getPublicKeyFromWallet()
+
+export { getPublicKeyFromWallet, getPrivateKeyFromWallet, initWallet }
