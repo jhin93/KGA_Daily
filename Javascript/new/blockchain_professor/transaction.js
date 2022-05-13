@@ -10,7 +10,11 @@ const getTransactionPool = () => {
     return _.cloneDeep(transactionPool);    // 깊은 복사
 }
 
-let unspentTxOuts = []; // UnspentTxOut []
+// let unspentTxOuts = []; // UnspentTxOut []
+let unspentTxOuts = processTransaction(transactions /* Transaction[] */, [] /* UnspentTxOut[] */, 0 /* blockIndex */);
+const getUnspentTxOuts = () => {
+    return _.cloneDeep(unspentTxOuts);
+}
 
 class UnspentTxOut {
     constructor(txOutId, txOutIndex, address, amount) {
@@ -292,4 +296,40 @@ const isInTx = (txIn) => {
     return findTxOut !== undefined;
 }
 
-export { sendTransaction, getTransactionPool, addToTransactionPool, getCoinbaseTransaction, updateTransactionPool };
+const processTransaction = (transactions, unspentTxOuts, blockIndex) => {
+    // 1. 예외처리 (트랜잭션 구조를 검증하는 과정)
+    if(!isValidateBlockTransaction(transactions, unspentTxOuts, blockIndex)) {
+        console.log('invalid processTransaction');
+        return null;
+    }
+    
+    // 2. 미사용 txouts를 추출하는 과정
+    // 2-1. 블록에 있는 데이터 (처리해야 할 트랜잭션 정보) 중에서 txIns로 이미 소모된 txOuts(UnspentTxOut)를 구성
+    const consumedTxOuts = transactions.map((tx) => tx.txIns)  // txIns로만 만든 배열
+        .reduce((a,b) => a.concat(b), []) // txIns들을 하나의 배열로
+        .map((txIn) => new UnspentTxOut(txIn.txOutId, txIn.txOutIndex, '', 0));
+
+    // 2-2. 새로 들어온 트랜잭션 정보에서 추출한 UnspentTxout 생성
+    const newUnspentTxOuts = transactions.map((tx) => {
+        return tx.txOuts.map((txOut) => new UnspentTxOut(tx.id, blockIndex, txOut.address, txOut.amount))
+    })
+    .reduce((a, b) => a.concat(b), []);    
+
+    // 2-3. 기존 UnspentTxOut - 소모된 UnspentTxOut + newUnspentTXout을 추가 
+    // 두 1차원 배열의 txOutId와 txOutIndex를 비교해서 같은 요소를 filter하는 코드를 만들어보자.
+    
+    // txOutId와 txOutIndex를 비교해서 같은 요소를 찾는 함수
+    const findSameEle = txOutId.filter(ele => txOutIndex.includes(ele))
+
+    const resultUnspentTxOuts = (unspentTxOuts.filter((uTxO) => !checkSameElement(consumedTxOuts, uTxO.txOutIndex, uTxO.txOutId))).concat(newUnspentTxOuts);
+    // !checkSameElement 인 이유는 같은 요소를 배제해야 하기 때문에 ! 연산자를 붙인다.
+
+    unspentTxOuts = resultUnspentTxOuts
+    return resultUnspentTxOuts;
+}
+
+const checkSameElement = (txOuts, txOutIndex, txOutId) => {
+    return txOuts.find((txOut) => txOut.txOutId === txOutId &&  txOut.txOutIndex === txOutIndex);
+}
+
+export { sendTransaction, getTransactionPool, addToTransactionPool, getCoinbaseTransaction, updateTransactionPool, getUnspentTxOuts, processTransaction };

@@ -11,7 +11,7 @@
 
 import CryptoJS from 'crypto-js';
 import random from 'random';
-import { getCoinbaseTransaction, getTransactionPool, updateTransactionPool } from './transaction.js'
+import { getCoinbaseTransaction, getTransactionPool, updateTransactionPool, getUnspentTxOuts, processTransaction, updateTransactionPool } from './transaction.js'
 import { getPublicKeyFromWallet } from './wallet';
 
 // const blocks = [];
@@ -94,10 +94,10 @@ const addBlock = (newBlock, previousBlock) => {
         // blocks6003.push(newBlock);
 
         // 사용되지 않은 txOuts 세팅
+        processTransaction(newBlock.data, getUnspentTxOuts(), newBlock.index)
 
         // 트랜잭션 풀 업데이트
         updateTransactionPool(unspentTxOuts);
-
         return true;
     }
     return null;
@@ -134,6 +134,8 @@ const replaceBlockchain = (receiveBlockchain) => {
             console.log(getBlocks());
 
             // 사용되지 않은 txOuts 세팅
+            const latestBlock = getLatestBlock();
+            processTransaction(latestBlock.data, getUnspentTxOuts(), latestBlock.index)
         
             // 트랜잭션 풀 업데이트
             updateTransactionPool(unspentTxOuts);
@@ -233,7 +235,10 @@ const findNonce = (index, data, timestamp, previousHash, difficulty) => {
     }
 }
 
-let blocks = [createGenesisBlock()];
+const genesisBlock = createGenesisBlock();
+genesisBlock.data = getCoinbaseTransaction(getPublicKeyFromWallet(), getLatestBlock().index + 1);
+
+let blocks = [genesisBlock];
 // const blocks6002 = [createGenesisBlock()];
 // const blocks6003 = [createGenesisBlock()];
 
