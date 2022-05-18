@@ -949,3 +949,10 @@ https://yceffort.kr/2018/09/19/how-does-proof-of-authority-consensus-work
 
 ethers.js  
 http://www.umlcert.com/ethereum-dapps-16/  
+
+-- 먼저 그리디 문제를 풀어 사고력을 높이고 나머지를 수행.  
+0. 탐욕법 https://programmers.co.kr/learn/courses/30/parts/12244  
+1. DFS, BFS - https://programmers.co.kr/learn/courses/30/parts/12421  
+2. 완전탐색 - https://programmers.co.kr/learn/courses/30/parts/12230  
+3. 해시 - https://programmers.co.kr/learn/courses/30/parts/12077  
+4. 스택/큐 https://programmers.co.kr/learn/courses/30/parts/12081  
