@@ -2,7 +2,7 @@
 //const express = require('express')
 import express from 'express'
 import bodyParser from 'body-parser'
-import { getBlocks, createBlock } from './block.js'
+import { getBlocks, createBlock, getUnspentTxOuts } from './block.js'
 import { connectionToPeer, getPeers, mineBlock } from './p2pServer.js'
 import { getPublicKeyFromWallet } from './wallet.js'
 import { getTransactionPool, sendTransaction } from './transaction.js'
@@ -51,6 +51,10 @@ const initHttpServer = (myHttpPort) => {
 
     app.get('/transactions', (req, res) => {
         res.send(getTransactionPool());
+    })
+
+    app.get('/unspentTxOuts', (req, res) => {
+        res.send(getUnspentTxOuts());
     })
 
     app.listen(myHttpPort, () => {

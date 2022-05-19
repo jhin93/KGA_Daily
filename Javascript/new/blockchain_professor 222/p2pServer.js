@@ -114,11 +114,11 @@ const handleBlockchainResponse = (receiveBlockchain) => {
 const handleTransactionPoolResponse = (recieveTransactionPool) => {
     console.log('recieveTransactionPool : ', recieveTransactionPool);
 
-    // recieveTransactionPool.forEach((transaction) => {
-    //     addToTransactionPool(transaction);
+    recieveTransactionPool.forEach((transaction) => {
+        addToTransactionPool(transaction);
 
-    //     // 다시 전파
-    // });
+        // 다시 전파
+    });
 }
 
 const queryLatestMessage = () => {

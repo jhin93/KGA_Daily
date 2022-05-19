@@ -7,9 +7,9 @@
     hash : 블록 내부 데이터로 생성한 sha256 값 (블록의 유일성)
     previousHash : 이전 블록의 해쉬 (이전 블록을 참조)
 */
-
+import _ from 'lodash'
 import CryptoJS from 'crypto-js'
-import {getCoinbaseTransaction, getTransactionPool, getUnspentTxOuts, processTransaction, updateTransactionPool} from './transaction.js'
+import {getCoinbaseTransaction, getTransactionPool, processTransaction, updateTransactionPool, addToTransactionPool} from './transaction.js'
 import {getPublicKeyFromWallet} from './wallet.js'
 
 class Block {
@@ -25,6 +25,14 @@ class Block {
     }
 }
 
+//let unspentTxOuts = []; // UnspentTxOut []
+let unspentTxOuts = 
+    processTransaction(getTransactionPool(), [], 0);
+const getUnspentTxOuts = () => {
+    return _.cloneDeep(unspentTxOuts)
+}
+
+
 const calculateHash = (index, data, timestamp, previousHash, difficulty, nonce) => 
     CryptoJS.SHA256((index + data + timestamp + previousHash + difficulty + nonce).toString()).toString();
 
@@ -35,6 +43,10 @@ const createGenesisBlock = () => {
                          genesisBlock.previousHash, genesisBlock.difficulty, genesisBlock.nonce);
 
     genesisBlock.data = getCoinbaseTransaction(getPublicKeyFromWallet(), 1);
+
+    // addToTransactionPool(genesisBlock.data);
+    unspentTxOuts = processTransaction([genesisBlock.data], [], 0);
+
     return genesisBlock;
 }
 
@@ -230,4 +242,4 @@ const replaceBlockchain = (receiveBlockchain) => {
     }
 }
 
-export { getBlocks, getLatestBlock, createBlock, addBlock, isValidNewBlock, replaceBlockchain }
+export { getBlocks, getLatestBlock, createBlock, addBlock, isValidNewBlock, replaceBlockchain, getUnspentTxOuts, }

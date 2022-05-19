@@ -3,10 +3,11 @@ import _ from 'lodash'
 
 import { getPublicKeyFromWallet, getPrivateKeyFromWallet } from './wallet.js'
 import { broadcastiongTransactionPool } from './p2pServer.js'
+import { getLatestBlock, getUnspentTxOuts } from './block.js'
 
 const COINBASE_AMOUNT = 50;
 
-let transactionPool = [];
+let transactionPool = []
 const getTransactionPool = () => {
     return _.cloneDeep(transactionPool);
 }
@@ -105,8 +106,17 @@ const sendTransaction = (address, amount) => {
 }
 
 const createTransaction = (address, amount) => {    
+
+    // 미사용 TxOuts에서 사용할 내용들을 추출
+    const unspentTxOuts = getUnspentTxOuts();
+    const {includeTxOuts, leftoverAmount} = findTxOutsForAmount(amount, unspentTxOuts);
+    // 서명되지 않은 TxIns 구성
+    const unsignedTxIns = includeTxOuts.map(createUnsignedTxIn);
+    console.log('unsignedTxIns : ', unsignedTxIns);
+
     const tx = new Transaction();
-    tx.txOuts = createTxOuts(address, amount, 0);
+    tx.txIns = unsignedTxIns;
+    tx.txOuts = createTxOuts(address, amount, leftoverAmount);
     tx.id = getTransactionId(tx); 
 
     console.log('1 createTransaction 결과는 : ', tx.txOuts);
@@ -142,6 +152,7 @@ const filterTxPoolTxs = (myUnspentTxOuts) => {
     return _.without(myUnspentTxOuts, ...removable);
 }
 
+//5, 5, 5, 5, 5 내가 보내려는 amount 17
 const findTxOutsForAmount = (amount, filteredUnspentTxOuts) => {
     let currentAmount = 0;
     const includeTxOuts = [];
@@ -180,9 +191,9 @@ const createTxOuts = (address, amount, leftoverAmount) => {
 
 const addToTransactionPool = (transaction) => {
     // 올바른 트랜잭션인지
-    if (!isValidateTransaction(transaction, unspentTxOuts)) {
-        throw Error('추가하려는 트랜잭션이 올바르지 않다!!', transaction);
-    }
+    // if (!isValidateTransaction(transaction, unspentTxOuts)) {
+    //     throw Error('추가하려는 트랜잭션이 올바르지 않다!!', transaction);
+    // }
 
     // 중복되는지
     if (!isValidateTxForPool(transaction)) {
@@ -278,6 +289,7 @@ const processTransaction = (transactions, unspentTxOuts, blockIndex) => {
         .reduce((a, b) => a.concat(b), [])
         .map((txIn) => new UnspentTxOut(txIn.txOutId, txIn.txOutIndex, '', 0));
 
+
     // 2_2. 새로 들어온 트랜잭션 정보에서 추출한 UnspentTXout 생성
     const newUnspentTxOuts = transactions.map((tx) => {
         return tx.txOuts.map((txOut) => new UnspentTxOut(tx.id, blockIndex, txOut.address, txOut.amount));
@@ -288,6 +300,7 @@ const processTransaction = (transactions, unspentTxOuts, blockIndex) => {
     // 두 1차원 배열의 txOutId와 txOutIndex를 비교해서 같은 요소를 filter하는 코드를 
     // 만들어보자.
     const resultUnspentTxOuts = (unspentTxOuts.filter((uTxO) => !checkSameElement(consumedTxOuts, uTxO.txOutIndex, uTxO.txOutId))).concat(newUnspentTxOuts);
+    console.log('processTransactions : ', transactions)
 
     unspentTxOuts = resultUnspentTxOuts;
     return resultUnspentTxOuts;
@@ -297,11 +310,5 @@ const checkSameElement = (txOuts, txOutIndex, txOutId) => {
     return txOuts.find((txOut) => txOut.txOutId === txOutId && txOut.txOutIndex === txOutIndex);
 }
 
-//let unspentTxOuts = []; // UnspentTxOut []
-let unspentTxOuts = 
-    processTransaction(transactionPool, [], 0);
-const getUnspentTxOuts = () => {
-    return _.cloneDeep(unspentTxOuts)
-}
 
-export {getTransactionPool, addToTransactionPool, getCoinbaseTransaction, getUnspentTxOuts, processTransaction, updateTransactionPool, sendTransaction}
+export {getTransactionPool, addToTransactionPool, getCoinbaseTransaction, processTransaction, updateTransactionPool, sendTransaction}
