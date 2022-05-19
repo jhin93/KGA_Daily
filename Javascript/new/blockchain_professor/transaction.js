@@ -47,9 +47,9 @@ class Transaction {
 // transaction id
 const getTransactionId = (transaction) => {
     // txIns에 있는 내용들을 하나의 문자열로 만든다.
-    const txInsContent = transaction.txIns
-        .map((txIn) => txIn.txOutId + txIn.txOutIndex)
-        .reduce((a, b) => a + b, '');
+    // const txInsContent = transaction.txIns
+    //     .map((txIn) => txIn.txOutId + txIn.txOutIndex)
+    //     .reduce((a, b) => a + b, '');
 
     // txOuts에 있는 내용들을 하나의 문자열로 만든다.
     const txOutsContent = transaction.txOuts
@@ -57,7 +57,7 @@ const getTransactionId = (transaction) => {
         .reduce((a, b) => a + b, '');
 
     // 위의 두 내용을 다 합해서 hash처리한다.
-    return CryptoJS.SHA256(txInsContent + txOutsContent).toString();
+    return CryptoJS.SHA256(/*txInsContent +*/ txOutsContent).toString();
 }
 
 // transaction signature
@@ -91,21 +91,24 @@ const getCoinbaseTransaction = (address, blockIndex) => {
 
 const sendTransaction = (address, amount) => {
     // 1. 트랜잭션 생성
-    const tx = createTransaction();
+    const tx = createTransaction(address, amount);
+    console.log('2 sendTransaction 결과는 : ', tx);
 
     // 2. 트랜잭션 풀에 추가
     transactionPool.push(tx);
 
     // 3. 주변 노드에 전파
-
+    
 
     return tx;
 }
 
-const createTransaction = (amount, address) => {    
+const createTransaction = (address, amount) => {    
     const tx = new Transaction();
     tx.txOuts = createTxOuts(address, amount, 0);
     tx.id = getTransactionId(tx); 
+
+    console.log('1 createTransaction 결과는 : ', tx.txOuts);
 
     return tx;
 }
@@ -300,4 +303,4 @@ const getUnspentTxOuts = () => {
     return _.cloneDeep(unspentTxOuts)
 }
 
-export {getTransactionPool, addToTransactionPool, getCoinbaseTransaction, getUnspentTxOuts, processTransaction, updateTransactionPool}
+export {getTransactionPool, addToTransactionPool, getCoinbaseTransaction, getUnspentTxOuts, processTransaction, updateTransactionPool, sendTransaction}

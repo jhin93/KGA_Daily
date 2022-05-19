@@ -5,7 +5,7 @@ import bodyParser from 'body-parser'
 import { getBlocks, createBlock } from './block.js'
 import { connectionToPeer, getPeers, mineBlock } from './p2pServer.js'
 import { getPublicKeyFromWallet } from './wallet.js'
-import { getTransactionPool } from './transaction.js'
+import { getTransactionPool, sendTransaction } from './transaction.js'
 
 // 초기화 함수
 const initHttpServer = (myHttpPort) => {

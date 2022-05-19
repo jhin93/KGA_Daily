@@ -14,6 +14,7 @@ const MessageType = {
     QUERY_ALL : 1,
     // 블록 전달
     RESPONSE_BLOCKCHAIN : 2,
+    
     QUERY_TRANSACTION_POOL : 3,
     RESPONSE_TRANSACTION_POOL : 4
 }
