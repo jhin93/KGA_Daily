@@ -4,6 +4,8 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import { getBlocks, createBlock } from './block.js'
 import { connectionToPeer, getPeers, mineBlock } from './p2pServer.js'
+import { getPublicKeyFromWallet } from './wallet.js'
+import { getTransactionPool, sendTransaction } from './transaction.js'
 
 // 초기화 함수
 const initHttpServer = (myHttpPort) => {
@@ -33,6 +35,22 @@ const initHttpServer = (myHttpPort) => {
     app.post('/addPeer', (req, res) => {
         console.log('/addPeer : ',req.body.message);
         res.send(connectionToPeer(req.body.data));
+    })
+
+    app.get('/address', (req, res) => {
+        const address = getPublicKeyFromWallet();
+        res.send( {'address' : address});
+    })
+
+    app.post('/sendTransaction', (req, res) => {
+        const address = req.body.address;
+        const amount = req.body.amount;
+
+        res.send(sendTransaction(address, amount));
+    })
+
+    app.get('/transactions', (req, res) => {
+        res.send(getTransactionPool());
     })
 
     app.listen(myHttpPort, () => {
