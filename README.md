@@ -956,3 +956,30 @@ http://www.umlcert.com/ethereum-dapps-16/
 2. 완전탐색 - https://programmers.co.kr/learn/courses/30/parts/12230  
 3. 해시 - https://programmers.co.kr/learn/courses/30/parts/12077  
 4. 스택/큐 https://programmers.co.kr/learn/courses/30/parts/12081  
+
+
+
+스마트 컨트랙트 Event.
+이벤트(Event)는 컨트랙트 내부에서 일어난 일을 클라이언트 쪽에 전달하기 위해 사용한다.
+```        
+// 이벤트 선언.
+event IntegersAdded(uint x, uint y, uint result);
+
+function add(uint _x, uint _y) public {
+    uint result = _x + _y;
+    // 이벤트를 실행하여 앱에게 add 함수가 실행되었음을 알린다:
+    IntegersAdded(_x, _y, result);
+    return result;
+}
+
+// 클라이언트
+YourContract.IntegersAdded(function(error, result) {
+    // 결과와 관련된 행동을 취한다
+})
+
+선언한 IntegersAdded는 자신을 사용하는 함수(add)의 실행 여부를 클라이언트에 전달한다.
+컨트랙트 내부에서 함수 'add'가 실행되면 포함된 이벤트가 실행되고, 이를 클라이언트도 감지한다.
+        
+```
+
+
