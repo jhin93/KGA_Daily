@@ -958,9 +958,12 @@ http://www.umlcert.com/ethereum-dapps-16/
 4. 스택/큐 https://programmers.co.kr/learn/courses/30/parts/12081  
 
 
+<br>
+<br>
 
-스마트 컨트랙트 Event.
-이벤트(Event)는 컨트랙트 내부에서 일어난 일을 클라이언트 쪽에 전달하기 위해 사용한다.
+
+스마트 컨트랙트 Event.  
+이벤트(Event)는 컨트랙트 내부에서 일어난 일을 클라이언트 쪽에 전달하기 위해 사용한다.  
 ```        
 // 이벤트 선언.
 event IntegersAdded(uint x, uint y, uint result);
