@@ -932,6 +932,11 @@ https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=zag001&logNo
 geth attach ipc:/Users/kimjinkyung/Library/Ethereum/geth.ipc
 ```
 
+```
+// 이더리움 데이터를 받아오는 데 연산력(.threads)을 늘이거나 줄일 수 있음
+geth --mine --miner.threads=1
+```
+
 
 geth puppeth로 프라이빗 네트워크   
 https://medium.com/onther-tech/geth%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-private-ethereum-chain-private-network-%EA%B5%AC%EC%B6%95-82feeb1d0bbc  
