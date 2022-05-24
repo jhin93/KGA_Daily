@@ -924,6 +924,15 @@ https://geth.ethereum.org/
 geth 명령어, 옵션  
 https://geth.ethereum.org/docs/interface/command-line-options  
 
+
+작동중인 geth 노드의 콘솔에 연결 후 사용하기. 
+geth console -> endpoint 검색 -> geth attach  
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=zag001&logNo=221657727971  
+```
+geth attach ipc:/Users/kimjinkyung/Library/Ethereum/geth.ipc
+```
+
+
 geth puppeth로 프라이빗 네트워크   
 https://medium.com/onther-tech/geth%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-private-ethereum-chain-private-network-%EA%B5%AC%EC%B6%95-82feeb1d0bbc  
 https://brunch.co.kr/@skkrypto/80  
