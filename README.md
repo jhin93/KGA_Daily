@@ -937,6 +937,11 @@ geth attach ipc:/Users/kimjinkyung/Library/Ethereum/geth.ipc
 geth --mine --miner.threads=1
 ```
 
+geth에서 rpcport를 쓰는 이유는 내가 만든 블록체인 네트워크에 다른 사람이 접근하려고 할때 그 방법을 알려주기 위함이다.  
+@127.0.0.1:30301 --port 30303 --rpcport 8545  
+@127.0.0.1:30301 - 내 기본 ip  
+30303 - node1의 포트  
+8545 - rpcport  
 
 geth puppeth로 프라이빗 네트워크   
 https://medium.com/onther-tech/geth%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-private-ethereum-chain-private-network-%EA%B5%AC%EC%B6%95-82feeb1d0bbc  
