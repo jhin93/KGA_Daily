@@ -1012,3 +1012,5 @@ https://ko.0xzx.com/20201208139978.html
 포트번호란?  
 https://it-sungwoo.tistory.com/128?category=799152  
 
+이더리움 KeyStore파일  
+https://medium.com/hexlant/%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80-keystore-%ED%8C%8C%EC%9D%BC-utc-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%95%94%ED%98%B8%ED%99%94-%EB%B3%B5%ED%98%B8%ED%99%94-%EC%9B%90%EB%A6%AC-1-2-d417cb605bf  
