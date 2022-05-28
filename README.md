@@ -8,6 +8,8 @@ vscode 단축키
 https://blog.naver.com/jiwon3194/222512040766  
 
 
+
+
 반복문 사용 시, 무한 루프가 돌때는 연산자가 제한범위안에 제대로 있는 지 확인할 것.  
 ```javascript
 while( i < 10 ) {  
@@ -30,6 +32,7 @@ https://stackoverflow.com/questions/8862035/what-does-it-mean-when-the-form-acti
 
 자바스크립트 label  
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label  
+
 
 
 NodeJS  
