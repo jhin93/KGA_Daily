@@ -415,7 +415,7 @@ https://opentutorials.org/course/1375/6761
   리액트(12/13 ~ )
 
 함수형 컴포넌트 vs 클래스형 컴포넌트
-https://devowen.com/298
+https://devowen.com
 
 
 브랜치 strategy  
